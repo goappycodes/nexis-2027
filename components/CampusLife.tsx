@@ -13,10 +13,10 @@ const HIGHLIGHTS = [
 
 export default function CampusLife() {
   return (
-    <section id="campus" className="scroll-mt-24 py-20 sm:py-28 lg:py-32">
+    <section id="campus" className="scroll-mt-24 py-12 sm:py-20 lg:py-28">
       <div className="shell">
         {/* Header */}
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-7 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <div className="flex items-center gap-4">
@@ -74,7 +74,7 @@ export default function CampusLife() {
         </div>
 
         {/* Uniform gallery — 8 tiles fill 2 / 4 columns with no gaps */}
-        <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="mt-9 sm:mt-14 grid grid-cols-2 gap-3 md:grid-cols-4">
           {CAMPUS_IMAGES.map((img, i) => (
             <Reveal
               key={img.src}

@@ -9,8 +9,8 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-line bg-paper-2/50 py-20 sm:py-28 lg:py-32">
-      <div className="shell grid gap-12 lg:grid-cols-12 lg:gap-16">
+    <section className="border-t border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
+      <div className="shell grid gap-8 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <Reveal>
             <div className="flex items-center gap-4">
@@ -42,7 +42,7 @@ export default function Faq() {
                 <div key={f.q} className="border-b border-line">
                   <button
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                    className="flex w-full items-center justify-between gap-6 py-5 text-left"
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-lg leading-snug sm:text-xl">

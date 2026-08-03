@@ -48,7 +48,7 @@ export default function ExperienceCarousel() {
       : "linear-gradient(90deg,transparent,#000 12%,#000 82%,transparent)";
 
   return (
-    <div className="relative mt-14">
+    <div className="relative mt-9 sm:mt-14">
       <div
         ref={ref}
         className="no-scrollbar -mx-[var(--gutter)] flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-[var(--gutter)] pb-1"
@@ -73,7 +73,7 @@ export default function ExperienceCarousel() {
                 {e.tag}
               </span>
             </div>
-            <div className="flex flex-1 flex-col p-7">
+            <div className="flex flex-1 flex-col p-5 sm:p-7">
               <div className="flex items-start justify-between gap-4">
                 <h3 className="font-serif text-2xl leading-tight">{e.title}</h3>
                 <ArrowUpRight className="mt-1 text-lg text-muted transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink" />

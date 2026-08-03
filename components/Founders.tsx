@@ -4,7 +4,7 @@ import { FOUNDERS } from "@/lib/content";
 
 export default function Founders() {
   return (
-    <section className="border-y border-line bg-paper-2/50 py-20 sm:py-28 lg:py-32">
+    <section className="border-y border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
       <div className="shell">
         <div className="max-w-3xl">
           <Reveal>
@@ -29,12 +29,12 @@ export default function Founders() {
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 sm:mt-16 grid gap-5 md:grid-cols-2">
           {FOUNDERS.map((f, i) => (
             <Reveal
               key={f.name}
               delay={i * 100}
-              className="flex flex-col gap-6 rounded-[4px] border border-line bg-paper p-8 sm:flex-row sm:items-start sm:p-10"
+              className="flex flex-col gap-6 rounded-[4px] border border-line bg-paper p-6 sm:p-8 sm:flex-row sm:items-start sm:p-10"
             >
               <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-[4px] bg-paper-2 ring-1 ring-line">
                 <Image

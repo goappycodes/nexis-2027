@@ -12,7 +12,7 @@ export default function Faculty() {
   return (
     <section
       id="faculty"
-      className="scroll-mt-24 border-y border-line bg-paper-2/50 py-20 sm:py-28 lg:py-32"
+      className="scroll-mt-24 border-y border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28"
     >
       <div className="shell">
         <SectionHeader
@@ -46,7 +46,7 @@ export default function Faculty() {
             <Reveal
               key={m.name}
               delay={i * 90}
-              className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8"
+              className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6"
             >
               <div className="flex items-center gap-4">
                 <FacultyAvatar src={m.img} name={m.name} />

@@ -5,7 +5,7 @@ import { BATCH } from "@/lib/content";
 export default function CtaBand() {
   return (
     <section id="apply" className="scroll-mt-24 bg-crimson text-white">
-      <div className="shell py-20 sm:py-28 lg:py-32">
+      <div className="shell py-12 sm:py-20 lg:py-28">
         <div className="grid items-end gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <Reveal>

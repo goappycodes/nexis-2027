@@ -6,7 +6,7 @@ import { BATCH, PROGRAM_FACTS } from "@/lib/content";
 export default function Hero() {
   return (
     <section id="top" className="relative">
-      <div className="shell relative z-10 pt-7 pb-9 sm:pt-9 lg:pt-11">
+      <div className="shell relative z-10 pt-5 pb-7 sm:pt-9 sm:pb-9 lg:pt-11">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left — the statement */}
           <div className="lg:col-span-7">
@@ -51,7 +51,7 @@ export default function Hero() {
           {/* Right — editorial campus plate */}
           <div className="lg:col-span-5">
             <Reveal delay={200} className="relative">
-              <figure className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-paper-2 lg:aspect-[7/8]">
+              <figure className="relative aspect-[16/10] overflow-hidden rounded-[4px] bg-paper-2 sm:aspect-[4/5] lg:aspect-[7/8]">
                 <Image
                   src="/images/campus/cafeteria.jpg"
                   alt="Inside the NEXIS campus in Siliguri"
@@ -86,7 +86,7 @@ export default function Hero() {
             <Reveal
               key={f.label}
               delay={i * 70}
-              className={`py-6 md:px-7 md:first:pl-0 ${
+              className={`py-4 sm:py-6 md:px-7 md:first:pl-0 ${
                 i % 2 === 0 ? "pr-4" : "pl-4 md:pl-7"
               } ${i < 2 ? "border-b border-line md:border-b-0" : ""}`}
             >

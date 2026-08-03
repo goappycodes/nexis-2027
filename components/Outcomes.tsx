@@ -5,7 +5,7 @@ import { OUTCOME_STATS, PATHWAYS } from "@/lib/content";
 
 export default function Outcomes() {
   return (
-    <section id="outcomes" className="shell scroll-mt-24 py-20 sm:py-28 lg:py-32">
+    <section id="outcomes" className="shell scroll-mt-24 py-12 sm:py-20 lg:py-28">
       <SectionHeader
         index="05"
         kicker="Outcomes"
@@ -20,9 +20,9 @@ export default function Outcomes() {
       />
 
       {/* Stat band */}
-      <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[4px] border border-line bg-line lg:grid-cols-4">
+      <div className="mt-10 sm:mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[4px] border border-line bg-line lg:grid-cols-4">
         {OUTCOME_STATS.map((s, i) => (
-          <Reveal key={s.l} delay={i * 70} className="bg-paper p-7 sm:p-8">
+          <Reveal key={s.l} delay={i * 70} className="bg-paper p-5 sm:p-8">
             <p className="display text-[clamp(2.4rem,5vw,3.4rem)] text-ink">
               {s.k}
             </p>
@@ -35,12 +35,12 @@ export default function Outcomes() {
       <StudentWall />
 
       {/* Pathways */}
-      <div className="mt-16 grid gap-5 md:grid-cols-3">
+      <div className="mt-10 sm:mt-16 grid gap-5 md:grid-cols-3">
         {PATHWAYS.map((p, i) => (
           <Reveal
             key={p.title}
             delay={i * 90}
-            className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8"
+            className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6"
           >
             <span className="kicker text-crimson">{p.meta}</span>
             <h3 className="mt-5 font-serif text-2xl leading-tight">{p.title}</h3>

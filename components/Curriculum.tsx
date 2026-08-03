@@ -8,7 +8,7 @@ export default function Curriculum() {
       id="curriculum"
       className="relative scroll-mt-24 bg-ink text-paper"
     >
-      <div className="shell py-20 sm:py-28 lg:py-32">
+      <div className="shell py-12 sm:py-20 lg:py-28">
         {/* Header */}
         <div className="max-w-3xl">
           <Reveal>
@@ -34,24 +34,24 @@ export default function Curriculum() {
         </div>
 
         {/* Year rows */}
-        <div className="mt-16 border-t border-white/15">
+        <div className="mt-10 sm:mt-16 border-t border-white/15">
           {CURRICULUM.map((c, i) => (
             <Reveal
               key={c.year}
               delay={i * 60}
-              className="group grid gap-6 border-b border-white/15 py-10 md:grid-cols-12 md:items-start md:gap-10 md:py-12"
+              className="group grid gap-4 border-b border-white/15 py-7 sm:gap-6 sm:py-10 md:grid-cols-12 md:items-start md:gap-10 md:py-12"
             >
               {/* Year marker */}
-              <div className="md:col-span-3">
+              <div className="flex items-baseline gap-3 md:col-span-3 md:block">
                 <p className="kicker text-crimson">{c.year}</p>
-                <p className="display mt-3 text-[clamp(2.4rem,6vw,4rem)] text-white/12 transition-colors duration-500 group-hover:text-white/25">
+                <p className="display text-2xl text-white/25 md:mt-3 md:text-[clamp(2.4rem,6vw,4rem)] md:text-white/12 md:transition-colors md:duration-500 md:group-hover:text-white/25">
                   0{i + 1}
                 </p>
               </div>
 
               {/* Title + lede */}
               <div className="md:col-span-4">
-                <h3 className="font-serif text-2xl leading-tight sm:text-[1.7rem]">
+                <h3 className="font-serif text-xl leading-tight sm:text-2xl md:text-[1.7rem]">
                   {c.title}
                 </h3>
                 <p className="mt-3 text-[0.98rem] leading-relaxed text-white/65">

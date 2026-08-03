@@ -11,7 +11,7 @@ export default function StudentWall() {
         <span className="text-[0.8rem] text-muted">{STUDENTS.length} students</span>
       </Reveal>
 
-      <div className="grid grid-cols-3 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10">
+      <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-5 sm:gap-2 md:grid-cols-6 lg:grid-cols-10">
         {STUDENTS.map((s, i) => (
           <Reveal
             key={s.name}

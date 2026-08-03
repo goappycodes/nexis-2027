@@ -4,7 +4,7 @@ import { RECRUITER_LOGOS } from "@/lib/content";
 export default function Recognition() {
   const row = [...RECRUITER_LOGOS, ...RECRUITER_LOGOS];
   return (
-    <section className="overflow-hidden border-b border-line bg-paper-2/50 py-12">
+    <section className="overflow-hidden border-b border-line bg-paper-2/50 py-9 sm:py-12">
       <div className="shell">
         <Reveal className="mb-9 text-center">
           <p className="kicker">Where our students already work &amp; learn</p>

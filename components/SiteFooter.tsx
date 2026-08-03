@@ -10,7 +10,7 @@ const PROGRAMS = [
 export default function SiteFooter() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="shell py-16 sm:py-20">
+      <div className="shell py-12 sm:py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-5">
@@ -64,7 +64,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Compliance + legal */}
-        <div className="mt-16 border-t border-white/15 pt-8">
+        <div className="mt-10 sm:mt-16 border-t border-white/15 pt-8">
           <p className="max-w-4xl text-[0.78rem] leading-relaxed text-white/45">
             NEXIS is a private school of business and a skilling institution
             operating as a Training Body accredited by MEPSC — an awarding body
