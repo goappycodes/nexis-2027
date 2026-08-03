@@ -12,17 +12,17 @@ const HIGHLIGHTS = [
 ];
 
 // Bento column spans keyed by tile index for an editorial rhythm.
+// Wide tiles at 0, 3, 6 keep each 4-col row balanced (2+1+1).
 const SPAN = [
-  "sm:col-span-2 lg:col-span-2", // life-at-nexis (wide)
+  "col-span-2 lg:col-span-2", // 0 life-at-nexis collage (wide)
   "",
   "",
-  "sm:col-span-2 lg:col-span-2", // cafeteria (wide)
+  "col-span-2 lg:col-span-2", // 3 breakout spaces (wide)
   "",
   "",
+  "col-span-2 lg:col-span-2", // 6 made to inspire (wide)
   "",
-  "sm:col-span-2 lg:col-span-1",
   "",
-  "sm:col-span-2 lg:col-span-2", // safe-future (wide)
 ];
 
 export default function CampusLife() {

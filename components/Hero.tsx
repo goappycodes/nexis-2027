@@ -53,11 +53,11 @@ export default function Hero() {
             <Reveal delay={200} className="relative">
               <figure className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-paper-2">
                 <Image
-                  src="/images/campus/tour-main.jpg"
-                  alt="NEXIS campus in Siliguri"
+                  src="/images/campus/cafeteria.jpg"
+                  alt="Inside the NEXIS campus in Siliguri"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/5 to-transparent" />

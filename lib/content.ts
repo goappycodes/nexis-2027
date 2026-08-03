@@ -115,7 +115,7 @@ export const EXPERIENCES = [
     tag: "AIvolution",
     title: "Build with AI",
     d: "Master the AI tools that make you work smarter — automating tasks and solving real business problems with ease.",
-    img: "/images/campus/tour-main.jpg",
+    img: "/images/campus/apex-hall.jpg",
   },
   {
     tag: "Global Immersion",
@@ -157,18 +157,17 @@ export const STUDENTS = [
   { name: "Aditya Khaitan", org: "The Corporate Pot", img: "/images/students/aditya.jpg" },
 ];
 
-/* Campus imagery for galleries. */
+/* Campus imagery for galleries — all clean, real campus shots. */
 export const CAMPUS_IMAGES = [
-  { src: "/images/campus/life-at-nexis.jpg", cap: "Life at NEXIS", wide: true },
+  { src: "/images/campus/life-at-nexis.jpg", cap: "Life at NEXIS" },
+  { src: "/images/campus/cafeteria.jpg", cap: "The Aspire lounge" },
   { src: "/images/campus/apex-hall.jpg", cap: "Apex Hall" },
+  { src: "/images/campus/tour7.jpg", cap: "Breakout spaces" },
   { src: "/images/campus/legacy-hall.jpg", cap: "Legacy Hall" },
-  { src: "/images/campus/cafeteria.jpg", cap: "The Cafeteria" },
-  { src: "/images/campus/tour-main.jpg", cap: "On campus" },
-  { src: "/images/campus/tour6.jpg", cap: "Everyday buzz" },
-  { src: "/images/campus/tour7.jpg", cap: "Clubs & events" },
-  { src: "/images/campus/tour8.jpg", cap: "Competitions" },
-  { src: "/images/campus/tour9.jpg", cap: "Student life" },
-  { src: "/images/campus/safe-future.jpg", cap: "A safe, modern campus" },
+  { src: "/images/campus/tour6.jpg", cap: "The NEXIS lobby" },
+  { src: "/images/campus/safe-future.jpg", cap: "Made to inspire" },
+  { src: "/images/campus/tour9.jpg", cap: "Teamwork rooms" },
+  { src: "/images/campus/tour8.jpg", cap: "Discussion pods" },
 ];
 
 export const PRESS = [
