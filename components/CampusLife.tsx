@@ -11,20 +11,6 @@ const HIGHLIGHTS = [
   "Lifelong friendships",
 ];
 
-// Bento column spans keyed by tile index for an editorial rhythm.
-// Wide tiles at 0, 3, 6 keep each 4-col row balanced (2+1+1).
-const SPAN = [
-  "col-span-2 lg:col-span-2", // 0 life-at-nexis collage (wide)
-  "",
-  "",
-  "col-span-2 lg:col-span-2", // 3 breakout spaces (wide)
-  "",
-  "",
-  "col-span-2 lg:col-span-2", // 6 made to inspire (wide)
-  "",
-  "",
-];
-
 export default function CampusLife() {
   return (
     <section id="campus" className="scroll-mt-24 py-20 sm:py-28 lg:py-32">
@@ -87,23 +73,23 @@ export default function CampusLife() {
           </div>
         </div>
 
-        {/* Bento gallery */}
-        <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Uniform gallery — 8 tiles fill 2 / 4 columns with no gaps */}
+        <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-4">
           {CAMPUS_IMAGES.map((img, i) => (
             <Reveal
               key={img.src}
               delay={(i % 4) * 60}
-              className={`group relative aspect-[4/3] overflow-hidden rounded-[4px] bg-paper-2 ${SPAN[i] || ""}`}
+              className="group relative aspect-[4/3] overflow-hidden rounded-[4px] bg-paper-2"
             >
               <Image
                 src={img.src}
                 alt={img.cap}
                 fill
-                sizes="(max-width:640px) 50vw, (max-width:1024px) 50vw, 33vw"
+                sizes="(max-width:768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
-              <figcaption className="absolute bottom-0 left-0 flex items-center gap-2 p-4 text-[0.78rem] font-medium text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
+              <figcaption className="absolute bottom-0 left-0 flex items-center gap-2 p-4 text-[0.8rem] font-medium text-white">
                 <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
                 {img.cap}
               </figcaption>

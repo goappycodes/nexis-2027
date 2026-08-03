@@ -1,6 +1,5 @@
 import SiteNav from "@/components/SiteNav";
 import Hero from "@/components/Hero";
-import PhotoMarquee from "@/components/PhotoMarquee";
 import Recognition from "@/components/Recognition";
 import Overview from "@/components/Overview";
 import Curriculum from "@/components/Curriculum";
@@ -20,7 +19,6 @@ export default function UGPage() {
     <main className="relative">
       <SiteNav />
       <Hero />
-      <PhotoMarquee />
       <Recognition />
       <Overview />
       <Curriculum />

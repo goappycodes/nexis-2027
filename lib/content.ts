@@ -157,14 +157,14 @@ export const STUDENTS = [
   { name: "Aditya Khaitan", org: "The Corporate Pot", img: "/images/students/aditya.jpg" },
 ];
 
-/* Campus imagery for galleries — all clean, real campus shots. */
+/* Campus imagery for galleries — all clean, real campus shots.
+   Eight images fill both the 2-col and 4-col grid without gaps. */
 export const CAMPUS_IMAGES = [
-  { src: "/images/campus/life-at-nexis.jpg", cap: "Life at NEXIS" },
   { src: "/images/campus/cafeteria.jpg", cap: "The Aspire lounge" },
   { src: "/images/campus/apex-hall.jpg", cap: "Apex Hall" },
   { src: "/images/campus/tour7.jpg", cap: "Breakout spaces" },
-  { src: "/images/campus/legacy-hall.jpg", cap: "Legacy Hall" },
   { src: "/images/campus/tour6.jpg", cap: "The NEXIS lobby" },
+  { src: "/images/campus/legacy-hall.jpg", cap: "Legacy Hall" },
   { src: "/images/campus/safe-future.jpg", cap: "Made to inspire" },
   { src: "/images/campus/tour9.jpg", cap: "Teamwork rooms" },
   { src: "/images/campus/tour8.jpg", cap: "Discussion pods" },
@@ -182,29 +182,42 @@ export const FACULTY = [
   {
     name: "Sharad Agarwal",
     role: "Marketing Expert",
+    img: "/images/faculty/sharad.jpg",
     d: "Founder of Primsy India — building North Bengal's fastest-growing hub for digital marketing and design.",
   },
   {
     name: "Neeraj Sancheti",
     role: "Brand Strategist",
+    img: "/images/faculty/neeraj.jpg",
     d: "Founder of Kreativ Street — the mind behind 500+ campaigns, turning content into sales.",
   },
   {
     name: "Naveen Jain",
     role: "Sales Expert",
+    img: "/images/faculty/naveen.jpg",
     d: "Director of HOC & Global Optics — turning vision into success since 1989, trusted by 1M+ customers.",
   },
 ];
 
-export const BRANDS = [
-  "boAt",
-  "Lenskart",
-  "Zomato",
-  "Snitch",
-  "State Plate",
-  "ITC",
-  "TATA Motors",
-  "BeerBiceps",
+/* Recruiter & partner network logos (from the NEXIS site's own CDN). */
+export const RECRUITER_LOGOS = [
+  { name: "boAt", src: "/images/recruiters/boat-logo.svg" },
+  { name: "Zomato", src: "/images/recruiters/zomato.svg" },
+  { name: "Swiggy", src: "/images/recruiters/swiggy.svg" },
+  { name: "Lenskart", src: "/images/recruiters/lenscart-logo.svg" },
+  { name: "Snitch", src: "/images/recruiters/snitch-logo.svg" },
+  { name: "Razorpay", src: "/images/recruiters/razorpay.svg" },
+  { name: "JP Morgan", src: "/images/recruiters/jpmorgan.svg" },
+  { name: "Deloitte", src: "/images/recruiters/delloite-logo.svg" },
+  { name: "EY", src: "/images/recruiters/ey-logo.svg" },
+  { name: "Flipkart", src: "/images/recruiters/flipkart.png" },
+  { name: "upGrad", src: "/images/recruiters/upgrad-logo.svg" },
+  { name: "Bajaj", src: "/images/recruiters/bajaj-logo.svg" },
+  { name: "Cultfit", src: "/images/recruiters/culltfit-logo.svg" },
+  { name: "Bombay Shaving Co.", src: "/images/recruiters/bombay-shaving-logo.svg" },
+  { name: "Delhivery", src: "/images/recruiters/delhivery-logo.svg" },
+  { name: "Motilal Oswal", src: "/images/recruiters/motilal-logo.svg" },
+  { name: "BlissClub", src: "/images/recruiters/blissclub-logo.svg" },
 ];
 
 export const OUTCOME_STATS = [

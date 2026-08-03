@@ -25,8 +25,8 @@ export default function StudentWall() {
               sizes="(max-width:640px) 30vw, (max-width:1024px) 16vw, 10vw"
               className="object-cover grayscale-[30%] transition-all duration-700 ease-premium group-hover:scale-110 group-hover:grayscale-0"
             />
-            {/* Hover caption — kept off by default so the dense grid stays clean */}
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100" />
+            {/* Hover caption — gradient appears on hover so text stays legible */}
+            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="absolute inset-x-0 bottom-0 translate-y-1.5 p-2 opacity-0 transition-all duration-400 ease-premium group-hover:translate-y-0 group-hover:opacity-100">
               <p className="text-[0.72rem] font-semibold leading-tight text-white">
                 {s.name}

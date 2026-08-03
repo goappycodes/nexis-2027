@@ -6,8 +6,8 @@ import { BATCH, PROGRAM_FACTS } from "@/lib/content";
 export default function Hero() {
   return (
     <section id="top" className="relative">
-      <div className="shell relative z-10 pt-14 pb-10 sm:pt-20 lg:pt-24">
-        <div className="grid items-end gap-12 lg:grid-cols-12">
+      <div className="shell relative z-10 pt-7 pb-9 sm:pt-9 lg:pt-11">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left — the statement */}
           <div className="lg:col-span-7">
             <Reveal>
@@ -18,7 +18,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={80}>
-              <h1 className="display balance mt-7 text-[clamp(2.9rem,8.2vw,6.6rem)]">
+              <h1 className="display balance mt-4 text-[clamp(2.5rem,6.4vw,5.1rem)]">
                 Learn business
                 <br />
                 by <span className="serif-em text-crimson">building</span> it.
@@ -26,7 +26,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="mt-8 max-w-xl text-[1.05rem] leading-relaxed text-ink-2">
+              <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-ink-2">
                 A three-year, on-campus program in {BATCH.city} where you work on
                 real businesses from your first semester — mentored by founders
                 and CXOs, not just lectured at. This is the most practical
@@ -35,7 +35,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={240}>
-              <div className="mt-9 flex flex-wrap items-center gap-3">
+              <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a href="#apply" className="btn btn-crimson">
                   Apply for the {BATCH.cohort.split("–")[0]}
                   <ArrowRight className="arrow" />
@@ -51,7 +51,7 @@ export default function Hero() {
           {/* Right — editorial campus plate */}
           <div className="lg:col-span-5">
             <Reveal delay={200} className="relative">
-              <figure className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-paper-2">
+              <figure className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-paper-2 lg:aspect-[7/8]">
                 <Image
                   src="/images/campus/cafeteria.jpg"
                   alt="Inside the NEXIS campus in Siliguri"

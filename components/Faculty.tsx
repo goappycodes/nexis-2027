@@ -1,14 +1,12 @@
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
-import { FACULTY } from "@/lib/content";
+import FacultyAvatar from "./FacultyAvatar";
+import { FACULTY, RECRUITER_LOGOS } from "@/lib/content";
 
-function monogram(name: string) {
-  return name
-    .split(" ")
-    .map((n) => n[0])
-    .slice(0, 2)
-    .join("");
-}
+// A few marquee logos to show where mentors come from.
+const MENTOR_LOGOS = ["boAt", "Lenskart", "Zomato", "Snitch", "Swiggy", "Razorpay"]
+  .map((n) => RECRUITER_LOGOS.find((l) => l.name === n))
+  .filter(Boolean) as { name: string; src: string }[];
 
 export default function Faculty() {
   return (
@@ -29,7 +27,21 @@ export default function Faculty() {
           lede="50+ founders and CXOs mentor on campus, with 30+ masterclasses every semester. You learn how businesses are really built, scaled and sustained — directly from those who did it."
         />
 
-        <div className="mt-16 grid gap-5 md:grid-cols-3">
+        {/* Where your mentors come from */}
+        <Reveal className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-6 border-y border-line py-7">
+          <span className="kicker shrink-0 text-muted">Mentors come from</span>
+          {MENTOR_LOGOS.map((l) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              key={l.name}
+              src={l.src}
+              alt={l.name}
+              className="h-6 w-auto max-w-[120px] object-contain opacity-70 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0"
+            />
+          ))}
+        </Reveal>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {FACULTY.map((m, i) => (
             <Reveal
               key={m.name}
@@ -37,9 +49,7 @@ export default function Faculty() {
               className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8"
             >
               <div className="flex items-center gap-4">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-line bg-paper-2 font-serif text-lg text-crimson">
-                  {monogram(m.name)}
-                </span>
+                <FacultyAvatar src={m.img} name={m.name} />
                 <div>
                   <h3 className="font-serif text-xl leading-tight">{m.name}</h3>
                   <p className="kicker mt-1 text-crimson">{m.role}</p>
