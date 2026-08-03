@@ -1,0 +1,53 @@
+import Reveal from "./Reveal";
+import { ArrowRight, ArrowUpRight } from "./icons";
+import { BATCH } from "@/lib/content";
+
+export default function CtaBand() {
+  return (
+    <section id="apply" className="scroll-mt-24 bg-crimson text-white">
+      <div className="shell py-20 sm:py-28 lg:py-32">
+        <div className="grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <Reveal>
+              <p className="text-[0.72rem] font-medium uppercase tracking-[0.2em] text-white/75">
+                Admissions open · {BATCH.cohort}
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="display balance mt-6 text-[clamp(2.4rem,6vw,5rem)] text-white">
+                Your career can start
+                <br />
+                this <span className="italic">July</span>.
+              </h2>
+            </Reveal>
+            <Reveal delay={140}>
+              <p className="mt-6 max-w-lg text-[1.05rem] leading-relaxed text-white/85">
+                Join a cohort of ambitious builders in {BATCH.city}. Seats for
+                the {BATCH.cohort} are limited — take the first step today.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="lg:col-span-4 lg:justify-self-end">
+            <Reveal delay={200} className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <a
+                href="#prospectus"
+                className="btn btn-light w-full justify-center sm:w-auto lg:w-full"
+              >
+                Apply now
+                <ArrowRight className="arrow" />
+              </a>
+              <a
+                href="#prospectus"
+                className="btn w-full justify-center border-white/40 bg-transparent text-white hover:bg-white/10 sm:w-auto lg:w-full"
+              >
+                Download prospectus
+                <ArrowUpRight className="arrow" />
+              </a>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
