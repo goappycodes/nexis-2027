@@ -58,7 +58,7 @@ export default function ExperienceCarousel() {
           <article
             key={e.title}
             data-card
-            className="lift group flex w-[80vw] shrink-0 snap-start flex-col overflow-hidden rounded-[4px] border border-line bg-paper hover:border-ink/30 sm:w-[54vw] md:w-[38vw] lg:w-[30%] xl:w-[26%]"
+            className="lift group flex w-[80vw] shrink-0 snap-start flex-col overflow-hidden rounded-[2px] border border-line bg-paper hover:border-ink/30 sm:w-[54vw] md:w-[38vw] lg:w-[30%] xl:w-[26%]"
           >
             <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
               <Image
@@ -104,7 +104,7 @@ export default function ExperienceCarousel() {
         >
           <ArrowRight className="text-lg" />
         </button>
-        <span className="ml-2 text-[0.8rem] text-muted">Drag or swipe to explore</span>
+        <span className="ml-2 text-[0.8rem] text-muted">Six ways you&rsquo;ll learn by doing</span>
       </div>
     </div>
   );

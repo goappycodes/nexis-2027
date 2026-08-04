@@ -22,7 +22,7 @@ export default function Admissions() {
       />
 
       {/* Steps */}
-      <div className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-[4px] border border-line bg-line md:grid-cols-3">
+      <div className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-[2px] border border-line bg-line md:grid-cols-3">
         {ADMISSION_STEPS.map((s, i) => (
           <Reveal key={s.n} delay={i * 90} className="bg-paper p-6 sm:p-10">
             <div className="flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function Admissions() {
 
       {/* Eligibility + financing */}
       <div className="mt-6 grid gap-5 md:grid-cols-2">
-        <Reveal className="rounded-[4px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6">
+        <Reveal className="rounded-[2px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6">
           <p className="kicker text-crimson">Eligibility</p>
           <p className="mt-4 text-[0.98rem] leading-relaxed text-ink-2">
             Open to students appearing for or having passed Class XII from any
@@ -48,7 +48,7 @@ export default function Admissions() {
             experience.
           </p>
         </Reveal>
-        <Reveal delay={90} className="rounded-[4px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6">
+        <Reveal delay={90} className="rounded-[2px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6">
           <p className="kicker text-crimson">Financing</p>
           <p className="mt-4 text-[0.98rem] leading-relaxed text-ink-2">
             Finance shouldn&rsquo;t be a barrier. We partner with Axis Bank for

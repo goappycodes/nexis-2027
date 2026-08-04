@@ -6,7 +6,7 @@ export default function StudentWall() {
   return (
     <div className="mt-6">
       <Reveal className="mb-6 flex items-center gap-4">
-        <span className="kicker text-crimson">Class of first-years, at work</span>
+        <span className="kicker text-crimson">The Class of 2025, at work</span>
         <span className="h-px flex-1 bg-line" />
         <span className="text-[0.8rem] text-muted">{STUDENTS.length} students</span>
       </Reveal>
@@ -16,7 +16,7 @@ export default function StudentWall() {
           <Reveal
             key={s.name}
             delay={(i % 10) * 40}
-            className="group relative aspect-square overflow-hidden rounded-[3px] bg-paper-2"
+            className="group relative aspect-square overflow-hidden rounded-[2px] bg-paper-2"
           >
             <Image
               src={s.img}

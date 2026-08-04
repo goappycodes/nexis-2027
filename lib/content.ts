@@ -51,7 +51,7 @@ export const PROGRAMS = [
   {
     tag: "New",
     title: "School of AI",
-    d: "Build real fluency in applied AI — the tools, workflows and thinking that make you dangerous in any modern business.",
+    d: "Build genuine fluency in applied AI — the tools, workflows and judgement that make you effective in any modern business.",
     meta: ["Applied AI", "Hands-on", "Future-ready"],
     img: "/images/campus/apex-hall.jpg",
     href: "#",
@@ -73,8 +73,8 @@ export const WHY_NEXIS = [
   },
   {
     k: "365",
-    t: "A campus that buzzes",
-    d: "Clubs, competitions, sports and real projects — a vibrant, modern campus alive every single day.",
+    t: "A living campus",
+    d: "Clubs, competitions, sport and real ventures — a modern campus in constant motion, all year round.",
   },
   {
     k: "75+",

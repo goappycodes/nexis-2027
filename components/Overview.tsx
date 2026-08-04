@@ -10,15 +10,15 @@ export default function Overview() {
         kicker="The Program"
         title={
           <>
-            An undergraduate program that
-            <br className="hidden sm:block" /> behaves like a{" "}
-            <span className="serif-em text-crimson">startup</span>.
+            An undergraduate education,
+            <br className="hidden sm:block" /> built around{" "}
+            <span className="serif-em text-crimson">real work</span>.
           </>
         }
-        lede="Three years, structured around real work. You build ventures, consult businesses, intern with founders and graduate with a portfolio — not just a transcript. Here is what makes it different."
+        lede="Three years, structured around practice. You build ventures, consult businesses, intern with founders and graduate with a portfolio of real work — not just a transcript. Here is what sets the education apart."
       />
 
-      <div className="mt-8 sm:mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[4px] border border-line bg-line">
+      <div className="mt-8 sm:mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-[2px] border border-line bg-line">
         {DIFFERENTIATORS.map((d, i) => (
           <Reveal
             key={d.t}

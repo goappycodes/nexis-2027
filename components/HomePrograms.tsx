@@ -39,7 +39,7 @@ export default function HomePrograms() {
             <Reveal key={p.title} delay={i * 90}>
               <Card
                 href={p.href as string}
-                className={`lift group flex h-full flex-col overflow-hidden rounded-[4px] border border-line bg-paper ${
+                className={`lift group flex h-full flex-col overflow-hidden rounded-[2px] border border-line bg-paper ${
                   p.live ? "hover:border-ink/30" : ""
                 }`}
               >

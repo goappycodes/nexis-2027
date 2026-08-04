@@ -31,8 +31,8 @@ export default function CampusLife({ index = "06" }: { index?: string }) {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="display balance mt-6 text-[clamp(2rem,4.6vw,3.5rem)]">
-                A campus that buzzes{" "}
-                <span className="serif-em text-crimson">every single day</span>.
+                A campus alive with{" "}
+                <span className="serif-em text-crimson">ambition</span>.
               </h2>
             </Reveal>
             <Reveal delay={140}>
@@ -83,7 +83,7 @@ export default function CampusLife({ index = "06" }: { index?: string }) {
             <Reveal
               key={img.src}
               delay={(i % 4) * 60}
-              className="group relative aspect-[4/3] overflow-hidden rounded-[4px] bg-paper-2"
+              className="group relative aspect-[4/3] overflow-hidden rounded-[2px] bg-paper-2"
             >
               <Image
                 src={img.src}

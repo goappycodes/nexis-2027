@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import HomeHero from "@/components/HomeHero";
 import Recognition from "@/components/Recognition";
+import Ethos from "@/components/Ethos";
 import HomePrograms from "@/components/HomePrograms";
 import HomeWhy from "@/components/HomeWhy";
 import HomeProof from "@/components/HomeProof";
@@ -25,6 +26,7 @@ export default function Home() {
       <SiteNav links={HOME_NAV} />
       <HomeHero />
       <Recognition />
+      <Ethos />
       <HomePrograms />
       <HomeWhy />
       <HomeProof />

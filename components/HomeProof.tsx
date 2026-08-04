@@ -9,20 +9,20 @@ export default function HomeProof() {
           <Reveal>
             <p className="kicker flex items-center gap-3">
               <span className="h-px w-8 bg-crimson" />
-              The proof
+              Our students
             </p>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="display balance mt-5 text-[clamp(2rem,4.6vw,3.5rem)]">
-              Believe us — these are{" "}
-              <span className="serif-em text-crimson">first-year</span> students.
+              Already in the{" "}
+              <span className="serif-em text-crimson">field</span>.
             </h2>
           </Reveal>
         </div>
         <Reveal delay={140}>
           <p className="max-w-sm text-[0.98rem] leading-relaxed text-ink-2">
-            Already interning, earning and winning national recognition — in
-            their very first year on campus.
+            Interning, building real ventures and winning national recognition —
+            many of them in their very first year.
           </p>
         </Reveal>
       </div>

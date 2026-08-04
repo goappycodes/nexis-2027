@@ -4,26 +4,31 @@ import { BATCH } from "@/lib/content";
 
 export default function CtaBand() {
   return (
-    <section id="apply" className="scroll-mt-24 bg-crimson text-white">
+    <section
+      id="apply"
+      className="scroll-mt-24 bg-gradient-to-br from-[#a8183b] to-[#6f0f27] text-white"
+    >
       <div className="shell py-12 sm:py-20 lg:py-28">
         <div className="grid items-end gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <Reveal>
-              <p className="text-[0.72rem] font-medium uppercase tracking-[0.2em] text-white/75">
+              <p className="flex items-center gap-3 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-white/75">
+                <span className="h-px w-8 bg-white/50" />
                 Admissions open · {BATCH.cohort}
               </p>
             </Reveal>
             <Reveal delay={80}>
               <h2 className="display balance mt-6 text-[clamp(2.4rem,6vw,5rem)] text-white">
-                Your career can start
+                Begin an education
                 <br />
-                this <span className="italic">July</span>.
+                that <span className="serif-em">lasts</span>.
               </h2>
             </Reveal>
             <Reveal delay={140}>
               <p className="mt-6 max-w-lg text-[1.05rem] leading-relaxed text-white/85">
-                Join a cohort of ambitious builders in {BATCH.city}. Seats for
-                the {BATCH.cohort} are limited — take the first step today.
+                Applications are open for the {BATCH.cohort} in {BATCH.city}.
+                Take the first step toward a business education built for how the
+                world actually works.
               </p>
             </Reveal>
           </div>

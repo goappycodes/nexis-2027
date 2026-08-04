@@ -33,9 +33,9 @@ export default function HomeHero() {
 
             <Reveal delay={160}>
               <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-ink-2">
-                Learn by doing. Work from day one. Build real skills for real
-                careers — mentored by founders and CXOs, on a campus that buzzes
-                every single day.
+                Learn by doing. Work from day one. Build the skills real careers
+                are made of — mentored by founders and CXOs, at a modern campus
+                in Siliguri.
               </p>
             </Reveal>
 
@@ -56,7 +56,7 @@ export default function HomeHero() {
           {/* Right — campus plate */}
           <div className="lg:col-span-5">
             <Reveal delay={200} className="relative">
-              <figure className="relative aspect-[16/10] overflow-hidden rounded-[4px] bg-paper-2 sm:aspect-[4/5] lg:aspect-[7/8]">
+              <figure className="relative aspect-[16/10] overflow-hidden rounded-[2px] bg-paper-2 sm:aspect-[4/5] lg:aspect-[7/8]">
                 <Image
                   src="/images/campus/apex-hall.jpg"
                   alt="Students inside the NEXIS campus in Siliguri"
@@ -72,7 +72,7 @@ export default function HomeHero() {
                 </figcaption>
               </figure>
 
-              <div className="absolute -left-3 -top-3 hidden rounded-[4px] border border-line bg-paper px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,12,16,0.5)] sm:block lg:-left-8">
+              <div className="absolute -left-3 -top-3 hidden rounded-[2px] border border-line bg-paper px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,12,16,0.5)] sm:block lg:-left-8">
                 <p className="font-serif text-3xl leading-none">50+</p>
                 <p className="mt-1 text-[0.68rem] uppercase tracking-[0.12em] text-muted">
                   CXO mentors

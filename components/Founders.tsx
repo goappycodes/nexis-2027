@@ -38,9 +38,9 @@ export default function Founders({ index = "07" }: { index?: string }) {
             <Reveal
               key={f.name}
               delay={i * 100}
-              className="flex flex-col gap-6 rounded-[4px] border border-line bg-paper p-6 sm:p-8 sm:flex-row sm:items-start sm:p-10"
+              className="flex flex-col gap-6 rounded-[2px] border border-line bg-paper p-6 sm:p-8 sm:flex-row sm:items-start sm:p-10"
             >
-              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-[4px] bg-paper-2 ring-1 ring-line">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-[2px] bg-paper-2 ring-1 ring-line">
                 <Image
                   src={f.img}
                   alt={f.name}

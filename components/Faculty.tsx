@@ -46,7 +46,7 @@ export default function Faculty() {
             <Reveal
               key={m.name}
               delay={i * 90}
-              className="lift flex flex-col rounded-[4px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6"
+              className="lift flex flex-col rounded-[2px] border border-line bg-paper p-8 sm:p-8 max-sm:p-6"
             >
               <div className="flex items-center gap-4">
                 <FacultyAvatar src={m.img} name={m.name} />

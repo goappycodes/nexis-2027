@@ -32,29 +32,27 @@ export default function Recognition() {
         </div>
       </div>
 
-      {/* Recognised & backed by — official marks on a dark plate */}
+      {/* Recognised & backed by — official marks, dark on the light band */}
       <div className="shell mt-10 sm:mt-12">
-        <Reveal className="overflow-hidden rounded-[6px] bg-ink px-6 py-7 sm:px-10 sm:py-8">
-          <div className="flex flex-col items-center gap-7 md:flex-row md:justify-between md:gap-10">
-            <span className="kicker shrink-0 text-white/50">
-              Recognised &amp; backed by
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-6 sm:gap-x-12">
-              {ACCREDITATION.map((a) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={a.name}
-                  src={a.src}
-                  alt={a.name}
-                  className="h-9 w-auto max-w-[150px] object-contain sm:h-11"
-                />
-              ))}
-            </div>
+        <Reveal className="flex flex-col items-center gap-7 border-t border-line pt-9 md:flex-row md:justify-between md:gap-10">
+          <span className="kicker shrink-0 text-muted">
+            Recognised &amp; backed by
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
+            {ACCREDITATION.map((a) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={a.name}
+                src={a.src}
+                alt={a.name}
+                className="h-9 w-auto max-w-[150px] object-contain opacity-80 [filter:brightness(0)] transition duration-500 hover:opacity-100 sm:h-11"
+              />
+            ))}
           </div>
         </Reveal>
       </div>
 
-      <div className="shell mt-9">
+      <div className="shell mt-10">
         <Reveal className="mx-auto max-w-3xl text-center text-[0.9rem] leading-relaxed text-muted">
           <p>
             NEXIS is a school of business and skilling institution — a Training

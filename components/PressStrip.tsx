@@ -19,7 +19,7 @@ export default function PressStrip() {
               className="group w-[46%] sm:w-[31%] lg:w-[18.5%]"
             >
               <figure>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[4px] border border-line bg-paper-2">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[2px] border border-line bg-paper-2">
                   <Image
                     src={p.img}
                     alt={`${p.name} — coverage of NEXIS`}
