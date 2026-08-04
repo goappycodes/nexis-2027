@@ -14,10 +14,7 @@ const config: Config = {
         "ink-2": "var(--ink-2)",
         muted: "var(--muted)",
         line: "var(--line)",
-        crimson: {
-          DEFAULT: "var(--crimson)",
-          deep: "var(--crimson-deep)",
-        },
+        crimson: "var(--crimson)",
       },
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],

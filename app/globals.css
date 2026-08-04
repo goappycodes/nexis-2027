@@ -16,7 +16,6 @@
   --line: rgba(11, 12, 16, 0.14);
   --line-soft: rgba(11, 12, 16, 0.08);
   --crimson: #ef3a5d;
-  --crimson-deep: #c01a43;
 
   --shell: 1440px;
   --gutter: clamp(20px, 4.5vw, 80px);
@@ -142,10 +141,7 @@
     --btn-bg: var(--crimson);
     border-color: var(--crimson);
   }
-  .btn-crimson:hover {
-    --btn-bg: var(--crimson-deep);
-    border-color: var(--crimson-deep);
-  }
+  /* Hover feedback comes from the lift + arrow nudge — colour stays brand pink */
   .btn-ghost {
     --btn-fg: var(--ink);
     --btn-bg: transparent;
