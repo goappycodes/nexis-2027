@@ -5,17 +5,21 @@ import Reveal from "./Reveal";
 import { Plus } from "./icons";
 import { FAQS } from "@/lib/content";
 
-export default function Faq() {
+export default function Faq({ index = "09" }: { index?: string }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="border-t border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
+    <section id="faq" className="scroll-mt-24 border-t border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
       <div className="shell grid gap-8 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <Reveal>
             <div className="flex items-center gap-4">
-              <span className="section-index">09</span>
-              <span className="h-px w-10 bg-line" />
+              {index && (
+                <>
+                  <span className="section-index">{index}</span>
+                  <span className="h-px w-10 bg-line" />
+                </>
+              )}
               <span className="kicker">Questions</span>
             </div>
           </Reveal>

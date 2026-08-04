@@ -20,6 +20,69 @@ export const NAV_LINKS = [
   { label: "Admissions", href: "#admissions" },
 ];
 
+export const HOME_NAV = [
+  { label: "Programs", href: "#programs" },
+  { label: "Why NEXIS", href: "#why" },
+  { label: "Students", href: "#students" },
+  { label: "Campus", href: "#campus" },
+  { label: "News", href: "#news" },
+];
+
+/* The three NEXIS programs — the homepage's core hub. */
+export const PROGRAMS = [
+  {
+    tag: "Undergraduate",
+    title: "UG in Business Management",
+    d: "A three-year, on-campus program where you learn business by building it — digital marketing, analytics, then entrepreneurship. For students after Class XII.",
+    meta: ["3 years", "On-campus", "Batch of 2027"],
+    img: "/images/campus/tour7.jpg",
+    href: "/ug",
+    live: true,
+  },
+  {
+    tag: "Postgraduate",
+    title: "PG in Business Management",
+    d: "An intensive postgraduate program for graduates ready to fast-track into leadership, entrepreneurship and high-growth careers.",
+    meta: ["Full-time", "On-campus", "For graduates"],
+    img: "/images/campus/legacy-hall.jpg",
+    href: "#",
+    live: false,
+  },
+  {
+    tag: "New",
+    title: "School of AI",
+    d: "Build real fluency in applied AI — the tools, workflows and thinking that make you dangerous in any modern business.",
+    meta: ["Applied AI", "Hands-on", "Future-ready"],
+    img: "/images/campus/apex-hall.jpg",
+    href: "#",
+    live: false,
+  },
+];
+
+/* Institution-level differentiators for the homepage. */
+export const WHY_NEXIS = [
+  {
+    k: "70%",
+    t: "Hands-on curriculum",
+    d: "Practical, industry-backed learning — you do the work every day, not just study it for an exam.",
+  },
+  {
+    k: "50+",
+    t: "Faculty who've built",
+    d: "Learn from CEOs, entrepreneurs and CXOs of India's fastest-growing companies — not just career academics.",
+  },
+  {
+    k: "365",
+    t: "A campus that buzzes",
+    d: "Clubs, competitions, sports and real projects — a vibrant, modern campus alive every single day.",
+  },
+  {
+    k: "75+",
+    t: "Career-outcome focused",
+    d: "Skills over theory, internships every year, and an active 75+ company recruiter network.",
+  },
+];
+
 export const PROGRAM_FACTS = [
   { label: "Format", value: "On-campus", sub: `${BATCH.city} campus` },
   { label: "Commences", value: BATCH.starts, sub: BATCH.cohort },

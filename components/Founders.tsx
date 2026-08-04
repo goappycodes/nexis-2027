@@ -2,15 +2,19 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import { FOUNDERS } from "@/lib/content";
 
-export default function Founders() {
+export default function Founders({ index = "07" }: { index?: string }) {
   return (
     <section className="border-y border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
       <div className="shell">
         <div className="max-w-3xl">
           <Reveal>
             <div className="flex items-center gap-4">
-              <span className="section-index">07</span>
-              <span className="h-px w-10 bg-line" />
+              {index && (
+                <>
+                  <span className="section-index">{index}</span>
+                  <span className="h-px w-10 bg-line" />
+                </>
+              )}
               <span className="kicker">The Founders</span>
             </div>
           </Reveal>

@@ -5,7 +5,15 @@ import { useEffect, useState } from "react";
 import { NAV_LINKS, BATCH } from "@/lib/content";
 import { ArrowRight } from "./icons";
 
-export default function SiteNav() {
+type NavLink = { label: string; href: string };
+
+export default function SiteNav({
+  links = NAV_LINKS,
+  applyHref = "#apply",
+}: {
+  links?: NavLink[];
+  applyHref?: string;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -56,7 +64,7 @@ export default function SiteNav() {
           </a>
 
           <div className="hidden items-center gap-8 lg:flex">
-            {NAV_LINKS.map((l) => (
+            {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -68,7 +76,7 @@ export default function SiteNav() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="#apply" className="btn btn-crimson hidden sm:inline-flex">
+            <a href={applyHref} className="btn btn-crimson hidden sm:inline-flex">
               Apply for {BATCH.year}
               <ArrowRight className="arrow" />
             </a>
@@ -116,7 +124,7 @@ export default function SiteNav() {
           }`}
         >
           <div className="flex flex-col gap-1 pt-10">
-            {NAV_LINKS.map((l, i) => (
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -131,7 +139,7 @@ export default function SiteNav() {
             ))}
           </div>
           <a
-            href="#apply"
+            href={applyHref}
             onClick={() => setOpen(false)}
             className="btn btn-crimson mt-8 w-full justify-center"
           >

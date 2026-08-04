@@ -11,7 +11,7 @@ const HIGHLIGHTS = [
   "Lifelong friendships",
 ];
 
-export default function CampusLife() {
+export default function CampusLife({ index = "06" }: { index?: string }) {
   return (
     <section id="campus" className="scroll-mt-24 py-12 sm:py-20 lg:py-28">
       <div className="shell">
@@ -20,8 +20,12 @@ export default function CampusLife() {
           <div className="lg:col-span-7">
             <Reveal>
               <div className="flex items-center gap-4">
-                <span className="section-index">06</span>
-                <span className="h-px w-10 bg-line" />
+                {index && (
+                  <>
+                    <span className="section-index">{index}</span>
+                    <span className="h-px w-10 bg-line" />
+                  </>
+                )}
                 <span className="kicker">Campus Life</span>
               </div>
             </Reveal>
