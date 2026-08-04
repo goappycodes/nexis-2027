@@ -262,6 +262,20 @@ export const FACULTY = [
   },
 ];
 
+/* Government / accreditation marks — white logos, shown on a dark strip. */
+export const ACCREDITATION = [
+  {
+    name: "Ministry of Skill Development & Entrepreneurship",
+    src: "/images/logos/skill-ministry.png",
+  },
+  {
+    name: "MEPSC — Management, Entrepreneurship & Professional Skills Council",
+    src: "/images/logos/mepsc-white.png",
+  },
+  { name: "DPIIT · Startup India", src: "/images/logos/startupindia-white.png" },
+  { name: "NCVET", src: "/images/logos/ncvet.png" },
+];
+
 /* Recruiter & partner network logos (from the NEXIS site's own CDN). */
 export const RECRUITER_LOGOS = [
   { name: "boAt", src: "/images/recruiters/boat-logo.svg" },
