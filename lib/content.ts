@@ -417,14 +417,44 @@ export const CONTACT = {
   ],
 };
 
-/* Real-route navigation for the interior pages (the homepage and /ug
-   keep their own in-page anchor navs via HOME_NAV / NAV_LINKS). */
-export const SITE_NAV = [
-  { label: "The Program", href: "/ug" },
-  { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
-  { label: "Campus", href: "/about/campus" },
-  { label: "Careers", href: "/ug/career-prospects" },
-  { label: "Recognition", href: "/recognition" },
+/* Grouped, real-route navigation used site-wide (homepage, /ug and every
+   interior page). Items with `children` render as dropdowns; items with
+   `href` render as plain links. Legal, thank-you and the SEO landing pages
+   are intentionally not in the top nav. */
+export type NavItem = {
+  label: string;
+  href?: string;
+  children?: { label: string; href: string }[];
+};
+
+export const SITE_NAV: NavItem[] = [
+  {
+    label: "About",
+    children: [
+      { label: "About NEXIS", href: "/about" },
+      { label: "Our Campus", href: "/about/campus" },
+      { label: "Recognition", href: "/recognition" },
+      { label: "Events", href: "/events" },
+    ],
+  },
+  {
+    label: "Program",
+    children: [
+      { label: "UG in Business Management", href: "/ug" },
+      { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
+      { label: "Career Prospects", href: "/ug/career-prospects" },
+      { label: "Voice of NEXIS", href: "/voice-of-nexis" },
+    ],
+  },
+  {
+    label: "Admissions",
+    children: [
+      { label: "Admission Enquiry", href: "/ug/admission-enquiry" },
+      { label: "Book a Campus Tour", href: "/ug/book-campus-tour" },
+      { label: "Book a Founder Connect", href: "/ug/book-founder-connect" },
+      { label: "Request a Callback", href: "/ug/request-callback" },
+    ],
+  },
   { label: "Contact", href: "/contact-us" },
 ];
 

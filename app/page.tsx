@@ -12,7 +12,6 @@ import Founders from "@/components/Founders";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
 import SiteFooter from "@/components/SiteFooter";
-import { HOME_NAV } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "NEXIS School of Business — India's Most Practical Business School | Siliguri",
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="relative">
-      <SiteNav links={HOME_NAV} />
+      <SiteNav />
       <HomeHero />
       <Recognition />
       <Ethos />

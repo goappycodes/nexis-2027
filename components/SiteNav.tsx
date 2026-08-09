@@ -2,17 +2,32 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { NAV_LINKS, BATCH } from "@/lib/content";
+import { SITE_NAV, BATCH, type NavItem } from "@/lib/content";
 import { ArrowRight } from "./icons";
 
-type NavLink = { label: string; href: string };
+function Chevron({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.7}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  );
+}
 
 export default function SiteNav({
-  links = NAV_LINKS,
+  links = SITE_NAV,
   applyHref = "#apply",
   logoHref = "#top",
 }: {
-  links?: NavLink[];
+  links?: NavItem[];
   applyHref?: string;
   logoHref?: string;
 }) {
@@ -65,16 +80,42 @@ export default function SiteNav({
             />
           </a>
 
-          <div className="hidden items-center gap-8 lg:flex">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="ulink text-[0.82rem] font-medium text-ink-2"
-              >
-                {l.label}
-              </a>
-            ))}
+          <div className="hidden items-center gap-7 lg:flex">
+            {links.map((item) =>
+              item.children ? (
+                <div key={item.label} className="group relative">
+                  <button
+                    className="ulink inline-flex items-center gap-1 text-[0.82rem] font-medium text-ink-2"
+                    aria-haspopup="true"
+                  >
+                    {item.label}
+                    <Chevron className="h-3.5 w-3.5 text-muted transition-transform duration-300 group-hover:rotate-180" />
+                  </button>
+                  {/* Dropdown — CSS hover/focus, with a pt-4 hover bridge */}
+                  <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="min-w-[240px] rounded-[2px] border border-line bg-paper p-2 shadow-[0_24px_60px_-24px_rgba(11,12,16,0.4)]">
+                      {item.children.map((c) => (
+                        <a
+                          key={c.href}
+                          href={c.href}
+                          className="block rounded-[2px] px-3.5 py-2.5 text-[0.85rem] text-ink-2 transition-colors hover:bg-paper-2 hover:text-ink"
+                        >
+                          {c.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="ulink text-[0.82rem] font-medium text-ink-2"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
 
           <div className="flex items-center gap-3">
@@ -121,24 +162,39 @@ export default function SiteNav({
           onClick={() => setOpen(false)}
         />
         <div
-          className={`absolute right-0 top-0 h-full w-[84%] max-w-sm bg-paper px-8 pt-10 shadow-2xl transition-transform duration-500 ease-premium ${
+          className={`absolute right-0 top-0 h-full w-[86%] max-w-sm overflow-y-auto bg-paper px-8 pb-12 pt-10 shadow-2xl transition-transform duration-500 ease-premium ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex flex-col gap-1 pt-10">
-            {links.map((l, i) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-line-soft py-4 font-serif text-2xl"
-              >
-                <span className="section-index mr-3 text-sm">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                {l.label}
-              </a>
-            ))}
+          <div className="flex flex-col gap-6 pt-8">
+            {links.map((item) =>
+              item.children ? (
+                <div key={item.label}>
+                  <p className="kicker mb-2">{item.label}</p>
+                  <div className="flex flex-col">
+                    {item.children.map((c) => (
+                      <a
+                        key={c.href}
+                        href={c.href}
+                        onClick={() => setOpen(false)}
+                        className="border-b border-line-soft py-2.5 font-serif text-lg"
+                      >
+                        {c.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="font-serif text-xl"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
           <a
             href={applyHref}
