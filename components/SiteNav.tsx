@@ -10,9 +10,11 @@ type NavLink = { label: string; href: string };
 export default function SiteNav({
   links = NAV_LINKS,
   applyHref = "#apply",
+  logoHref = "#top",
 }: {
   links?: NavLink[];
   applyHref?: string;
+  logoHref?: string;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -52,7 +54,7 @@ export default function SiteNav({
         }`}
       >
         <nav className="shell flex items-center justify-between py-4">
-          <a href="#top" className="flex items-center gap-3" aria-label="NEXIS home">
+          <a href={logoHref} className="flex items-center gap-3" aria-label="NEXIS home">
             <Image
               src="/brand/nexis-logo-dark.png"
               alt="NEXIS"

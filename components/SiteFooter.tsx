@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { NAV_LINKS, BATCH } from "@/lib/content";
+import { BATCH, CONTACT, FOOTER_EXPLORE, FOOTER_LEGAL } from "@/lib/content";
 
 const PROGRAMS = [
-  { label: "UG in Business Management", href: "#program" },
+  { label: "UG in Business Management", href: "/ug" },
   { label: "PG in Business Management", href: "#" },
   { label: "School of AI", href: "#" },
 ];
@@ -29,14 +29,27 @@ export default function SiteFooter() {
               A next-gen campus in {BATCH.city} where students learn business by
               building it — mentored by founders and CXOs from day one.
             </p>
+
+            <div className="mt-7 space-y-1.5 text-[0.85rem] text-white/60">
+              <p>{CONTACT.address}</p>
+              <p>
+                <a href={CONTACT.phoneHref} className="ulink">
+                  {CONTACT.phone}
+                </a>
+                <span className="px-2 text-white/25">·</span>
+                <a href={`mailto:${CONTACT.email}`} className="ulink">
+                  {CONTACT.email}
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Explore */}
           <div className="lg:col-span-3">
             <p className="kicker text-white/50">Explore</p>
             <ul className="mt-5 space-y-3">
-              {NAV_LINKS.map((l) => (
-                <li key={l.href}>
+              {FOOTER_EXPLORE.map((l) => (
+                <li key={l.href + l.label}>
                   <a href={l.href} className="ulink text-[0.92rem] text-white/80">
                     {l.label}
                   </a>
@@ -57,7 +70,7 @@ export default function SiteFooter() {
                 </li>
               ))}
             </ul>
-            <a href="#apply" className="btn btn-crimson mt-8">
+            <a href={CONTACT.applyHref} className="btn btn-crimson mt-8">
               Apply for {BATCH.year}
             </a>
           </div>
@@ -74,18 +87,19 @@ export default function SiteFooter() {
           </p>
           <div className="mt-6 flex flex-col justify-between gap-4 text-[0.8rem] text-white/50 sm:flex-row sm:items-center">
             <p>
-              &copy; {BATCH.year} NEXIS School of Business · {BATCH.city}, India
+              &copy; {BATCH.year} {CONTACT.entity} · {BATCH.city}, India
             </p>
-            <div className="flex gap-6">
-              <a href="#" className="ulink">
-                Instagram
-              </a>
-              <a href="#" className="ulink">
-                LinkedIn
-              </a>
-              <a href="#" className="ulink">
-                YouTube
-              </a>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {FOOTER_LEGAL.map((l) => (
+                <a key={l.href} href={l.href} className="ulink">
+                  {l.label}
+                </a>
+              ))}
+              {CONTACT.socials.map((s) => (
+                <a key={s.label} href={s.href} className="ulink">
+                  {s.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>

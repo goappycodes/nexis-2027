@@ -387,3 +387,69 @@ export const FAQS = [
     a: "It's an opt-in residential program. NEXIS helps students who wish to live close to campus connect with nearby, secure accommodation. Accommodation charges are not part of the fee, and NEXIS does not charge students or residences for facilitating this.",
   },
 ];
+
+/* ============================================================
+   Contact, navigation and shared form data — used across the
+   interior pages (contact, about, forms, legal, etc.)
+   ============================================================ */
+
+export const CONTACT = {
+  entity: "NEXIS Education Hub Private Limited",
+  brand: "NEXIS School of Business",
+  phone: "+91 97331 27000",
+  phoneHref: "tel:+919733127000",
+  whatsapp: "https://wa.me/919733127000",
+  email: "info@nexisschool.com",
+  emails: [
+    { label: "General", value: "info@nexisschool.com" },
+    { label: "Admissions", value: "admissions@nexisschool.com" },
+    { label: "Careers", value: "careerservices@nexisschool.com" },
+  ],
+  address: "5th Floor, Tradium Building, Check Post, Siliguri – 734001",
+  addressLines: ["5th Floor, Tradium Building", "Check Post, Siliguri – 734001", "West Bengal, India"],
+  hours: "Mon–Fri · 10:00 AM – 6:00 PM",
+  applyHref: "/ug/admission-enquiry",
+  brochureHref: "https://link.nexisschool.com/nexisbrochure",
+  socials: [
+    { label: "Instagram", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Facebook", href: "#" },
+  ],
+};
+
+/* Real-route navigation for the interior pages (the homepage and /ug
+   keep their own in-page anchor navs via HOME_NAV / NAV_LINKS). */
+export const SITE_NAV = [
+  { label: "The Program", href: "/ug" },
+  { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
+  { label: "Campus", href: "/about/campus" },
+  { label: "Careers", href: "/ug/career-prospects" },
+  { label: "Recognition", href: "/recognition" },
+  { label: "Contact", href: "/contact-us" },
+];
+
+export const FOOTER_EXPLORE = [
+  { label: "About NEXIS", href: "/about" },
+  { label: "The UG Program", href: "/ug" },
+  { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
+  { label: "Campus", href: "/about/campus" },
+  { label: "Recognition", href: "/recognition" },
+  { label: "Career Prospects", href: "/ug/career-prospects" },
+  { label: "Events", href: "/events" },
+  { label: "Contact", href: "/contact-us" },
+];
+
+export const FOOTER_LEGAL = [
+  { label: "Privacy Policy", href: "/about/privacy" },
+  { label: "Terms of Use", href: "/about/terms-of-use" },
+];
+
+/* Shared option lists for the enquiry / callback forms. */
+export const FORM_OPTIONS = {
+  grade: ["Class 11", "Class 12", "Class 12 Passout", "Other"],
+  board: ["ISC", "CBSE", "WBCHSE", "NIOS", "Other"],
+  stream: ["Commerce", "Science", "Humanities"],
+  purpose: ["Admission Enquiry", "Brochure Download", "Campus Visit"],
+  timeSlot: ["10 AM – 12 PM", "1 PM – 3 PM"],
+  query: ["Admissions", "Careers", "Partnership", "General Enquiry"],
+};
