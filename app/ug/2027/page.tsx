@@ -2,17 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Recognition from "@/components/Recognition";
-import StudentWall from "@/components/StudentWall";
+import StudentCarousel from "@/components/StudentCarousel";
 import LeadForm from "@/components/LeadForm";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
-import {
-  BATCH,
-  CONTACT,
-  WHY_NEXIS,
-  CURRICULUM,
-  CAMPUS_IMAGES,
-  FAQS,
-} from "@/lib/content";
+import { BATCH, CONTACT, WHY_NEXIS, CAMPUS_IMAGES, FAQS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "UG in Business Management, Batch of 2027 | NEXIS Siliguri",
@@ -27,12 +20,6 @@ const PROOF = [
   "Internships from Sem 1",
   "75+ recruiters",
   "6-month internship",
-];
-
-const CURRICULUM_IMG = [
-  "/images/campus/tour6.jpg",
-  "/images/campus/tour8.jpg",
-  "/images/campus/tour7.jpg",
 ];
 
 // Awareness-stage objection handling, curated for a cold ad audience.
@@ -89,7 +76,10 @@ export default function UG2027LandingPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/45 to-ink/20" />
+        {/* Legibility overlays: a uniform scrim + a stronger bottom gradient
+            so the white headline stays readable over bright, busy photos. */}
+        <div className="absolute inset-0 bg-ink/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-transparent" />
         <div className="shell relative flex h-full flex-col justify-end pb-7 sm:pb-10">
           <Reveal>
             <p className="flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-white/80 sm:text-[0.72rem]">
@@ -160,21 +150,46 @@ export default function UG2027LandingPage() {
               </p>
             </Reveal>
             <Reveal delay={140}>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <a href={CONTACT.brochureHref} className="btn btn-ghost">
-                  Download the prospectus
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                <a
+                  href={CONTACT.brochureHref}
+                  className="btn justify-center border-crimson bg-transparent text-crimson hover:bg-crimson/5"
+                >
+                  Download prospectus
                   <ArrowUpRight className="arrow" />
                 </a>
-                <a href={CONTACT.phoneHref} className="btn btn-ghost">
+                <a
+                  href={CONTACT.phoneHref}
+                  className="btn btn-ghost justify-center"
+                >
                   Call {CONTACT.phone}
                 </a>
               </div>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-6 max-w-md text-[0.8rem] leading-relaxed text-muted">
-                NSQF-aligned · Recognised through NCVET via MEPSC · DPIIT Startup
-                India. NEXIS is a school of business and does not confer degrees.
-              </p>
+              <div className="mt-7">
+                <p className="text-[0.7rem] uppercase tracking-[0.16em] text-muted">
+                  Recognised by
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-x-7 gap-y-4">
+                  {[
+                    { src: "/images/logos/mepsc-white.png", name: "MEPSC" },
+                    { src: "/images/logos/ncvet.png", name: "NCVET" },
+                    {
+                      src: "/images/logos/startupindia-white.png",
+                      name: "Startup India",
+                    },
+                  ].map((l) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={l.name}
+                      src={l.src}
+                      alt={l.name}
+                      className="h-8 w-auto max-w-[120px] object-contain opacity-80 [filter:brightness(0)] sm:h-9"
+                    />
+                  ))}
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -247,55 +262,10 @@ export default function UG2027LandingPage() {
         </div>
       </section>
 
-      {/* Curriculum — image cards */}
-      <section className="shell py-10 sm:py-14">
-        <Reveal className="max-w-2xl">
-          <p className="kicker flex items-center gap-3">
-            <span className="h-px w-8 bg-crimson" />
-            Three years, structured around practice
-          </p>
-          <h2 className="display balance mt-4 text-[clamp(1.7rem,4.4vw,3rem)]">
-            What you&rsquo;ll actually{" "}
-            <span className="serif-em text-crimson">do</span>.
-          </h2>
-        </Reveal>
-        <div className="mt-8 grid gap-4 sm:gap-5 md:grid-cols-3">
-          {CURRICULUM.map((c, i) => (
-            <Reveal
-              key={c.year}
-              delay={i * 80}
-              className="group overflow-hidden rounded-[2px] border border-line bg-paper"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
-                <Image
-                  src={CURRICULUM_IMG[i]}
-                  alt={c.title}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width:768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
-                />
-                <span className="absolute left-3 top-3 rounded-full bg-paper/90 px-3 py-1 text-[0.68rem] font-medium uppercase tracking-[0.1em] text-ink backdrop-blur">
-                  {c.year}
-                </span>
-              </div>
-              <div className="p-5 sm:p-6">
-                <h3 className="font-serif text-lg leading-tight sm:text-xl">
-                  {c.title}
-                </h3>
-                <p className="mt-2.5 text-[0.9rem] leading-relaxed text-ink-2">
-                  {c.lede}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Students — proof faces */}
-      <section className="border-y border-line bg-paper-2/40">
-        <div className="shell py-10 sm:py-14">
-          <Reveal className="max-w-2xl">
+      {/* Students — proof faces, 3-row fade carousel */}
+      <section className="border-y border-line bg-paper-2/40 py-10 sm:py-14">
+        <div className="shell mb-7 max-w-2xl">
+          <Reveal>
             <p className="kicker flex items-center gap-3">
               <span className="h-px w-8 bg-crimson" />
               Real students, already at work
@@ -305,8 +275,8 @@ export default function UG2027LandingPage() {
               <span className="serif-em text-crimson">winning</span>.
             </h2>
           </Reveal>
-          <StudentWall />
         </div>
+        <StudentCarousel />
       </section>
 
       {/* Trust — recruiters + accreditation */}
@@ -353,6 +323,7 @@ export default function UG2027LandingPage() {
           sizes="100vw"
           className="object-cover"
         />
+        <div className="absolute inset-0 bg-ink/45" />
         <div className="absolute inset-0 bg-crimson/90" />
         <div className="shell relative py-11 sm:py-16">
           <Reveal className="max-w-2xl">
@@ -394,7 +365,7 @@ export default function UG2027LandingPage() {
               alt="NEXIS"
               width={400}
               height={105}
-              className="h-7 w-auto"
+              className="h-7 w-auto self-start"
             />
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-[0.8rem] text-white/60">
               <a href="/about/privacy" className="ulink">
