@@ -8,14 +8,16 @@
    ============================================================ */
 
 :root {
-  --paper: #fbfaf7;
-  --paper-2: #f2efe9;
-  --ink: #0b0c10;
-  --ink-2: #23252c;
-  --muted: #6b6b73;
+  /* Brand colours as RGB channel triplets so Tailwind's /opacity modifier
+     works (bg-ink/80, from-ink/55, etc.). --line keeps its baked-in alpha. */
+  --paper: 251 250 247;
+  --paper-2: 242 239 233;
+  --ink: 11 12 16;
+  --ink-2: 35 37 44;
+  --muted: 107 107 115;
   --line: rgba(11, 12, 16, 0.14);
   --line-soft: rgba(11, 12, 16, 0.08);
-  --crimson: #ef3a5d;
+  --crimson: 239 58 93;
 
   --shell: 1440px;
   --gutter: clamp(20px, 4.5vw, 80px);
@@ -33,15 +35,15 @@
   }
 
   body {
-    background: var(--paper);
-    color: var(--ink);
+    background: rgb(var(--paper));
+    color: rgb(var(--ink));
     font-family: var(--font-inter), system-ui, sans-serif;
     font-feature-settings: "kern", "liga", "ss01";
     overflow-x: hidden;
   }
 
   ::selection {
-    background: var(--crimson);
+    background: rgb(var(--crimson));
     color: #fff;
   }
 }
@@ -80,7 +82,7 @@
     font-weight: 500;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: rgb(var(--muted));
   }
 
   .display {
@@ -100,7 +102,7 @@
   .section-index {
     font-family: var(--font-fraunces), Georgia, serif;
     font-variation-settings: "opsz" 40;
-    color: var(--crimson);
+    color: rgb(var(--crimson));
     font-size: 0.95rem;
     letter-spacing: 0.04em;
   }
@@ -112,7 +114,7 @@
   /* ---------- Buttons ---------- */
   .btn {
     --btn-fg: #fff;
-    --btn-bg: var(--ink);
+    --btn-bg: rgb(var(--ink));
     display: inline-flex;
     align-items: center;
     gap: 0.6em;
@@ -138,12 +140,12 @@
     transform: translateX(4px);
   }
   .btn-crimson {
-    --btn-bg: var(--crimson);
-    border-color: var(--crimson);
+    --btn-bg: rgb(var(--crimson));
+    border-color: rgb(var(--crimson));
   }
   /* Hover feedback comes from the lift + arrow nudge — colour stays brand pink */
   .btn-ghost {
-    --btn-fg: var(--ink);
+    --btn-fg: rgb(var(--ink));
     --btn-bg: transparent;
     border-color: var(--line);
   }
@@ -151,9 +153,9 @@
     border-color: var(--ink);
   }
   .btn-light {
-    --btn-fg: var(--ink);
-    --btn-bg: var(--paper);
-    border-color: var(--paper);
+    --btn-fg: rgb(var(--ink));
+    --btn-bg: rgb(var(--paper));
+    border-color: rgb(var(--paper));
   }
 
   /* Animated underline link */

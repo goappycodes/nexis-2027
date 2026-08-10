@@ -33,10 +33,8 @@ function Field({
     Four fields only. Routes to /ug/thank-you on submit (no backend wired). */
 export default function LeadForm({
   submitLabel = "Send my enquiry",
-  defaultMessage = "Ref: LP / I want to know about NEXIS UG Programs..",
 }: {
   submitLabel?: string;
-  defaultMessage?: string;
 }) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
@@ -110,15 +108,6 @@ export default function LeadForm({
             <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
-      </Field>
-
-      <Field label="Message">
-        <textarea
-          name="message"
-          rows={2}
-          defaultValue={defaultMessage}
-          className={`${inputCls} resize-none`}
-        />
       </Field>
 
       <button

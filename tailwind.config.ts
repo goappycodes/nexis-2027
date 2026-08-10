@@ -8,13 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "var(--paper)",
-        "paper-2": "var(--paper-2)",
-        ink: "var(--ink)",
-        "ink-2": "var(--ink-2)",
-        muted: "var(--muted)",
+        paper: "rgb(var(--paper) / <alpha-value>)",
+        "paper-2": "rgb(var(--paper-2) / <alpha-value>)",
+        ink: "rgb(var(--ink) / <alpha-value>)",
+        "ink-2": "rgb(var(--ink-2) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
         line: "var(--line)",
-        crimson: "var(--crimson)",
+        crimson: "rgb(var(--crimson) / <alpha-value>)",
       },
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],

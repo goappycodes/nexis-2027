@@ -25,6 +25,11 @@ const PROOF = [
 // Awareness-stage objection handling, curated for a cold ad audience.
 const LP_FAQS = [FAQS[3], FAQS[1], FAQS[4], FAQS[2]];
 
+// Open WhatsApp with a pre-filled, source-tagged message.
+const WA_HREF = `${CONTACT.whatsapp}?text=${encodeURIComponent(
+  "Ref: LP / I want to know about NEXIS UG Programs.."
+)}`;
+
 export default function UG2027LandingPage() {
   return (
     <main id="top" className="relative pb-24 lg:pb-0">
@@ -53,7 +58,7 @@ export default function UG2027LandingPage() {
           </a>
           <div className="flex items-center gap-3">
             <a
-              href={CONTACT.whatsapp}
+              href={WA_HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden items-center gap-1.5 text-[0.85rem] font-medium text-[#25D366] sm:inline-flex"
@@ -162,7 +167,7 @@ export default function UG2027LandingPage() {
                   <ArrowUpRight className="arrow" />
                 </a>
                 <a
-                  href={CONTACT.whatsapp}
+                  href={WA_HREF}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn justify-center border-[#25D366] bg-transparent text-[#25D366] hover:bg-[#25D366]/10"
@@ -329,8 +334,8 @@ export default function UG2027LandingPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-ink/55" />
-        <div className="absolute inset-0 bg-crimson/95" />
+        {/* Dark overlay so the white statement reads clearly over the photo. */}
+        <div className="absolute inset-0 bg-ink/80" />
         <div className="shell relative py-11 sm:py-16">
           <Reveal className="max-w-2xl">
             <p className="flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-white/80">
@@ -400,15 +405,15 @@ export default function UG2027LandingPage() {
 
       {/* Sticky mobile CTA bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-paper/95 backdrop-blur-md lg:hidden">
-        <div className="flex gap-2.5 p-3">
+        <div className="flex items-center gap-2.5 p-3">
           <a
-            href={CONTACT.whatsapp}
+            href={WA_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn flex-1 justify-center border-[#25D366] bg-transparent text-[#25D366]"
+            aria-label="WhatsApp us"
+            className="btn shrink-0 border-[#25D366] bg-[#25D366] px-4 text-white"
           >
-            <WhatsApp className="text-[1.15em]" />
-            WhatsApp
+            <WhatsApp className="text-[1.35em]" />
           </a>
           <a href="#enquire" className="btn btn-crimson flex-1 justify-center">
             Enquire now
