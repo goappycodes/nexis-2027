@@ -83,7 +83,7 @@ export default function AboutPage() {
       </div>
 
       {/* Vision & Mission */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-5 md:grid-cols-2">
           <Reveal className="rounded-[2px] border border-line bg-paper p-8 sm:p-10">
             <p className="kicker text-crimson">Vision</p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
 
       {/* Principles */}
       <section className="border-t border-line bg-paper-2/50">
-        <div className="shell py-12 sm:py-20 lg:py-28">
+        <div className="shell py-8 sm:py-16 lg:py-24">
           <div className="max-w-3xl">
             <Reveal>
               <p className="kicker flex items-center gap-3">

@@ -121,7 +121,7 @@ export default function CampusPage() {
       </div>
 
       {/* Facilities */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="max-w-3xl">
           <Reveal>
             <p className="kicker flex items-center gap-3">
@@ -175,7 +175,7 @@ export default function CampusPage() {
 
       {/* Safety & well-being — dark */}
       <section className="bg-ink text-paper">
-        <div className="shell py-12 sm:py-20 lg:py-28">
+        <div className="shell py-8 sm:py-16 lg:py-24">
           <div className="max-w-3xl">
             <Reveal>
               <p className="kicker flex items-center gap-3 text-white/55">
@@ -207,7 +207,7 @@ export default function CampusPage() {
       </section>
 
       {/* Living spaces */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>

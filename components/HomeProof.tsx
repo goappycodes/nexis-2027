@@ -3,7 +3,7 @@ import StudentWall from "./StudentWall";
 
 export default function HomeProof() {
   return (
-    <section id="students" className="shell scroll-mt-24 py-12 sm:py-20 lg:py-28">
+    <section id="students" className="shell scroll-mt-24 py-8 sm:py-16 lg:py-24">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <Reveal>

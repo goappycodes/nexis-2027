@@ -164,7 +164,7 @@ export default function LifeAtNexisPage() {
       </div>
 
       {/* Clubs */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="max-w-3xl">
           <Reveal>
             <p className="kicker flex items-center gap-3">
@@ -210,7 +210,7 @@ export default function LifeAtNexisPage() {
 
       {/* Sports + Events */}
       <section className="border-y border-line bg-paper-2/50">
-        <div className="shell grid gap-12 py-12 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-28">
+        <div className="shell grid gap-12 py-8 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-28">
           <div>
             <Reveal>
               <p className="kicker flex items-center gap-3">
@@ -280,7 +280,7 @@ export default function LifeAtNexisPage() {
       </section>
 
       {/* Beyond campus */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="max-w-3xl">
           <Reveal>
             <p className="kicker flex items-center gap-3">
@@ -325,7 +325,7 @@ export default function LifeAtNexisPage() {
 
       {/* Meet the students */}
       <section className="border-t border-line bg-paper-2/50">
-        <div className="shell py-12 sm:py-20 lg:py-28">
+        <div className="shell py-8 sm:py-16 lg:py-24">
           <div className="max-w-3xl">
             <Reveal>
               <p className="kicker flex items-center gap-3">
@@ -345,7 +345,7 @@ export default function LifeAtNexisPage() {
       </section>
 
       {/* FAQ — static */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
             <Reveal>

@@ -9,7 +9,7 @@ export default function Faq({ index = "09" }: { index?: string }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-24 border-t border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
+    <section id="faq" className="scroll-mt-24 border-t border-line bg-paper-2/50 py-8 sm:py-16 lg:py-24">
       <div className="shell grid gap-8 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-4">
           <Reveal>

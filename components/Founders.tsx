@@ -4,7 +4,7 @@ import { FOUNDERS } from "@/lib/content";
 
 export default function Founders({ index = "07" }: { index?: string }) {
   return (
-    <section className="border-y border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28">
+    <section className="border-y border-line bg-paper-2/50 py-8 sm:py-16 lg:py-24">
       <div className="shell">
         <div className="max-w-3xl">
           <Reveal>

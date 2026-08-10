@@ -88,7 +88,7 @@ export default function EventsPage() {
       />
 
       {/* Formats */}
-      <section className="shell py-12 sm:py-20 lg:py-24">
+      <section className="shell py-8 sm:py-16 lg:py-22">
         <div className="max-w-3xl">
           <Reveal>
             <p className="kicker flex items-center gap-3">

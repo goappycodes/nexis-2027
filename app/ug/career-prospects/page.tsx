@@ -94,7 +94,7 @@ export default function CareerProspectsPage() {
       </div>
 
       {/* Two pathways */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-5 lg:grid-cols-2">
           {/* Career Bootcamp */}
           <Reveal className="flex flex-col rounded-[2px] border border-line bg-paper p-8 sm:p-10">

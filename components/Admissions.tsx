@@ -7,7 +7,7 @@ export default function Admissions() {
   return (
     <section
       id="admissions"
-      className="shell scroll-mt-24 py-12 sm:py-20 lg:py-28"
+      className="shell scroll-mt-24 py-8 sm:py-16 lg:py-24"
     >
       <SectionHeader
         index="08"

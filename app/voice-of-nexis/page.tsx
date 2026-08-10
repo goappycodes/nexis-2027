@@ -97,7 +97,7 @@ export default function VoiceOfNexisPage() {
       </div>
 
       {/* Responsibilities */}
-      <section className="shell py-12 sm:py-20 lg:py-28">
+      <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
@@ -143,7 +143,7 @@ export default function VoiceOfNexisPage() {
 
       {/* Perks */}
       <section className="border-t border-line bg-paper-2/50">
-        <div className="shell py-12 sm:py-20 lg:py-28">
+        <div className="shell py-8 sm:py-16 lg:py-24">
           <div className="max-w-3xl">
             <Reveal>
               <p className="kicker flex items-center gap-3">

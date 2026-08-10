@@ -19,7 +19,7 @@ export default function FormLayout({
   children,
 }: Props) {
   return (
-    <section className="shell py-10 sm:py-14 lg:py-18">
+    <section className="shell py-7 sm:py-12 lg:py-16">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         {/* Copy + aside */}
         <div className="lg:col-span-5">

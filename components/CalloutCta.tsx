@@ -20,7 +20,7 @@ export default function CalloutCta({
 }) {
   return (
     <section className="bg-crimson text-white">
-      <div className="shell py-12 sm:py-20 lg:py-24">
+      <div className="shell py-8 sm:py-16 lg:py-22">
         <div className="grid items-end gap-10 lg:grid-cols-12">
           <div className="lg:col-span-8">
             {kicker && (

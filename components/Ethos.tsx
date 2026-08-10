@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export default function Ethos() {
   return (
-    <section className="shell py-16 sm:py-24 lg:py-28">
+    <section className="shell py-10 sm:py-18 lg:py-24">
       <Reveal className="max-w-4xl">
         <p className="kicker flex items-center gap-3 text-crimson">
           <span className="h-px w-8 bg-crimson" />

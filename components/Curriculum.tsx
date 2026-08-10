@@ -8,7 +8,7 @@ export default function Curriculum() {
       id="curriculum"
       className="relative scroll-mt-24 bg-ink text-paper"
     >
-      <div className="shell py-12 sm:py-20 lg:py-28">
+      <div className="shell py-8 sm:py-16 lg:py-24">
         {/* Header */}
         <div className="max-w-3xl">
           <Reveal>

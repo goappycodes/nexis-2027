@@ -34,6 +34,14 @@
     scroll-behavior: smooth;
   }
 
+  /* Denser layout on phones: a smaller root shrinks every rem-based size
+     (body copy, heading clamp mins, spacing) in one place. sm+ stays 16px. */
+  @media (max-width: 639px) {
+    html {
+      font-size: 14.5px;
+    }
+  }
+
   body {
     background: rgb(var(--paper));
     color: rgb(var(--ink));

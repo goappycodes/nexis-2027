@@ -3,7 +3,7 @@ import ExperienceCarousel from "./ExperienceCarousel";
 
 export default function HowYouLearn() {
   return (
-    <section id="learn" className="scroll-mt-24 py-12 sm:py-20 lg:py-28">
+    <section id="learn" className="scroll-mt-24 py-8 sm:py-16 lg:py-24">
       <div className="shell overflow-hidden">
         <SectionHeader
           index="03"

@@ -21,7 +21,7 @@ export default function PageHero({
 }: Props) {
   const centered = align === "center";
   return (
-    <section className="shell pt-8 pb-10 sm:pt-12 sm:pb-14 lg:pt-16">
+    <section className="shell pt-5 pb-8 sm:pt-10 sm:pb-12 lg:pt-14">
       <div className={centered ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
         <Reveal>
           <p

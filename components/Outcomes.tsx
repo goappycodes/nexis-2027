@@ -5,7 +5,7 @@ import { OUTCOME_STATS, PATHWAYS } from "@/lib/content";
 
 export default function Outcomes() {
   return (
-    <section id="outcomes" className="shell scroll-mt-24 py-12 sm:py-20 lg:py-28">
+    <section id="outcomes" className="shell scroll-mt-24 py-8 sm:py-16 lg:py-24">
       <SectionHeader
         index="05"
         kicker="Outcomes"

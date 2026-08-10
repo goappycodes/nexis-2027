@@ -12,7 +12,7 @@ export default function Faculty() {
   return (
     <section
       id="faculty"
-      className="scroll-mt-24 border-y border-line bg-paper-2/50 py-12 sm:py-20 lg:py-28"
+      className="scroll-mt-24 border-y border-line bg-paper-2/50 py-8 sm:py-16 lg:py-24"
     >
       <div className="shell">
         <SectionHeader

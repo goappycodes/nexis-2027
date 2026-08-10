@@ -196,7 +196,7 @@ export default function BbaCollegesPage() {
 
       {/* Shortlist */}
       <section className="border-t border-line bg-paper-2/50">
-        <div className="shell py-12 sm:py-20 lg:py-24">
+        <div className="shell py-8 sm:py-16 lg:py-22">
           <Reveal className="mb-8 max-w-2xl">
             <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
               The best BBA colleges in Siliguri, in detail
@@ -232,7 +232,7 @@ export default function BbaCollegesPage() {
       </section>
 
       {/* Checklist */}
-      <section className="shell py-12 sm:py-20 lg:py-24">
+      <section className="shell py-8 sm:py-16 lg:py-22">
         <Reveal className="mb-8 max-w-2xl">
           <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
             What to look for in a BBA college
@@ -284,7 +284,7 @@ export default function BbaCollegesPage() {
       </div>
 
       {/* FAQ */}
-      <section className="shell py-12 sm:py-20 lg:py-24">
+      <section className="shell py-8 sm:py-16 lg:py-22">
         <Reveal className="mb-8 max-w-2xl">
           <h2 className="display text-[clamp(1.8rem,4vw,2.8rem)]">
             Frequently asked questions

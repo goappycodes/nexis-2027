@@ -4,7 +4,7 @@ import { DIFFERENTIATORS } from "@/lib/content";
 
 export default function Overview() {
   return (
-    <section id="program" className="shell scroll-mt-24 py-12 sm:py-20 lg:py-28">
+    <section id="program" className="shell scroll-mt-24 py-8 sm:py-16 lg:py-24">
       <SectionHeader
         index="01"
         kicker="The Program"

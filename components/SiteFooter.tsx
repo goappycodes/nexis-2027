@@ -10,7 +10,7 @@ const PROGRAMS = [
 export default function SiteFooter() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="shell py-12 sm:py-16 lg:py-20">
+      <div className="shell py-9 sm:py-14 lg:py-18">
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-5">

@@ -4,7 +4,7 @@ import { PRESS } from "@/lib/content";
 
 export default function PressStrip() {
   return (
-    <section id="news" className="scroll-mt-24 border-y border-line bg-paper py-12 sm:py-16 lg:py-20">
+    <section id="news" className="scroll-mt-24 border-y border-line bg-paper py-9 sm:py-14 lg:py-18">
       <div className="shell">
         <Reveal className="mb-10 flex items-center gap-4">
           <span className="kicker">NEXIS in the news</span>

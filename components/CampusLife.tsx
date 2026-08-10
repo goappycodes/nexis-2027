@@ -13,7 +13,7 @@ const HIGHLIGHTS = [
 
 export default function CampusLife({ index = "06" }: { index?: string }) {
   return (
-    <section id="campus" className="scroll-mt-24 py-12 sm:py-20 lg:py-28">
+    <section id="campus" className="scroll-mt-24 py-8 sm:py-16 lg:py-24">
       <div className="shell">
         {/* Header */}
         <div className="grid gap-7 lg:grid-cols-12 lg:gap-16">
