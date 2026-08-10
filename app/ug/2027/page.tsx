@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import Recognition from "@/components/Recognition";
 import StudentCarousel from "@/components/StudentCarousel";
 import LeadForm from "@/components/LeadForm";
-import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 import { BATCH, CONTACT, WHY_NEXIS, CAMPUS_IMAGES, FAQS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -53,10 +53,13 @@ export default function UG2027LandingPage() {
           </a>
           <div className="flex items-center gap-3">
             <a
-              href={CONTACT.phoneHref}
-              className="hidden text-[0.85rem] font-medium text-ink-2 sm:inline-flex"
+              href={CONTACT.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 text-[0.85rem] font-medium text-[#25D366] sm:inline-flex"
             >
-              Call {CONTACT.phone}
+              <WhatsApp className="text-[1.05em]" />
+              WhatsApp us
             </a>
             <a href="#enquire" className="btn btn-crimson">
               Enquire now
@@ -76,10 +79,10 @@ export default function UG2027LandingPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        {/* Legibility overlays: a uniform scrim + a stronger bottom gradient
-            so the white headline stays readable over bright, busy photos. */}
-        <div className="absolute inset-0 bg-ink/45" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-transparent" />
+        {/* Legibility overlays: a strong uniform scrim + a heavy bottom
+            gradient so the white headline stays readable over bright photos. */}
+        <div className="absolute inset-0 bg-ink/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/25" />
         <div className="shell relative flex h-full flex-col justify-end pb-7 sm:pb-10">
           <Reveal>
             <p className="flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.16em] text-white/80 sm:text-[0.72rem]">
@@ -159,10 +162,13 @@ export default function UG2027LandingPage() {
                   <ArrowUpRight className="arrow" />
                 </a>
                 <a
-                  href={CONTACT.phoneHref}
-                  className="btn btn-ghost justify-center"
+                  href={CONTACT.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn justify-center border-[#25D366] bg-transparent text-[#25D366] hover:bg-[#25D366]/10"
                 >
-                  Call {CONTACT.phone}
+                  <WhatsApp className="text-[1.1em]" />
+                  WhatsApp us
                 </a>
               </div>
             </Reveal>
@@ -323,8 +329,8 @@ export default function UG2027LandingPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-ink/45" />
-        <div className="absolute inset-0 bg-crimson/90" />
+        <div className="absolute inset-0 bg-ink/55" />
+        <div className="absolute inset-0 bg-crimson/95" />
         <div className="shell relative py-11 sm:py-16">
           <Reveal className="max-w-2xl">
             <p className="flex items-center gap-3 text-[0.7rem] font-medium uppercase tracking-[0.18em] text-white/80">
@@ -395,8 +401,14 @@ export default function UG2027LandingPage() {
       {/* Sticky mobile CTA bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-paper/95 backdrop-blur-md lg:hidden">
         <div className="flex gap-2.5 p-3">
-          <a href={CONTACT.phoneHref} className="btn btn-ghost flex-1 justify-center">
-            Call
+          <a
+            href={CONTACT.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn flex-1 justify-center border-[#25D366] bg-transparent text-[#25D366]"
+          >
+            <WhatsApp className="text-[1.15em]" />
+            WhatsApp
           </a>
           <a href="#enquire" className="btn btn-crimson flex-1 justify-center">
             Enquire now
