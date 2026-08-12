@@ -67,10 +67,12 @@ export default function SiteNav({
       {/* Nav */}
       <header
         className={`sticky top-0 z-50 transition-colors duration-500 ${
-          scrolled
-            ? dark
-              ? "border-b border-white/10 bg-ink/85 backdrop-blur-md"
-              : "bg-paper/85 backdrop-blur-md border-b border-line"
+          dark
+            ? scrolled
+              ? "border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md"
+              : "border-b border-transparent bg-[#08080a]"
+            : scrolled
+            ? "bg-paper/85 backdrop-blur-md border-b border-line"
             : "bg-transparent border-b border-transparent"
         }`}
       >
