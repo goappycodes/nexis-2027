@@ -15,10 +15,14 @@ const config: Config = {
         muted: "rgb(var(--muted) / <alpha-value>)",
         line: "var(--line)",
         crimson: "rgb(var(--crimson) / <alpha-value>)",
+        // Brand accents (nexisschool.com) — used on /ug.
+        oxblood: "#af103d",
+        lime: "#d5fe00",
       },
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        poppins: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         kicker: "0.18em",

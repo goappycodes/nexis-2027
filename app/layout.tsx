@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter, Fraunces, Poppins } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,15 @@ const fraunces = Fraunces({
   display: "swap",
   variable: "--font-fraunces",
   axes: ["opsz", "SOFT", "WONK"],
+});
+
+// Brand sans (nexisschool.com identity). Loaded globally as a CSS var but
+// only applied where opted in (currently the /ug page wrapper).
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -35,7 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} ${poppins.variable}`}
+    >
       <head>
         {/* Adds `.js` before first paint so scroll-reveal only hides content
             when JS can bring it back. */}

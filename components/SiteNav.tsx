@@ -26,11 +26,15 @@ export default function SiteNav({
   links = SITE_NAV,
   applyHref = "#apply",
   logoHref = "#top",
+  theme = "light",
 }: {
   links?: NavItem[];
   applyHref?: string;
   logoHref?: string;
+  theme?: "light" | "dark";
 }) {
+  const dark = theme === "dark";
+  const linkCls = dark ? "text-white/80" : "text-ink-2";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -64,17 +68,19 @@ export default function SiteNav({
       <header
         className={`sticky top-0 z-50 transition-colors duration-500 ${
           scrolled
-            ? "bg-paper/85 backdrop-blur-md border-b border-line"
+            ? dark
+              ? "border-b border-white/10 bg-ink/85 backdrop-blur-md"
+              : "bg-paper/85 backdrop-blur-md border-b border-line"
             : "bg-transparent border-b border-transparent"
         }`}
       >
         <nav className="shell flex items-center justify-between py-4">
           <a href={logoHref} className="flex items-center gap-3" aria-label="NEXIS home">
             <Image
-              src="/brand/nexis-logo-dark.png"
+              src={dark ? "/brand/nexis-logo-white.png" : "/brand/nexis-logo-dark.png"}
               alt="NEXIS"
-              width={254}
-              height={66}
+              width={400}
+              height={105}
               priority
               className="h-7 w-auto"
             />
@@ -85,11 +91,15 @@ export default function SiteNav({
               item.children ? (
                 <div key={item.label} className="group relative">
                   <button
-                    className="ulink inline-flex items-center gap-1 text-[0.82rem] font-medium text-ink-2"
+                    className={`ulink inline-flex items-center gap-1 text-[0.82rem] font-medium ${linkCls}`}
                     aria-haspopup="true"
                   >
                     {item.label}
-                    <Chevron className="h-3.5 w-3.5 text-muted transition-transform duration-300 group-hover:rotate-180" />
+                    <Chevron
+                      className={`h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180 ${
+                        dark ? "text-white/50" : "text-muted"
+                      }`}
+                    />
                   </button>
                   {/* Dropdown — CSS hover/focus, with a pt-4 hover bridge */}
                   <div className="pointer-events-none invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:visible group-focus-within:opacity-100">
@@ -110,7 +120,7 @@ export default function SiteNav({
                 <a
                   key={item.href}
                   href={item.href}
-                  className="ulink text-[0.82rem] font-medium text-ink-2"
+                  className={`ulink text-[0.82rem] font-medium ${linkCls}`}
                 >
                   {item.label}
                 </a>
@@ -125,25 +135,27 @@ export default function SiteNav({
             </a>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden flex h-10 w-10 items-center justify-center rounded-full border border-line"
+              className={`lg:hidden flex h-10 w-10 items-center justify-center rounded-full border ${
+                dark ? "border-white/25" : "border-line"
+              }`}
               aria-label="Toggle menu"
               aria-expanded={open}
             >
               <span className="relative flex h-3 w-4 flex-col justify-between">
                 <span
-                  className={`h-[1.5px] w-full bg-ink transition-transform duration-300 ${
-                    open ? "translate-y-[5px] rotate-45" : ""
-                  }`}
+                  className={`h-[1.5px] w-full transition-transform duration-300 ${
+                    dark ? "bg-white" : "bg-ink"
+                  } ${open ? "translate-y-[5px] rotate-45" : ""}`}
                 />
                 <span
-                  className={`h-[1.5px] w-full bg-ink transition-opacity duration-300 ${
-                    open ? "opacity-0" : ""
-                  }`}
+                  className={`h-[1.5px] w-full transition-opacity duration-300 ${
+                    dark ? "bg-white" : "bg-ink"
+                  } ${open ? "opacity-0" : ""}`}
                 />
                 <span
-                  className={`h-[1.5px] w-full bg-ink transition-transform duration-300 ${
-                    open ? "-translate-y-[5px] -rotate-45" : ""
-                  }`}
+                  className={`h-[1.5px] w-full transition-transform duration-300 ${
+                    dark ? "bg-white" : "bg-ink"
+                  } ${open ? "-translate-y-[5px] -rotate-45" : ""}`}
                 />
               </span>
             </button>
