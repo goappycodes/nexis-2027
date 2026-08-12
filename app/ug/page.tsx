@@ -10,28 +10,192 @@ import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import {
   BATCH,
   CONTACT,
-  PROGRAM_FACTS,
-  DIFFERENTIATORS,
-  CURRICULUM,
-  EXPERIENCES,
-  FACULTY,
-  OUTCOME_STATS,
-  PATHWAYS,
-  CAMPUS_STATS,
-  CAMPUS_IMAGES,
   ACCREDITATION,
   RECRUITER_LOGOS,
-  FOUNDERS,
-  ADMISSION_STEPS,
-  FAQS,
+  CAMPUS_IMAGES,
+  CAMPUS_STATS,
+  OUTCOME_STATS,
+  FACULTY,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
   title:
     "Undergraduate Program in Business Management — Batch of 2027 | NEXIS",
   description:
-    "A three-year, on-campus undergraduate program in Siliguri where you learn business by building real businesses — mentored by founders and CXOs from day one. Admissions open for the Batch of 2027.",
+    "A three-year, on-campus undergraduate program in Siliguri where you practise what you learn every single day — Digital Sales & Marketing, Business Analytics and Entrepreneurship, mentored by founders and CXOs.",
 };
+
+/* ---- Content mirrors nexisschool.com/ug (kept local to /ug) ---- */
+
+const FACTS = [
+  { label: "Mode", value: "On-campus", sub: "Siliguri campus" },
+  { label: "Commencement", value: BATCH.starts, sub: BATCH.cohort },
+  { label: "Eligibility", value: "Class XII", sub: "current students & passouts" },
+  { label: "Duration", value: "3 years", sub: "incl. 6-month internship" },
+];
+
+const MENTOR_POINTS = [
+  "Get guided by entrepreneurs who've been there and done that.",
+  "Work on live industry projects that take you far beyond classroom learning.",
+];
+
+const CURRICULUM = [
+  {
+    year: "Year 01",
+    title: "Digital Sales & Marketing",
+    lede: "Build your foundations — learn to build an audience and sell, the core skill of every modern business.",
+  },
+  {
+    year: "Year 02",
+    title: "Business Analytics",
+    lede: "Deepen your edge — turn data into decisions with dashboards, AI tools and real client work.",
+  },
+  {
+    year: "Year 03",
+    title: "Entrepreneurship",
+    lede: "Take the entrepreneur's seat — build, pitch and run a venture of your own.",
+  },
+];
+
+const ALREADY = [
+  "Consulted 5+ local businesses to grow their revenue",
+  "Built 4 real D2C businesses from scratch in the first semester",
+  "Developed 15+ AI bots for real use-cases",
+];
+
+const INTERN_POINTS = [
+  "Begin internships in startups as early as their first semester",
+  "Are mentored directly by founders and CXOs",
+  "Gain hands-on experience across marketing, finance, operations and more",
+];
+
+const LIFE_POINTS = [
+  "A 360° campus experience at a next-gen campus",
+  "Lead thriving student clubs and organise 30+ events in 3 years",
+  "Compete in bi-monthly competitions across 10+ sports",
+  "Build lifelong friendships and a professional network that lasts",
+];
+
+const EXPERIENCES = [
+  {
+    tag: "Content Creator Challenge",
+    title: "Become an Influencer",
+    d: "Learn marketing by building your own influencer brand — and grow channels that reach thousands, even millions.",
+    img: "/images/campus/tour6.jpg",
+  },
+  {
+    tag: "Dropshipping Challenge",
+    title: "Become an entrepreneur at 18",
+    d: "Build and scale your own venture from scratch — and earn real revenue and profit.",
+    img: "/images/campus/tour7.jpg",
+  },
+  {
+    tag: "OUTCLASS",
+    title: "Consult local businesses",
+    d: "Step into a consultant's shoes — from cafés to car dealerships — to revamp and grow real local businesses.",
+    img: "/images/campus/tour8.jpg",
+  },
+  {
+    tag: "Industry Trek",
+    title: "Decode real business operations",
+    d: "Tour iconic factories, unicorn startups and offices to see firsthand how businesses run on the ground.",
+    img: "/images/campus/tour9.jpg",
+  },
+  {
+    tag: "AIvolution",
+    title: "Build with AI",
+    d: "Use powerful AI tools that make you work smarter, not harder — solving real business problems with ease.",
+    img: "/images/campus/apex-hall.jpg",
+  },
+  {
+    tag: "Global Immersion",
+    title: "Learn beyond borders",
+    d: "Opt into international immersion trips to Singapore and Dubai for first-hand exposure to global business culture.",
+    img: "/images/campus/safe-future.jpg",
+  },
+];
+
+const PATHWAYS = [
+  {
+    meta: "Careers",
+    title: "Internships & careers first",
+    d: "Careers don't start after NEXIS — they start as soon as you join. Internships every year, résumé, LinkedIn and interview training, and career bootcamps backed by a 75+ recruiter network.",
+  },
+  {
+    meta: "Entrepreneurship",
+    title: "Start your startup with the NEXIS Incubation Centre",
+    d: "Learning by building is our DNA. Mentor and founder guidance, seed-fund support for strong ideas, and insights to scale family businesses — many graduate with a running business and customers already in the market.",
+  },
+  {
+    meta: "Higher studies",
+    title: "Ready for higher studies",
+    d: "Regular career counselling, GMAT/CAT and study-abroad guidance, and a portfolio of real work. Whether it's an MBA, a global university or a specialised master's — you move forward with confidence.",
+  },
+];
+
+const DAY = [
+  {
+    t: "Treasure Hunt",
+    d: "A day of clues, laughter and teamwork as students put their minds and energy to the test.",
+  },
+  {
+    t: "Houses @ NEXIS",
+    d: "Creativity, unity and friendship come alive as students represent their houses with pride.",
+  },
+  {
+    t: "Sports at NEXIS",
+    d: "Students compete every month across 10+ sports, representing their houses.",
+  },
+];
+
+const ADMISSION_STEPS = [
+  {
+    n: "01",
+    title: "Apply online",
+    d: "Submit your application and profile. There is no cut-off on Class XII board marks — we look at the whole person.",
+  },
+  {
+    n: "02",
+    title: "NEXGen Test",
+    d: "A 45-minute on-campus aptitude test that assesses your readiness and mindset for business management.",
+  },
+  {
+    n: "03",
+    title: "Interview & discussion",
+    d: "A conversation to understand whether you're coachable, ambitious and a fit for the three-year program.",
+  },
+];
+
+const UG_FAQS = [
+  {
+    q: "What is NEXIS?",
+    a: "NEXIS is a private business school that operates as a Training Body, duly accredited by MEPSC — an awarding body recognised by NCVET — and offers certification in vocational courses related to business management, aligned with the NSQF framework. NEXIS does not confer any degrees.",
+  },
+  {
+    q: "Can I join for a single year, or do I need to commit to the full 3-year programme?",
+    a: "The 3-year integrated programme is the flagship at NEXIS, and most students opt for it. Year 1 builds your foundations in Digital Sales & Marketing, Year 2 deepens your edge with Business Analytics, and Year 3 puts you in the entrepreneur's seat. Each year is an independent NSQF-aligned qualification recognised under NCVET, so you earn a nationally recognised qualification at the end of every year — not just after three.",
+  },
+  {
+    q: "Why should I join NEXIS School of Business?",
+    a: "NEXIS focuses on practical, hands-on learning rather than traditional classroom methods: a future-ready curriculum with AI & tech-based learning, 30+ masterclasses each semester led by founders of successful businesses, a campus full of events, sport, clubs, real projects and internships, and the chance to study alongside the best students in your region.",
+  },
+  {
+    q: "Is it an online program?",
+    a: "No. The 3-year undergraduate program is full-time and on-campus in Siliguri, at a 7,500 sq ft modern campus with an opt-in residential facility through tie-ups with nearby PGs.",
+  },
+  {
+    q: "What financing options are available?",
+    a: "We've partnered with Axis Bank for collateral-free education loans at low interest with moratorium benefits, plus semester-wise payment plans so you can pay in instalments. Finance shouldn't be a barrier if you're selected.",
+  },
+  {
+    q: "Is this a fully residential program?",
+    a: "No — it's opt-in. NEXIS helps students who wish to live close to campus connect with nearby, secure accommodation. Accommodation charges aren't part of the fee, and NEXIS doesn't charge students or residences for facilitating this.",
+  },
+  {
+    q: "What is the eligibility criteria?",
+    a: "Students who have completed Class XII from a recognised board (CBSE, ISC, WBCHSE and others), with or without Mathematics. There is no board-marks cut-off — we evaluate academics alongside extracurriculars, leadership and personal experience, followed by the 45-minute on-campus NEXGen aptitude test and an interview.",
+  },
+];
 
 /* Eyebrow label — crimson by default, neon-lime on dark sections. */
 function Eyebrow({
@@ -64,7 +228,7 @@ export default function UGPage() {
     <main className="relative font-poppins ug-poppins">
       <SiteNav applyHref="#apply" theme="dark" />
 
-      {/* ============ HERO (dark) ============ */}
+      {/* ============ HERO ============ */}
       <section id="top" className={`relative overflow-hidden ${DEEP} text-white`}>
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
@@ -74,35 +238,33 @@ export default function UGPage() {
         <div className="shell relative grid items-center gap-10 pt-9 pb-11 sm:pt-12 lg:grid-cols-12 lg:gap-12 lg:pb-20 lg:pt-16">
           <div className="lg:col-span-7">
             <Reveal>
-              <Eyebrow lime>
-                Undergraduate Program · {BATCH.city}
-              </Eyebrow>
+              <Eyebrow lime>Undergraduate Program · {BATCH.city}</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="display balance mt-5 text-[clamp(2.4rem,6.6vw,5rem)] text-white">
-                Learn business by{" "}
-                <span className="serif-em text-crimson">building</span> it.
+              <h1 className="display balance mt-5 text-[clamp(2.1rem,5.4vw,4.2rem)] text-white">
+                Undergraduate Program in{" "}
+                <span className="serif-em text-crimson">Business Management</span>
               </h1>
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-6 max-w-xl text-[1.02rem] leading-relaxed text-white/70">
-                A three-year, on-campus program in {BATCH.city} where you work on
-                real businesses from your first semester — mentored by founders
-                and CXOs, not just lectured at. The most practical business
-                education in India.
+                A three-year programme where you practise what you learn — every
+                single day. Industry-integrated, with a focus on Digital Sales &amp;
+                Marketing, Business Analytics and Entrepreneurship, plus the
+                industry-readiness skills that set you apart.
               </p>
             </Reveal>
             <Reveal delay={220}>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a href={CONTACT.applyHref} className="btn btn-crimson">
-                  Apply for the {BATCH.year} cohort
+                  Apply now
                   <ArrowRight className="arrow" />
                 </a>
                 <a
                   href={CONTACT.brochureHref}
                   className="btn border-white/25 bg-transparent text-white hover:bg-white/10"
                 >
-                  Download prospectus
+                  Download brochure
                   <ArrowUpRight className="arrow" />
                 </a>
               </div>
@@ -139,7 +301,7 @@ export default function UGPage() {
         {/* Fact rail */}
         <div className="relative border-t border-white/10">
           <div className="shell grid grid-cols-2 md:grid-cols-4">
-            {PROGRAM_FACTS.map((f, i) => (
+            {FACTS.map((f, i) => (
               <Reveal
                 key={f.label}
                 delay={i * 70}
@@ -160,7 +322,7 @@ export default function UGPage() {
         </div>
       </section>
 
-      {/* ============ BACKED BY (dark) ============ */}
+      {/* ============ BACKED BY ============ */}
       <section className="bg-ink text-white">
         <div className="shell py-9 sm:py-12">
           <Reveal className="text-center">
@@ -181,61 +343,54 @@ export default function UGPage() {
           </Reveal>
           <Reveal className="mx-auto mt-9 max-w-3xl border-t border-white/10 pt-8 text-center text-[0.88rem] leading-relaxed text-white/50">
             <p>
-              NEXIS is a school of business and skilling institution — a Training
-              Body accredited by{" "}
-              <span className="font-medium text-white/80">MEPSC</span>, an awarding
+              NEXIS is a private business school and a Training Body accredited by{" "}
+              <span className="font-medium text-white/80">MEPSC</span> — an awarding
               body recognised by{" "}
-              <span className="font-medium text-white/80">NCVET</span>. Every year
-              of the program earns a nationally recognised,{" "}
+              <span className="font-medium text-white/80">NCVET</span> — offering{" "}
               <span className="font-medium text-white/80">NSQF-aligned</span>{" "}
-              qualification. We don&rsquo;t confer degrees — we build careers.
+              certification in business management. NEXIS does not confer any degrees.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* ============ PROGRAM OVERVIEW (light) ============ */}
+      {/* ============ LEARN DIRECTLY FROM INDUSTRY LEADERS (light) ============ */}
       <section className="bg-paper text-ink">
         <div className="shell py-12 sm:py-16 lg:py-24">
-          <div className="max-w-3xl">
-            <Reveal>
-              <Eyebrow>The Program</Eyebrow>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
-                An undergraduate education, built around{" "}
-                <span className="serif-em text-crimson">real work</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={140}>
-              <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2">
-                Three years, structured around practice. You build ventures,
-                consult businesses, intern with founders and graduate with a
-                portfolio of real work — not just a transcript.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-[3px] border border-line bg-line sm:mt-14 sm:grid-cols-2">
-            {DIFFERENTIATORS.map((d, i) => (
-              <Reveal
-                key={d.t}
-                delay={i * 80}
-                className="bg-paper p-6 transition-colors duration-500 hover:bg-paper-2/60 sm:p-10"
-              >
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-4">
-                  <span className="display text-3xl text-crimson sm:text-5xl">
-                    {d.k}
-                  </span>
-                  <span className="font-serif text-base leading-tight text-ink sm:text-lg">
-                    {d.t}
-                  </span>
-                </div>
-                <p className="mt-3 max-w-md text-[0.9rem] leading-relaxed text-ink-2 sm:mt-5 sm:text-[0.98rem]">
-                  {d.d}
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-6">
+              <Reveal>
+                <Eyebrow>Faculty &amp; Mentors</Eyebrow>
+              </Reveal>
+              <Reveal delay={80}>
+                <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
+                  Learn directly from industry leaders &amp;{" "}
+                  <span className="serif-em text-crimson">entrepreneurs</span>.
+                </h2>
+              </Reveal>
+              <Reveal delay={140}>
+                <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2">
+                  Get mentored by 50+ industry leaders from companies like boAt,
+                  Snitch, Lenskart, State Plate and Zomato.
                 </p>
               </Reveal>
-            ))}
+            </div>
+            <div className="lg:col-span-6">
+              <ul className="space-y-4">
+                {MENTOR_POINTS.map((p, i) => (
+                  <Reveal
+                    key={p}
+                    delay={i * 80}
+                    className="flex gap-4 rounded-[3px] border border-line bg-paper p-5"
+                  >
+                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-crimson" />
+                    <span className="text-[0.98rem] leading-relaxed text-ink-2">
+                      {p}
+                    </span>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -274,117 +429,64 @@ export default function UGPage() {
                 <p className="mt-3 text-[0.92rem] leading-relaxed text-white/60">
                   {c.lede}
                 </p>
-                <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-6">
-                  {c.points.map((p) => (
-                    <li
-                      key={p}
-                      className="flex gap-3 text-[0.88rem] leading-relaxed text-white/75"
-                    >
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-crimson" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-5 text-[0.74rem] leading-relaxed text-white/40">
-                  {c.qualification}
-                </p>
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="mt-8 rounded-[3px] border border-white/10 bg-white/[0.03] p-6 sm:mt-10 sm:p-8">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-lime">
+              At NEXIS, our students have already
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+              {ALREADY.map((a) => (
+                <li
+                  key={a}
+                  className="flex gap-3 text-[0.92rem] leading-relaxed text-white/75"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" />
+                  <span>{a}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
-      {/* ============ MENTORS (light) ============ */}
+      {/* ============ INTERNSHIPS (light) ============ */}
       <section className="bg-paper text-ink">
         <div className="shell py-12 sm:py-16 lg:py-24">
-          <div className="max-w-3xl">
-            <Reveal>
-              <Eyebrow>Faculty &amp; Mentors</Eyebrow>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
-                Learn directly from{" "}
-                <span className="serif-em text-crimson">industry leaders</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={140}>
-              <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2">
-                Not career academics — founders, CEOs and CXOs who have actually
-                built and scaled companies. 50+ of them mentor on campus.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="mt-9 grid gap-5 sm:mt-14 md:grid-cols-3">
-            {FACULTY.map((f, i) => (
-              <Reveal
-                key={f.name}
-                delay={i * 90}
-                className="rounded-[3px] border border-line bg-paper p-6 sm:p-8"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-ink font-serif text-lg text-paper">
-                  {monogram(f.name)}
-                </div>
-                <h3 className="mt-5 font-serif text-xl leading-tight">{f.name}</h3>
-                <p className="mt-1 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-crimson">
-                  {f.role}
-                </p>
-                <p className="mt-4 border-t border-line pt-4 text-[0.92rem] leading-relaxed text-ink-2">
-                  {f.d}
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-6">
+              <Reveal>
+                <Eyebrow>Internships</Eyebrow>
+              </Reveal>
+              <Reveal delay={80}>
+                <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
+                  Intern with top brands from your{" "}
+                  <span className="serif-em text-crimson">first year</span>.
+                </h2>
+              </Reveal>
+              <Reveal delay={140}>
+                <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2">
+                  Work with leading firms and gain real-world exposure. At NEXIS,
+                  students:
                 </p>
               </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============ LEARN BY DOING (crimson — brand signature) ============ */}
-      <section className="bg-crimson text-white">
-        <div className="shell py-12 sm:py-16 lg:py-24">
-          <div className="max-w-3xl">
-            <Reveal>
-              <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/80">
-                <span className="h-px w-8 bg-white/60" />
-                Learn by doing
-              </p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
-                The work is the{" "}
-                <span className="serif-em">classroom</span>.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div className="mt-9 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {EXPERIENCES.map((e, i) => (
-              <Reveal
-                key={e.title}
-                delay={(i % 3) * 80}
-                className="group relative aspect-[4/3] overflow-hidden rounded-[3px] bg-black/20"
-              >
-                <Image
-                  src={e.img}
-                  alt={e.title}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width:768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-lime">
-                    {e.tag}
-                  </span>
-                  <h3 className="mt-1.5 font-serif text-lg leading-tight">
-                    {e.title}
-                  </h3>
-                  <p className="mt-1.5 text-[0.82rem] leading-relaxed text-white/75">
-                    {e.d}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+            </div>
+            <div className="lg:col-span-6">
+              <ul className="space-y-3 border-t border-line pt-2">
+                {INTERN_POINTS.map((p, i) => (
+                  <Reveal
+                    key={p}
+                    delay={i * 80}
+                    className="flex gap-3 border-b border-line py-4 text-[0.98rem] leading-relaxed text-ink-2"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-crimson" />
+                    <span>{p}</span>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -395,20 +497,26 @@ export default function UGPage() {
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <Reveal>
-                <Eyebrow lime>Campus Life</Eyebrow>
+                <Eyebrow lime>Student Life &amp; Campus</Eyebrow>
               </Reveal>
               <Reveal delay={80}>
                 <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
-                  A campus alive with{" "}
-                  <span className="serif-em text-crimson">ambition</span>.
+                  Student life is more than just{" "}
+                  <span className="serif-em text-crimson">lectures</span>.
                 </h2>
               </Reveal>
               <Reveal delay={140}>
-                <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-white/65">
-                  A 360° experience at a next-gen campus in the heart of Siliguri.
-                  Lead clubs, represent your house, compete every month and build
-                  a network — and friendships — that outlast the program.
-                </p>
+                <ul className="mt-6 space-y-3">
+                  {LIFE_POINTS.map((p) => (
+                    <li
+                      key={p}
+                      className="flex gap-3 text-[0.96rem] leading-relaxed text-white/70"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
             </div>
             <div className="lg:col-span-5">
@@ -454,23 +562,139 @@ export default function UGPage() {
               </Reveal>
             ))}
           </div>
+
+          {/* A day in the life */}
+          <div className="mt-8 grid gap-4 sm:mt-12 md:grid-cols-3">
+            {DAY.map((d, i) => (
+              <Reveal
+                key={d.t}
+                delay={i * 80}
+                className="rounded-[3px] border border-white/10 bg-[#0e0e11] p-6"
+              >
+                <h3 className="font-serif text-lg leading-tight">{d.t}</h3>
+                <p className="mt-2.5 text-[0.88rem] leading-relaxed text-white/60">
+                  {d.d}
+                </p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ============ STUDENT WALL (dark) ============ */}
+      {/* ============ FIRST-YEAR STUDENTS (dark) ============ */}
       <section className={`${DEEP} text-white py-12 sm:py-16 lg:py-20`}>
         <div className="shell mb-8 max-w-2xl">
           <Reveal>
-            <Eyebrow lime>The Class of 2025</Eyebrow>
+            <Eyebrow lime>The founding batch, at work</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
-              Already interning, earning,{" "}
-              <span className="serif-em text-crimson">winning</span>.
+              These are our first-year{" "}
+              <span className="serif-em text-crimson">students</span>.
             </h2>
+          </Reveal>
+          <Reveal delay={140}>
+            <p className="mt-4 text-[1rem] leading-relaxed text-white/60">
+              Already interning, earning and winning national recognitions.
+            </p>
           </Reveal>
         </div>
         <StudentCarousel />
+      </section>
+
+      {/* ============ 30+ INDUSTRY LEADERS ON CAMPUS (light) ============ */}
+      <section className="bg-paper text-ink">
+        <div className="shell py-12 sm:py-16 lg:py-24">
+          <div className="max-w-3xl">
+            <Reveal>
+              <Eyebrow>On Campus</Eyebrow>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
+                30+ industry leaders already on{" "}
+                <span className="serif-em text-crimson">campus</span>.
+              </h2>
+            </Reveal>
+            <Reveal delay={140}>
+              <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-ink-2">
+                Learn how businesses are built, scaled and sustained — directly
+                from those who&rsquo;ve done it.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mt-9 grid gap-5 sm:mt-14 md:grid-cols-3">
+            {FACULTY.map((f, i) => (
+              <Reveal
+                key={f.name}
+                delay={i * 90}
+                className="rounded-[3px] border border-line bg-paper p-6 sm:p-8"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-ink font-serif text-lg text-paper">
+                  {monogram(f.name)}
+                </div>
+                <h3 className="mt-5 font-serif text-xl leading-tight">{f.name}</h3>
+                <p className="mt-1 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-crimson">
+                  {f.role}
+                </p>
+                <p className="mt-4 border-t border-line pt-4 text-[0.92rem] leading-relaxed text-ink-2">
+                  {f.d}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ LEARN BY DOING (crimson) ============ */}
+      <section className="bg-crimson text-white">
+        <div className="shell py-12 sm:py-16 lg:py-24">
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/80">
+                <span className="h-px w-8 bg-white/60" />
+                Learn by doing
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
+                Learn by doing — not just by sitting in{" "}
+                <span className="serif-em">lectures</span>.
+              </h2>
+            </Reveal>
+          </div>
+
+          <div className="mt-9 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {EXPERIENCES.map((e, i) => (
+              <Reveal
+                key={e.title}
+                delay={(i % 3) * 80}
+                className="group relative aspect-[4/3] overflow-hidden rounded-[3px] bg-black/20"
+              >
+                <Image
+                  src={e.img}
+                  alt={e.title}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width:768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5">
+                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-lime">
+                    {e.tag}
+                  </span>
+                  <h3 className="mt-1.5 font-serif text-lg leading-tight">
+                    {e.title}
+                  </h3>
+                  <p className="mt-1.5 text-[0.82rem] leading-relaxed text-white/75">
+                    {e.d}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ============ CAREER PROSPECTS (light) ============ */}
@@ -482,8 +706,8 @@ export default function UGPage() {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
-                Where NEXIS takes{" "}
-                <span className="serif-em text-crimson">you</span>.
+                Our exclusive network of{" "}
+                <span className="serif-em text-crimson">75+ companies</span>.
               </h2>
             </Reveal>
           </div>
@@ -511,7 +735,9 @@ export default function UGPage() {
                 <span className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-crimson">
                   {p.meta}
                 </span>
-                <h3 className="mt-4 font-serif text-xl leading-tight">{p.title}</h3>
+                <h3 className="mt-4 font-serif text-lg leading-tight sm:text-xl">
+                  {p.title}
+                </h3>
                 <p className="mt-3 text-[0.92rem] leading-relaxed text-ink-2">
                   {p.d}
                 </p>
@@ -519,7 +745,6 @@ export default function UGPage() {
             ))}
           </div>
 
-          {/* Recruiter marquee */}
           <Reveal className="mt-12">
             <p className="text-center text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-muted">
               Where our students already work &amp; learn
@@ -555,17 +780,14 @@ export default function UGPage() {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
-                How you join the{" "}
-                <span className="serif-em text-crimson">
-                  {BATCH.cohort.split("–")[0]}
-                </span>
-                .
+                Want to know how you can join{" "}
+                <span className="serif-em text-crimson">NEXIS</span>?
               </h2>
             </Reveal>
             <Reveal delay={140}>
               <p className="mt-5 max-w-xl text-[1rem] leading-relaxed text-white/65">
-                A profile-first process — there&rsquo;s no cut-off on board marks.
-                We look for ambition, coachability and the drive to build.
+                Discover our admission process, eligibility and key dates — and
+                take the first step toward becoming a NEXIS student.
               </p>
             </Reveal>
           </div>
@@ -617,58 +839,6 @@ export default function UGPage() {
         </div>
       </section>
 
-      {/* ============ FOUNDERS (light) ============ */}
-      <section className="bg-paper text-ink">
-        <div className="shell py-12 sm:py-16 lg:py-24">
-          <div className="max-w-3xl">
-            <Reveal>
-              <Eyebrow>The Founders</Eyebrow>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
-                Built by alumni of India&rsquo;s{" "}
-                <span className="serif-em text-crimson">finest</span>.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div className="mt-9 grid gap-5 sm:mt-14 md:grid-cols-2">
-            {FOUNDERS.map((f, i) => (
-              <Reveal
-                key={f.name}
-                delay={i * 100}
-                className="flex flex-col gap-6 rounded-[3px] border border-line bg-paper p-6 sm:flex-row sm:items-start sm:p-8"
-              >
-                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-[3px] bg-paper-2 ring-1 ring-line">
-                  <Image
-                    src={f.img}
-                    alt={f.name}
-                    fill
-                    sizes="120px"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-serif text-2xl leading-tight">{f.name}</h3>
-                  <p className="mt-1 text-[0.85rem] text-muted">{f.role}</p>
-                  <ul className="mt-5 space-y-2.5 border-t border-line pt-5">
-                    {f.creds.map((c) => (
-                      <li
-                        key={c}
-                        className="flex items-center gap-3 text-[0.92rem] text-ink-2"
-                      >
-                        <span className="h-1 w-1 rounded-full bg-crimson" />
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ============ FAQ (dark) ============ */}
       <section className={`${DEEP} text-white`}>
         <div className="shell py-12 sm:py-16 lg:py-24">
@@ -679,13 +849,13 @@ export default function UGPage() {
               </Reveal>
               <Reveal delay={80}>
                 <h2 className="display balance mt-5 text-[clamp(1.9rem,4.4vw,3rem)] text-white">
-                  The honest{" "}
-                  <span className="serif-em text-crimson">details</span>.
+                  Frequently asked{" "}
+                  <span className="serif-em text-crimson">questions</span>.
                 </h2>
               </Reveal>
             </div>
             <div className="lg:col-span-8">
-              <FaqAccordion items={FAQS} dark />
+              <FaqAccordion items={UG_FAQS} dark />
             </div>
           </div>
         </div>
@@ -703,16 +873,15 @@ export default function UGPage() {
                 </p>
               </Reveal>
               <Reveal delay={80}>
-                <h2 className="display balance mt-6 text-[clamp(2.2rem,5.5vw,4.4rem)] text-white">
-                  Begin an education that{" "}
-                  <span className="serif-em">lasts</span>.
+                <h2 className="display balance mt-6 text-[clamp(2rem,5.2vw,4rem)] text-white">
+                  Take the first step toward becoming a NEXIS{" "}
+                  <span className="serif-em">student</span>.
                 </h2>
               </Reveal>
               <Reveal delay={140}>
                 <p className="mt-5 max-w-lg text-[1.02rem] leading-relaxed text-white/85">
                   Applications are open for the {BATCH.cohort} in {BATCH.city}.
-                  Take the first step toward a business education built for how the
-                  world actually works.
+                  Discover the admission process, eligibility and key dates.
                 </p>
               </Reveal>
             </div>
@@ -732,7 +901,7 @@ export default function UGPage() {
                   href={CONTACT.brochureHref}
                   className="btn w-full justify-center border-white/40 bg-transparent text-white hover:bg-white/10 sm:w-auto lg:w-full"
                 >
-                  Download prospectus
+                  Download brochure
                   <ArrowUpRight className="arrow" />
                 </a>
               </Reveal>
