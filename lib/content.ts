@@ -10,6 +10,76 @@ export const BATCH = {
   city: "Siliguri",
 };
 
+/* Published reports & downloads (hosted on the live nexisschool.com CDN). */
+export const REPORTS = {
+  masterclass:
+    "https://nexisschool.com/wp-content/uploads/2025/12/MASTERCLASS-Report.pdf",
+  outclass:
+    "https://nexisschool.com/wp-content/uploads/2025/12/OUTCLASS-REPORT-2025.pdf",
+  internship:
+    "https://nexisschool.com/wp-content/uploads/2026/05/NEXIS-Summer-Internship-Report-2026.pdf",
+  yearbook: "https://nexisschool.com/wp-content/uploads/2026/04/NEXIS-Yearbook.pdf",
+};
+
+/* Upcoming events, shown as a horizontal carousel on /ug.
+
+   ADD EVENTS HERE — the carousel scrolls sideways, so any number of entries
+   works and nothing needs to change in the page. Newest first.
+     t     required — event name
+     d     required — one or two lines of detail
+     img   required — poster or photo (any aspect; it fills a 16:10 frame)
+     href  required — where the CTA goes
+     cta   required — CTA label, e.g. "Register now"
+     tag   optional — small kicker above the title, e.g. "Campus tour"
+     date  optional — e.g. "Sat, 12 Sep · 10:00 AM"                          */
+export type UgEvent = {
+  t: string;
+  d: string;
+  img: string;
+  href: string;
+  cta: string;
+  tag?: string;
+  date?: string;
+};
+
+export const UG_EVENTS: UgEvent[] = [
+  {
+    tag: "Campus tour",
+    t: "NEXIS Campus Tour & UG Admission Counselling",
+    d: "A guided walk through the campus, followed by a one-to-one admission counselling session with the team.",
+    img: "/images/campus/tour6.jpg",
+    href: "/ug/book-campus-tour",
+    cta: "Register now",
+  },
+  {
+    tag: "Founder connect",
+    t: "Founder Connect",
+    d: "Sit down with a NEXIS founder to talk through the programme, the method, and whether it fits your plans.",
+    img: "/images/campus/legacy-hall.jpg",
+    href: "/ug/book-founder-connect",
+    cta: "Book a slot",
+  },
+  {
+    tag: "Admissions",
+    t: "NEXGen Aptitude Test",
+    d: "The 45-minute on-campus test that opens your application, followed by an interview and discussion round.",
+    img: "/images/campus/apex-hall.jpg",
+    href: "/ug/admission-enquiry",
+    cta: "Apply now",
+  },
+];
+
+/* In-page section rail on /ug — mirrors the tab strip on nexisschool.com/ug. */
+export const UG_SECTIONS = [
+  { label: "Highlights", href: "#highlights" },
+  { label: "Curriculum & Faculty", href: "#curriculum" },
+  { label: "Admissions & Fees", href: "#admissions" },
+  { label: "Career Outcome", href: "#careers" },
+  { label: "Student Life", href: "#student-life" },
+  { label: "Founding batch", href: "#founding-batch" },
+  { label: "FAQs", href: "#faqs" },
+];
+
 export const NAV_LINKS = [
   { label: "Program", href: "#program" },
   { label: "Curriculum", href: "#curriculum" },
@@ -245,19 +315,19 @@ export const FACULTY = [
   {
     name: "Sharad Agarwal",
     role: "Marketing Expert",
-    img: "/images/faculty/sharad.jpg",
+    img: "/images/ug/mentor-sharad.jpg",
     d: "Founder of Primsy India — building North Bengal's fastest-growing hub for digital marketing and design.",
   },
   {
     name: "Neeraj Sancheti",
     role: "Brand Strategist",
-    img: "/images/faculty/neeraj.jpg",
+    img: "/images/ug/mentor-neeraj.jpg",
     d: "Founder of Kreativ Street — the mind behind 500+ campaigns, turning content into sales.",
   },
   {
     name: "Naveen Jain",
     role: "Sales Expert",
-    img: "/images/faculty/naveen.jpg",
+    img: "/images/ug/mentor-naveen.jpg",
     d: "Director of HOC & Global Optics — turning vision into success since 1989, trusted by 1M+ customers.",
   },
 ];
