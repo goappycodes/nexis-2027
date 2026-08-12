@@ -240,6 +240,28 @@
   }
 }
 
+/* ------------------------------------------------------------
+   /ug adopts the nexisschool.com brand type: Poppins headlines
+   (no Fraunces serif), to stay close to the original. Scoped to the
+   .ug-poppins wrapper and left unlayered so it wins over the
+   component/utility layers. The rest of the site keeps Fraunces.
+   ------------------------------------------------------------ */
+.ug-poppins .display,
+.ug-poppins .serif-em,
+.ug-poppins .font-serif {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-variation-settings: normal;
+  font-style: normal;
+}
+.ug-poppins .display {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+}
+.ug-poppins .serif-em {
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .reveal {

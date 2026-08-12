@@ -61,7 +61,7 @@ const DEEP = "bg-[#08080a]";
 
 export default function UGPage() {
   return (
-    <main className="relative font-poppins">
+    <main className="relative font-poppins ug-poppins">
       <SiteNav applyHref="#apply" theme="dark" />
 
       {/* ============ HERO (dark) ============ */}
