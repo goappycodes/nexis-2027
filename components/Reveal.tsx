@@ -1,12 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 
 type RevealProps = {
   children: ReactNode;
   delay?: number;
   as?: keyof JSX.IntrinsicElements;
   className?: string;
+  /** Merged with the internal reveal-delay variable, so callers can set
+      things like a sticky `top` offset without clobbering the animation. */
+  style?: CSSProperties;
 };
 
 /** Fades + lifts its children into view once, on scroll. */
@@ -15,6 +24,7 @@ export default function Reveal({
   delay = 0,
   as = "div",
   className = "",
+  style,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -46,7 +56,7 @@ export default function Reveal({
     <Tag
       ref={ref}
       className={`reveal ${shown ? "is-in" : ""} ${className}`}
-      style={{ ["--reveal-delay" as any]: `${delay}ms` }}
+      style={{ ...style, ["--reveal-delay" as any]: `${delay}ms` }}
     >
       {children}
     </Tag>

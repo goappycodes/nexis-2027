@@ -115,7 +115,7 @@ const LEARN = [
     title: "Become entrepreneurs at just 18",
     d: "Build and scale your own venture from scratch, and earn real revenue and profits.",
     img: "/images/ug/learn-dropshipping.jpg",
-    metaLabel: "Brands our UG founding cohort have built",
+    metaLabel: "Brands our UG students have built",
     logos: [
       { name: "Toyzilla", src: "/images/ug/brand-toyzilla.jpg" },
       { name: "Ship Sukoon", src: "/images/ug/brand-shipsukoon.jpg" },
@@ -159,6 +159,25 @@ const LEARN = [
     title: "A world-class learning experience for future leaders",
     d: "Students can opt for international immersion trips to places like Singapore and Dubai for first-hand exposure to global business culture.",
     img: "/images/ug/learn-global.jpg",
+  },
+];
+
+/* Batch films pulled from the live site (public/videos/ug). */
+const BATCH_FILMS = [
+  {
+    src: "/videos/ug/batch-1.mp4",
+    poster: "/images/ug/founding-1.jpg",
+    label: "Meet the 2025–28 batch",
+  },
+  {
+    src: "/videos/ug/batch-2.mp4",
+    poster: "/images/ug/founding-2.jpg",
+    label: "A student on her year at NEXIS",
+  },
+  {
+    src: "/videos/ug/batch-3.mp4",
+    poster: "/images/ug/founding-3.jpg",
+    label: "A student on his year at NEXIS",
   },
 ];
 
@@ -547,7 +566,7 @@ function HighlightCard({
       <div
         className={`flex items-center justify-center ${
           mediaContain
-            ? "bg-paper p-8 sm:p-12"
+            ? "bg-[#0e0e11] p-8 sm:p-12"
             : dark
             ? "bg-[#08080a]"
             : "bg-paper-2"
@@ -610,9 +629,13 @@ export default function UGPage() {
           fill
           sizes="100vw"
           priority
-          className="-z-10 object-cover opacity-30"
+          className="-z-10 object-cover opacity-80"
         />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#08080a]/85 via-[#08080a]/75 to-[#08080a]" />
+        {/* Vertical scrim: light enough in the middle to read the photograph,
+            solid at the bottom so the section below joins seamlessly. */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#08080a]/80 via-[#08080a]/45 to-[#08080a]" />
+        {/* Horizontal scrim keeps the centred headline legible over busy areas. */}
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(8,8,10,0.72)_0%,rgba(8,8,10,0.35)_55%,transparent_100%)]" />
         <div className="pointer-events-none absolute -left-40 -top-40 -z-10 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
         <div className="pointer-events-none absolute -right-24 top-1/3 -z-10 h-72 w-72 rounded-full bg-lime/10 blur-[130px]" />
 
@@ -621,7 +644,7 @@ export default function UGPage() {
             <p className="flex items-center justify-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
               <span className="h-px w-8 bg-lime" />
               <span className="text-lime">
-                Undergraduate Program · {BATCH.city}
+                Undergraduate Program · {BATCH.city} Campus
               </span>
               <span className="h-px w-8 bg-lime" />
             </p>
@@ -656,7 +679,7 @@ export default function UGPage() {
             </div>
           </Reveal>
           <Reveal delay={280}>
-            <p className="mt-8 max-w-2xl text-[0.88rem] leading-relaxed text-white/50">
+            <p className="mt-6 max-w-2xl text-[0.66rem] leading-relaxed text-white/45 sm:mt-8 sm:text-[0.85rem] sm:text-white/50">
               Industry-integrated programme with a focus on Digital Sales &amp;
               Marketing, Business Analytics and Entrepreneurship, along with the
               industry-readiness skills that set you apart.
@@ -774,9 +797,9 @@ export default function UGPage() {
 
         </div>
 
-        {/* Dense horizontal carousel — scales to any number of events. Cards
-            snap, and the right edge fades to signal there is more to scroll. */}
-        <div className="relative mt-9 sm:mt-12">
+        {/* Dense horizontal carousel — manual scroll (no auto-advance), with
+            both ends fading off. Scales to any number of events. */}
+        <div className="relative mt-4 pb-10 sm:mt-6 sm:pb-14">
           <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-6 px-6 pb-4 [scrollbar-width:none] lg:px-[max(1.5rem,calc((100vw-1200px)/2))] [&::-webkit-scrollbar]:hidden">
             {UG_EVENTS.map((e, i) => (
               <Reveal
@@ -825,7 +848,11 @@ export default function UGPage() {
           </div>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-paper to-transparent"
+            className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-paper to-transparent sm:w-20"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-paper to-transparent sm:w-20"
           />
         </div>
       </section>
@@ -947,14 +974,12 @@ export default function UGPage() {
               <Chip>Student Life &amp; Campus</Chip>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)]">
-                Student life
+              <h2 className="display balance mt-5 text-[clamp(1.7rem,4.2vw,3rem)]">
+                Student life{" "}
+                <span className="serif-em text-crimson">
+                  is more than just lectures
+                </span>
               </h2>
-            </Reveal>
-            <Reveal delay={110}>
-              <p className="mt-1 font-serif text-[clamp(1.2rem,2.8vw,1.9rem)] leading-snug text-crimson">
-                is more than just lectures
-              </p>
             </Reveal>
             <Reveal delay={150}>
               <p className="mt-5 text-[1rem] leading-relaxed text-ink-2">
@@ -965,13 +990,13 @@ export default function UGPage() {
 
           {/* Single-row carousel — fixed height, natural widths, so every
               frame shows in full. Fades out at both ends. */}
-          <div className="marquee-mask mt-10 overflow-hidden sm:mt-14">
+          <div className="marquee-mask mt-8 overflow-hidden sm:mt-10">
             <div className="flex w-max gap-3 animate-marquee hover:[animation-play-state:paused]">
               {[...LIFE_IMAGES, ...CAMPUS_IMAGES, ...LIFE_IMAGES, ...CAMPUS_IMAGES].map(
                 (img, i) => (
                   <figure
                     key={`${img.src}-${i}`}
-                    className="relative h-[230px] shrink-0 overflow-hidden rounded-[3px] ring-1 ring-ink/10 sm:h-[300px]"
+                    className="relative h-[136px] shrink-0 overflow-hidden rounded-[3px] ring-1 ring-ink/10 sm:h-[176px] lg:h-[196px]"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -1025,12 +1050,12 @@ export default function UGPage() {
           <Reveal>
             <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
               <span className="h-px w-8 bg-lime" />
-              <span className="text-lime">The first-year cohort, at work</span>
+              <span className="text-lime">Our students, at work</span>
             </p>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="display balance mt-5 text-[clamp(1.9rem,4.6vw,3.4rem)] text-white">
-              These are our first-year{" "}
+              These are our{" "}
               <span className="serif-em text-crimson">students</span>.
             </h2>
           </Reveal>
@@ -1074,28 +1099,29 @@ export default function UGPage() {
             </Reveal>
           </div>
 
-          <div className="mt-9 grid gap-5 sm:mt-14 md:grid-cols-3">
-            {FACULTY.map((f, i) => (
-              <Reveal
-                key={f.name}
-                delay={i * 90}
-                className={`flex flex-col ${CARD_LIGHT}`}
-              >
-                <AccentRule />
-                <div className="overflow-hidden bg-ink">
-                  <Plate src={f.img} alt={f.name} />
-                </div>
-                <div className="p-6 sm:p-7">
-                  <h3 className="font-serif text-xl leading-tight">{f.name}</h3>
-                  <p className="mt-1 text-[0.78rem] font-semibold uppercase tracking-[0.12em] text-crimson">
-                    {f.role}
-                  </p>
-                  <p className="mt-4 text-[0.9rem] leading-relaxed text-ink-2">
-                    {f.d}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="marquee-mask mt-8 overflow-hidden sm:mt-12">
+            <div className="flex w-max items-stretch gap-5 animate-marquee hover:[animation-play-state:paused]">
+              {[...FACULTY, ...FACULTY].map((f, i) => (
+                <article
+                  key={`${f.name}-${i}`}
+                  className={`flex w-[288px] shrink-0 flex-col sm:w-[320px] ${CARD_LIGHT}`}
+                >
+                  <AccentRule />
+                  <div className="overflow-hidden bg-ink">
+                    <Plate src={f.img} alt={f.name} />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-serif text-lg leading-tight">{f.name}</h3>
+                    <p className="mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-crimson">
+                      {f.role}
+                    </p>
+                    <p className="mt-3 text-[0.86rem] leading-relaxed text-ink-2">
+                      {f.d}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
 
           <Reveal className="mt-9 text-center">
@@ -1117,96 +1143,87 @@ export default function UGPage() {
         <div className="shell py-12 sm:py-16 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <h2 className="display balance text-[clamp(2rem,5vw,3.6rem)] text-white">
-                Learn by doing
+              <h2 className="display balance text-[clamp(1.8rem,4.4vw,3.2rem)] text-white">
+                Learn by doing —{" "}
+                <span className="serif-em">not just by sitting in lectures</span>
               </h2>
-            </Reveal>
-            <Reveal delay={80}>
-              <p className="mt-2 font-serif text-[clamp(1.1rem,2.6vw,1.7rem)] leading-snug text-white/85">
-                Not just by sitting in lectures
-              </p>
             </Reveal>
           </div>
 
-          <div className="mt-9 space-y-5 sm:mt-14">
-            {[0, 1, 2].map((row) => (
-              <div
-                key={row}
-                className={`grid gap-5 ${
-                  row === 1
-                    ? "lg:grid-cols-[1fr_1.2fr]"
-                    : "lg:grid-cols-[1.2fr_1fr]"
-                } md:grid-cols-2`}
+          <div className="mt-8 grid items-stretch gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {LEARN.map((e, i) => (
+              <Reveal
+                key={e.title}
+                delay={(i % 3) * 80}
+                className={`flex flex-col ${CARD_LIGHT}`}
               >
-                {LEARN.slice(row * 2, row * 2 + 2).map((e, i) => (
-                  <Reveal
-                    key={e.title}
-                    delay={i * 80}
-                    className={`flex flex-col justify-between p-6 sm:p-7 ${CARD_LIGHT}`}
-                  >
-                    <AccentRule />
-                    <div>
-                      <Chip>{e.badge}</Chip>
-                      <h3 className="mt-4 font-serif text-lg leading-tight text-ink sm:text-xl">
-                        {e.title}
-                      </h3>
-                      <p className="mt-2.5 text-[0.88rem] leading-relaxed text-ink-2">
-                        {e.d}
+                <AccentRule />
+                {/* Uniform frame so every card in the row matches. */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={e.img}
+                    alt={e.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <Chip>{e.badge}</Chip>
+                  <h3 className="mt-3 font-serif text-[1.02rem] leading-tight text-ink">
+                    {e.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-[0.84rem] leading-relaxed text-ink-2">
+                    {e.d}
+                  </p>
+                  {(e.people || e.logos) && (
+                    <div className="mt-4 border-t border-line pt-3">
+                      <p className="text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-muted">
+                        {e.metaLabel}
                       </p>
-                    </div>
-                    <div className="mt-6">
-                      <div className="overflow-hidden rounded-[3px] bg-ink">
-                        <Plate src={e.img} alt={e.title} />
-                      </div>
-                      {(e.people || e.logos) && (
-                        <>
-                          <p className="mt-5 text-center text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-muted">
-                            {e.metaLabel}
-                          </p>
-                          {e.people && (
-                            <div className="mt-3 grid grid-cols-2 gap-3">
-                              {e.people.map((m) => (
-                                <div
-                                  key={m.name}
-                                  className="flex items-center gap-3 rounded-[3px] border border-line p-2"
-                                >
-                                  <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-paper-2">
-                                    <Image
-                                      src={m.src}
-                                      alt={m.name}
-                                      fill
-                                      loading="lazy"
-                                      sizes="40px"
-                                      className="object-cover"
-                                    />
-                                  </span>
-                                  <span className="text-[0.76rem] font-medium leading-tight text-ink">
-                                    {m.name}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {e.logos && (
-                            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-                              {e.logos.map((l) => (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                  key={l.name}
-                                  src={l.src}
-                                  alt={l.name}
-                                  title={l.name}
-                                  className="h-10 w-auto max-w-[92px] object-contain"
+                      {e.people && (
+                        <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-2">
+                          {e.people.map((m) => (
+                            <span
+                              key={m.name}
+                              className="flex items-center gap-2"
+                            >
+                              <span className="relative h-7 w-7 shrink-0 overflow-hidden rounded-full bg-paper-2">
+                                <Image
+                                  src={m.src}
+                                  alt={m.name}
+                                  fill
+                                  loading="lazy"
+                                  sizes="28px"
+                                  className="object-cover"
                                 />
-                              ))}
-                            </div>
-                          )}
-                        </>
+                              </span>
+                              <span className="text-[0.72rem] font-medium text-ink">
+                                {m.name}
+                              </span>
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      {e.logos && (
+                        <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-2">
+                          {e.logos.map((l) => (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              key={l.name}
+                              src={l.src}
+                              alt={l.name}
+                              title={l.name}
+                              className="h-7 w-auto max-w-[68px] object-contain"
+                            />
+                          ))}
+                        </div>
                       )}
                     </div>
-                  </Reveal>
-                ))}
-              </div>
+                  )}
+                </div>
+              </Reveal>
             ))}
           </div>
 
@@ -1229,14 +1246,12 @@ export default function UGPage() {
         <div className="shell py-12 sm:py-16 lg:py-24">
           <div className="mx-auto max-w-2xl text-center">
             <Reveal>
-              <h2 className="display balance text-[clamp(2rem,5vw,3.6rem)]">
-                Career Prospects
+              <h2 className="display balance text-[clamp(1.8rem,4.4vw,3.2rem)]">
+                Career Prospects —{" "}
+                <span className="serif-em text-crimson">
+                  our exclusive network of 75+ companies
+                </span>
               </h2>
-            </Reveal>
-            <Reveal delay={80}>
-              <p className="mt-2 font-serif text-[clamp(1.1rem,2.6vw,1.7rem)] leading-snug text-crimson">
-                Our exclusive network of 75+ companies
-              </p>
             </Reveal>
           </div>
 
@@ -1272,33 +1287,45 @@ export default function UGPage() {
             ))}
           </div>
 
-          <div className="mt-9 grid items-start gap-5 md:grid-cols-3">
+          {/* On narrow screens these are a flex column, not a grid — a sticky
+              child needs a tall containing block to travel in, and a one-column
+              grid gives each card a row exactly its own height (no travel).
+              From md they sit side by side and sticky is switched off. */}
+          <div className="mt-9 flex flex-col gap-5 md:grid md:grid-cols-3 md:items-start">
             {PATHWAYS.map((p, i) => (
               <Reveal
                 key={p.title}
                 delay={i * 80}
-                className={`flex flex-col ${CARD_DARK}`}
+                style={{ top: `calc(6rem + ${i * 0.9}rem)` }}
+                className={`sticky flex flex-col md:static ${CARD_DARK}`}
               >
                 <AccentRule lime />
-                <div className="overflow-hidden bg-black/40">
-                  <Plate src={p.img} alt={p.title} />
+                <div className="relative aspect-[2/1] overflow-hidden bg-black/40 sm:aspect-[16/9]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-lime">
+                <div className="flex flex-1 flex-col p-5">
+                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-lime">
                     {p.meta}
                   </span>
-                  <h3 className="mt-3 font-serif text-lg leading-tight text-white sm:text-xl">
+                  <h3 className="mt-2 font-serif text-[1.02rem] leading-tight text-white">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-[0.89rem] leading-relaxed text-white/60">
+                  <p className="mt-2 text-[0.84rem] leading-relaxed text-white/60">
                     {p.lede}
                   </p>
                   {p.points && (
-                    <ol className="mt-4 space-y-2">
+                    <ol className="mt-3 space-y-1.5">
                       {p.points.map((pt, n) => (
                         <li
                           key={pt}
-                          className="flex gap-3 text-[0.87rem] leading-relaxed text-white/70"
+                          className="flex gap-3 text-[0.82rem] leading-relaxed text-white/70"
                         >
                           <span className="shrink-0 text-[0.74rem] font-semibold tabular-nums text-lime">
                             {String(n + 1).padStart(2, "0")}
@@ -1309,7 +1336,7 @@ export default function UGPage() {
                     </ol>
                   )}
                   {p.foot && (
-                    <p className="mt-4 border-t border-white/10 pt-4 text-[0.87rem] leading-relaxed text-white/50">
+                    <p className="mt-3 border-t border-white/10 pt-3 text-[0.82rem] leading-relaxed text-white/50">
                       {p.foot}
                     </p>
                   )}
@@ -1463,18 +1490,27 @@ export default function UGPage() {
         </div>
       </section>
 
-      {/* ============ UG FOUNDING BATCH (dark) ============ */}
-      <section className={`${DEEP} ${ANCHOR} text-white`} id="founding-batch">
+      {/* ============ UG BATCHES (dark) ============ */}
+      <section className={`${DEEP} ${ANCHOR} text-white`} id="batches">
         <div className="shell py-12 sm:py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-4">
               <Reveal>
                 <h2 className="display balance text-[clamp(1.9rem,4.6vw,3.2rem)] text-white">
-                  UG <span className="serif-em text-crimson">Founding Batch</span>
+                  UG <span className="serif-em text-crimson">Batches</span>
                 </h2>
               </Reveal>
               <Reveal delay={60}>
-                <p className="mt-2 font-serif text-xl text-white/45">(25&ndash;28)</p>
+                <p className="mt-2 font-serif text-xl text-white/45">
+                  2025&ndash;28 &amp; 2026&ndash;29
+                </p>
+              </Reveal>
+              <Reveal delay={100}>
+                <p className="mt-5 text-[0.95rem] leading-relaxed text-white/60">
+                  Two cohorts are on campus today — the 2025&ndash;28 batch, now in
+                  their second year, and the 2026&ndash;29 batch, who joined this
+                  July. The {BATCH.cohort} will be the third.
+                </p>
               </Reveal>
               <Reveal delay={140} className="mt-7">
                 <a
@@ -1487,17 +1523,23 @@ export default function UGPage() {
               </Reveal>
             </div>
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-3 items-start gap-3">
-                {["founding-1", "founding-2", "founding-3"].map((s, i) => (
+              <div className="flex snap-x snap-mandatory items-start gap-3 overflow-x-auto pb-3 [scrollbar-width:none] sm:grid sm:grid-cols-3 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+                {BATCH_FILMS.map((v, i) => (
                   <Reveal
-                    key={s}
+                    key={v.src}
                     delay={i * 80}
-                    className="overflow-hidden rounded-[3px] border border-white/10 bg-[#0e0e11]"
+                    className="w-[74%] shrink-0 snap-start overflow-hidden rounded-[3px] border border-white/10 bg-[#0e0e11] sm:w-auto"
                   >
-                    <Plate
-                      src={`/images/ug/${s}.jpg`}
-                      alt="NEXIS UG founding batch student"
-                    />
+                    <video
+                      controls
+                      playsInline
+                      preload="none"
+                      poster={v.poster}
+                      aria-label={v.label}
+                      className="block h-auto w-full"
+                    >
+                      <source src={v.src} type="video/mp4" />
+                    </video>
                   </Reveal>
                 ))}
               </div>

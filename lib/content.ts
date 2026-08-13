@@ -67,6 +67,55 @@ export const UG_EVENTS: UgEvent[] = [
     href: "/ug/admission-enquiry",
     cta: "Apply now",
   },
+
+  /* ---- PLACEHOLDER ENTRIES ----------------------------------------------
+     Dummy events so the carousel can be reviewed with a realistic count.
+     Titles and dates are invented — replace or delete before going live. */
+  {
+    tag: "Masterclass",
+    date: "Sat, 20 Sep · 11:00 AM",
+    t: "Masterclass: Building a D2C Brand",
+    d: "A working session with a founder on positioning, pricing and the first thousand customers.",
+    img: "/images/campus/tour7.jpg",
+    href: "/events",
+    cta: "Save your seat",
+  },
+  {
+    tag: "Showcase",
+    date: "Fri, 3 Oct · 4:00 PM",
+    t: "OUTCLASS Demo Day",
+    d: "Students present the local businesses they consulted, and the revenue their work moved.",
+    img: "/images/campus/tour8.jpg",
+    href: "/events",
+    cta: "Register now",
+  },
+  {
+    tag: "Scholarship",
+    date: "Sun, 12 Oct · 10:00 AM",
+    t: "NEXGen Scholarship Test",
+    d: "The on-campus test that decides merit scholarships, worth 10% to 100% of tuition.",
+    img: "/images/campus/life-at-nexis.jpg",
+    href: "/ug/admission-enquiry",
+    cta: "Apply now",
+  },
+  {
+    tag: "Open house",
+    date: "Sat, 25 Oct · 11:00 AM",
+    t: "Parents' Open House",
+    d: "Walk the campus, meet the faculty and get the fee, financing and outcomes picture in one sitting.",
+    img: "/images/campus/legacy-hall.jpg",
+    href: "/ug/book-campus-tour",
+    cta: "Reserve a place",
+  },
+  {
+    tag: "Competition",
+    date: "Sat, 8 Nov · 9:00 AM",
+    t: "Startup Weekend @ NEXIS",
+    d: "Forty-eight hours from idea to pitch, judged by founders and investors from the network.",
+    img: "/images/campus/safe-future.jpg",
+    href: "/events",
+    cta: "Join the cohort",
+  },
 ];
 
 /* In-page section rail on /ug — mirrors the tab strip on nexisschool.com/ug. */
@@ -76,7 +125,7 @@ export const UG_SECTIONS = [
   { label: "Admissions & Fees", href: "#admissions" },
   { label: "Career Outcome", href: "#careers" },
   { label: "Student Life", href: "#student-life" },
-  { label: "Founding batch", href: "#founding-batch" },
+  { label: "Our batches", href: "#batches" },
   { label: "FAQs", href: "#faqs" },
 ];
 
@@ -330,6 +379,16 @@ export const FACULTY = [
     img: "/images/ug/mentor-naveen.jpg",
     d: "Director of HOC & Global Optics — turning vision into success since 1989, trusted by 1M+ customers.",
   },
+
+  /* ---- PLACEHOLDER ENTRIES ----------------------------------------------
+     Slots so the mentor carousel can be reviewed at a realistic length.
+     These are NOT real people — swap in each mentor's photo, name, role and
+     one-line credential, or delete, before this goes live. */
+  { name: "Mentor 04", role: "Finance Expert", img: "/images/ug/mentor-sharad.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
+  { name: "Mentor 05", role: "Operations Expert", img: "/images/ug/mentor-neeraj.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
+  { name: "Mentor 06", role: "Product Expert", img: "/images/ug/mentor-naveen.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
+  { name: "Mentor 07", role: "Growth Expert", img: "/images/ug/mentor-sharad.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
+  { name: "Mentor 08", role: "People & Culture", img: "/images/ug/mentor-neeraj.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
 ];
 
 /* Government / accreditation marks — white logos, shown on a dark strip. */
