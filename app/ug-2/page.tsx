@@ -596,7 +596,7 @@ function HighlightCard({
 
 export default function UGPage() {
   return (
-    <main className="relative font-poppins ug-poppins">
+    <main className="relative font-poppins ug-poppins ug-serif">
       <SiteNav applyHref="#apply" theme="dark" />
 
       {/* ============ HERO — full-bleed media, centred content ============ */}

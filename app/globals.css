@@ -262,6 +262,30 @@
   font-weight: 600;
 }
 
+/* ------------------------------------------------------------
+   /ug-2 opts the main headings back into Fraunces while keeping
+   Poppins for body copy and UI. Equal specificity to the
+   .ug-poppins rules above, so it must stay after them to win.
+   `.serif-em` is included because it sits inside those headings —
+   leaving it on Poppins would split a single headline across two
+   typefaces. Card titles (.font-serif) stay Poppins.
+   ------------------------------------------------------------ */
+.ug-serif .display,
+.ug-serif .serif-em {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+.ug-serif .display {
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.018em;
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+}
+.ug-serif .serif-em {
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 6;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .reveal {
