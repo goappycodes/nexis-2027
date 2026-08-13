@@ -118,6 +118,195 @@ export const UG_EVENTS: UgEvent[] = [
   },
 ];
 
+/* The full three-year syllabus, as published on nexisschool.com/ug/curriculum.
+   Rendered by <CurriculumJourney /> as a year selector plus subject cards. */
+export type CurriculumBlock = {
+  title: string;
+  tag: string;
+  items?: string[];
+  entries?: { t: string; d: string }[];
+  wide?: boolean;
+};
+
+export type CurriculumYear = {
+  n: string;
+  year: string;
+  lede: string;
+  theme: string;
+  blocks: CurriculumBlock[];
+};
+
+export const UG_CURRICULUM: CurriculumYear[] = [
+  {
+    n: "01",
+    year: "Year 1",
+    lede: "Build your basics",
+    theme: "Digital Sales & Marketing",
+    blocks: [
+      {
+        title: "Core course",
+        tag: "In-campus",
+        items: [
+          "Marketing 101",
+          "Fundamentals of Accounting",
+          "Foundation of HRM",
+          "Business Economics (Micro & Macro)",
+          "Business Strategy and Decision Making",
+          "Corporate Accounting",
+        ],
+      },
+      {
+        title: "Everyday course",
+        tag: "In-campus",
+        items: [
+          "AI in Business",
+          "Art of Communication",
+          "Navigating the Digital World",
+          "Financial Markets Fundamentals",
+        ],
+      },
+      {
+        title: "Focus workshops",
+        tag: "In-campus",
+        items: [
+          "Visual Storytelling with Canva",
+          "LinkedIn for Growth",
+          "Project Management",
+          "Building Your Own Website",
+          "The Personal Finance Playbook: Money Smart",
+        ],
+      },
+      {
+        title: "Experiential projects",
+        tag: "OUTCLASS",
+        wide: true,
+        entries: [
+          {
+            t: "Local Business Consulting",
+            d: "Work closely with local cafés, dealerships and small businesses. Understand their challenges, come up with creative ideas, and help them boost their strategy, sales and growth — all while learning how real businesses work.",
+          },
+          {
+            t: "Dropshipping Challenge",
+            d: "Choose a product, set up your own online store, and experience what it takes to build a business from scratch — from designing your website to making your first sale.",
+          },
+          {
+            t: "AIvolution",
+            d: "Identify one real problem in the world or in a business and build a working AI product around it. From idea to prototype, you create something that actually solves a pain point and can be tested and improved.",
+          },
+          {
+            t: "Professional Internship Experience",
+            d: "A full-time, hands-on internship inside a startup, local business or corporate team. You work like an actual team member, take ownership of tasks, and understand how real companies run.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    n: "02",
+    year: "Year 2",
+    lede: "Get your hands dirty with experience",
+    theme: "Business Analytics",
+    blocks: [
+      {
+        title: "Core course",
+        tag: "In-campus",
+        items: [
+          "Sales and Advanced Marketing (GTM)",
+          "Corporate Finance",
+          "Data Analytics (Excel, BI)",
+          "Entrepreneurship",
+          "Digital Marketing and E-commerce",
+          "Product Management",
+        ],
+      },
+      {
+        title: "Everyday course",
+        tag: "In-campus",
+        items: [
+          "Design and No-Code",
+          "Quantitative Techniques in Business",
+          "International Business: Imports and Exports",
+        ],
+      },
+      {
+        title: "Focus workshops",
+        tag: "In-campus",
+        items: [
+          "Resume and Interview Prep",
+          "The Art of Negotiation",
+          "Sustainability and CSR",
+        ],
+      },
+      {
+        title: "Experiential projects",
+        tag: "OUTCLASS",
+        wide: true,
+        entries: [
+          {
+            t: "Creator Challenge",
+            d: "Learn marketing by building your personal brand. Create content and grow your audience on your chosen platform.",
+          },
+          {
+            t: "The 10L Investment Challenge",
+            d: "Learn finance by managing a virtual portfolio invested in live markets. Master personal finance while you are still a student.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    n: "03",
+    year: "Year 3",
+    lede: "Craft your journey",
+    theme: "Entrepreneurship",
+    blocks: [
+      {
+        title: "Core course",
+        tag: "In-campus",
+        items: [
+          "Strategic Brand Management",
+          "Growth Hacking",
+          "Advanced Taxation",
+          "Advertising & Sales Promotion",
+        ],
+      },
+      {
+        title: "Everyday course",
+        tag: "In-campus",
+        items: [
+          "Financial Modelling",
+          "Business Automation & Systems",
+          "Understanding Computer Behaviour and Lifecycle",
+        ],
+      },
+      {
+        title: "Focus workshops",
+        tag: "In-campus",
+        items: ["Career Bootcamp (resume, case study, interview preparation)"],
+      },
+      {
+        title: "Six months in the field",
+        tag: "OUTCLASS",
+        wide: true,
+        entries: [
+          {
+            t: "6-month Professional Internship",
+            d: "A real taste of the corporate world with a startup, SME or large company — applying what you have learned on live projects, seeing how businesses actually run, and building your confidence and network.",
+          },
+          {
+            t: "Career Bootcamp & Placement Drive",
+            d: "Sessions on resume building, interviews and communication, then meeting recruiters directly through our placement drives.",
+          },
+          {
+            t: "Build Your Own Business (NEXIS Startup Lab)",
+            d: "Turn your idea into a real venture — from product development to pitching your startup to mentors and investors.",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 /* In-page section rail on /ug — mirrors the tab strip on nexisschool.com/ug. */
 export const UG_SECTIONS = [
   { label: "Highlights", href: "#highlights" },
