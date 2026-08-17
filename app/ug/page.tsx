@@ -64,21 +64,39 @@ const INTERN_POINTS = [
   "Gain hands-on experience across marketing, finance, operations and more",
 ];
 
-const CURRICULUM = [
+/* Sets NEXIS against the conventional route after Class XII, one dimension at a
+   time. Deliberately factual — the contrast does the persuading, and the
+   category is implied rather than claimed. */
+const DIFFERENCE = [
   {
-    year: "Year 01",
-    title: "Digital Sales & Marketing",
-    lede: "Build your foundations — learn to build an audience and sell, the core skill of every modern business.",
+    dim: "Who teaches you",
+    usual: "Career academics, working through a syllabus set years ago.",
+    nexis:
+      "50+ founders and CXOs from boAt, Snitch, Lenskart, State Plate and Zomato — teaching the work they do every day.",
   },
   {
-    year: "Year 02",
-    title: "Business Analytics",
-    lede: "Deepen your edge — turn data into decisions with dashboards, AI tools and real client work.",
+    dim: "When the real work starts",
+    usual: "After you finish. The first job is the first time it counts.",
+    nexis:
+      "Semester one. Our students have already consulted 5+ local businesses and built 4 D2C brands from scratch.",
   },
   {
-    year: "Year 03",
-    title: "Entrepreneurship",
-    lede: "Take the entrepreneur's seat — build, pitch and run a venture of your own.",
+    dim: "What you are measured on",
+    usual: "Attendance, internals and a paper at the end of the year.",
+    nexis:
+      "Work that ships — client outcomes, launched stores, live campaigns and the revenue they bring in.",
+  },
+  {
+    dim: "Time in the field",
+    usual: "One internship in the final year, and you find it yourself.",
+    nexis:
+      "Internships from the first year across 75+ recruiting partners, plus six months full-time in the field.",
+  },
+  {
+    dim: "What you leave with",
+    usual: "A qualification, and a portfolio you still have to start.",
+    nexis:
+      "A recognised qualification, three years of real work behind you, and a network of founders who know your name.",
   },
 ];
 
@@ -871,6 +889,75 @@ export default function UGPage() {
         </div>
       </nav>
 
+      {/* ============ THE DIFFERENCE — the ledger that opens the page ============ */}
+      <section className={`bg-ink ${ANCHOR} text-white`} id="why">
+        <div className="shell py-12 sm:py-16 lg:py-20">
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
+                <span className="h-px w-8 bg-lime" />
+                <span className="text-lime">Side by side</span>
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <h2 className="display balance mt-5 text-[clamp(1.8rem,4.4vw,3.1rem)] text-white">
+                What makes NEXIS different from{" "}
+                <span className="serif-em text-crimson">
+                  traditional colleges
+                </span>
+              </h2>
+            </Reveal>
+          </div>
+
+          {/* Column captions — the row labels carry them on narrow screens */}
+          <div className="mt-10 hidden gap-x-8 md:grid md:grid-cols-12">
+            <span className="md:col-span-3" />
+            <span className="text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-white/30 md:col-span-4">
+              Traditional colleges
+            </span>
+            <span className="text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-crimson md:col-span-5">
+              At NEXIS
+            </span>
+          </div>
+
+          <div className="mt-4 md:mt-3">
+            {DIFFERENCE.map((d, i) => (
+              <Reveal
+                key={d.dim}
+                delay={Math.min(i, 4) * 60}
+                className="grid gap-x-8 gap-y-3 border-t border-white/10 py-6 md:grid-cols-12 md:py-7"
+              >
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-lime md:col-span-3">
+                  {d.dim}
+                </p>
+                <div className="md:col-span-4">
+                  <p className="text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-white/30 md:hidden">
+                    Traditional colleges
+                  </p>
+                  <p className="mt-1.5 text-[0.9rem] leading-relaxed text-white/40 md:mt-0">
+                    {d.usual}
+                  </p>
+                </div>
+                <div className="md:col-span-5 md:border-l md:border-white/10 md:pl-8">
+                  <p className="text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-crimson md:hidden">
+                    At NEXIS
+                  </p>
+                  <p className="mt-1.5 text-[0.95rem] leading-relaxed text-white md:mt-0">
+                    {d.nexis}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="border-t border-white/10 pt-7">
+            <p className="max-w-2xl font-serif text-[1.05rem] leading-relaxed text-white/75 sm:text-[1.2rem]">
+              Three years. Six semesters. In the field from the first one.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ============ HIGHLIGHTS — faculty / curriculum / internships ============ */}
       <section className={`${DEEP} ${ANCHOR} text-white`} id="curriculum">
         <div className="shell space-y-10 py-12 sm:space-y-14 sm:py-16 lg:py-24">
@@ -915,31 +1002,7 @@ export default function UGPage() {
             ctaHref={REPORTS.outclass}
           />
 
-          {/* The three years, at a glance */}
-          <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
-            {CURRICULUM.map((c, i) => (
-              <Reveal
-                key={c.year}
-                delay={i * 90}
-                className="flex flex-col rounded-[3px] border border-white/10 bg-[#0e0e11] p-6 sm:p-8"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-lime">
-                    {c.year}
-                  </span>
-                  <span className="h-px flex-1 bg-white/10" />
-                </div>
-                <h3 className="mt-5 font-serif text-xl leading-tight sm:text-2xl">
-                  {c.title}
-                </h3>
-                <p className="mt-3 text-[0.92rem] leading-relaxed text-white/60">
-                  {c.lede}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* The full syllabus, year by year */}
+          {/* The full syllabus, semester by semester */}
           <div className="pt-2">
             <Reveal className="mb-7 max-w-2xl">
               <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
@@ -947,13 +1010,11 @@ export default function UGPage() {
                 <span className="text-lime">The full syllabus</span>
               </p>
               <h3 className="display balance mt-4 text-[clamp(1.5rem,3.4vw,2.4rem)] text-white">
-                Every course, workshop and project —{" "}
-                <span className="serif-em text-crimson">year by year</span>
+                Every course, project and tool —{" "}
+                <span className="serif-em text-crimson">semester by semester</span>
               </h3>
             </Reveal>
-            <Reveal delay={80}>
-              <CurriculumJourney />
-            </Reveal>
+            <CurriculumJourney />
           </div>
 
           <HighlightCard

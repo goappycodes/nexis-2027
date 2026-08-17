@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces, Poppins } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,7 +58,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="grain">{children}</body>
+      <body className="grain">
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

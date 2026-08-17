@@ -118,14 +118,58 @@ export const UG_EVENTS: UgEvent[] = [
   },
 ];
 
+/* Tools students actually work in, listed per semester. No vendor logo files
+   ship with the repo, so each mark renders as a monogram tile in the brand's
+   own type; drop a file at /images/tools/<key>.svg and set `src` here and the
+   real logo is used instead — nothing else changes. */
+export type ToolMark = { name: string; mark: string; src?: string };
+
+export const TOOL_MARKS: Record<string, ToolMark> = {
+  canva: { name: "Canva", mark: "Cv" },
+  chatgpt: { name: "ChatGPT", mark: "AI" },
+  linkedin: { name: "LinkedIn", mark: "in" },
+  sheets: { name: "Google Sheets", mark: "Sh" },
+  shopify: { name: "Shopify", mark: "Sp" },
+  meta: { name: "Meta Ads", mark: "M" },
+  wordpress: { name: "WordPress", mark: "W" },
+  notion: { name: "Notion", mark: "N" },
+  tally: { name: "Tally", mark: "T" },
+  tradingview: { name: "TradingView", mark: "TV" },
+  zapier: { name: "Zapier", mark: "Z" },
+  googleads: { name: "Google Ads", mark: "Ads" },
+  figma: { name: "Figma", mark: "Fg" },
+  framer: { name: "Framer", mark: "Fr" },
+  hubspot: { name: "HubSpot", mark: "Hs" },
+  excel: { name: "Excel", mark: "X" },
+  powerbi: { name: "Power BI", mark: "BI" },
+  sql: { name: "SQL", mark: "SQL" },
+  ga4: { name: "Google Analytics", mark: "GA" },
+  jira: { name: "Jira", mark: "Jr" },
+  semrush: { name: "Semrush", mark: "Se" },
+  mailchimp: { name: "Mailchimp", mark: "Mc" },
+  slack: { name: "Slack", mark: "Sl" },
+};
+
 /* The full three-year syllabus, as published on nexisschool.com/ug/curriculum.
-   Rendered by <CurriculumJourney /> as a year selector plus subject cards. */
+   Each year runs two semesters; every semester carries what happens in class,
+   what happens out of it, and the tools it is taught on. Rendered by
+   <CurriculumJourney /> as a sticky year rail beside scrolling semesters. */
 export type CurriculumBlock = {
   title: string;
-  tag: string;
-  items?: string[];
-  entries?: { t: string; d: string }[];
-  wide?: boolean;
+  items: string[];
+};
+
+export type CurriculumProject = { t: string; d: string };
+
+export type CurriculumSemester = {
+  /** 1–6, continuous across the three years. */
+  n: number;
+  label: string;
+  focus: string;
+  inClass: CurriculumBlock[];
+  outClass: CurriculumProject[];
+  /** Keys into TOOL_MARKS. */
+  tools: string[];
 };
 
 export type CurriculumYear = {
@@ -133,7 +177,7 @@ export type CurriculumYear = {
   year: string;
   lede: string;
   theme: string;
-  blocks: CurriculumBlock[];
+  semesters: CurriculumSemester[];
 };
 
 export const UG_CURRICULUM: CurriculumYear[] = [
@@ -142,45 +186,30 @@ export const UG_CURRICULUM: CurriculumYear[] = [
     year: "Year 1",
     lede: "Build your basics",
     theme: "Digital Sales & Marketing",
-    blocks: [
+    semesters: [
       {
-        title: "Core course",
-        tag: "In-campus",
-        items: [
-          "Marketing 101",
-          "Fundamentals of Accounting",
-          "Foundation of HRM",
-          "Business Economics (Micro & Macro)",
-          "Business Strategy and Decision Making",
-          "Corporate Accounting",
+        n: 1,
+        label: "Semester 1",
+        focus: "Foundations — and your first paying customer.",
+        inClass: [
+          {
+            title: "Core course",
+            items: [
+              "Marketing 101",
+              "Fundamentals of Accounting",
+              "Foundation of HRM",
+            ],
+          },
+          {
+            title: "Everyday course",
+            items: ["AI in Business", "Art of Communication"],
+          },
+          {
+            title: "Focus workshops",
+            items: ["Visual Storytelling with Canva", "LinkedIn for Growth"],
+          },
         ],
-      },
-      {
-        title: "Everyday course",
-        tag: "In-campus",
-        items: [
-          "AI in Business",
-          "Art of Communication",
-          "Navigating the Digital World",
-          "Financial Markets Fundamentals",
-        ],
-      },
-      {
-        title: "Focus workshops",
-        tag: "In-campus",
-        items: [
-          "Visual Storytelling with Canva",
-          "LinkedIn for Growth",
-          "Project Management",
-          "Building Your Own Website",
-          "The Personal Finance Playbook: Money Smart",
-        ],
-      },
-      {
-        title: "Experiential projects",
-        tag: "OUTCLASS",
-        wide: true,
-        entries: [
+        outClass: [
           {
             t: "Local Business Consulting",
             d: "Work closely with local cafés, dealerships and small businesses. Understand their challenges, come up with creative ideas, and help them boost their strategy, sales and growth — all while learning how real businesses work.",
@@ -189,6 +218,39 @@ export const UG_CURRICULUM: CurriculumYear[] = [
             t: "Dropshipping Challenge",
             d: "Choose a product, set up your own online store, and experience what it takes to build a business from scratch — from designing your website to making your first sale.",
           },
+        ],
+        tools: ["canva", "linkedin", "chatgpt", "shopify", "sheets", "meta"],
+      },
+      {
+        n: 2,
+        label: "Semester 2",
+        focus: "Systems, strategy and the first internship.",
+        inClass: [
+          {
+            title: "Core course",
+            items: [
+              "Business Economics (Micro & Macro)",
+              "Business Strategy and Decision Making",
+              "Corporate Accounting",
+            ],
+          },
+          {
+            title: "Everyday course",
+            items: [
+              "Navigating the Digital World",
+              "Financial Markets Fundamentals",
+            ],
+          },
+          {
+            title: "Focus workshops",
+            items: [
+              "Project Management",
+              "Building Your Own Website",
+              "The Personal Finance Playbook: Money Smart",
+            ],
+          },
+        ],
+        outClass: [
           {
             t: "AIvolution",
             d: "Identify one real problem in the world or in a business and build a working AI product around it. From idea to prototype, you create something that actually solves a pain point and can be tested and improved.",
@@ -198,6 +260,7 @@ export const UG_CURRICULUM: CurriculumYear[] = [
             d: "A full-time, hands-on internship inside a startup, local business or corporate team. You work like an actual team member, take ownership of tasks, and understand how real companies run.",
           },
         ],
+        tools: ["wordpress", "notion", "tally", "tradingview", "zapier"],
       },
     ],
   },
@@ -206,51 +269,66 @@ export const UG_CURRICULUM: CurriculumYear[] = [
     year: "Year 2",
     lede: "Get your hands dirty with experience",
     theme: "Business Analytics",
-    blocks: [
+    semesters: [
       {
-        title: "Core course",
-        tag: "In-campus",
-        items: [
-          "Sales and Advanced Marketing (GTM)",
-          "Corporate Finance",
-          "Data Analytics (Excel, BI)",
-          "Entrepreneurship",
-          "Digital Marketing and E-commerce",
-          "Product Management",
+        n: 3,
+        label: "Semester 3",
+        focus: "Go to market — and build an audience of your own.",
+        inClass: [
+          {
+            title: "Core course",
+            items: [
+              "Sales and Advanced Marketing (GTM)",
+              "Digital Marketing and E-commerce",
+              "Corporate Finance",
+            ],
+          },
+          {
+            title: "Everyday course",
+            items: ["Design and No-Code", "Quantitative Techniques in Business"],
+          },
+          {
+            title: "Focus workshops",
+            items: ["Resume and Interview Prep"],
+          },
         ],
-      },
-      {
-        title: "Everyday course",
-        tag: "In-campus",
-        items: [
-          "Design and No-Code",
-          "Quantitative Techniques in Business",
-          "International Business: Imports and Exports",
-        ],
-      },
-      {
-        title: "Focus workshops",
-        tag: "In-campus",
-        items: [
-          "Resume and Interview Prep",
-          "The Art of Negotiation",
-          "Sustainability and CSR",
-        ],
-      },
-      {
-        title: "Experiential projects",
-        tag: "OUTCLASS",
-        wide: true,
-        entries: [
+        outClass: [
           {
             t: "Creator Challenge",
             d: "Learn marketing by building your personal brand. Create content and grow your audience on your chosen platform.",
           },
+        ],
+        tools: ["googleads", "meta", "figma", "framer", "hubspot"],
+      },
+      {
+        n: 4,
+        label: "Semester 4",
+        focus: "Turn data into decisions.",
+        inClass: [
+          {
+            title: "Core course",
+            items: [
+              "Data Analytics (Excel, BI)",
+              "Product Management",
+              "Entrepreneurship",
+            ],
+          },
+          {
+            title: "Everyday course",
+            items: ["International Business: Imports and Exports"],
+          },
+          {
+            title: "Focus workshops",
+            items: ["The Art of Negotiation", "Sustainability and CSR"],
+          },
+        ],
+        outClass: [
           {
             t: "The 10L Investment Challenge",
             d: "Learn finance by managing a virtual portfolio invested in live markets. Master personal finance while you are still a student.",
           },
         ],
+        tools: ["excel", "powerbi", "sql", "ga4", "jira"],
       },
     ],
   },
@@ -259,49 +337,67 @@ export const UG_CURRICULUM: CurriculumYear[] = [
     year: "Year 3",
     lede: "Craft your journey",
     theme: "Entrepreneurship",
-    blocks: [
+    semesters: [
       {
-        title: "Core course",
-        tag: "In-campus",
-        items: [
-          "Strategic Brand Management",
-          "Growth Hacking",
-          "Advanced Taxation",
-          "Advertising & Sales Promotion",
-        ],
-      },
-      {
-        title: "Everyday course",
-        tag: "In-campus",
-        items: [
-          "Financial Modelling",
-          "Business Automation & Systems",
-          "Understanding Computer Behaviour and Lifecycle",
-        ],
-      },
-      {
-        title: "Focus workshops",
-        tag: "In-campus",
-        items: ["Career Bootcamp (resume, case study, interview preparation)"],
-      },
-      {
-        title: "Six months in the field",
-        tag: "OUTCLASS",
-        wide: true,
-        entries: [
+        n: 5,
+        label: "Semester 5",
+        focus: "Brand, growth and a venture with your name on it.",
+        inClass: [
           {
-            t: "6-month Professional Internship",
-            d: "A real taste of the corporate world with a startup, SME or large company — applying what you have learned on live projects, seeing how businesses actually run, and building your confidence and network.",
+            title: "Core course",
+            items: [
+              "Strategic Brand Management",
+              "Growth Hacking",
+              "Advertising & Sales Promotion",
+              "Advanced Taxation",
+            ],
+          },
+          {
+            title: "Everyday course",
+            items: [
+              "Financial Modelling",
+              "Business Automation & Systems",
+              "Understanding Computer Behaviour and Lifecycle",
+            ],
+          },
+          {
+            title: "Focus workshops",
+            items: ["Career Bootcamp (resume, case study, interview preparation)"],
+          },
+        ],
+        outClass: [
+          {
+            t: "Build Your Own Business (NEXIS Startup Lab)",
+            d: "Turn your idea into a real venture — from product development to pitching your startup to mentors and investors.",
           },
           {
             t: "Career Bootcamp & Placement Drive",
             d: "Sessions on resume building, interviews and communication, then meeting recruiters directly through our placement drives.",
           },
+        ],
+        tools: ["excel", "semrush", "mailchimp", "zapier", "chatgpt"],
+      },
+      {
+        n: 6,
+        label: "Semester 6",
+        focus: "Six months in the field, working like a team member.",
+        inClass: [
           {
-            t: "Build Your Own Business (NEXIS Startup Lab)",
-            d: "Turn your idea into a real venture — from product development to pitching your startup to mentors and investors.",
+            title: "On the job",
+            items: [
+              "Weekly mentor reviews with faculty and founders",
+              "Live project documentation and reporting",
+              "Placement interviews and offer negotiation",
+            ],
           },
         ],
+        outClass: [
+          {
+            t: "6-month Professional Internship",
+            d: "A real taste of the corporate world with a startup, SME or large company — applying what you have learned on live projects, seeing how businesses actually run, and building your confidence and network.",
+          },
+        ],
+        tools: ["slack", "notion", "jira", "hubspot", "linkedin"],
       },
     ],
   },
@@ -309,6 +405,7 @@ export const UG_CURRICULUM: CurriculumYear[] = [
 
 /* In-page section rail on /ug — mirrors the tab strip on nexisschool.com/ug. */
 export const UG_SECTIONS = [
+  { label: "Why NEXIS", href: "#why" },
   { label: "Highlights", href: "#highlights" },
   { label: "Curriculum & Faculty", href: "#curriculum" },
   { label: "Admissions & Fees", href: "#admissions" },
