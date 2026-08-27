@@ -13,6 +13,7 @@ export default function VideoPlate({
   width,
   height,
   label = "Watch the film",
+  showLabel = true,
 }: {
   poster: string;
   alt: string;
@@ -20,6 +21,8 @@ export default function VideoPlate({
   width: number;
   height: number;
   label?: string;
+  /** Hides the bottom-left label pill while keeping it for a11y/title use. */
+  showLabel?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const close = useCallback(() => setOpen(false), []);
@@ -69,10 +72,12 @@ export default function VideoPlate({
             </svg>
           </span>
         </span>
-        <span className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-black/55 px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-lime" />
-          {label}
-        </span>
+        {showLabel && (
+          <span className="pointer-events-none absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-black/55 px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+            {label}
+          </span>
+        )}
       </button>
 
       {open && (

@@ -286,6 +286,17 @@
   font-variation-settings: "opsz" 144, "SOFT" 6;
 }
 
+/* ------------------------------------------------------------
+   /ug/2027 landing page: headings stay Fraunces (site default via
+   .display/.font-serif), but body copy runs on Poppins instead of
+   Inter. .kicker hardcodes Inter above, so it needs a scoped
+   override here too — everything else picks up Poppins by simply
+   inheriting from the .lp-poppins wrapper on <main>.
+   ------------------------------------------------------------ */
+.lp-poppins .kicker {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .reveal {
