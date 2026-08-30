@@ -71,12 +71,14 @@ const OTHER_COURSES = [
     img: "/images/ug/learn-dropshipping.jpg",
     alt: "NEXIS students selling products at a campus business showcase",
     focus: "Brands · Content · Commerce",
+    description: "Build brands, create campaigns, and grow businesses online.",
   },
   {
     name: "UG in Computer Science and AI",
     img: "/images/ug/learn-ai.jpg",
     alt: "A NEXIS student presenting a software project on campus",
     focus: "Code · Build · Innovate",
+    description: "Turn ideas into software and explore what AI can build.",
   },
 ];
 
@@ -427,6 +429,9 @@ export default function UG2027LandingPage() {
                   <div className="flex flex-1 flex-col items-start p-3 sm:p-6 lg:p-4 xl:p-5">
                     <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
                     <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem] lg:text-[1.35rem]">{c.name}</h3>
+                    <p className="mt-2 hidden text-[0.82rem] leading-relaxed text-ink-2 lg:block">
+                      {c.description}
+                    </p>
                     <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-ink-2 sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
                       Explore program <ArrowUpRight className="shrink-0" />
                     </a>

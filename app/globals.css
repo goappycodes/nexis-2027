@@ -21,6 +21,9 @@
 
   --shell: 1440px;
   --gutter: clamp(20px, 4.5vw, 80px);
+  /* One shared setting for every Fraunces style. A lower optical size keeps
+     finer strokes legible while retaining the character of the display face. */
+  --fraunces-variation: "opsz" 48, "SOFT" 0, "WONK" 1;
 }
 
 @layer base {
@@ -84,6 +87,13 @@
   }
 
   /* ---------- Type ---------- */
+  .display,
+  .serif-em,
+  .font-serif,
+  .section-index {
+    font-variation-settings: var(--fraunces-variation);
+  }
+
   .kicker {
     font-family: var(--font-inter), sans-serif;
     font-size: 0.72rem;
@@ -270,6 +280,7 @@
 .ug-serif .display,
 .ug-serif .serif-em {
   font-family: var(--font-fraunces), Georgia, serif;
+  font-variation-settings: var(--fraunces-variation);
 }
 .ug-serif .display {
   font-weight: 400;
@@ -296,10 +307,8 @@
    Exclude the Poppins-only route, which shares the landing-page markup. */
 @layer components {
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .serif-em, .font-serif, .section-index) {
-    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+    font-variation-settings: var(--fraunces-variation);
     letter-spacing: normal;
-    /* Reinforce fine hairlines without changing the requested display axes. */
-    -webkit-text-stroke: 0.12px currentColor;
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .font-serif, .section-index) {
