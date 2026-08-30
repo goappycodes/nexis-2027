@@ -165,7 +165,7 @@ export default function UG2027LandingPage() {
           </Reveal>
           <Reveal delay={80}>
             <p className="mt-3 max-w-xl font-poppins text-[0.9rem] leading-relaxed text-white/85 sm:text-[1.02rem]">
-              Not your typical management college. {" "}
+              <strong className="font-bold">Not your typical management college.</strong>{" "}
               Full time, hands-on courses at our Siliguri campus where you learn
               by doing, intern from your first year, build your own business, and
               graduate as an Industry-ready fresher.

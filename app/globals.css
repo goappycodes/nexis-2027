@@ -298,10 +298,12 @@
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .serif-em, .font-serif, .section-index) {
     font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
     letter-spacing: normal;
+    /* Reinforce fine hairlines without changing the requested display axes. */
+    -webkit-text-stroke: 0.12px currentColor;
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .font-serif, .section-index) {
-    font-weight: 450;
+    font-weight: 500;
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) .display {
