@@ -379,7 +379,7 @@ export default function UG2027LandingPage() {
             ))}
           </div>
 
-          <div className="mt-10 sm:mt-14">
+          <div className="mt-10 sm:mt-14 lg:mt-8">
             <Reveal>
               <p className="kicker text-muted">Other Undergrad Courses</p>
             </Reveal>
@@ -388,21 +388,21 @@ export default function UG2027LandingPage() {
                 <Reveal
                   key={c.name}
                   delay={80 + i * 80}
-                  className="group flex flex-col overflow-hidden rounded-[4px] border border-line bg-paper-2/40"
+                  className="group flex flex-col overflow-hidden rounded-[4px] border border-line bg-paper-2/40 lg:grid lg:grid-cols-[144px_minmax(0,1fr)] xl:grid-cols-[176px_minmax(0,1fr)]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/9]">
+                  <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/9] lg:aspect-auto lg:min-h-[184px]">
                     <Image
                       src={c.img}
                       alt={c.alt}
                       fill
-                      sizes="(max-width:1440px) 46vw, 640px"
+                      sizes="(max-width:1023px) 46vw, (max-width:1279px) 144px, 176px"
                       className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col items-start p-3 sm:p-6">
+                  <div className="flex flex-1 flex-col items-start p-3 sm:p-6 lg:p-4 xl:p-5">
                     <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
-                    <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem]">{c.name}</h3>
-                    <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-ink-2 sm:gap-2 sm:pt-4 sm:text-[0.82rem]" aria-label={`Enquire about ${c.name}`}>
+                    <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem] lg:text-[1.35rem]">{c.name}</h3>
+                    <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-ink-2 sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
                       Explore program <ArrowUpRight className="shrink-0" />
                     </a>
                   </div>
