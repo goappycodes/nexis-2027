@@ -98,18 +98,15 @@
     font-weight: 400;
     line-height: 0.98;
     letter-spacing: -0.018em;
-    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
   }
 
   .serif-em {
     font-family: var(--font-fraunces), Georgia, serif;
     font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 6;
   }
 
   .section-index {
     font-family: var(--font-fraunces), Georgia, serif;
-    font-variation-settings: "opsz" 40;
     color: rgb(var(--crimson));
     font-size: 0.95rem;
     letter-spacing: 0.04em;
@@ -278,12 +275,10 @@
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.018em;
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
 }
 .ug-serif .serif-em {
   font-weight: 400;
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 6;
 }
 
 /* ------------------------------------------------------------
