@@ -27,9 +27,7 @@ function YearbookImage({ src, index }: { src: string; index: number }) {
 
 type FlipApi = {
   getState: () => string;
-  getBoundsRect: () => { left: number; top: number; width: number; height: number };
   getFlipController: () => {
-    showCorner: (point: { x: number; y: number }) => void;
     stopMove: () => void;
   };
   flipNext: (corner: "bottom") => void;
@@ -71,11 +69,9 @@ export default function YearbookFlipBook({ pages }: { pages: string[] }) {
     const el = wrapRef.current;
     if (!el || !pageWidth || readyWidth !== pageWidth || reducedMotion || pages.length < 2) return;
     let startTimer: ReturnType<typeof setTimeout> | undefined;
-    let returnTimer: ReturnType<typeof setTimeout> | undefined;
     const api = bookRef.current?.pageFlip();
     const cancel = () => {
       clearTimeout(startTimer);
-      clearTimeout(returnTimer);
       if (api?.getState() === "fold_corner") api.getFlipController().stopMove();
     };
     cancelHint.current = cancel;
@@ -86,17 +82,15 @@ export default function YearbookFlipBook({ pages }: { pages: string[] }) {
       }
       if (hinted.current || interacted.current) return;
       startTimer = setTimeout(() => {
-        if (!api || interacted.current || api.getState() !== "read") return;
+        if (!api || interacted.current || hinted.current) return;
+        if (api.getState() === "fold_corner") api.getFlipController().stopMove();
+        if (api.getState() !== "read") return;
         hinted.current = true;
-        const rect = api.getBoundsRect();
-        // Lift the real paper corner, then settle back without changing pages.
-        api.getFlipController().showCorner({
-          x: rect.left + rect.width - 2,
-          y: rect.top + rect.height - 2,
-        });
-        returnTimer = setTimeout(cancel, 1100);
-      }, 450);
-    }, { threshold: 0.45 });
+        // One visible page turn introduces the interaction on scroll. Never
+        // repeat it or interrupt someone who has already started reading.
+        api.flipNext("bottom");
+      }, 600);
+    }, { threshold: 0.35 });
     observer.observe(el);
     return () => {
       cancel();

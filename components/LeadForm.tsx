@@ -70,58 +70,47 @@ export default function LeadForm({
           />
         </Field>
 
-        <Field label="Alternate phone">
+        <Field label="Name of school" required>
           <input
-            name="altPhone"
-            type="tel"
-            autoComplete="tel"
-            placeholder="Optional"
+            name="school"
+            type="text"
+            required
+            autoComplete="organization"
+            placeholder="Your school"
             className={inputCls}
           />
         </Field>
 
-        <Field label="Email" required>
-          <input
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            placeholder="you@email.com"
-            className={inputCls}
-          />
-        </Field>
-
-      </div>
-
-      <Field label="Current grade" required>
-        <div className="relative">
-          <select
-            name="grade"
-            required
-            defaultValue=""
-            className={`${inputCls} appearance-none pr-10`}
-          >
-            <option value="" disabled>
-              Select…
-            </option>
-            {FORM_OPTIONS.grade.map((g) => (
-              <option key={g} value={g}>
-                {g}
+        <Field label="Current grade" required>
+          <div className="relative">
+            <select
+              name="grade"
+              required
+              defaultValue=""
+              className={`${inputCls} appearance-none pr-10`}
+            >
+              <option value="" disabled>
+                Select…
               </option>
-            ))}
-          </select>
-          <svg
-            viewBox="0 0 24 24"
-            className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={1.6}
-            aria-hidden
-          >
-            <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-      </Field>
+              {FORM_OPTIONS.grade.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </select>
+            <svg
+              viewBox="0 0 24 24"
+              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.6}
+              aria-hidden
+            >
+              <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </Field>
+      </div>
 
       <button
         type="submit"

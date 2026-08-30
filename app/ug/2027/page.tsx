@@ -214,6 +214,9 @@ export default function UG2027LandingPage() {
                 ))}
               </div>
               <Reveal delay={280} className="mt-6 grid max-w-lg grid-cols-2 items-center gap-6 border-t border-white/15 pt-5 sm:gap-8 lg:border-line">
+                <p className="col-span-2 font-serif text-xl leading-tight sm:text-2xl">
+                  Our courses are backed by
+                </p>
                 {ACCREDITATION.slice(0, 2).map((mark) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -405,6 +408,9 @@ export default function UG2027LandingPage() {
                       sizes="(max-width:1023px) 46vw, (max-width:1279px) 144px, 176px"
                       className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
                     />
+                    <span className="absolute left-2 top-2 rounded-full bg-crimson px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.08em] text-white shadow-sm sm:left-3 sm:top-3 sm:px-3 sm:text-[0.7rem]">
+                      3 YEARS
+                    </span>
                   </div>
                   <div className="flex flex-1 flex-col items-start p-3 sm:p-6 lg:p-4 xl:p-5">
                     <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
@@ -598,10 +604,6 @@ export default function UG2027LandingPage() {
             </p>
           </Reveal>
           <Reveal delay={120} className="mt-6 flex flex-wrap gap-3">
-            <a href="#enquire" className="btn btn-light">
-              Enquire now
-              <ArrowRight className="arrow" />
-            </a>
             <a
               href={CONTACT.brochureHref}
               className="btn border-white/40 bg-transparent text-white hover:bg-white/10"
