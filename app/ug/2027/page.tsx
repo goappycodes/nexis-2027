@@ -112,7 +112,7 @@ export default function UG2027LandingPage() {
     <main id="top" className="relative font-poppins lp-poppins pb-20 lg:pb-0">
       {/* Urgency strip */}
       <div className="relative z-[60] bg-ink text-paper">
-        <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(10px,3vw,16px)] leading-tight tracking-normal sm:py-2.5">
+        <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(10px,3.2vw,18px)] leading-tight tracking-normal sm:py-2.5">
           <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-crimson sm:h-1.5 sm:w-1.5" />
           <span className="whitespace-nowrap font-semibold opacity-90">
             Early Bird Admissions for 2027 Batch start 1st Dec
@@ -142,7 +142,7 @@ export default function UG2027LandingPage() {
       <div className="lg:bg-ink">
       <div className="lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
       {/* Hero — image band with overlaid statement */}
-      <section className="relative h-[42vh] min-h-[290px] w-full overflow-hidden sm:h-[52vh] lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-h-[580px]">
+      <section className="relative h-[42vh] min-h-[340px] w-full overflow-hidden sm:h-[52vh] lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-h-[580px]">
         <Image
           src="/images/campus/life-at-nexis.jpg"
           alt="Students on the NEXIS campus in Siliguri"
@@ -157,7 +157,7 @@ export default function UG2027LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/25" />
         <div className="shell relative flex h-full flex-col justify-end pb-6 sm:pb-9 lg:justify-center lg:py-14">
           <Reveal>
-            <h1 className="balance font-serif text-[clamp(1.4rem,4.6vw,2.4rem)] leading-tight text-white lg:max-w-[22ch] lg:text-[clamp(2.1rem,3vw,2.8rem)]">
+            <h1 className="balance font-serif text-[clamp(1.8rem,5.8vw,2.6rem)] leading-tight text-white lg:max-w-[22ch] lg:text-[clamp(2.5rem,3.5vw,3.25rem)]">
               3-Year Undergrad in{" "}
               <span className="text-crimson lg:block">Business Management</span>
             </h1>
