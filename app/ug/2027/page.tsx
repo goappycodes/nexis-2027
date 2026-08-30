@@ -157,19 +157,15 @@ export default function UG2027LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/25" />
         <div className="shell relative flex h-full flex-col justify-end pb-6 sm:pb-9 lg:justify-center lg:py-14">
           <Reveal>
-            <h1 className="balance font-poppins text-[clamp(1.4rem,4.6vw,2.4rem)] font-bold uppercase leading-tight text-white lg:max-w-[22ch] lg:text-[clamp(2.1rem,3vw,2.8rem)]">
+            <h1 className="balance font-serif text-[clamp(1.4rem,4.6vw,2.4rem)] leading-tight text-white lg:max-w-[22ch] lg:text-[clamp(2.1rem,3vw,2.8rem)]">
               3-Year Undergrad in{" "}
               <span className="text-crimson lg:block">Business Management</span>
             </h1>
             <span className="mt-3 block h-px w-7 bg-crimson" aria-hidden="true" />
           </Reveal>
           <Reveal delay={80}>
-            <p className="display mt-3 max-w-xl text-[clamp(1.05rem,3vw,1.5rem)] text-white/90">
-              Not your typical management college
-            </p>
-          </Reveal>
-          <Reveal delay={150}>
-            <p className="mt-3 max-w-xl text-[0.9rem] leading-relaxed text-white/85 sm:text-[1.02rem]">
+            <p className="mt-3 max-w-xl font-poppins text-[0.9rem] leading-relaxed text-white/85 sm:text-[1.02rem]">
+              Not your typical management college. {" "}
               Full time, hands-on courses at our Siliguri campus where you learn
               by doing, intern from your first year, build your own business, and
               graduate as an Industry-ready fresher.
