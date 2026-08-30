@@ -79,6 +79,9 @@ const OTHER_COURSES = [
   },
 ];
 
+const ADMISSION_VALUE_CLASS =
+  "whitespace-nowrap font-serif text-4xl leading-none text-crimson sm:text-[clamp(1.5rem,3.3vw,3rem)]";
+
 const LP_FACTS = [
   { label: "Format", value: "On-campus", sub: "Opt-in residential" },
   {
@@ -409,17 +412,17 @@ export default function UG2027LandingPage() {
                 </Reveal>
               ))}
             </div>
-            <Reveal className="mt-6 grid grid-cols-2 overflow-hidden rounded-[4px] border border-crimson/25 bg-crimson/[0.06] sm:grid-cols-3">
+            <Reveal className="mt-6 grid grid-cols-2 items-stretch overflow-hidden rounded-[4px] border border-crimson/25 bg-crimson/[0.06] sm:grid-cols-3 sm:auto-rows-fr">
               <div className="p-4 sm:p-6">
-                <p className="font-serif text-4xl leading-none text-crimson sm:text-5xl">40</p>
+                <p className={ADMISSION_VALUE_CLASS}>40</p>
                 <p className="mt-2 text-[0.98rem] leading-snug text-ink">Students per program</p>
               </div>
               <div className="border-l border-crimson/20 p-4 sm:p-6">
-                <p className="font-serif text-4xl leading-none text-crimson sm:text-5xl">15</p>
+                <p className={ADMISSION_VALUE_CLASS}>15</p>
                 <p className="mt-2 text-[0.98rem] leading-snug text-ink">Early-bird places each</p>
               </div>
               <div className="col-span-2 border-t border-crimson/20 p-4 sm:col-span-1 sm:border-l sm:border-t-0 sm:p-6">
-                <p className="font-serif text-3xl leading-none text-crimson sm:text-4xl">1 December</p>
+                <p className={ADMISSION_VALUE_CLASS}>1 December</p>
                 <p className="mt-2 text-[0.98rem] leading-snug text-ink">Admissions open</p>
               </div>
             </Reveal>
