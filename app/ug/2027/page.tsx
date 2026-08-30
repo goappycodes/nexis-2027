@@ -178,7 +178,7 @@ export default function UG2027LandingPage() {
       </section>
 
       {/* Program at a glance — video plays inline, never navigates away */}
-      <section className="bg-ink text-paper lg:col-span-2 lg:row-start-2 lg:border-t lg:border-white/10">
+      <section className="bg-ink text-paper lg:col-span-2 lg:row-start-2 lg:bg-paper lg:text-ink lg:[box-shadow:0_0_0_100vmax_rgb(var(--paper))] lg:[clip-path:inset(0_-100vmax)]">
         <div className="shell py-6 sm:py-10">
           <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -205,21 +205,21 @@ export default function UG2027LandingPage() {
                       {f.value}
                     </p>
                     {f.sub && (
-                      <p className="mt-0.5 text-[0.8rem] leading-snug text-white/45">
+                      <p className="mt-0.5 text-[0.8rem] leading-snug text-white/45 lg:text-ink-2">
                         {f.sub}
                       </p>
                     )}
                   </Reveal>
                 ))}
               </div>
-              <Reveal delay={280} className="mt-6 grid max-w-lg grid-cols-2 items-center gap-6 border-t border-white/15 pt-5 sm:gap-8">
+              <Reveal delay={280} className="mt-6 grid max-w-lg grid-cols-2 items-center gap-6 border-t border-white/15 pt-5 sm:gap-8 lg:border-line">
                 {ACCREDITATION.slice(0, 2).map((mark) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     key={mark.name}
                     src={mark.src}
                     alt={mark.name}
-                    className="h-16 w-full min-w-0 object-contain object-left brightness-0 invert sm:h-20"
+                    className="h-16 w-full min-w-0 object-contain object-left brightness-0 invert sm:h-20 lg:invert-0"
                   />
                 ))}
               </Reveal>
