@@ -44,14 +44,23 @@ const PROGRAM_HIGHLIGHTS = [
   {
     title: "Build your business",
     text: "Turn ideas into ventures. Learn to pitch, raise funds and lead.",
+    img: "/images/ug/career-entrepreneurship.jpg",
+    alt: "NEXIS students showcasing their own products",
+    position: "35% center",
   },
   {
     title: "Learn from industry",
     text: "100+ experts. Founder mentorship. Internships from year one.",
+    img: "/images/ug/career-jobs.jpg",
+    alt: "An industry mentor leading a session with NEXIS students",
+    position: "left center",
   },
   {
     title: "Graduate with experience",
     text: "6 CV-ready projects in three years. Real work to show for it.",
+    img: "/images/ug/learn-ai.jpg",
+    alt: "A NEXIS student presenting a completed software project",
+    position: "center 60%",
   },
 ];
 
@@ -99,10 +108,10 @@ export default function UG2027LandingPage() {
     <main id="top" className="relative font-poppins lp-poppins pb-20 lg:pb-0">
       {/* Urgency strip */}
       <div className="relative z-[60] bg-ink text-paper">
-        <div className="shell flex items-center justify-center gap-2.5 py-1.5 text-center text-[0.64rem] uppercase tracking-[0.12em] sm:py-2 sm:text-[0.72rem] sm:tracking-[0.14em]">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-crimson" />
-          <span className="font-bold opacity-90">
-            Early Bird Admissions for Batch 2027 open . 1st December
+        <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(9px,2.6vw,12px)] leading-tight tracking-normal sm:py-2.5">
+          <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-crimson sm:h-1.5 sm:w-1.5" />
+          <span className="whitespace-nowrap font-semibold opacity-90">
+            Early Bird Admissions for 2027 Batch start 1st Dec
           </span>
         </div>
       </div>
@@ -120,11 +129,16 @@ export default function UG2027LandingPage() {
               className="h-5 w-auto sm:h-7"
             />
           </a>
+          <a href="#enquire" className="btn btn-crimson hidden lg:inline-flex">
+            Enquire now <ArrowRight className="arrow" />
+          </a>
         </div>
       </header>
 
+      <div className="lg:bg-ink">
+      <div className="lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
       {/* Hero — image band with overlaid statement */}
-      <section className="relative h-[42vh] min-h-[290px] w-full overflow-hidden sm:h-[52vh] lg:h-[60vh]">
+      <section className="relative h-[42vh] min-h-[290px] w-full overflow-hidden sm:h-[52vh] lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-h-[580px]">
         <Image
           src="/images/campus/life-at-nexis.jpg"
           alt="Students on the NEXIS campus in Siliguri"
@@ -137,31 +151,31 @@ export default function UG2027LandingPage() {
             gradient so the white headline stays readable over bright photos. */}
         <div className="absolute inset-0 bg-ink/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/25" />
-        <div className="shell relative flex h-full flex-col justify-end pb-6 sm:pb-9">
+        <div className="shell relative flex h-full flex-col justify-end pb-6 sm:pb-9 lg:justify-center lg:py-14">
           <Reveal>
-            <span className="mb-3 block h-px w-7 bg-crimson" />
-            <h1 className="balance font-poppins text-[clamp(1.4rem,4.6vw,2.4rem)] font-bold uppercase leading-tight tracking-tight text-white">
-              3-Year Undergrad in Business Management
+            <h1 className="balance font-poppins text-[clamp(1.4rem,4.6vw,2.4rem)] font-bold uppercase leading-tight text-white lg:max-w-[22ch] lg:text-[clamp(2.1rem,3vw,2.8rem)]">
+              3-Year Undergrad in{" "}
+              <span className="text-crimson lg:block">Business Management</span>
             </h1>
+            <span className="mt-3 block h-px w-7 bg-crimson" aria-hidden="true" />
           </Reveal>
           <Reveal delay={80}>
             <p className="display mt-3 max-w-xl text-[clamp(1.05rem,3vw,1.5rem)] text-white/90">
-              Learn Business by{" "}
-              <span className="serif-em text-crimson">Building</span> it.
+              Not your typical management college
             </p>
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-3 max-w-xl text-[0.9rem] leading-relaxed text-white/85 sm:text-[1.02rem]">
-              3-years on campus courses where you learn by doing, intern from
-              your first year, build your own business, and graduate as an
-              Industry-ready fresher.
+              Full time, hands-on courses at our Siliguri campus where you learn
+              by doing, intern from your first year, build your own business, and
+              graduate as an Industry-ready fresher.
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* Program at a glance — video plays inline, never navigates away */}
-      <section className="bg-ink text-paper">
+      <section className="bg-ink text-paper lg:col-span-2 lg:row-start-2 lg:border-t lg:border-white/10">
         <div className="shell py-6 sm:py-10">
           <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -195,14 +209,14 @@ export default function UG2027LandingPage() {
                   </Reveal>
                 ))}
               </div>
-              <Reveal delay={280} className="mt-6 flex items-center gap-7 border-t border-white/15 pt-5 sm:gap-10">
+              <Reveal delay={280} className="mt-6 grid max-w-lg grid-cols-2 items-center gap-6 border-t border-white/15 pt-5 sm:gap-8">
                 {ACCREDITATION.slice(0, 2).map((mark) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     key={mark.name}
                     src={mark.src}
                     alt={mark.name}
-                    className="h-10 w-auto max-w-[140px] object-contain brightness-0 invert sm:h-12 sm:max-w-[160px]"
+                    className="h-16 w-full min-w-0 object-contain object-left brightness-0 invert sm:h-20"
                   />
                 ))}
               </Reveal>
@@ -212,9 +226,9 @@ export default function UG2027LandingPage() {
       </section>
 
       {/* Enquiry — centered form; alumni credibility now lives below it */}
-      <section id="enquire" className="scroll-mt-14 border-b border-line bg-paper-2/40">
-        <div className="shell py-7 sm:py-12">
-          <div className="mx-auto max-w-xl">
+      <section id="enquire" className="scroll-mt-14 border-b border-line bg-paper-2/40 lg:col-start-2 lg:row-start-1 lg:flex lg:scroll-mt-24 lg:items-center lg:border-0 lg:bg-transparent">
+        <div className="shell py-7 sm:py-12 lg:!pl-0 lg:py-10">
+          <div className="mx-auto max-w-xl lg:max-w-none">
             <Reveal>
               <div className="overflow-hidden rounded-[3px] border border-line bg-paper shadow-[0_40px_90px_-55px_rgba(11,12,16,0.55)]">
                 <div className="border-b border-line bg-paper-2/60 px-5 py-3.5 sm:px-7 sm:py-4">
@@ -234,6 +248,8 @@ export default function UG2027LandingPage() {
           </div>
         </div>
       </section>
+      </div>
+      </div>
 
       {/* Founders — alumni credibility, portrait cards on dark */}
       <section className="bg-ink text-paper">
@@ -338,10 +354,22 @@ export default function UG2027LandingPage() {
                 delay={i * 70}
                 className="flex gap-4 border-b border-line py-5 last:border-b-0 md:flex-col md:border-b-0 md:px-6 md:py-7 md:first:pl-0"
               >
-                <span className="font-serif text-2xl leading-none text-crimson/70 sm:text-3xl">
-                  0{i + 1}
-                </span>
-                <div>
+                <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24">
+                  <div className="absolute inset-0 overflow-hidden rounded-full ring-1 ring-ink/10">
+                    <Image
+                      src={item.img}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width:639px) 73px, 96px"
+                      className="object-cover"
+                      style={{ objectPosition: item.position }}
+                    />
+                  </div>
+                  <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-paper font-serif text-[0.8rem] text-crimson ring-1 ring-line">
+                    0{i + 1}
+                  </span>
+                </div>
+                <div className="min-w-0">
                   <h3 className="font-serif text-xl leading-tight sm:text-2xl">{item.title}</h3>
                   <p className="mt-2 max-w-sm text-[0.86rem] leading-relaxed text-ink-2 sm:text-[0.92rem]">
                     {item.text}
@@ -381,10 +409,19 @@ export default function UG2027LandingPage() {
                 </Reveal>
               ))}
             </div>
-            <Reveal className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-l-2 border-crimson bg-crimson/[0.04] px-4 py-3 text-[0.8rem] text-ink-2 sm:text-[0.86rem]">
-              <span><strong className="font-medium text-crimson">40</strong> students per program</span>
-              <span><strong className="font-medium text-crimson">15</strong> early-bird places each</span>
-              <span>Admissions open <strong className="font-medium text-ink">1 December</strong></span>
+            <Reveal className="mt-6 grid grid-cols-2 overflow-hidden rounded-[4px] border border-crimson/25 bg-crimson/[0.06] sm:grid-cols-3">
+              <div className="p-4 sm:p-6">
+                <p className="font-serif text-4xl leading-none text-crimson sm:text-5xl">40</p>
+                <p className="mt-2 text-[0.98rem] leading-snug text-ink">Students per program</p>
+              </div>
+              <div className="border-l border-crimson/20 p-4 sm:p-6">
+                <p className="font-serif text-4xl leading-none text-crimson sm:text-5xl">15</p>
+                <p className="mt-2 text-[0.98rem] leading-snug text-ink">Early-bird places each</p>
+              </div>
+              <div className="col-span-2 border-t border-crimson/20 p-4 sm:col-span-1 sm:border-l sm:border-t-0 sm:p-6">
+                <p className="font-serif text-3xl leading-none text-crimson sm:text-4xl">1 December</p>
+                <p className="mt-2 text-[0.98rem] leading-snug text-ink">Admissions open</p>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -392,14 +429,14 @@ export default function UG2027LandingPage() {
 
       {/* Students — proof faces, 3-row fade carousel */}
       <section className="border-y border-line bg-paper-2/40 py-7 sm:py-12">
-        <div className="shell mb-5 max-w-2xl">
+        <div className="shell mb-5 max-w-2xl lg:max-w-none">
           <Reveal>
             <p className="flex items-center gap-2.5 font-serif text-[1rem] font-normal leading-snug text-ink-2 sm:text-[1.15rem]">
               <span className="h-px w-7 shrink-0 bg-crimson" />
               They haven&rsquo;t even graduated — and they&rsquo;re already
               working.
             </p>
-            <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)]">
+            <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)] lg:max-w-3xl">
               Meet our first-years, already{" "}
               <span className="serif-em text-crimson">
                 interning and earning
@@ -417,7 +454,7 @@ export default function UG2027LandingPage() {
           on a third-party embed's autoplay policy. Source is a 9:16 clip,
           centre-cropped to fill the wide banner the same way the hero
           photo is cropped. */}
-      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh]">
+      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh] lg:h-[440px]">
         <div className="absolute inset-0" aria-hidden="true">
           <video
             autoPlay
@@ -506,7 +543,8 @@ export default function UG2027LandingPage() {
 
       {/* Yearbook — real page-turn flip book */}
       <section className="bg-paper py-8 sm:py-14">
-        <div className="shell mb-6">
+        <div className="lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:items-center lg:gap-12 lg:px-12">
+        <div className="shell mb-6 lg:mb-0 lg:!px-0">
           <Reveal>
             <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)]">
               The Yearbook That Has{" "}
@@ -519,8 +557,9 @@ export default function UG2027LandingPage() {
             </p>
           </Reveal>
         </div>
-        <div className="shell">
+        <div className="shell lg:!px-0">
           <YearbookFlipBook pages={YEARBOOK_PAGES} />
+        </div>
         </div>
       </section>
 

@@ -297,6 +297,14 @@
   font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
+/* Desktop rhythm for the paid-ads page; approved phone/tablet styles stay intact. */
+@media (min-width: 1024px) {
+  .lp-poppins .shell {
+    max-width: 1280px;
+    padding-inline: 48px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .reveal {
