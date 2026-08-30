@@ -6,6 +6,7 @@ export default function Recognition({
   doubleRow = false,
   showAccreditation = true,
   showKicker = true,
+  embedded = false,
 }: {
   /** Full-colour logos in bordered chips, instead of the muted grayscale
       marquee — used where the recruiter row should read as a bolder,
@@ -21,13 +22,15 @@ export default function Recognition({
       used where a page already supplies its own lead-in line right
       above this component (e.g. the 2027 landing page). */
   showKicker?: boolean;
+  /** Compact, transparent presentation inside another content section. */
+  embedded?: boolean;
 }) {
   const offset = Math.ceil(RECRUITER_LOGOS.length / 2);
   const rows = doubleRow
     ? [RECRUITER_LOGOS.slice(0, offset), RECRUITER_LOGOS.slice(offset)]
     : [RECRUITER_LOGOS];
   return (
-    <section className="overflow-hidden border-b border-line bg-paper-2/50 py-6 sm:py-10">
+    <section className={embedded ? "min-w-0 overflow-hidden" : "overflow-hidden border-b border-line bg-paper-2/50 py-6 sm:py-10"}>
       {showKicker && (
         <div className="shell">
           <Reveal className="mb-9 text-center">
@@ -50,7 +53,7 @@ export default function Recognition({
               vibrant ? (
                 <div
                   key={`${l.name}-${i}`}
-                  className="mx-2 flex h-14 shrink-0 items-center justify-center rounded-[6px] border border-line bg-paper px-6 shadow-[0_10px_30px_-20px_rgba(11,12,16,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-18px_rgba(11,12,16,0.5)] sm:h-16 sm:px-8"
+                  className={`mx-2 flex h-14 shrink-0 items-center justify-center rounded-[6px] border border-line bg-paper px-6 shadow-[0_10px_30px_-20px_rgba(11,12,16,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-18px_rgba(11,12,16,0.5)] ${embedded ? "" : "sm:h-16 sm:px-8"}`}
                   title={l.name}
                   aria-hidden={i >= logos.length ? true : undefined}
                 >
@@ -59,7 +62,7 @@ export default function Recognition({
                   <img
                     src={l.src}
                     alt={l.name}
-                    className="h-7 w-auto max-w-[132px] object-contain sm:h-8"
+                    className={`h-7 w-auto max-w-[132px] object-contain ${embedded ? "" : "sm:h-8"}`}
                   />
                 </div>
               ) : (

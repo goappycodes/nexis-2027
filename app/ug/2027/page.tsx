@@ -473,7 +473,7 @@ export default function UG2027LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent lg:hidden" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-transparent to-transparent lg:hidden" />
 
-        <div className="shell relative flex h-full flex-col py-8 sm:py-12 lg:col-start-1 lg:row-start-1 lg:h-auto lg:!p-0">
+        <div className="shell relative flex h-full flex-col py-8 sm:py-12 lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-w-0 lg:!p-0">
           <Reveal className="max-w-sm">
             <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem]">
               You intern{" "}
@@ -481,11 +481,19 @@ export default function UG2027LandingPage() {
               years.
             </h2>
           </Reveal>
+          <div className="mt-9 hidden lg:block">
+            <p className="mb-5 font-serif text-2xl text-white">
+              Learn by working{" "}
+              <span className="serif-em text-crimson">with</span> —
+            </p>
+            <Recognition vibrant doubleRow embedded showAccreditation={false} showKicker={false} />
+          </div>
         </div>
         </div>
       </section>
 
-      {/* Intro line for the recruiter marquee below */}
+      {/* Mobile keeps the full-width recruiter showcase below the video. */}
+      <div className="lg:hidden">
       <div className="relative overflow-hidden bg-gradient-to-br from-black via-ink to-black py-8 text-center sm:py-12">
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/25 blur-[100px]" />
         <p className="shell relative display text-[clamp(1.3rem,3.6vw,1.9rem)] text-white">
@@ -496,6 +504,7 @@ export default function UG2027LandingPage() {
 
       {/* Trust — recruiters + accreditation */}
       <Recognition vibrant doubleRow showAccreditation={false} showKicker={false} />
+      </div>
 
       {/* Faculty — pre-designed portrait cards, auto-scrolling so the
           strip reads as lively on mobile without needing a swipe. */}
