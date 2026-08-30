@@ -303,7 +303,7 @@
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .font-serif, .section-index) {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) .display {
