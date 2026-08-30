@@ -253,7 +253,7 @@ export default function UG2027LandingPage() {
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line">
                 <Image
                   src="/images/counselling/moira-priya-headshot.png"
-                  alt="Ms. Moira Priya, Counselling Head"
+                  alt="Ms. Moira Priya Devi, Counselling Head"
                   fill
                   sizes="80px"
                   className="object-cover"
@@ -261,7 +261,7 @@ export default function UG2027LandingPage() {
               </div>
               <p className="text-[0.8rem] leading-relaxed text-ink-2 lg:text-white/80">
                 Get connected directly with our Counselling Head,{" "}
-                <strong className="font-semibold text-ink lg:text-white">Ms. Moira Priya,</strong>{" "}
+                <strong className="font-semibold text-ink lg:text-white">Ms. Moira Priya Devi,</strong>{" "}
                 and have your questions answered.
               </p>
             </Reveal>

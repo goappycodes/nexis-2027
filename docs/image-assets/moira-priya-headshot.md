@@ -1,4 +1,4 @@
-# Ms. Moira Priya — counselling profile image
+# Ms. Moira Priya Devi — counselling profile image
 
 Asset: `public/images/counselling/moira-priya-headshot.png`
 
