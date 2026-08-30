@@ -13,6 +13,7 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-fraunces",
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
 // Brand sans (nexisschool.com identity). Loaded globally as a CSS var but

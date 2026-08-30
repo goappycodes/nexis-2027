@@ -1,6 +1,7 @@
 .variation,
 .variation * {
   font-family: var(--font-poppins), sans-serif;
+  font-variation-settings: normal;
 }
 
 .variation :global(.display) {

@@ -292,6 +292,27 @@
   font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
+/* Preserve the expressive Fraunces axes, with clearer spacing and strokes.
+   Exclude the Poppins-only route, which shares the landing-page markup. */
+@layer components {
+  .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .serif-em, .font-serif, .section-index) {
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+    letter-spacing: normal;
+  }
+
+  .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .font-serif, .section-index) {
+    font-weight: 450;
+  }
+
+  .lp-poppins:not([data-font-theme="poppins"] *) .display {
+    line-height: 1.12;
+  }
+
+  .lp-poppins:not([data-font-theme="poppins"] *) .serif-em {
+    font-weight: inherit;
+  }
+}
+
 /* Desktop rhythm for the paid-ads page; approved phone/tablet styles stay intact. */
 @media (min-width: 1024px) {
   .lp-poppins .shell {

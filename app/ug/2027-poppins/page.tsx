@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 /** Shared content and interactions, with typography scoped to this variation. */
 export default function UG2027PoppinsPage() {
   return (
-    <div className={styles.variation}>
+    <div className={styles.variation} data-font-theme="poppins">
       <UG2027LandingPage />
     </div>
   );
