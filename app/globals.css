@@ -21,9 +21,8 @@
 
   --shell: 1440px;
   --gutter: clamp(20px, 4.5vw, 80px);
-  /* One shared setting for every Fraunces style. A lower optical size keeps
-     finer strokes legible while retaining the character of the display face. */
-  --fraunces-variation: "opsz" 48, "SOFT" 0, "WONK" 1;
+  /* One shared setting, very close to the original 144 display optical size. */
+  --fraunces-variation: "opsz" 136, "SOFT" 0, "WONK" 1;
 }
 
 @layer base {
@@ -309,6 +308,7 @@
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .serif-em, .font-serif, .section-index) {
     font-variation-settings: var(--fraunces-variation);
     letter-spacing: normal;
+    -webkit-text-stroke: 0.12px currentColor;
   }
 
   .lp-poppins:not([data-font-theme="poppins"] *) :is(.display, .font-serif, .section-index) {

@@ -240,7 +240,7 @@ export default function UG2027LandingPage() {
               <div className="overflow-hidden rounded-[3px] border border-line bg-paper shadow-[0_40px_90px_-55px_rgba(11,12,16,0.55)]">
                 <div className="border-b border-line bg-paper-2/60 px-5 py-3.5 sm:px-7 sm:py-4">
                   <h2 className="font-serif text-2xl leading-tight sm:text-3xl">
-                    Enquire about the 2027–2030 program
+                    Enquire about the 2027 admissions
                   </h2>
                   <p className="mt-1 text-[0.84rem] text-ink-2">
                     Get info on curriculum, fees, and admissions
@@ -412,7 +412,7 @@ export default function UG2027LandingPage() {
                 <Reveal
                   key={c.name}
                   delay={80 + i * 80}
-                  className="group flex flex-col overflow-hidden rounded-[4px] border border-line bg-paper-2/40 lg:grid lg:grid-cols-[144px_minmax(0,1fr)] xl:grid-cols-[176px_minmax(0,1fr)]"
+                  className="group flex flex-col overflow-hidden rounded-[4px] border border-white/15 bg-ink text-paper lg:grid lg:grid-cols-[144px_minmax(0,1fr)] xl:grid-cols-[176px_minmax(0,1fr)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/9] lg:aspect-auto lg:min-h-[184px]">
                     <Image
@@ -429,11 +429,11 @@ export default function UG2027LandingPage() {
                   <div className="flex flex-1 flex-col items-start p-3 sm:p-6 lg:p-4 xl:p-5">
                     <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
                     <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem] lg:text-[1.35rem]">{c.name}</h3>
-                    <p className="mt-2 hidden text-[0.82rem] leading-relaxed text-ink-2 lg:block">
+                    <p className="mt-2 hidden text-[0.82rem] leading-relaxed text-white/75 lg:block">
                       {c.description}
                     </p>
-                    <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-ink-2 sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
-                      Explore program <ArrowUpRight className="shrink-0" />
+                    <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-white sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
+                      Explore program <ArrowUpRight className="shrink-0 text-crimson" />
                     </a>
                   </div>
                 </Reveal>
