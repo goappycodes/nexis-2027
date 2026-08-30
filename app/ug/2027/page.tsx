@@ -249,10 +249,20 @@ export default function UG2027LandingPage() {
                 </div>
               </div>
             </Reveal>
-            <Reveal delay={100} className="mt-4 border-l-2 border-crimson pl-3 sm:pl-4">
+            <Reveal delay={100} className="mt-4 flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 lg:border-white/15 lg:bg-white/5">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line">
+                <Image
+                  src="/images/counselling/moira-priya-headshot.png"
+                  alt="Ms. Moira Priya, Counselling Head"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
               <p className="text-[0.8rem] leading-relaxed text-ink-2 lg:text-white/80">
-                We&rsquo;ll schedule a counselling session with our Counselling Head,{" "}
-                <strong className="font-semibold text-ink lg:text-white">Ms. Moira Priya.</strong>
+                Get connected directly with our Counselling Head,{" "}
+                <strong className="font-semibold text-ink lg:text-white">Ms. Moira Priya,</strong>{" "}
+                and have your questions answered.
               </p>
             </Reveal>
           </div>
