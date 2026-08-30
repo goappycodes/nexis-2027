@@ -132,14 +132,6 @@ export default function LeadForm({
         <ArrowRight className="arrow" />
       </button>
 
-      <p className="text-[0.76rem] leading-relaxed text-muted">
-        By submitting, you agree to be contacted about the program. We never
-        spam or share your details. See our{" "}
-        <a href="/about/privacy" className="ulink text-ink-2">
-          Privacy Policy
-        </a>
-        .
-      </p>
     </form>
   );
 }

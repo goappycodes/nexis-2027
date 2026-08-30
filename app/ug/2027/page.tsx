@@ -129,7 +129,7 @@ export default function UG2027LandingPage() {
               width={254}
               height={66}
               priority
-              className="h-5 w-auto sm:h-7"
+              className="h-8 w-auto sm:h-7"
             />
           </a>
           <a href="#enquire" className="btn btn-crimson hidden lg:inline-flex">
@@ -239,8 +239,7 @@ export default function UG2027LandingPage() {
                     Enquire about the 2027–2030 program
                   </h2>
                   <p className="mt-1 text-[0.84rem] text-ink-2">
-                    Get details on curriculum, fees, and admissions from our
-                    admission counsellor.
+                    Get info on curriculum, fees, and admissions
                   </p>
                 </div>
                 <div className="p-4 sm:p-7">
@@ -451,14 +450,11 @@ export default function UG2027LandingPage() {
         <StudentCarousel />
       </section>
 
-      {/* Intern spotlight — autoplaying, muted, looping background video.
-          Self-hosted (compressed to ~8MB, no audio track — it's muted
-          anyway) so there is no click-through / exit link and no reliance
-          on a third-party embed's autoplay policy. Source is a 9:16 clip,
-          centre-cropped to fill the wide banner the same way the hero
-          photo is cropped. */}
-      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh] lg:h-[440px]">
-        <div className="absolute inset-0" aria-hidden="true">
+      {/* Intern spotlight — keep the approved mobile treatment; show the
+          complete 9:16 frame beside the heading on desktop. */}
+      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh] lg:h-auto lg:min-h-0">
+        <div className="h-full lg:mx-auto lg:grid lg:h-auto lg:max-w-[1040px] lg:grid-cols-[minmax(0,1fr)_288px] lg:items-center lg:gap-20 lg:px-12 lg:py-10">
+        <div className="absolute inset-0 lg:relative lg:inset-auto lg:col-start-2 lg:row-start-1 lg:aspect-[9/16] lg:overflow-hidden lg:rounded-lg lg:bg-black lg:ring-1 lg:ring-white/15" aria-hidden="true">
           <video
             autoPlay
             muted
@@ -467,24 +463,25 @@ export default function UG2027LandingPage() {
             preload="auto"
             poster="/videos/intern-spotlight-poster.jpg"
             tabIndex={-1}
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 object-cover"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 object-cover lg:inset-0 lg:h-full lg:min-h-0 lg:w-full lg:min-w-0 lg:translate-x-0 lg:translate-y-0 lg:object-contain"
           >
             <source src="/videos/intern-spotlight.mp4" type="video/mp4" />
           </video>
         </div>
         {/* Scrim at both ends, so text stays legible whether it sits at
             the top of the frame or the bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-transparent to-transparent lg:hidden" />
 
-        <div className="shell relative flex h-full flex-col py-8 sm:py-12">
+        <div className="shell relative flex h-full flex-col py-8 sm:py-12 lg:col-start-1 lg:row-start-1 lg:h-auto lg:!p-0">
           <Reveal className="max-w-sm">
-            <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white">
+            <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem]">
               You intern{" "}
               <span className="serif-em text-crimson">twice</span> in 3
               years.
             </h2>
           </Reveal>
+        </div>
         </div>
       </section>
 
