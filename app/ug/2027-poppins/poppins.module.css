@@ -1,0 +1,19 @@
+.variation,
+.variation * {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.variation :global(.display) {
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: normal;
+}
+
+.variation :global(.serif-em) {
+  font-style: normal;
+  font-weight: inherit;
+}
+
+.variation :global(.font-serif) {
+  line-height: 1.3;
+}
