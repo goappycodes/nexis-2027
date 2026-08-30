@@ -6,7 +6,7 @@ import { FORM_OPTIONS } from "@/lib/content";
 import { ArrowRight } from "./icons";
 
 const inputCls =
-  "w-full rounded-[2px] border border-line bg-paper px-4 py-3 text-[0.95rem] text-ink outline-none transition-colors focus:border-ink placeholder:text-muted";
+  "min-w-0 w-full rounded-[2px] border border-line bg-paper px-3 py-3 text-[0.95rem] text-ink outline-none transition-colors focus:border-ink placeholder:text-muted sm:px-4";
 const labelCls = "mb-1.5 block text-[0.8rem] font-medium text-ink-2";
 
 function Field({
@@ -19,7 +19,7 @@ function Field({
   children: ReactNode;
 }) {
   return (
-    <label className="block">
+    <label className="block min-w-0">
       <span className={labelCls}>
         {label}
         {required && <span className="text-crimson"> *</span>}
@@ -30,7 +30,7 @@ function Field({
 }
 
 /** Short, conversion-focused lead form for the paid-ads landing page.
-    Four fields only. Routes to /ug/thank-you on submit (no backend wired). */
+    Contact fields in two columns. Routes to /ug/thank-you on submit (no backend wired). */
 export default function LeadForm({
   submitLabel = "Send my enquiry",
 }: {
@@ -47,38 +47,51 @@ export default function LeadForm({
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
-      <Field label="Full name" required>
-        <input
-          name="fullName"
-          type="text"
-          required
-          autoComplete="name"
-          placeholder="Your name"
-          className={inputCls}
-        />
-      </Field>
+      <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:gap-x-4">
+        <Field label="Full name" required>
+          <input
+            name="fullName"
+            type="text"
+            required
+            autoComplete="name"
+            placeholder="Your name"
+            className={inputCls}
+          />
+        </Field>
 
-      <Field label="Phone" required>
-        <input
-          name="phone"
-          type="tel"
-          required
-          autoComplete="tel"
-          placeholder="+91 …"
-          className={inputCls}
-        />
-      </Field>
+        <Field label="Phone" required>
+          <input
+            name="phone"
+            type="tel"
+            required
+            autoComplete="tel"
+            placeholder="+91 …"
+            className={inputCls}
+          />
+        </Field>
 
-      <Field label="Email" required>
-        <input
-          name="email"
-          type="email"
-          required
-          autoComplete="email"
-          placeholder="you@email.com"
-          className={inputCls}
-        />
-      </Field>
+        <Field label="Alternate phone">
+          <input
+            name="altPhone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="Optional"
+            className={inputCls}
+          />
+        </Field>
+
+        <Field label="Email" required>
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            placeholder="you@email.com"
+            className={inputCls}
+          />
+        </Field>
+
+      </div>
 
       <Field label="Current grade" required>
         <div className="relative">

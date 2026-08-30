@@ -6,7 +6,6 @@ import StudentCarousel from "@/components/StudentCarousel";
 import VideoPlate from "@/components/VideoPlate";
 import LeadForm from "@/components/LeadForm";
 import YearbookFlipBook from "@/components/YearbookFlipBook";
-import FaqAccordion, { type FaqItem } from "@/components/FaqAccordion";
 import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 import { ACCREDITATION, BATCH, CONTACT, FOUNDERS } from "@/lib/content";
 
@@ -41,39 +40,33 @@ const YEARBOOK_PAGES = Array.from(
   (_, i) => `/images/yearbook/page-${String(i + 1).padStart(2, "0")}.jpg`,
 );
 
-// "What's it really like" — curriculum-style accordion.
-const NEXIS_LIFE_ITEMS: FaqItem[] = [
+const PROGRAM_HIGHLIGHTS = [
   {
-    q: "Built for",
-    a: "Students who want to build their business, intern from 1st year, and graduate as an experienced professional.",
+    title: "Build your business",
+    text: "Turn ideas into ventures. Learn to pitch, raise funds and lead.",
   },
   {
-    q: "What you learn",
-    a: "Real insights from 100+ industry experts.",
+    title: "Learn from industry",
+    text: "100+ experts. Founder mentorship. Internships from year one.",
   },
   {
-    q: "The Outcome",
-    a: [
-      {
-        ul: [
-          "6 projects in three years to build your CV",
-          "Internships from year one",
-          "The ability to pitch to VCs",
-          "The skills to run a business, raise funding, and find mentors who back you",
-        ],
-      },
-    ],
+    title: "Graduate with experience",
+    text: "6 CV-ready projects in three years. Real work to show for it.",
   },
 ];
 
 const OTHER_COURSES = [
   {
     name: "UG in Digital Marketing and Commerce",
-    note: "This program is open to only 40 students. Early bird admissions begin 1st December, with just 15 slots available.",
+    img: "/images/ug/learn-dropshipping.jpg",
+    alt: "NEXIS students selling products at a campus business showcase",
+    focus: "Brands · Content · Commerce",
   },
   {
     name: "UG in Computer Science and AI",
-    note: "This program is open to only 40 students. Early bird admissions begin 1st December, with just 15 slots available.",
+    img: "/images/ug/learn-ai.jpg",
+    alt: "A NEXIS student presenting a software project on campus",
+    focus: "Code · Build · Innovate",
   },
 ];
 
@@ -148,7 +141,7 @@ export default function UG2027LandingPage() {
           <Reveal>
             <span className="mb-3 block h-px w-7 bg-crimson" />
             <h1 className="balance font-poppins text-[clamp(1.4rem,4.6vw,2.4rem)] font-bold uppercase leading-tight tracking-tight text-white">
-              3-Year UG in Business Management
+              3-Year Undergrad in Business Management
             </h1>
           </Reveal>
           <Reveal delay={80}>
@@ -202,6 +195,17 @@ export default function UG2027LandingPage() {
                   </Reveal>
                 ))}
               </div>
+              <Reveal delay={280} className="mt-6 flex items-center gap-7 border-t border-white/15 pt-5 sm:gap-10">
+                {ACCREDITATION.slice(0, 2).map((mark) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={mark.name}
+                    src={mark.src}
+                    alt={mark.name}
+                    className="h-10 w-auto max-w-[140px] object-contain brightness-0 invert sm:h-12 sm:max-w-[160px]"
+                  />
+                ))}
+              </Reveal>
             </div>
           </div>
         </div>
@@ -233,7 +237,7 @@ export default function UG2027LandingPage() {
 
       {/* Founders — alumni credibility, portrait cards on dark */}
       <section className="bg-ink text-paper">
-        <div className="shell py-10 sm:py-16">
+        <div className="shell py-8 sm:py-10">
           <Reveal className="max-w-2xl">
             <p className="kicker flex items-center gap-2.5 text-white/55">
               <span className="h-px w-7 bg-crimson" />
@@ -248,7 +252,7 @@ export default function UG2027LandingPage() {
           </Reveal>
           <Reveal
             delay={80}
-            className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-5"
+            className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-4"
           >
             {[
               { src: "/images/logos/iim.png", name: "IIM Bangalore" },
@@ -266,46 +270,45 @@ export default function UG2027LandingPage() {
             ))}
           </Reveal>
 
-          <div className="mt-10 grid items-stretch gap-5 sm:mt-14 md:grid-cols-2">
+          <div className="mt-6 grid items-stretch gap-3 sm:gap-4 md:grid-cols-2">
             {FOUNDERS.map((f, i) => {
               const [tag, subtitle] = f.role.split(" — ");
               return (
                 <Reveal
                   key={f.name}
                   delay={140 + i * 100}
-                  className="relative flex min-h-[340px] flex-col overflow-hidden rounded-[18px] border border-white/25 bg-gradient-to-br from-crimson/25 via-ink to-black p-6 sm:min-h-[420px] sm:p-8"
+                  className="relative overflow-hidden rounded-xl border border-white/25 bg-gradient-to-br from-crimson/25 via-ink to-black p-4 sm:p-5"
                 >
-                  <span className="absolute left-6 top-6 h-9 w-1 bg-crimson sm:left-8 sm:top-8" />
-                  <div className="relative z-10 pl-5 sm:pl-6">
-                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/85 sm:text-[0.78rem]">
+                  <div className="relative z-10 w-[66%] border-l-2 border-crimson pl-3 sm:pl-4">
+                    <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white/70 sm:text-[0.7rem]">
                       {tag}
                     </p>
-                    <p className="mt-0.5 text-[0.95rem] font-semibold text-white sm:text-[1.05rem]">
+                    <h3 className="mt-1 text-[1rem] font-bold uppercase leading-tight tracking-[0.03em] text-white sm:text-[1.1rem]">
+                      {f.name}
+                    </h3>
+                    <p className="mt-1.5 text-[0.86rem] font-normal leading-snug text-white sm:text-[0.92rem]">
                       {subtitle}
                     </p>
-                    <ul className="mt-5 space-y-1.5">
+                    <ul className="mt-3 space-y-1">
                       {f.creds.map((c) => (
                         <li
                           key={c}
-                          className="text-[0.86rem] text-white/70 sm:text-[0.92rem]"
+                          className="text-[0.82rem] leading-snug text-white/70 sm:text-[0.86rem]"
                         >
                           {c}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="pointer-events-none absolute bottom-0 right-0 h-[78%] w-[52%] sm:h-[85%] sm:w-[46%]">
+                  <div className="pointer-events-none absolute bottom-0 right-0 h-full w-[34%]">
                     <Image
                       src={f.img}
                       alt={f.name}
                       fill
-                      sizes="(max-width:640px) 50vw, 260px"
+                      sizes="(max-width:767px) 32vw, (max-width:1440px) 16vw, 230px"
                       className="object-contain object-bottom"
                     />
                   </div>
-                  <p className="relative z-10 mt-auto max-w-[54%] pl-5 pt-6 text-[1rem] font-bold uppercase leading-tight tracking-[0.06em] text-white sm:max-w-[52%] sm:pl-6 sm:text-[1.1rem]">
-                    {f.name}
-                  </p>
                 </Reveal>
               );
             })}
@@ -313,13 +316,13 @@ export default function UG2027LandingPage() {
         </div>
       </section>
 
-      {/* What's it really like — curriculum-style accordion, no bottom CTA */}
+      {/* Program at a glance — concise outcomes and image-led course cards */}
       <section className="bg-paper py-8 sm:py-14">
         <div className="shell">
           <Reveal>
             <p className="kicker flex items-center gap-2.5">
               <span className="h-px w-7 bg-crimson" />
-              UG in Business Management
+              Undergrad in Business Management
             </p>
             <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)]">
               What&rsquo;s It{" "}
@@ -328,42 +331,61 @@ export default function UG2027LandingPage() {
             </h2>
           </Reveal>
 
-          <Reveal delay={80} className="mt-6">
-            <FaqAccordion items={NEXIS_LIFE_ITEMS} />
-          </Reveal>
-
-          <Reveal
-            delay={140}
-            className="mt-6 rounded-[3px] border border-crimson/30 bg-crimson/5 p-4 sm:p-5"
-          >
-            <p className="text-[0.88rem] leading-relaxed text-ink sm:text-[0.95rem]">
-              <span className="font-bold text-crimson">Limited seats.</span>{" "}
-              This course is open to only 40 students. Early bird admissions
-              begin 1st December, with just 15 slots available.
-            </p>
-          </Reveal>
+          <div className="mt-6 grid border-y border-line md:grid-cols-3 md:divide-x md:divide-line">
+            {PROGRAM_HIGHLIGHTS.map((item, i) => (
+              <Reveal
+                key={item.title}
+                delay={i * 70}
+                className="flex gap-4 border-b border-line py-5 last:border-b-0 md:flex-col md:border-b-0 md:px-6 md:py-7 md:first:pl-0"
+              >
+                <span className="font-serif text-2xl leading-none text-crimson/70 sm:text-3xl">
+                  0{i + 1}
+                </span>
+                <div>
+                  <h3 className="font-serif text-xl leading-tight sm:text-2xl">{item.title}</h3>
+                  <p className="mt-2 max-w-sm text-[0.86rem] leading-relaxed text-ink-2 sm:text-[0.92rem]">
+                    {item.text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
 
           <div className="mt-10 sm:mt-14">
             <Reveal>
-              <p className="kicker text-muted">Other courses that we offer</p>
+              <p className="kicker text-muted">Other Undergrad Courses</p>
             </Reveal>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
               {OTHER_COURSES.map((c, i) => (
                 <Reveal
                   key={c.name}
                   delay={80 + i * 80}
-                  className="rounded-[3px] border border-line bg-paper-2/40 p-5 sm:p-6"
+                  className="group flex flex-col overflow-hidden rounded-[4px] border border-line bg-paper-2/40"
                 >
-                  <h3 className="font-serif text-lg sm:text-xl">{c.name}</h3>
-                  <p className="mt-2 text-[0.84rem] leading-relaxed text-ink-2">
-                    <span className="font-semibold text-crimson">
-                      Limited seats.
-                    </span>{" "}
-                    {c.note}
-                  </p>
+                  <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/9]">
+                    <Image
+                      src={c.img}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width:1440px) 46vw, 640px"
+                      className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col items-start p-3 sm:p-6">
+                    <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
+                    <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem]">{c.name}</h3>
+                    <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-ink-2 sm:gap-2 sm:pt-4 sm:text-[0.82rem]" aria-label={`Enquire about ${c.name}`}>
+                      Explore program <ArrowUpRight className="shrink-0" />
+                    </a>
+                  </div>
                 </Reveal>
               ))}
             </div>
+            <Reveal className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2 border-l-2 border-crimson bg-crimson/[0.04] px-4 py-3 text-[0.8rem] text-ink-2 sm:text-[0.86rem]">
+              <span><strong className="font-medium text-crimson">40</strong> students per program</span>
+              <span><strong className="font-medium text-crimson">15</strong> early-bird places each</span>
+              <span>Admissions open <strong className="font-medium text-ink">1 December</strong></span>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -372,7 +394,7 @@ export default function UG2027LandingPage() {
       <section className="border-y border-line bg-paper-2/40 py-7 sm:py-12">
         <div className="shell mb-5 max-w-2xl">
           <Reveal>
-            <p className="flex items-center gap-2.5 text-[0.95rem] font-bold leading-snug text-ink sm:text-[1.15rem]">
+            <p className="flex items-center gap-2.5 font-serif text-[1rem] font-normal leading-snug text-ink-2 sm:text-[1.15rem]">
               <span className="h-px w-7 shrink-0 bg-crimson" />
               They haven&rsquo;t even graduated — and they&rsquo;re already
               working.
@@ -436,7 +458,7 @@ export default function UG2027LandingPage() {
       </div>
 
       {/* Trust — recruiters + accreditation */}
-      <Recognition vibrant showAccreditation={false} showKicker={false} />
+      <Recognition vibrant doubleRow showAccreditation={false} showKicker={false} />
 
       {/* Faculty — pre-designed portrait cards, auto-scrolling so the
           strip reads as lively on mobile without needing a swipe. */}
@@ -500,10 +522,6 @@ export default function UG2027LandingPage() {
         <div className="shell">
           <YearbookFlipBook pages={YEARBOOK_PAGES} />
         </div>
-        <p className="shell mt-4 flex items-center justify-center gap-1.5 text-[0.76rem] text-muted">
-          Drag a corner, or tap the edges, to turn the page
-          <ArrowRight className="text-[0.9em]" />
-        </p>
       </section>
 
       {/* Final CTA — awareness framing, over image */}
@@ -575,14 +593,14 @@ export default function UG2027LandingPage() {
                 <p className="text-[0.68rem] uppercase tracking-[0.16em] text-muted">
                   Accredited by
                 </p>
-                <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <div className="mt-4 flex flex-wrap items-center gap-x-7 gap-y-5">
                   {ACCREDITATION.map((a) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       key={a.name}
                       src={a.src}
                       alt={a.name}
-                      className="h-6 w-auto max-w-[100px] object-contain opacity-80 [filter:brightness(0)] sm:h-7"
+                      className="h-10 w-auto max-w-[140px] object-contain [filter:brightness(0)] sm:h-12 sm:max-w-[160px]"
                     />
                   ))}
                 </div>
