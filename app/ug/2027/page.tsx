@@ -112,7 +112,7 @@ export default function UG2027LandingPage() {
     <main id="top" className="relative font-poppins lp-poppins pb-20 lg:pb-0">
       {/* Urgency strip */}
       <div className="relative z-[60] bg-ink text-paper">
-        <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(9px,2.6vw,12px)] leading-tight tracking-normal sm:py-2.5">
+        <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(10px,3vw,16px)] leading-tight tracking-normal sm:py-2.5">
           <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-crimson sm:h-1.5 sm:w-1.5" />
           <span className="whitespace-nowrap font-semibold opacity-90">
             Early Bird Admissions for 2027 Batch start 1st Dec
@@ -121,7 +121,7 @@ export default function UG2027LandingPage() {
       </div>
 
       {/* Slim, distraction-free header */}
-      <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+      <header className="relative z-50 border-b border-line bg-paper">
         <div className="shell flex items-center justify-between py-2 sm:py-2.5">
           <a href="#top" className="flex items-center gap-3" aria-label="NEXIS">
             <Image
