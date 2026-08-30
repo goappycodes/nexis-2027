@@ -249,6 +249,12 @@ export default function UG2027LandingPage() {
                 </div>
               </div>
             </Reveal>
+            <Reveal delay={100} className="mt-4 border-l-2 border-crimson pl-3 sm:pl-4">
+              <p className="text-[0.8rem] leading-relaxed text-ink-2 lg:text-white/80">
+                We&rsquo;ll schedule a counselling session with our Counselling Head,{" "}
+                <strong className="font-semibold text-ink lg:text-white">Ms. Moira Priya.</strong>
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
