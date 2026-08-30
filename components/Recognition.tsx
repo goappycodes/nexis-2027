@@ -60,6 +60,8 @@ export default function Recognition({
                   {/* plain img so SVG logos render without optimizer config */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={l.src}
                     alt={l.name}
                     className={`h-7 w-auto max-w-[132px] object-contain ${embedded ? "" : "sm:h-8"}`}
@@ -75,6 +77,8 @@ export default function Recognition({
                   {/* plain img so SVG logos render without optimizer config */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={l.src}
                     alt={l.name}
                     className="h-6 w-auto max-w-[132px] object-contain opacity-70 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 sm:h-7"
@@ -98,6 +102,8 @@ export default function Recognition({
                 {ACCREDITATION.map((a) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
+                    loading="lazy"
+                    decoding="async"
                     key={a.name}
                     src={a.src}
                     alt={a.name}

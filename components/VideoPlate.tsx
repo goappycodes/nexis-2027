@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "./SmartImage";
 
 /** A poster image with a play control that opens the video in a full-screen
     overlay. The embed is only mounted once the viewer clicks, so nothing is
@@ -49,12 +50,12 @@ export default function VideoPlate({
         aria-label={`${label} — opens in a full-screen player`}
         className="group relative block w-full overflow-hidden rounded-[4px] border border-white/10 bg-[#0e0e11]"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={poster}
           alt={alt}
           width={width}
           height={height}
+          sizes="(max-width: 1023px) 100vw, 50vw"
           loading="lazy"
           decoding="async"
           className="block h-auto w-full"

@@ -1,12 +1,29 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { ArrowRight } from "./icons";
+import useNearViewport from "./useNearViewport";
 
 // Pages were rendered from the source PDF at this pixel size.
 const PAGE_W = 1100;
 const PAGE_H = 854;
+
+// Context reaches pages even when react-pageflip caches its child elements.
+const ActivePage = createContext(0);
+function YearbookImage({ src, index }: { src: string; index: number }) {
+  const active = useContext(ActivePage);
+  const inRange = index >= active - 1 && index <= active + 2;
+  const [loaded, setLoaded] = useState(inRange);
+  useEffect(() => { if (inRange) setLoaded(true); }, [inRange]);
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={loaded || inRange ? src : undefined}
+      alt={`NEXIS Yearbook — page ${index + 1}`} width={PAGE_W} height={PAGE_H}
+      loading="eager" decoding="async" className="h-full w-full object-cover"
+      draggable={false} />
+  );
+}
 
 type FlipApi = {
   getState: () => string;
@@ -22,7 +39,7 @@ type FlipApi = {
 };
 
 export default function YearbookFlipBook({ pages }: { pages: string[] }) {
-  const wrapRef = useRef<HTMLDivElement>(null);
+  const { ref: wrapRef, near } = useNearViewport<HTMLDivElement>();
   const bookRef = useRef<{ pageFlip: () => FlipApi }>(null);
   const hinted = useRef(false);
   const interacted = useRef(false);
@@ -127,7 +144,8 @@ export default function YearbookFlipBook({ pages }: { pages: string[] }) {
           }
         }}
       >
-        {pageWidth > 0 && (
+        {near && pageWidth > 0 && (
+          <ActivePage.Provider value={pageIndex}>
           <HTMLFlipBook
             ref={bookRef}
             key={pageWidth}
@@ -166,16 +184,11 @@ export default function YearbookFlipBook({ pages }: { pages: string[] }) {
                 key={src}
                 className="relative h-full w-full overflow-hidden bg-ink"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`NEXIS Yearbook — page ${i + 1}`}
-                  className="h-full w-full object-cover"
-                  draggable={false}
-                />
+                <YearbookImage src={src} index={i} />
               </div>
             ))}
           </HTMLFlipBook>
+          </ActivePage.Provider>
         )}
       </div>
       <div className="mt-4 flex items-center justify-between gap-3">

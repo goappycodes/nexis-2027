@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "./SmartImage";
 import { STUDENTS } from "@/lib/content";
 
 /** Three rows of student faces, each auto-scrolling as a marquee, with the

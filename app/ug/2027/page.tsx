@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/SmartImage";
+import LazyVideo from "@/components/LazyVideo";
 import Reveal from "@/components/Reveal";
 import Recognition from "@/components/Recognition";
 import StudentCarousel from "@/components/StudentCarousel";
@@ -216,6 +217,8 @@ export default function UG2027LandingPage() {
                 {ACCREDITATION.slice(0, 2).map((mark) => (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
+                    loading="lazy"
+                    decoding="async"
                     key={mark.name}
                     src={mark.src}
                     alt={mark.name}
@@ -280,6 +283,8 @@ export default function UG2027LandingPage() {
             ].map((l) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
+                loading="lazy"
+                decoding="async"
                 key={l.name}
                 src={l.src}
                 alt={l.name}
@@ -455,18 +460,11 @@ export default function UG2027LandingPage() {
       <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh] lg:h-auto lg:min-h-0">
         <div className="h-full lg:mx-auto lg:grid lg:h-auto lg:max-w-[1040px] lg:grid-cols-[minmax(0,1fr)_288px] lg:items-center lg:gap-20 lg:px-12 lg:py-10">
         <div className="absolute inset-0 lg:relative lg:inset-auto lg:col-start-2 lg:row-start-1 lg:aspect-[9/16] lg:overflow-hidden lg:rounded-lg lg:bg-black lg:ring-1 lg:ring-white/15" aria-hidden="true">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
+          <LazyVideo
+            src="/videos/intern-spotlight.mp4"
             poster="/videos/intern-spotlight-poster.jpg"
-            tabIndex={-1}
             className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 object-cover lg:inset-0 lg:h-full lg:min-h-0 lg:w-full lg:min-w-0 lg:translate-x-0 lg:translate-y-0 lg:object-contain"
-          >
-            <source src="/videos/intern-spotlight.mp4" type="video/mp4" />
-          </video>
+          />
         </div>
         {/* Scrim at both ends, so text stays legible whether it sits at
             the top of the frame or the bottom */}
@@ -531,7 +529,7 @@ export default function UG2027LandingPage() {
                   src={f.src}
                   alt={f.name}
                   fill
-                  loading={i < 6 ? "eager" : "lazy"}
+                  loading="lazy"
                   sizes="(max-width:640px) 176px, 224px"
                   className="object-cover"
                 />
@@ -645,6 +643,8 @@ export default function UG2027LandingPage() {
                   {ACCREDITATION.map((a) => (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
+                      loading="lazy"
+                      decoding="async"
                       key={a.name}
                       src={a.src}
                       alt={a.name}
