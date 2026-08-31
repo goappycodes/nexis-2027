@@ -860,6 +860,14 @@ export const SITE_NAV: NavItem[] = [
       { label: "School of AI", href: "/school-of-ai" },
       { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
       { label: "Career Prospects", href: "/ug/career-prospects" },
+    ],
+  },
+  {
+    label: "Participate",
+    children: [
+      { label: "PitchTank", href: "/ug/pitch-tank" },
+      { label: "18 under 18", href: "/18-under-18" },
+      { label: "Himalayan Scholarship Test", href: "/ug/himalayan-scholarship-test" },
       { label: "Voice of NEXIS", href: "/voice-of-nexis" },
     ],
   },
@@ -868,6 +876,7 @@ export const SITE_NAV: NavItem[] = [
     children: [
       { label: "Admission Enquiry", href: "/ug/admission-enquiry" },
       { label: "Book a Campus Tour", href: "/ug/book-campus-tour" },
+      { label: "Register for a Day @ NEXIS", href: "/ug/register-for-day-nexis" },
       { label: "Book a Founder Connect", href: "/ug/book-founder-connect" },
       { label: "Request a Callback", href: "/ug/request-callback" },
     ],
