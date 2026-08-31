@@ -37,6 +37,14 @@ export const metadata: Metadata = {
     description:
       "Learn business by building it. Real work from your first semester, mentored by founders and CXOs. Admissions open for the Batch of 2027.",
     type: "website",
+    siteName: "NEXIS School of Business",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEXIS School of Business — India's most practical business school",
+    description:
+      "Learn business by building it, in Siliguri. UG, PGP and School of AI programs, mentored by founders and CXOs.",
   },
 };
 
