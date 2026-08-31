@@ -322,6 +322,16 @@
   .lp-poppins:not([data-font-theme="poppins"] *) .serif-em {
     font-weight: inherit;
   }
+
+  .lp-poppins:not([data-font-theme="poppins"] *) .lp-hero-title {
+    font-size: clamp(2rem, 6.4vw, 2.85rem);
+  }
+
+  @media (min-width: 1024px) {
+    .lp-poppins:not([data-font-theme="poppins"] *) .lp-hero-title {
+      font-size: clamp(2.75rem, 3.9vw, 3.6rem);
+    }
+  }
 }
 
 /* Desktop rhythm for the paid-ads page; approved phone/tablet styles stay intact. */
