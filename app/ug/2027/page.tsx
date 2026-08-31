@@ -461,12 +461,7 @@ export default function UG2027LandingPage() {
       <section className="border-y border-line bg-paper-2/40 py-7 sm:py-12">
         <div className="shell mb-5 max-w-2xl lg:max-w-none">
           <Reveal>
-            <p className="flex items-center gap-2.5 font-serif text-[1rem] font-normal leading-snug text-ink-2 sm:text-[1.15rem]">
-              <span className="h-px w-7 shrink-0 bg-crimson" />
-              They haven&rsquo;t even graduated — and they&rsquo;re already
-              working.
-            </p>
-            <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)] lg:max-w-3xl">
+            <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] lg:max-w-3xl">
               Meet our first-years, already{" "}
               <span className="serif-em text-crimson">
                 interning and earning
