@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "./SmartImage";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import { ArrowUpRight } from "./icons";
@@ -39,11 +39,11 @@ export default function HomePrograms() {
             <Reveal key={p.title} delay={i * 90}>
               <Card
                 href={p.href as string}
-                className={`lift group flex h-full flex-col overflow-hidden rounded-[2px] border border-line bg-paper ${
-                  p.live ? "hover:border-ink/30" : ""
+                className={`lift group flex h-full flex-col overflow-hidden rounded-[6px] border border-white/15 bg-ink text-paper ${
+                  p.live ? "hover:border-crimson/60" : ""
                 }`}
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+                <div className="relative aspect-[16/9] overflow-hidden bg-paper-2">
                   <Image
                     src={p.img}
                     alt={p.title}
@@ -52,14 +52,14 @@ export default function HomePrograms() {
                     className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
-                  <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-crimson backdrop-blur">
+                  <span className="absolute left-4 top-4 rounded-full bg-crimson px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white">
                     {p.tag}
                   </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <h3 className="font-serif text-2xl leading-tight">{p.title}</h3>
-                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-ink-2">
+                  <p className="mt-3 flex-1 text-[0.95rem] leading-relaxed text-white/70">
                     {p.d}
                   </p>
 
@@ -67,17 +67,17 @@ export default function HomePrograms() {
                     {p.meta.map((m) => (
                       <span
                         key={m}
-                        className="rounded-full border border-line px-3 py-1 text-[0.72rem] text-muted"
+                        className="rounded-full border border-white/15 px-3 py-1 text-[0.72rem] text-white/55"
                       >
                         {m}
                       </span>
                     ))}
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-line pt-5">
+                  <div className="mt-6 flex items-center justify-between border-t border-white/15 pt-5">
                     <span
                       className={`text-[0.82rem] font-medium ${
-                        p.live ? "text-ink" : "text-muted"
+                        p.live ? "text-paper" : "text-white/55"
                       }`}
                     >
                       {p.live ? "Explore program" : "Coming soon"}

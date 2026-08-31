@@ -27,11 +27,13 @@ export default function SiteNav({
   applyHref = "#apply",
   logoHref = "#top",
   theme = "light",
+  branding = "default",
 }: {
   links?: NavItem[];
   applyHref?: string;
   logoHref?: string;
   theme?: "light" | "dark";
+  branding?: "default" | "2027";
 }) {
   const dark = theme === "dark";
   const linkCls = dark ? "text-white/80" : "text-ink-2";
@@ -56,18 +58,18 @@ export default function SiteNav({
     <>
       {/* Announcement strip */}
       <div className="relative z-[60] bg-ink text-paper">
-        <div className="shell flex items-center justify-center gap-3 py-2 text-center text-[0.72rem] tracking-[0.14em] uppercase">
+        <div className={branding === "2027" ? "flex items-center justify-center gap-1 px-2 py-2.5 text-center text-[clamp(10px,3.2vw,18px)] font-semibold whitespace-nowrap" : "shell flex items-center justify-center gap-3 py-2 text-center text-[0.72rem] tracking-[0.14em] uppercase"}>
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-crimson" />
           <span className="opacity-90">
-            Admissions open · {BATCH.cohort} · Starts {BATCH.starts}
+            {branding === "2027" ? "Early Bird Admissions for 2027 Batch start 1st Dec" : <>Admissions open · {BATCH.cohort} · Starts {BATCH.starts}</>}
           </span>
         </div>
       </div>
 
       {/* Nav */}
       <header
-        className={`sticky top-0 z-50 transition-colors duration-500 ${
-          dark
+        className={`${branding === "2027" ? "relative" : "sticky top-0"} z-50 transition-colors duration-500 ${
+          branding === "2027" ? "bg-paper border-b border-line" : dark
             ? scrolled
               ? "border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md"
               : "border-b border-transparent bg-[#08080a]"
@@ -84,7 +86,7 @@ export default function SiteNav({
               width={400}
               height={105}
               priority
-              className="h-7 w-auto"
+              className={branding === "2027" ? "h-8 w-auto sm:h-7" : "h-7 w-auto"}
             />
           </a>
 

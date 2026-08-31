@@ -38,11 +38,9 @@ function ToolMark({ id }: { id: string }) {
 }
 
 /** Small uppercase group label with a hairline running off to the right. */
-function GroupLabel({ children, tone }: { children: string; tone: "lime" | "crimson" | "muted" }) {
+function GroupLabel({ children, tone }: { children: string; tone: "crimson" | "muted" }) {
   const color =
-    tone === "lime"
-      ? "text-lime"
-      : tone === "crimson"
+    tone === "crimson"
       ? "text-crimson"
       : "text-white/40";
   return (
@@ -97,7 +95,7 @@ export default function CurriculumJourney() {
       {/* Compact readout on phones, where the year rail has no room */}
       <div className="sticky top-[112px] z-20 rounded-[4px] border border-white/10 bg-[#0e0e11]/95 px-4 py-3 backdrop-blur-md lg:hidden">
         <div className="flex items-baseline justify-between gap-3">
-          <p className="truncate text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-lime">
+          <p className="truncate text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-crimson">
             {cur.year} · {cur.theme}
           </p>
           <p className="shrink-0 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-white/40">
@@ -167,7 +165,7 @@ export default function CurriculumJourney() {
                         key={s.n}
                         className={`rounded-full px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.12em] transition-colors duration-300 ${
                           live
-                            ? "bg-lime text-ink"
+                            ? "bg-crimson text-white"
                             : on
                             ? "bg-white/15 text-white/75"
                             : "bg-white/5 text-white/35"
@@ -202,7 +200,7 @@ export default function CurriculumJourney() {
                 {String(s.n).padStart(2, "0")}
               </span>
               <div className="min-w-0">
-                <p className="text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-lime">
+                <p className="text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-crimson">
                   {s.year} · {s.label}
                 </p>
                 <h4 className="mt-1.5 font-serif text-lg leading-tight text-white sm:text-xl">
@@ -258,7 +256,7 @@ export default function CurriculumJourney() {
             </div>
 
             <div className="mt-5 rounded-[4px] border border-white/10 bg-[#0e0e11] p-5">
-              <GroupLabel tone="lime">Tools you will work in</GroupLabel>
+              <GroupLabel tone="crimson">Tools you will work in</GroupLabel>
               <div className="mt-4 flex flex-wrap gap-2">
                 {s.tools.map((id) => (
                   <ToolMark key={id} id={id} />

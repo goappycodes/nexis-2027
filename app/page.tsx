@@ -21,17 +21,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative">
-      <SiteNav />
+    <main className="relative font-poppins lp-poppins">
+      <SiteNav branding="2027" />
       <HomeHero />
-      <Recognition />
+      <Recognition vibrant doubleRow />
       <Ethos />
       <HomePrograms />
       <HomeWhy />
       <HomeProof />
       <CampusLife index="" />
       <PressStrip />
-      <Founders index="" />
+      <Founders index="" branded />
       <Faq index="" />
       <CtaBand />
       <SiteFooter />

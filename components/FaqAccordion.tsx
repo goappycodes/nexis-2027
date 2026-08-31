@@ -16,7 +16,7 @@ export type FaqItem = { q: string; a: string | FaqBlock[] };
 function Answer({ a, dark }: { a: string | FaqBlock[]; dark: boolean }) {
   const body = dark ? "text-white/65" : "text-ink-2";
   const head = dark ? "text-white/90" : "text-ink";
-  const dot = dark ? "bg-lime" : "bg-crimson";
+  const dot = "bg-crimson";
   const blocks: FaqBlock[] = typeof a === "string" ? [{ p: a }] : a;
 
   return (
@@ -50,9 +50,7 @@ function Answer({ a, dark }: { a: string | FaqBlock[]; dark: boolean }) {
               {b.ol.map((li, n) => (
                 <li key={li} className="flex gap-3">
                   <span
-                    className={`shrink-0 text-[0.78rem] font-semibold tabular-nums ${
-                      dark ? "text-lime" : "text-crimson"
-                    }`}
+                    className="shrink-0 text-[0.78rem] font-semibold tabular-nums text-crimson"
                   >
                     {String(n + 1).padStart(2, "0")}
                   </span>

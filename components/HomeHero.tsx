@@ -11,20 +11,20 @@ const HOME_FACTS = [
 
 export default function HomeHero() {
   return (
-    <section id="top" className="relative">
-      <div className="shell relative z-10 pt-5 pb-7 sm:pt-9 sm:pb-9 lg:pt-11">
+    <section id="top" className="relative bg-ink text-paper">
+      <div className="shell relative z-10 py-10 sm:py-12 lg:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Left — statement */}
           <div className="lg:col-span-7">
             <Reveal>
-              <p className="kicker flex items-center gap-3">
+              <p className="kicker flex items-center gap-3 text-white/65">
                 <span className="h-px w-8 bg-crimson" />
                 NEXIS School of Business · Siliguri
               </p>
             </Reveal>
 
             <Reveal delay={80}>
-              <h1 className="display balance mt-4 text-[clamp(2.5rem,6.4vw,5.1rem)]">
+              <h1 className="display balance mt-5 text-[clamp(2.5rem,4.8vw,3.75rem)]">
                 India&rsquo;s most{" "}
                 <span className="serif-em text-crimson">practical</span> business
                 school.
@@ -32,7 +32,7 @@ export default function HomeHero() {
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-ink-2">
+              <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-white/75">
                 Learn by doing. Work from day one. Build the skills real careers
                 are made of — mentored by founders and CXOs, at a modern campus
                 in Siliguri.
@@ -45,7 +45,7 @@ export default function HomeHero() {
                   Explore programs
                   <ArrowRight className="arrow" />
                 </a>
-                <a href="#campus" className="btn btn-ghost">
+                <a href="#campus" className="btn border-white/30 bg-transparent text-paper hover:bg-white/10">
                   Take a campus tour
                   <ArrowUpRight className="arrow" />
                 </a>
@@ -56,7 +56,7 @@ export default function HomeHero() {
           {/* Right — campus plate */}
           <div className="lg:col-span-5">
             <Reveal delay={200} className="relative">
-              <figure className="relative aspect-[16/10] overflow-hidden rounded-[2px] bg-paper-2 sm:aspect-[4/5] lg:aspect-[7/8]">
+              <figure className="relative aspect-[16/10] overflow-hidden rounded-[6px] bg-paper-2 lg:aspect-[4/5]">
                 <Image
                   src="/images/campus/apex-hall.jpg"
                   alt="Students inside the NEXIS campus in Siliguri"
@@ -72,7 +72,7 @@ export default function HomeHero() {
                 </figcaption>
               </figure>
 
-              <div className="absolute -left-3 -top-3 hidden rounded-[2px] border border-line bg-paper px-4 py-3 shadow-[0_18px_40px_-24px_rgba(11,12,16,0.5)] sm:block lg:-left-8">
+              <div className="absolute -left-3 -top-3 hidden rounded-[6px] border border-line bg-paper px-4 py-3 text-ink shadow-[0_18px_40px_-24px_rgba(11,12,16,0.5)] sm:block lg:-left-8">
                 <p className="font-serif text-3xl leading-none">50+</p>
                 <p className="mt-1 text-[0.68rem] uppercase tracking-[0.12em] text-muted">
                   CXO mentors
@@ -84,7 +84,7 @@ export default function HomeHero() {
       </div>
 
       {/* Fact rail */}
-      <div className="relative z-10 border-y border-line">
+      <div className="relative z-10 border-y border-line bg-paper text-ink">
         <div className="shell grid grid-cols-2 divide-line md:grid-cols-4 md:divide-x">
           {HOME_FACTS.map((f, i) => (
             <Reveal
@@ -94,7 +94,7 @@ export default function HomeHero() {
                 i % 2 === 0 ? "pr-4" : "pl-4 md:pl-7"
               } ${i < 2 ? "border-b border-line md:border-b-0" : ""}`}
             >
-              <p className="kicker">{f.label}</p>
+              <p className="kicker text-crimson">{f.label}</p>
               <p className="mt-2 font-serif text-xl leading-tight">{f.value}</p>
               <p className="mt-0.5 text-[0.8rem] text-muted">{f.sub}</p>
             </Reveal>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Image from "next/image";
+import Image from "@/components/SmartImage";
+import Recognition from "@/components/Recognition";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
@@ -16,7 +17,6 @@ import {
   UG_EVENTS,
   UG_SECTIONS,
   ACCREDITATION,
-  RECRUITER_LOGOS,
   CAMPUS_IMAGES,
   CAMPUS_STATS,
   OUTCOME_STATS,
@@ -440,10 +440,10 @@ const UG_FAQS: FaqItem[] = [
 const DEEP = "bg-[#08080a]";
 const ANCHOR = "scroll-mt-[7.5rem]";
 
-/** Lime pill label — the live page's yellow card badge. */
+/** Brand pill label shared with the final landing page. */
 function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="self-start rounded-full bg-lime px-3.5 py-1 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ink">
+    <span className="self-start rounded-full bg-crimson px-3.5 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white">
       {children}
     </span>
   );
@@ -456,9 +456,7 @@ function Points({ items, dark }: { items: string[]; dark: boolean }) {
       {items.map((p) => (
         <li key={p} className="flex gap-3 text-[0.92rem] leading-relaxed">
           <ArrowRight
-            className={`mt-[0.3rem] shrink-0 text-[0.72rem] ${
-              dark ? "text-lime" : "text-crimson"
-            }`}
+            className="mt-[0.3rem] shrink-0 text-[0.72rem] text-crimson"
           />
           <span className={dark ? "text-white/65" : "text-ink-2"}>{p}</span>
         </li>
@@ -485,13 +483,11 @@ const CARD_DARK =
 
 /** Hairline brand rule along a card's top edge — grows from a short accent to
     the full width on hover. The premium stand-in for the offset shadow. */
-function AccentRule({ lime = false }: { lime?: boolean }) {
+function AccentRule() {
   return (
     <span
       aria-hidden
-      className={`pointer-events-none absolute left-0 top-0 z-10 h-px w-24 bg-gradient-to-r to-transparent transition-[width] duration-700 ease-premium group-hover:w-full ${
-        lime ? "from-lime" : "from-crimson"
-      }`}
+      className="pointer-events-none absolute left-0 top-0 z-10 h-px w-24 bg-gradient-to-r from-crimson to-transparent transition-[width] duration-700 ease-premium group-hover:w-full"
     />
   );
 }
@@ -579,7 +575,7 @@ function HighlightCard({
 }) {
   return (
     <Reveal className={`grid md:grid-cols-2 ${dark ? CARD_DARK : CARD_LIGHT}`}>
-      <AccentRule lime={dark} />
+      <AccentRule />
       <div
         className={`flex items-center justify-center ${
           mediaContain
@@ -632,8 +628,8 @@ function HighlightCard({
 
 export default function UGPage() {
   return (
-    <main className="relative font-poppins ug-poppins ug-serif">
-      <SiteNav applyHref="#apply" theme="dark" />
+    <main className="relative font-poppins lp-poppins">
+      <SiteNav applyHref="#apply" logoHref="/" branding="2027" />
 
       {/* ============ HERO — full-bleed media, centred content ============ */}
       <section
@@ -654,16 +650,16 @@ export default function UGPage() {
         {/* Horizontal scrim keeps the centred headline legible over busy areas. */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(8,8,10,0.72)_0%,rgba(8,8,10,0.35)_55%,transparent_100%)]" />
         <div className="pointer-events-none absolute -left-40 -top-40 -z-10 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
-        <div className="pointer-events-none absolute -right-24 top-1/3 -z-10 h-72 w-72 rounded-full bg-lime/10 blur-[130px]" />
+        <div className="pointer-events-none absolute -right-24 top-1/3 -z-10 h-72 w-72 rounded-full bg-crimson/10 blur-[130px]" />
 
         <div className="shell relative flex flex-col items-center pb-12 pt-12 text-center sm:pt-16 lg:pb-16 lg:pt-24">
           <Reveal>
             <p className="flex items-center justify-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-              <span className="h-px w-8 bg-lime" />
-              <span className="text-lime">
+              <span className="h-px w-8 bg-crimson" />
+              <span className="text-crimson">
                 Undergraduate Program · {BATCH.city} Campus
               </span>
-              <span className="h-px w-8 bg-lime" />
+              <span className="h-px w-8 bg-crimson" />
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -711,14 +707,14 @@ export default function UGPage() {
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white/45">
               Our programs are backed by
             </p>
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            <div className="mx-auto mt-7 grid max-w-3xl grid-cols-2 items-center justify-items-center gap-x-8 gap-y-7 sm:grid-cols-4">
               {ACCREDITATION.map((a) => (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   key={a.name}
                   src={a.src}
                   alt={a.name}
-                  className="h-9 w-auto max-w-[160px] object-contain opacity-90 sm:h-11"
+                  className="h-14 w-full max-w-[160px] object-contain opacity-90 sm:h-16"
                 />
               ))}
             </div>
@@ -727,7 +723,7 @@ export default function UGPage() {
       </section>
 
       {/* ============ PROGRAM AT A GLANCE ============ */}
-      <section className={`bg-ink ${ANCHOR} text-white`} id="highlights">
+      <section className={`bg-paper-2/50 ${ANCHOR} text-ink`} id="highlights">
         <div className="shell py-12 sm:py-16 lg:py-20">
           <div className="grid items-center gap-9 lg:grid-cols-12 lg:gap-14">
             <div className="lg:col-span-6">
@@ -744,28 +740,28 @@ export default function UGPage() {
             </div>
             <div className="lg:col-span-6">
               <Reveal>
-                <h2 className="display balance text-[clamp(1.7rem,4vw,2.8rem)] text-white">
+                <h2 className="display balance text-[clamp(1.7rem,4vw,2.8rem)] text-ink">
                   Undergraduate Program in{" "}
                   <span className="serif-em text-crimson">Business Management</span>
                 </h2>
               </Reveal>
               <Reveal delay={80}>
-                <p className="mt-5 inline-flex items-center gap-2.5 rounded-full border border-lime/30 bg-lime/10 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-lime">
-                  <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+                <p className="mt-5 inline-flex items-center gap-2.5 rounded-full border border-crimson/30 bg-crimson/10 px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-crimson">
+                  <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
                   Admissions open · {BATCH.cohort}
                 </p>
               </Reveal>
 
-              <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-white/10 pt-7 sm:gap-x-10">
+              <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-line pt-7 sm:gap-x-10">
                 {FACTS.map((f, i) => (
                   <Reveal key={f.label} delay={i * 70}>
-                    <p className="text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-lime">
+                    <p className="text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-crimson">
                       {f.label}
                     </p>
                     <p className="mt-2 font-serif text-xl leading-tight">
                       {f.value}
                     </p>
-                    <p className="mt-0.5 text-[0.8rem] leading-snug text-white/45">
+                    <p className="mt-0.5 text-[0.8rem] leading-snug text-muted">
                       {f.sub}
                     </p>
                   </Reveal>
@@ -784,7 +780,7 @@ export default function UGPage() {
                 </a>
                 <a
                   href={CONTACT.applyHref}
-                  className="btn border-white/25 bg-transparent text-white hover:bg-white/10"
+                  className="btn btn-ghost"
                 >
                   Enquire now
                   <ArrowRight className="arrow" />
@@ -874,14 +870,14 @@ export default function UGPage() {
       {/* ============ SECTION RAIL ============ */}
       <nav
         aria-label="Page sections"
-        className="sticky top-[66px] z-30 border-y border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md"
+        className="relative z-30 border-y border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md"
       >
         <div className="shell flex gap-6 overflow-x-auto py-3.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {UG_SECTIONS.map((s) => (
             <a
               key={s.href}
               href={s.href}
-              className="whitespace-nowrap text-[0.78rem] font-medium text-white/55 transition-colors hover:text-lime"
+              className="whitespace-nowrap text-[0.78rem] font-medium text-white/55 transition-colors hover:text-crimson"
             >
               {s.label}
             </a>
@@ -895,8 +891,8 @@ export default function UGPage() {
           <div className="max-w-3xl">
             <Reveal>
               <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-                <span className="h-px w-8 bg-lime" />
-                <span className="text-lime">Side by side</span>
+                <span className="h-px w-8 bg-crimson" />
+                <span className="text-crimson">Side by side</span>
               </p>
             </Reveal>
             <Reveal delay={80}>
@@ -927,7 +923,7 @@ export default function UGPage() {
                 delay={Math.min(i, 4) * 60}
                 className="grid gap-x-8 gap-y-3 border-t border-white/10 py-6 md:grid-cols-12 md:py-7"
               >
-                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-lime md:col-span-3">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-crimson md:col-span-3">
                   {d.dim}
                 </p>
                 <div className="md:col-span-4">
@@ -1006,8 +1002,8 @@ export default function UGPage() {
           <div className="pt-2">
             <Reveal className="mb-7 max-w-2xl">
               <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-                <span className="h-px w-8 bg-lime" />
-                <span className="text-lime">The full syllabus</span>
+                <span className="h-px w-8 bg-crimson" />
+                <span className="text-crimson">The full syllabus</span>
               </p>
               <h3 className="display balance mt-4 text-[clamp(1.5rem,3.4vw,2.4rem)] text-white">
                 Every course, project and tool —{" "}
@@ -1081,7 +1077,7 @@ export default function UGPage() {
                       className="block h-full w-auto max-w-none"
                     />
                     <figcaption className="absolute inset-x-0 bottom-0 flex items-center gap-2 bg-gradient-to-t from-black/85 to-transparent p-3 pt-10 text-[0.74rem] font-medium text-white">
-                      <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
                       {img.cap}
                     </figcaption>
                   </figure>
@@ -1123,8 +1119,8 @@ export default function UGPage() {
         <div className="shell mb-9 max-w-2xl">
           <Reveal>
             <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-              <span className="h-px w-8 bg-lime" />
-              <span className="text-lime">Our students, at work</span>
+              <span className="h-px w-8 bg-crimson" />
+              <span className="text-crimson">Our students, at work</span>
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -1329,23 +1325,8 @@ export default function UGPage() {
             </Reveal>
           </div>
 
-          <div className="marquee-mask mt-10 overflow-hidden">
-            <div className="flex w-max items-center animate-marquee">
-              {[...RECRUITER_LOGOS, ...RECRUITER_LOGOS].map((l, i) => (
-                <div
-                  key={`${l.name}-${i}`}
-                  className="flex h-12 shrink-0 items-center justify-center px-8 sm:px-10"
-                  title={l.name}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={l.src}
-                    alt={l.name}
-                    className="h-6 w-auto max-w-[130px] object-contain opacity-70 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 sm:h-7"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="mt-10">
+            <Recognition vibrant doubleRow embedded showKicker={false} showAccreditation={false} />
           </div>
 
           <div className="mt-9 grid grid-cols-2 gap-6 border-y border-line py-8 lg:grid-cols-4">
@@ -1373,7 +1354,7 @@ export default function UGPage() {
                 style={{ top: `calc(6rem + ${i * 0.9}rem)` }}
                 className={`sticky flex flex-col md:static ${CARD_DARK}`}
               >
-                <AccentRule lime />
+                <AccentRule />
                 <div className="relative aspect-[2/1] overflow-hidden bg-black/40 sm:aspect-[16/9]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -1385,7 +1366,7 @@ export default function UGPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-lime">
+                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-crimson">
                     {p.meta}
                   </span>
                   <h3 className="mt-2 font-serif text-[1.02rem] leading-tight text-white">
@@ -1401,7 +1382,7 @@ export default function UGPage() {
                           key={pt}
                           className="flex gap-3 text-[0.82rem] leading-relaxed text-white/70"
                         >
-                          <span className="shrink-0 text-[0.74rem] font-semibold tabular-nums text-lime">
+                          <span className="shrink-0 text-[0.74rem] font-semibold tabular-nums text-crimson">
                             {String(n + 1).padStart(2, "0")}
                           </span>
                           <span>{pt}</span>
@@ -1465,7 +1446,7 @@ export default function UGPage() {
                 className="rounded-[3px] border border-white/10 bg-[#0e0e11] p-6 sm:p-8"
               >
                 <div className="flex items-center gap-3">
-                  <span className="display text-3xl text-lime">{s.n}</span>
+                  <span className="display text-3xl text-crimson">{s.n}</span>
                   <span className="h-px flex-1 bg-white/10" />
                 </div>
                 <h3 className="mt-5 font-serif text-xl leading-tight">{s.title}</h3>
@@ -1478,7 +1459,7 @@ export default function UGPage() {
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             <Reveal className="rounded-[3px] border border-white/10 bg-[#0e0e11] p-6 sm:p-8">
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-lime">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-crimson">
                 Eligibility
               </p>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-white/70">
@@ -1491,7 +1472,7 @@ export default function UGPage() {
               delay={80}
               className="rounded-[3px] border border-white/10 bg-[#0e0e11] p-6 sm:p-8"
             >
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-lime">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-crimson">
                 Tuition fee
               </p>
               <ul className="mt-4 space-y-2.5 text-[0.95rem] leading-relaxed text-white/70">
@@ -1509,7 +1490,7 @@ export default function UGPage() {
               delay={160}
               className="rounded-[3px] border border-white/10 bg-[#0e0e11] p-6 sm:p-8"
             >
-              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-lime">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-crimson">
                 Financing
               </p>
               <p className="mt-4 text-[0.95rem] leading-relaxed text-white/70">
@@ -1629,8 +1610,8 @@ export default function UGPage() {
             <div className="lg:col-span-4">
               <Reveal>
                 <p className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.2em]">
-                  <span className="h-px w-8 bg-lime" />
-                  <span className="text-lime">Questions</span>
+                  <span className="h-px w-8 bg-crimson" />
+                  <span className="text-crimson">Questions</span>
                 </p>
               </Reveal>
               <Reveal delay={80}>
