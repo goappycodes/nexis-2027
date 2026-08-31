@@ -3,8 +3,8 @@ import { BATCH, CONTACT, FOOTER_EXPLORE, FOOTER_LEGAL } from "@/lib/content";
 
 const PROGRAMS = [
   { label: "UG in Business Management", href: "/ug" },
-  { label: "PG in Business Management", href: "#" },
-  { label: "School of AI", href: "#" },
+  { label: "PGP in Business & Technology", href: "/pgp" },
+  { label: "School of AI", href: "/school-of-ai" },
 ];
 
 export default function SiteFooter() {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces, Poppins } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 const inter = Inter({
@@ -59,6 +60,7 @@ export default function RootLayout({
         />
       </head>
       <body className="grain">
+        <StructuredData />
         <SmoothScroll />
         {children}
       </body>

@@ -446,21 +446,21 @@ export const PROGRAMS = [
   },
   {
     tag: "Postgraduate",
-    title: "PG in Business Management",
-    d: "An intensive postgraduate program for graduates ready to fast-track into leadership, entrepreneurship and high-growth careers.",
-    meta: ["Full-time", "On-campus", "For graduates"],
+    title: "PGP in Business & Technology",
+    d: "A 12-month, part-time postgraduate program for graduates, entrepreneurs and family-business leaders — founder-led faculty and a mentored capstone.",
+    meta: ["12 months", "Part-time", "For graduates"],
     img: "/images/campus/legacy-hall.jpg",
-    href: "#",
-    live: false,
+    href: "/pgp",
+    live: true,
   },
   {
     tag: "New",
     title: "School of AI",
-    d: "Build genuine fluency in applied AI — the tools, workflows and judgement that make you effective in any modern business.",
-    meta: ["Applied AI", "Hands-on", "Future-ready"],
+    d: "India's first School of AI for Class 8–12 students — build real AI apps, automations and a capstone startup, mentored by IIT/IIM/ISB faculty.",
+    meta: ["Classes 8–12", "Hands-on", "Weekends"],
     img: "/images/campus/apex-hall.jpg",
-    href: "#",
-    live: false,
+    href: "/school-of-ai",
+    live: true,
   },
 ];
 
@@ -853,9 +853,11 @@ export const SITE_NAV: NavItem[] = [
     ],
   },
   {
-    label: "Program",
+    label: "Programs",
     children: [
       { label: "UG in Business Management", href: "/ug" },
+      { label: "PGP in Business & Technology", href: "/pgp" },
+      { label: "School of AI", href: "/school-of-ai" },
       { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
       { label: "Career Prospects", href: "/ug/career-prospects" },
       { label: "Voice of NEXIS", href: "/voice-of-nexis" },

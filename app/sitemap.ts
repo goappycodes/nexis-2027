@@ -8,6 +8,8 @@ const lastModified = "2026-08-09";
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/ug", priority: 0.9 },
+  { path: "/pgp", priority: 0.9 },
+  { path: "/school-of-ai", priority: 0.9 },
   { path: "/private-colleges-in-siliguri", priority: 0.8 },
   { path: "/bba-colleges-in-siliguri", priority: 0.8 },
   { path: "/about", priority: 0.7 },
