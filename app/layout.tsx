@@ -32,19 +32,15 @@ export const metadata: Metadata = {
   description:
     "A three-year, on-campus undergraduate program in Siliguri where you learn business by building real businesses — mentored by founders and CXOs from day one. Admissions open for the Batch of 2027.",
   icons: { icon: "/brand/nexis-icon.png" },
+  // No og:title/description here — Next derives them per page from each
+  // page's own `title`/`description`, so shared links describe the real page.
   openGraph: {
-    title: "NEXIS — Undergraduate Program in Business Management · Batch of 2027",
-    description:
-      "Learn business by building it. Real work from your first semester, mentored by founders and CXOs. Admissions open for the Batch of 2027.",
     type: "website",
     siteName: "NEXIS School of Business",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXIS School of Business — India's most practical business school",
-    description:
-      "Learn business by building it, in Siliguri. UG, PGP and School of AI programs, mentored by founders and CXOs.",
   },
 };
 

@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 /* The live deployment. Swap to https://nexisschool.com when the custom
    domain cuts over to this site (also update app/robots.ts). */
 const BASE = "https://nexis-2027.vercel.app";
-const lastModified = "2026-08-09";
+const lastModified = "2026-09-01";
 
 const ROUTES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },

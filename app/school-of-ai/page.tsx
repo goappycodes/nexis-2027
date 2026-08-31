@@ -24,12 +24,6 @@ export const metadata: Metadata = {
   description:
     "A hands-on, weekend AI program in Siliguri for school students in Classes 8–12. Build AI apps, chatbots, automations and a capstone AI startup — mentored by faculty from IIT, IIM and ISB. AI Foundations & AI Mastery tracks.",
   alternates: { canonical: "/school-of-ai" },
-  openGraph: {
-    title: "NEXIS School of AI — for Class 8–12 students",
-    description:
-      "Build real AI projects, earn Google + NEXIS certifications, and gain a 4–6 year head start. Weekend classes in Siliguri, mentored by IIT/IIM/ISB faculty.",
-    type: "website",
-  },
 };
 
 const APPLY = "https://apply.nexisschool.com/nexis-school-of-ai-official-application/";

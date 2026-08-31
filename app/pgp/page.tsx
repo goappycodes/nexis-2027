@@ -29,12 +29,6 @@ export const metadata: Metadata = {
   description:
     "A 12-month, part-time postgraduate program in Siliguri for entrepreneurs, family-business leaders and working professionals. Learn from 75% outstation founders and CXOs, specialise, and finish with a mentored capstone.",
   alternates: { canonical: "/pgp" },
-  openGraph: {
-    title: "NEXIS PGP — 12-Month Launchpad to transform Business Leaders",
-    description:
-      "Part-time postgraduate program in Siliguri. Founder-led faculty, three specialisation tracks, and a mentored capstone that ships a real business.",
-    type: "website",
-  },
 };
 
 const APPLY = "https://apply.nexisschool.com/pgp-admission/";
