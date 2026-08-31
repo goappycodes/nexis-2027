@@ -15,6 +15,8 @@ import {
   SectionRail,
   Reveal,
 } from "@/components/editorial";
+import JsonLd from "@/components/JsonLd";
+import { courseSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -231,6 +233,23 @@ export default function SchoolOfAIPage() {
   return (
     <main className="relative font-poppins lp-poppins">
       <SiteNav applyHref={ENQUIRE} logoHref="/" branding="2027" />
+      <JsonLd
+        data={[
+          courseSchema({
+            name: "NEXIS School of AI — for Class 8–12 Students",
+            description:
+              "A hands-on, weekend AI program in Siliguri for school students in Classes 8–12. Build AI apps, chatbots, automations and a capstone AI startup — with Google + NEXIS certification.",
+            path: "/school-of-ai",
+            mode: "Onsite",
+            duration: "P3M",
+          }),
+          faqPageSchema(AI_FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "School of AI", path: "/school-of-ai" },
+          ]),
+        ]}
+      />
 
       {/* ============ HERO ============ */}
       <section id="top" className={`relative isolate overflow-hidden ${DEEP} text-white`}>

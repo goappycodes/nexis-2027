@@ -20,6 +20,8 @@ import {
   Reveal,
 } from "@/components/editorial";
 import { CONTACT, ACCREDITATION } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import { courseSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -404,6 +406,23 @@ export default function PGPPage() {
   return (
     <main className="relative font-poppins lp-poppins">
       <SiteNav applyHref={ENQUIRE} logoHref="/" branding="2027" />
+      <JsonLd
+        data={[
+          courseSchema({
+            name: "Postgraduate Program (PGP) in Business & Technology",
+            description:
+              "A 12-month, part-time postgraduate program in Siliguri for graduates, entrepreneurs and family-business leaders — founder-led faculty, a specialisation track and a mentored capstone.",
+            path: "/pgp",
+            mode: "Blended",
+            duration: "P12M",
+          }),
+          faqPageSchema(PGP_FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "PGP in Business & Technology", path: "/pgp" },
+          ]),
+        ]}
+      />
 
       {/* ============ HERO ============ */}
       <section

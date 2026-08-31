@@ -7,6 +7,8 @@ import { ArrowUpRight } from "@/components/icons";
 import { AccentRule, CARD_LIGHT } from "@/components/editorial";
 import { FEATURED_POSTS, ARCHIVE_POSTS, postUrl } from "@/lib/blog";
 import { SITE_NAV, CONTACT } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import { blogItemListSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "The NEXIS Journal — Stories on Business, Skills & Siliguri",
@@ -27,6 +29,15 @@ export default function BlogPage() {
   return (
     <main className="relative">
       <SiteNav links={SITE_NAV} applyHref={CONTACT.applyHref} logoHref="/" />
+      <JsonLd
+        data={[
+          blogItemListSchema([...FEATURED_POSTS, ...ARCHIVE_POSTS]),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "The NEXIS Journal", path: "/blog" },
+          ]),
+        ]}
+      />
 
       <PageHero
         kicker="The NEXIS Journal"

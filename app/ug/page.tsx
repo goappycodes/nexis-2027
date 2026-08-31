@@ -22,6 +22,8 @@ import {
   OUTCOME_STATS,
   FACULTY,
 } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import { courseSchema, faqPageSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title:
@@ -630,6 +632,23 @@ export default function UGPage() {
   return (
     <main className="relative font-poppins lp-poppins">
       <SiteNav applyHref="#apply" logoHref="/" branding="2027" />
+      <JsonLd
+        data={[
+          courseSchema({
+            name: "Undergraduate Program in Business Management",
+            description:
+              "A three-year, on-campus undergraduate program in Siliguri — Digital Sales & Marketing, Business Analytics and Entrepreneurship — where you practise what you learn every day, mentored by founders and CXOs.",
+            path: "/ug",
+            mode: "Onsite",
+            duration: "P3Y",
+          }),
+          faqPageSchema(UG_FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "UG in Business Management", path: "/ug" },
+          ]),
+        ]}
+      />
 
       {/* ============ HERO — full-bleed media, centred content ============ */}
       <section

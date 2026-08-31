@@ -7,6 +7,8 @@ import { ArrowUpRight, ArrowRight } from "@/components/icons";
 import { AccentRule, CARD_LIGHT } from "@/components/editorial";
 import { VACANCIES, postUrl } from "@/lib/blog";
 import { SITE_NAV, CONTACT } from "@/lib/content";
+import JsonLd from "@/components/JsonLd";
+import { jobPostingSchema, breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Careers at NEXIS — Build the Future of Business Education",
@@ -21,6 +23,15 @@ export default function CareersPage() {
   return (
     <main className="relative">
       <SiteNav links={SITE_NAV} applyHref={CONTACT.applyHref} logoHref="/" />
+      <JsonLd
+        data={[
+          ...VACANCIES.map(jobPostingSchema),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Careers", path: "/careers" },
+          ]),
+        ]}
+      />
 
       <PageHero
         kicker="Careers"
