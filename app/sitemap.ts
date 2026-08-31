@@ -17,6 +17,8 @@ const ROUTES: { path: string; priority: number }[] = [
   { path: "/ug/life-at-nexis", priority: 0.7 },
   { path: "/ug/career-prospects", priority: 0.7 },
   { path: "/recognition", priority: 0.7 },
+  { path: "/blog", priority: 0.7 },
+  { path: "/careers", priority: 0.6 },
   { path: "/events", priority: 0.6 },
   { path: "/voice-of-nexis", priority: 0.6 },
   { path: "/voice-of-nexis/registration", priority: 0.5 },

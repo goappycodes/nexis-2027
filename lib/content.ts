@@ -869,6 +869,7 @@ export const SITE_NAV: NavItem[] = [
       { label: "18 under 18", href: "/18-under-18" },
       { label: "Himalayan Scholarship Test", href: "/ug/himalayan-scholarship-test" },
       { label: "Voice of NEXIS", href: "/voice-of-nexis" },
+      { label: "The NEXIS Journal", href: "/blog" },
     ],
   },
   {
@@ -890,7 +891,8 @@ export const FOOTER_EXPLORE = [
   { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
   { label: "Campus", href: "/about/campus" },
   { label: "Recognition", href: "/recognition" },
-  { label: "Career Prospects", href: "/ug/career-prospects" },
+  { label: "The NEXIS Journal", href: "/blog" },
+  { label: "Careers", href: "/careers" },
   { label: "Events", href: "/events" },
   { label: "Contact", href: "/contact-us" },
 ];
