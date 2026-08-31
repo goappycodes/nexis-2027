@@ -493,7 +493,7 @@ export default function UG2027LandingPage() {
           <Reveal className="max-w-sm">
             <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem]">
               You intern{" "}
-              <span className="serif-em text-crimson">twice</span> in 3
+              <span className="serif-em text-crimson">thrice</span> in 3
               years.
             </h2>
           </Reveal>
