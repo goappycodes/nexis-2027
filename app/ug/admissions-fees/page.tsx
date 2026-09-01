@@ -63,15 +63,33 @@ export default function AdmissionsFeesPage() {
               Three steps. One chance for us to get to know <span className="serif-em text-crimson">the real you</span>.
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {ADMISSION_STEPS.map((step, index) => (
-              <Reveal key={step.n} delay={index * 80} className={`p-6 sm:p-8 ${CARD_LIGHT}`}>
-                <AccentRule />
-                <span className="display text-5xl text-crimson">{step.n}</span>
-                <h3 className="mt-5 font-serif text-2xl leading-tight">{step.title}</h3>
-                <p className="mt-3 text-[0.9rem] leading-relaxed text-ink-2">{step.d}</p>
-              </Reveal>
-            ))}
+          <div className="mt-10 grid gap-5 lg:grid-cols-12 lg:gap-8">
+            <Reveal className="relative aspect-[16/10] overflow-hidden rounded-[5px] bg-paper-2 lg:col-span-5 lg:aspect-auto">
+              <Image
+                src="/images/ug/admissions.jpg"
+                alt="Students presenting during a live NEXIS session"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-crimson">Before the form</p>
+                <p className="mt-2 max-w-sm font-serif text-2xl leading-tight text-white">Visit the campus. Meet the team. Then decide.</p>
+              </div>
+            </Reveal>
+            <div className="grid gap-4 lg:col-span-7">
+              {ADMISSION_STEPS.map((step, index) => (
+                <Reveal key={step.n} delay={index * 70} className={`grid grid-cols-[54px_1fr] gap-4 p-5 sm:grid-cols-[68px_1fr] sm:gap-5 sm:p-6 ${CARD_LIGHT}`}>
+                  <AccentRule />
+                  <span className="display text-3xl leading-none text-crimson sm:text-4xl">{step.n}</span>
+                  <div>
+                    <h3 className="font-serif text-xl leading-tight sm:text-2xl">{step.title}</h3>
+                    <p className="mt-2 text-[0.86rem] leading-relaxed text-ink-2 sm:text-[0.9rem]">{step.d}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
