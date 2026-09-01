@@ -144,14 +144,14 @@ export default function UG2027LandingPage() {
       <div className="lg:bg-ink">
       <div className="lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
       {/* Hero — image band with overlaid statement */}
-      <section className="relative h-[42vh] min-h-[340px] w-full overflow-hidden sm:h-[52vh] lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-h-[580px]">
+      <section className="relative h-[42vh] min-h-[340px] w-full overflow-hidden bg-ink sm:h-[52vh] lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-h-[580px]">
         <Image
           src="/images/campus/life-at-nexis.jpg"
           alt="Students on the NEXIS campus in Siliguri"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-contain object-top sm:object-cover sm:object-center"
         />
         {/* Legibility overlays: a strong uniform scrim + a heavy bottom
             gradient so the white headline stays readable over bright photos. */}
@@ -407,29 +407,29 @@ export default function UG2027LandingPage() {
             <Reveal>
               <p className="kicker text-muted">Other Undergrad Courses</p>
             </Reveal>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
               {OTHER_COURSES.map((c, i) => (
                 <Reveal
                   key={c.name}
                   delay={80 + i * 80}
                   className="group flex flex-col overflow-hidden rounded-[4px] border border-white/15 bg-ink text-paper lg:grid lg:grid-cols-[144px_minmax(0,1fr)] xl:grid-cols-[176px_minmax(0,1fr)]"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/9] lg:aspect-auto lg:min-h-[184px]">
+                  <div className="relative aspect-video overflow-hidden bg-black lg:aspect-auto lg:min-h-[184px]">
                     <Image
                       src={c.img}
                       alt={c.alt}
                       fill
                       sizes="(max-width:1023px) 46vw, (max-width:1279px) 144px, 176px"
-                      className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03]"
+                      className="object-contain motion-safe:transition-transform motion-safe:duration-700 motion-safe:group-hover:scale-[1.03] lg:object-cover"
                     />
                     <span className="absolute left-2 top-2 rounded-full bg-crimson px-2.5 py-1 text-[0.6rem] font-semibold tracking-[0.08em] text-white shadow-sm sm:left-3 sm:top-3 sm:px-3 sm:text-[0.7rem]">
                       3 YEARS
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col items-start p-3 sm:p-6 lg:p-4 xl:p-5">
-                    <p className="hidden text-[0.72rem] uppercase tracking-[0.16em] text-crimson sm:block">{c.focus}</p>
+                    <p className="text-[0.68rem] uppercase tracking-[0.14em] text-crimson sm:text-[0.72rem] sm:tracking-[0.16em]">{c.focus}</p>
                     <h3 className="max-w-md font-serif text-[1.15rem] leading-tight sm:mt-2 sm:text-[1.8rem] lg:text-[1.35rem]">{c.name}</h3>
-                    <p className="mt-2 hidden text-[0.82rem] leading-relaxed text-white/75 lg:block">
+                    <p className="mt-2 text-[0.82rem] leading-relaxed text-white/75">
                       {c.description}
                     </p>
                     <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-white sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
