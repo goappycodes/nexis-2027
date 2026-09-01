@@ -12,6 +12,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-01 — `/ug/founding-batch`: replaced text-only milestone tiles with real-photo stories, clarified the short-film rail and corrected the closing image to show the actual founding cohort without mobile cropping.
 - 2026-09-01 — `/ug/admissions-fees`: replaced the oversized text-only process cards with a real-campus admissions story and compact numbered steps that are easier to scan on phones.
 - 2026-09-01 — `/events`: added an authentic pitch-night hero, changed the mobile event catalogue to a swipeable numbered rail and kept registration immediately after the event formats.
+- 2026-09-01 — `/about`: replaced generic introductory language, gave vision and mission distinct editorial treatments and turned the four principles into image-led stories using authentic campus, mentor and internship media.
 
 ## Next candidates
 

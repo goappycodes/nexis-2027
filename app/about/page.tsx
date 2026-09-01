@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import Founders from "@/components/Founders";
 import Recognition from "@/components/Recognition";
 import CalloutCta from "@/components/CalloutCta";
+import { AccentRule, CARD_DARK, CARD_LIGHT } from "@/components/editorial";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 import { SITE_NAV, CONTACT } from "@/lib/content";
 
@@ -20,18 +21,22 @@ const PRINCIPLES = [
   {
     t: "Practice over theory",
     d: "Students learn by doing — building ventures, running campaigns and consulting real businesses from the first semester, not memorising for an exam.",
+    img: "/wp-media/2025/08/case-study.jpg",
   },
   {
     t: "Mentors who've built",
     d: "Learn directly from founders, CEOs and CXOs of fast-growing companies — people who have actually built what they teach.",
+    img: "/images/ug/highlight-faculty.jpg",
   },
   {
     t: "A living campus",
     d: "Clubs, competitions, sport and real projects keep a modern campus in constant motion, all year round.",
+    img: "/images/ug/day-houses.jpg",
   },
   {
     t: "Outcomes from day one",
     d: "Internships every year and a 75+ company network mean careers start the day students join, not the day they graduate.",
+    img: "/videos/intern-spotlight-poster.jpg",
   },
 ];
 
@@ -48,7 +53,7 @@ export default function AboutPage() {
             <span className="serif-em text-crimson">works</span>.
           </>
         }
-        lede="At NEXIS, we prepare students with the skills and knowledge today's industries demand. Through practical learning, expert guidance and real-world exposure, we help you build a career with confidence and clarity."
+        lede="NEXIS was built around one simple idea: business is learned by doing it. On our Siliguri campus, briefs, campaigns, ventures and internships sit alongside the fundamentals from the beginning."
         actions={
           <>
             <a href={CONTACT.applyHref} className="btn btn-crimson">
@@ -85,17 +90,19 @@ export default function AboutPage() {
       {/* Vision & Mission */}
       <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-5 md:grid-cols-2">
-          <Reveal className="rounded-[2px] border border-line bg-paper p-8 sm:p-10">
-            <p className="kicker text-crimson">Vision</p>
-            <p className="mt-5 font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
+          <Reveal className={`p-8 sm:p-10 ${CARD_DARK}`}>
+            <AccentRule />
+            <p className="kicker text-crimson">01 · Vision</p>
+            <p className="mt-5 font-serif text-2xl leading-snug text-white sm:text-[1.7rem]">
               To be East India&rsquo;s leading name in new-age business
               education — creating the industry leaders and entrepreneurs of
               tomorrow by replacing an outdated model with a hands-on,
               real-world method.
             </p>
           </Reveal>
-          <Reveal delay={90} className="rounded-[2px] border border-line bg-paper p-8 sm:p-10">
-            <p className="kicker text-crimson">Mission</p>
+          <Reveal delay={90} className={`p-8 sm:p-10 ${CARD_LIGHT}`}>
+            <AccentRule />
+            <p className="kicker text-crimson">02 · Mission</p>
             <p className="mt-5 font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
               To transform business education in eastern India and build an
               institution that equips students to excel in the business world
@@ -123,15 +130,18 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          <div className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-[2px] border border-line bg-line sm:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-2">
             {PRINCIPLES.map((p, i) => (
-              <Reveal key={p.t} delay={i * 80} className="bg-paper p-8 sm:p-10">
-                <h3 className="font-serif text-xl leading-tight sm:text-2xl">
-                  {p.t}
-                </h3>
-                <p className="mt-4 text-[0.96rem] leading-relaxed text-ink-2">
-                  {p.d}
-                </p>
+              <Reveal key={p.t} delay={(i % 2) * 70} className={`grid min-h-[158px] grid-cols-[105px_1fr] overflow-hidden sm:grid-cols-[140px_1fr] ${CARD_LIGHT}`}>
+                <AccentRule />
+                <div className="relative min-h-full bg-paper-2">
+                  <Image src={p.img} alt="" fill sizes="140px" className="object-cover" />
+                  <span className="absolute left-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.58rem] font-semibold tracking-[0.12em] text-white backdrop-blur">0{i + 1}</span>
+                </div>
+                <div className="p-5 sm:p-6">
+                  <h3 className="font-serif text-xl leading-tight">{p.t}</h3>
+                  <p className="mt-3 text-[0.86rem] leading-relaxed text-ink-2">{p.d}</p>
+                </div>
               </Reveal>
             ))}
           </div>
