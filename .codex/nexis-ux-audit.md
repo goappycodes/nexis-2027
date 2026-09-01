@@ -14,6 +14,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-01 — `/events`: added an authentic pitch-night hero, changed the mobile event catalogue to a swipeable numbered rail and kept registration immediately after the event formats.
 - 2026-09-01 — `/about`: replaced generic introductory language, gave vision and mission distinct editorial treatments and turned the four principles into image-led stories using authentic campus, mentor and internship media.
 - 2026-09-02 — `/recognition`: added a real-campus trust hero and rebuilt affiliation cards around larger, scannable logo panels with concise explanations on phones.
+- 2026-09-02 — `/about/campus`: added a full campus hero and replaced text-only facility tiles plus a redundant gallery with a swipeable, photo-led tour of six real spaces.
 
 ## Next candidates
 
