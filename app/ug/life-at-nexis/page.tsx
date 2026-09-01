@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
-import PageHero from "@/components/PageHero";
+import UgDetailShell from "@/components/UgDetailShell";
 import Reveal from "@/components/Reveal";
 import StudentWall from "@/components/StudentWall";
-import CalloutCta from "@/components/CalloutCta";
-import { ArrowRight, ArrowUpRight } from "@/components/icons";
-import { SITE_NAV, CONTACT } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Life at NEXIS | Clubs, Sport, Events & Campus Culture",
   description:
     "Clubs, sport, competitions, fests and industry immersions — a living campus where you build friendships, ventures and a network that outlasts the program.",
+  alternates: { canonical: "/ug/student-life" },
 };
 
 const STATS = [
@@ -125,49 +121,15 @@ const FAQS = [
 
 export default function LifeAtNexisPage() {
   return (
-    <main className="relative">
-      <SiteNav links={SITE_NAV} applyHref={CONTACT.applyHref} logoHref="/" />
-
-      <PageHero
-        kicker="Life at NEXIS"
-        title={
-          <>
-            Where ambition meets{" "}
-            <span className="serif-em text-crimson">belonging</span>.
-          </>
-        }
-        lede="There's a club for every curious mind — code, culture, cameras and more. Compete every month, lead a club, travel with your cohort, and build friendships that outlast the program."
-        actions={
-          <>
-            <a href="/ug/book-campus-tour" className="btn btn-crimson">
-              Book a campus tour
-              <ArrowRight className="arrow" />
-            </a>
-            <a href="/ug/request-callback" className="btn btn-ghost">
-              Request a callback
-              <ArrowUpRight className="arrow" />
-            </a>
-          </>
-        }
-      />
-
-      {/* Stat strip */}
-      <div className="border-y border-line">
-        <div className="shell grid grid-cols-2 divide-line sm:grid-cols-3 lg:grid-cols-5 sm:divide-x">
-          {STATS.map((s, i) => (
-            <Reveal
-              key={s.l}
-              delay={i * 60}
-              className="py-5 sm:py-7 sm:px-6 sm:first:pl-0"
-            >
-              <p className="display text-[clamp(1.9rem,3vw,2.6rem)] text-crimson">
-                {s.k}
-              </p>
-              <p className="mt-1 text-[0.82rem] text-ink-2">{s.l}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
+    <UgDetailShell
+      eyebrow="UG in Business Management · Student life"
+      title={<>A campus with plans after <span className="serif-em text-crimson">class</span>.</>}
+      lede="Clubs, pitch rooms, house rivalries, sport, music and trips give every week another gear—and give every student a place to lead, compete or simply belong."
+      image="/images/ug/day-houses.jpg"
+      imageAlt="NEXIS students celebrating together during a campus event"
+      facts={STATS.filter((stat) => stat.l !== "annual fests").map((stat) => ({ label: stat.l, value: stat.k }))}
+      ctaTitle={<>The best way to feel the campus is to <span className="serif-em">step inside</span>.</>}
+    >
 
       {/* Clubs */}
       <section className="shell py-8 sm:py-16 lg:py-24">
@@ -226,72 +188,60 @@ export default function LifeAtNexisPage() {
       </section>
 
       {/* Sports + Events */}
-      <section className="border-y border-line bg-paper-2/50">
-        <div className="shell grid gap-12 py-8 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-28">
-          <div>
-            <Reveal>
-              <p className="kicker flex items-center gap-3">
-                <span className="h-px w-8 bg-crimson" />
-                Immersive sports life
-              </p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-6 text-[clamp(1.9rem,4vw,3rem)]">
-                Sport, celebrated like{" "}
-                <span className="serif-em text-crimson">academics</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={140}>
-              <p className="mt-6 max-w-md text-[1rem] leading-relaxed text-ink-2">
-                Monthly inter-house competitions across a range of sports, on
-                partnered turfs and courts across the city.
-              </p>
-            </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-7 flex flex-wrap gap-2.5">
-                {SPORTS.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-line bg-paper px-4 py-2 text-[0.82rem] text-ink-2"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-          </div>
+      <section className="border-y border-white/10 bg-[#08080a] text-white">
+        <div className="shell py-12 sm:py-16 lg:py-24">
+          <Reveal className="max-w-3xl">
+            <p className="kicker flex items-center gap-3 text-crimson">
+              <span className="h-px w-8 bg-crimson" />
+              The week beyond class
+            </p>
+            <h2 className="display balance mt-5 text-[clamp(2rem,4.8vw,3.6rem)] text-white">
+              Compete hard. Make noise. Find <span className="serif-em text-crimson">your people</span>.
+            </h2>
+          </Reveal>
 
-          <div>
-            <Reveal>
-              <p className="kicker flex items-center gap-3">
-                <span className="h-px w-8 bg-crimson" />
-                Competitions & events
-              </p>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="display balance mt-6 text-[clamp(1.9rem,4vw,3rem)]">
-                The spirit of challenge &{" "}
-                <span className="serif-em text-crimson">celebration</span>.
-              </h2>
-            </Reveal>
-            <Reveal delay={140}>
-              <p className="mt-6 max-w-md text-[1rem] leading-relaxed text-ink-2">
-                From pitch battles and hackathons to fests and musical nights —
-                there&rsquo;s always something happening on campus.
-              </p>
-            </Reveal>
-            <Reveal delay={200}>
-              <div className="mt-7 flex flex-wrap gap-2.5">
-                {EVENTS.map((e) => (
-                  <span
-                    key={e}
-                    className="rounded-full border border-line bg-paper px-4 py-2 text-[0.82rem] text-ink-2"
-                  >
-                    {e}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {[
+              {
+                kicker: "Immersive sports life",
+                title: "The house scoreboard matters.",
+                description: "Monthly inter-house competitions across partnered turfs and courts across the city.",
+                image: "/images/ug/day-sports.jpg",
+                items: SPORTS,
+              },
+              {
+                kicker: "Competitions & events",
+                title: "There is always another room to enter.",
+                description: "Pitch battles, hackathons, fests and musical nights keep the campus calendar moving.",
+                image: "/wp-media/2025/03/stage1.jpg",
+                items: EVENTS,
+              },
+            ].map((block, index) => (
+              <Reveal key={block.kicker} delay={index * 80} className="group overflow-hidden rounded-[5px] border border-white/15 bg-white/[0.04]">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={block.image}
+                    alt={block.kicker}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <span className="absolute bottom-4 left-4 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-crimson">0{index + 1} / {block.kicker}</span>
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="font-serif text-2xl leading-tight text-white sm:text-3xl">{block.title}</h3>
+                  <p className="mt-3 text-[0.9rem] leading-relaxed text-white/58">{block.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {block.items.map((item) => (
+                      <span key={item} className="rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-[0.72rem] text-white/72">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -394,20 +344,6 @@ export default function LifeAtNexisPage() {
         </div>
       </section>
 
-      <CalloutCta
-        kicker="Come see it"
-        title={
-          <>
-            The best way to feel it is to{" "}
-            <span className="serif-em">visit</span>.
-          </>
-        }
-        lede="Book a campus tour, sit in on a session, and experience life at NEXIS for yourself."
-        primary={{ label: "Book a campus tour", href: "/ug/book-campus-tour" }}
-        secondary={{ label: "Apply for 2027", href: CONTACT.applyHref }}
-      />
-
-      <SiteFooter />
-    </main>
+    </UgDetailShell>
   );
 }

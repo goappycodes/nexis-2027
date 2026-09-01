@@ -63,7 +63,7 @@ export default function Faculty() {
         </div>
 
         <Reveal className="mt-10">
-          <a href="#prospectus" className="ulink text-[0.9rem] font-medium">
+          <a href="/ug/curriculum" className="ulink text-[0.9rem] font-medium">
             See the full faculty line-up &rarr;
           </a>
         </Reveal>

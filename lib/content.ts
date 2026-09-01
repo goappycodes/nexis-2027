@@ -67,87 +67,38 @@ export const UG_EVENTS: UgEvent[] = [
     href: "/ug/admission-enquiry",
     cta: "Apply now",
   },
-
-  /* ---- PLACEHOLDER ENTRIES ----------------------------------------------
-     Dummy events so the carousel can be reviewed with a realistic count.
-     Titles and dates are invented — replace or delete before going live. */
-  {
-    tag: "Masterclass",
-    date: "Sat, 20 Sep · 11:00 AM",
-    t: "Masterclass: Building a D2C Brand",
-    d: "A working session with a founder on positioning, pricing and the first thousand customers.",
-    img: "/images/campus/tour7.jpg",
-    href: "/events",
-    cta: "Save your seat",
-  },
-  {
-    tag: "Showcase",
-    date: "Fri, 3 Oct · 4:00 PM",
-    t: "OUTCLASS Demo Day",
-    d: "Students present the local businesses they consulted, and the revenue their work moved.",
-    img: "/images/campus/tour8.jpg",
-    href: "/events",
-    cta: "Register now",
-  },
-  {
-    tag: "Scholarship",
-    date: "Sun, 12 Oct · 10:00 AM",
-    t: "NEXGen Scholarship Test",
-    d: "The on-campus test that decides merit scholarships, worth 10% to 100% of tuition.",
-    img: "/images/campus/life-at-nexis.jpg",
-    href: "/ug/admission-enquiry",
-    cta: "Apply now",
-  },
-  {
-    tag: "Open house",
-    date: "Sat, 25 Oct · 11:00 AM",
-    t: "Parents' Open House",
-    d: "Walk the campus, meet the faculty and get the fee, financing and outcomes picture in one sitting.",
-    img: "/images/campus/legacy-hall.jpg",
-    href: "/ug/book-campus-tour",
-    cta: "Reserve a place",
-  },
-  {
-    tag: "Competition",
-    date: "Sat, 8 Nov · 9:00 AM",
-    t: "Startup Weekend @ NEXIS",
-    d: "Forty-eight hours from idea to pitch, judged by founders and investors from the network.",
-    img: "/images/campus/safe-future.jpg",
-    href: "/events",
-    cta: "Join the cohort",
-  },
 ];
 
 /* Tools students actually work in, listed per semester. No vendor logo files
    ship with the repo, so each mark renders as a monogram tile in the brand's
    own type; drop a file at /images/tools/<key>.svg and set `src` here and the
    real logo is used instead — nothing else changes. */
-export type ToolMark = { name: string; mark: string; src?: string };
+export type ToolMark = { name: string; mark: string; src?: string; color?: string };
 
 export const TOOL_MARKS: Record<string, ToolMark> = {
-  canva: { name: "Canva", mark: "Cv" },
-  chatgpt: { name: "ChatGPT", mark: "AI" },
-  linkedin: { name: "LinkedIn", mark: "in" },
-  sheets: { name: "Google Sheets", mark: "Sh" },
-  shopify: { name: "Shopify", mark: "Sp" },
-  meta: { name: "Meta Ads", mark: "M" },
-  wordpress: { name: "WordPress", mark: "W" },
-  notion: { name: "Notion", mark: "N" },
-  tally: { name: "Tally", mark: "T" },
-  tradingview: { name: "TradingView", mark: "TV" },
-  zapier: { name: "Zapier", mark: "Z" },
-  googleads: { name: "Google Ads", mark: "Ads" },
-  figma: { name: "Figma", mark: "Fg" },
-  framer: { name: "Framer", mark: "Fr" },
-  hubspot: { name: "HubSpot", mark: "Hs" },
-  excel: { name: "Excel", mark: "X" },
-  powerbi: { name: "Power BI", mark: "BI" },
-  sql: { name: "SQL", mark: "SQL" },
-  ga4: { name: "Google Analytics", mark: "GA" },
-  jira: { name: "Jira", mark: "Jr" },
-  semrush: { name: "Semrush", mark: "Se" },
-  mailchimp: { name: "Mailchimp", mark: "Mc" },
-  slack: { name: "Slack", mark: "Sl" },
+  canva: { name: "Canva", mark: "Cv", color: "#00C4CC" },
+  chatgpt: { name: "ChatGPT", mark: "AI", color: "#10A37F" },
+  linkedin: { name: "LinkedIn", mark: "in", color: "#0A66C2" },
+  sheets: { name: "Google Sheets", mark: "Sh", color: "#34A853" },
+  shopify: { name: "Shopify", mark: "Sp", color: "#7AB55C" },
+  meta: { name: "Meta Ads", mark: "M", color: "#0866FF" },
+  wordpress: { name: "WordPress", mark: "W", color: "#21759B" },
+  notion: { name: "Notion", mark: "N", color: "#111111" },
+  tally: { name: "Tally", mark: "T", color: "#6C5CE7" },
+  tradingview: { name: "TradingView", mark: "TV", color: "#2962FF" },
+  zapier: { name: "Zapier", mark: "Z", color: "#FF4F00" },
+  googleads: { name: "Google Ads", mark: "Ads", color: "#4285F4" },
+  figma: { name: "Figma", mark: "Fg", color: "#A259FF" },
+  framer: { name: "Framer", mark: "Fr", color: "#0055FF" },
+  hubspot: { name: "HubSpot", mark: "Hs", color: "#FF7A59" },
+  excel: { name: "Excel", mark: "X", src: "/images/tools/excel.svg" },
+  powerbi: { name: "Power BI", mark: "BI", src: "/images/tools/powerbi.svg" },
+  sql: { name: "SQL", mark: "SQL", src: "/images/tools/sql.svg" },
+  ga4: { name: "Google Analytics", mark: "GA", src: "/images/tools/ga4.svg" },
+  jira: { name: "Jira", mark: "Jr", src: "/images/tools/jira.svg" },
+  semrush: { name: "Semrush", mark: "Se", color: "#FF642D" },
+  mailchimp: { name: "Mailchimp", mark: "Mc", color: "#FFE01B" },
+  slack: { name: "Slack", mark: "Sl", color: "#611F69" },
 };
 
 /* The full three-year syllabus, as published on nexisschool.com/ug/curriculum.
@@ -159,7 +110,7 @@ export type CurriculumBlock = {
   items: string[];
 };
 
-export type CurriculumProject = { t: string; d: string };
+export type CurriculumProject = { t: string; d: string; img: string };
 
 export type CurriculumSemester = {
   /** 1–6, continuous across the three years. */
@@ -213,10 +164,12 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "Local Business Consulting",
             d: "Work closely with local cafés, dealerships and small businesses. Understand their challenges, come up with creative ideas, and help them boost their strategy, sales and growth — all while learning how real businesses work.",
+            img: "/wp-media/2025/08/case-study.jpg",
           },
           {
             t: "Dropshipping Challenge",
             d: "Choose a product, set up your own online store, and experience what it takes to build a business from scratch — from designing your website to making your first sale.",
+            img: "/images/ug/learn-dropshipping.jpg",
           },
         ],
         tools: ["canva", "linkedin", "chatgpt", "shopify", "sheets", "meta"],
@@ -254,10 +207,12 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "AIvolution",
             d: "Identify one real problem in the world or in a business and build a working AI product around it. From idea to prototype, you create something that actually solves a pain point and can be tested and improved.",
+            img: "/images/ug/learn-ai.jpg",
           },
           {
             t: "Professional Internship Experience",
             d: "A full-time, hands-on internship inside a startup, local business or corporate team. You work like an actual team member, take ownership of tasks, and understand how real companies run.",
+            img: "/videos/intern-spotlight-poster.jpg",
           },
         ],
         tools: ["wordpress", "notion", "tally", "tradingview", "zapier"],
@@ -296,6 +251,7 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "Creator Challenge",
             d: "Learn marketing by building your personal brand. Create content and grow your audience on your chosen platform.",
+            img: "/images/ug/learn-influencer.jpg",
           },
         ],
         tools: ["googleads", "meta", "figma", "framer", "hubspot"],
@@ -326,6 +282,7 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "The 10L Investment Challenge",
             d: "Learn finance by managing a virtual portfolio invested in live markets. Master personal finance while you are still a student.",
+            img: "/images/ug/highlight-curriculum.jpg",
           },
         ],
         tools: ["excel", "powerbi", "sql", "ga4", "jira"],
@@ -369,10 +326,12 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "Build Your Own Business (NEXIS Startup Lab)",
             d: "Turn your idea into a real venture — from product development to pitching your startup to mentors and investors.",
+            img: "/images/ug/career-entrepreneurship.jpg",
           },
           {
             t: "Career Bootcamp & Placement Drive",
             d: "Sessions on resume building, interviews and communication, then meeting recruiters directly through our placement drives.",
+            img: "/images/ug/career-jobs.jpg",
           },
         ],
         tools: ["excel", "semrush", "mailchimp", "zapier", "chatgpt"],
@@ -395,6 +354,7 @@ export const UG_CURRICULUM: CurriculumYear[] = [
           {
             t: "6-month Professional Internship",
             d: "A real taste of the corporate world with a startup, SME or large company — applying what you have learned on live projects, seeing how businesses actually run, and building your confidence and network.",
+            img: "/images/ug/admissions.jpg",
           },
         ],
         tools: ["slack", "notion", "jira", "hubspot", "linkedin"],
@@ -406,12 +366,12 @@ export const UG_CURRICULUM: CurriculumYear[] = [
 /* In-page section rail on /ug — mirrors the tab strip on nexisschool.com/ug. */
 export const UG_SECTIONS = [
   { label: "Why NEXIS", href: "#why" },
-  { label: "Highlights", href: "#highlights" },
-  { label: "Curriculum & Faculty", href: "#curriculum" },
-  { label: "Admissions & Fees", href: "#admissions" },
-  { label: "Career Outcome", href: "#careers" },
-  { label: "Student Life", href: "#student-life" },
-  { label: "Our batches", href: "#batches" },
+  { label: "Highlights", href: "/ug/highlights" },
+  { label: "Curriculum & Faculty", href: "/ug/curriculum" },
+  { label: "Admissions & Fees", href: "/ug/admissions-fees" },
+  { label: "Career Outcome", href: "/ug/career-prospect" },
+  { label: "Student Life", href: "/ug/student-life" },
+  { label: "Our batches", href: "/ug/founding-batch" },
   { label: "FAQs", href: "#faqs" },
 ];
 
@@ -665,16 +625,6 @@ export const FACULTY = [
     img: "/images/ug/mentor-naveen.jpg",
     d: "Director of HOC & Global Optics — turning vision into success since 1989, trusted by 1M+ customers.",
   },
-
-  /* ---- PLACEHOLDER ENTRIES ----------------------------------------------
-     Slots so the mentor carousel can be reviewed at a realistic length.
-     These are NOT real people — swap in each mentor's photo, name, role and
-     one-line credential, or delete, before this goes live. */
-  { name: "Mentor 04", role: "Finance Expert", img: "/images/ug/mentor-sharad.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
-  { name: "Mentor 05", role: "Operations Expert", img: "/images/ug/mentor-neeraj.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
-  { name: "Mentor 06", role: "Product Expert", img: "/images/ug/mentor-naveen.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
-  { name: "Mentor 07", role: "Growth Expert", img: "/images/ug/mentor-sharad.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
-  { name: "Mentor 08", role: "People & Culture", img: "/images/ug/mentor-neeraj.jpg", d: "Placeholder — replace with this mentor's company and one-line credential." },
 ];
 
 /* Government / accreditation marks — white logos, shown on a dark strip. */
@@ -825,11 +775,7 @@ export const CONTACT = {
   hours: "Mon–Fri · 10:00 AM – 6:00 PM",
   applyHref: "/ug/admission-enquiry",
   brochureHref: "https://link.nexisschool.com/nexisbrochure",
-  socials: [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Facebook", href: "#" },
-  ],
+  socials: [] as { label: string; href: string }[],
 };
 
 /* Grouped, real-route navigation used site-wide (homepage, /ug and every
@@ -856,10 +802,13 @@ export const SITE_NAV: NavItem[] = [
     label: "Programs",
     children: [
       { label: "UG in Business Management", href: "/ug" },
+      { label: "UG Highlights", href: "/ug/highlights" },
+      { label: "UG Curriculum", href: "/ug/curriculum" },
+      { label: "UG Admissions & Fees", href: "/ug/admissions-fees" },
       { label: "PGP in Business & Technology", href: "/pgp" },
       { label: "School of AI", href: "/school-of-ai" },
-      { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
-      { label: "Career Prospects", href: "/ug/career-prospects" },
+      { label: "Life at NEXIS", href: "/ug/student-life" },
+      { label: "Career Prospects", href: "/ug/career-prospect" },
     ],
   },
   {
@@ -888,7 +837,8 @@ export const SITE_NAV: NavItem[] = [
 export const FOOTER_EXPLORE = [
   { label: "About NEXIS", href: "/about" },
   { label: "The UG Program", href: "/ug" },
-  { label: "Life at NEXIS", href: "/ug/life-at-nexis" },
+  { label: "UG Curriculum", href: "/ug/curriculum" },
+  { label: "Life at NEXIS", href: "/ug/student-life" },
   { label: "Campus", href: "/about/campus" },
   { label: "Recognition", href: "/recognition" },
   { label: "The NEXIS Journal", href: "/blog" },

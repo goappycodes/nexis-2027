@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import { ArrowRight, ArrowUpRight } from "./icons";
-import { BATCH } from "@/lib/content";
+import { BATCH, CONTACT } from "@/lib/content";
 
 export default function CtaBand() {
   return (
@@ -33,14 +33,16 @@ export default function CtaBand() {
           <div className="lg:col-span-4 lg:justify-self-end">
             <Reveal delay={200} className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <a
-                href="#prospectus"
+                href={CONTACT.applyHref}
                 className="btn btn-light w-full justify-center sm:w-auto lg:w-full"
               >
                 Apply now
                 <ArrowRight className="arrow" />
               </a>
               <a
-                href="#prospectus"
+                href={CONTACT.brochureHref}
+                target="_blank"
+                rel="noreferrer"
                 className="btn w-full justify-center border-white/40 bg-transparent text-white hover:bg-white/10 sm:w-auto lg:w-full"
               >
                 Download prospectus

@@ -79,7 +79,7 @@ export default function Curriculum() {
         </div>
 
         <Reveal className="mt-10">
-          <a href="#prospectus" className="btn btn-light">
+          <a href="/ug/curriculum" className="btn btn-light">
             Explore the full 3-year curriculum
           </a>
         </Reveal>

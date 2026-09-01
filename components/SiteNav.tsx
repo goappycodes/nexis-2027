@@ -220,6 +220,17 @@ export default function SiteNav({
             Apply for {BATCH.year}
             <ArrowRight className="arrow" />
           </a>
+          <a
+            href="/events"
+            onClick={() => setOpen(false)}
+            className="mt-3 flex items-center justify-between rounded-[4px] bg-ink px-4 py-3 text-white"
+          >
+            <span>
+              <span className="block text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-crimson">Campus pulse</span>
+              <span className="mt-1 block font-serif text-base">See what&rsquo;s happening</span>
+            </span>
+            <ArrowRight />
+          </a>
         </div>
       </div>
     </>

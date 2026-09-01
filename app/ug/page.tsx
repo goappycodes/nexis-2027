@@ -1420,7 +1420,7 @@ export default function UGPage() {
           </div>
 
           <Reveal className="mt-9 text-center">
-            <a href="/ug/career-prospects" className="btn">
+            <a href="/ug/career-prospect" className="btn">
               Where does NEXIS take you?
               <ArrowRight className="arrow" />
             </a>
@@ -1556,7 +1556,7 @@ export default function UGPage() {
           </div>
 
           <Reveal className="mt-9 text-center">
-            <a href="/ug/life-at-nexis" className="btn">
+            <a href="/ug/student-life" className="btn">
               Get a glimpse of student life at NEXIS
               <ArrowRight className="arrow" />
             </a>

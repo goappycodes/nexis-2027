@@ -22,12 +22,13 @@ function ToolMark({ id }: { id: string }) {
           alt=""
           loading="lazy"
           decoding="async"
-          className="h-6 w-6 rounded-[3px] bg-white/90 object-contain p-0.5"
+          className="h-7 w-7 rounded-[5px] bg-white object-contain p-1 shadow-[0_3px_10px_rgba(0,0,0,0.25)]"
         />
       ) : (
         <span
           aria-hidden
-          className="grid h-6 w-6 place-items-center rounded-[3px] bg-white/10 font-serif text-[0.6rem] leading-none text-white/80"
+          className="grid h-7 w-7 place-items-center rounded-[5px] font-serif text-[0.58rem] font-semibold leading-none text-white shadow-[0_3px_10px_rgba(0,0,0,0.25)]"
+          style={{ backgroundColor: t.color ?? "#33343a", color: t.color === "#FFE01B" ? "#111" : "#fff" }}
         >
           {t.mark}
         </span>
@@ -242,14 +243,21 @@ export default function CurriculumJourney() {
                 {s.outClass.map((e) => (
                   <div
                     key={e.t}
-                    className="rounded-[4px] border border-crimson/25 bg-crimson/[0.07] p-5"
+                    className="grid min-h-[148px] grid-cols-[92px_1fr] overflow-hidden rounded-[4px] border border-crimson/25 bg-crimson/[0.07] sm:grid-cols-[150px_1fr]"
                   >
-                    <h5 className="font-serif text-[1.02rem] leading-tight text-white">
-                      {e.t}
-                    </h5>
-                    <p className="mt-2 text-[0.86rem] leading-relaxed text-white/60">
-                      {e.d}
-                    </p>
+                    <div className="relative min-h-full overflow-hidden bg-white/5">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={e.img} alt={e.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#160b10]/20" />
+                    </div>
+                    <div className="p-4 sm:p-5">
+                      <h5 className="font-serif text-[1.02rem] leading-tight text-white">
+                        {e.t}
+                      </h5>
+                      <p className="mt-2 text-[0.82rem] leading-relaxed text-white/60 sm:text-[0.86rem]">
+                        {e.d}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

@@ -1,0 +1,17 @@
+# NEXIS UX audit log
+
+This file tracks the recurring page-by-page polish so later passes move forward instead of reworking the same route.
+
+## Reviewed
+
+- 2026-09-01 — `/ug/highlights`: built as a real route with image-led programme proof, semester rhythm, portfolio evidence and responsive UG navigation.
+- 2026-09-01 — `/ug/curriculum`: added imagery to every OUTCLASS project, branded tool marks, uncropped mobile faculty artwork and verified the full page at 390px.
+- 2026-09-01 — shared footer: converted Explore and Programs navigation to two columns on phone.
+- 2026-09-01 — `/ug/career-prospect` and `/ug/career-prospects`: replaced the generic interior-page treatment with an image-led UG hero, persistent UG subnavigation, clearer job/founder pathways and a compact mobile career journey.
+- 2026-09-01 — `/ug/student-life` and `/ug/life-at-nexis`: moved both routes into the image-led UG system, added the sticky UG navigation and rebuilt the sports/events section as real-photo campus stories for a stronger phone experience.
+
+## Next candidates
+
+- `/ug/founding-batch`
+- `/ug/admissions-fees`
+- Remaining top-level and campaign pages

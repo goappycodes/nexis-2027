@@ -1,19 +1,24 @@
 import Image from "next/image";
 import { BATCH, CONTACT, FOOTER_EXPLORE, FOOTER_LEGAL } from "@/lib/content";
+import CampusPulse from "./CampusPulse";
 
 const PROGRAMS = [
   { label: "UG in Business Management", href: "/ug" },
+  { label: "UG curriculum", href: "/ug/curriculum" },
+  { label: "Admissions & fees", href: "/ug/admissions-fees" },
   { label: "PGP in Business & Technology", href: "/pgp" },
   { label: "School of AI", href: "/school-of-ai" },
 ];
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-ink text-paper">
+    <>
+      <CampusPulse />
+      <footer className="bg-ink text-paper">
       <div className="shell py-9 sm:py-14 lg:py-18">
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-12 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-5">
+          <div className="col-span-2 lg:col-span-5">
             <Image
               src="/brand/nexis-logo-white.png"
               alt="NEXIS"
@@ -104,6 +109,7 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-    </footer>
+      </footer>
+    </>
   );
 }

@@ -256,6 +256,7 @@ export default function BbaCollegesPage() {
       {/* Enquiry */}
       <div id="pcs-enquire" className="scroll-mt-24 border-t border-line bg-paper-2/50">
         <FormLayout
+          headingLevel="h2"
           kicker="Get guidance · No obligation"
           title={
             <>

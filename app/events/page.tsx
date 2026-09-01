@@ -60,7 +60,7 @@ const FORMATS = [
     t: "Fests & Cultural Nights",
     tag: "Celebrate",
     d: "Freshers, musical nights, Diwali and more — the moments that turn a cohort into a community.",
-    href: "/ug/life-at-nexis",
+    href: "/ug/student-life",
     cta: "See life at NEXIS",
     img: "/images/ug/day-houses.jpg",
   },
@@ -151,6 +151,7 @@ export default function EventsPage() {
       {/* Register */}
       <div id="register" className="scroll-mt-24 border-t border-line bg-paper-2/50">
         <FormLayout
+          headingLevel="h2"
           kicker="Register"
           title={
             <>

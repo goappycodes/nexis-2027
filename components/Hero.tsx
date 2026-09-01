@@ -40,7 +40,12 @@ export default function Hero() {
                   Apply for the {BATCH.cohort.split("–")[0]}
                   <ArrowRight className="arrow" />
                 </a>
-                <a href="#prospectus" className="btn btn-ghost">
+                <a
+                  href="https://link.nexisschool.com/nexisbrochure"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-ghost"
+                >
                   Download prospectus
                   <ArrowUpRight className="arrow" />
                 </a>

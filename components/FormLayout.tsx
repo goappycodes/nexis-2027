@@ -7,6 +7,7 @@ type Props = {
   lede?: ReactNode;
   aside?: ReactNode;
   children: ReactNode; // the form
+  headingLevel?: "h1" | "h2";
 };
 
 /** Two-column conversion layout: editorial copy + aside on the left,
@@ -17,7 +18,9 @@ export default function FormLayout({
   lede,
   aside,
   children,
+  headingLevel = "h1",
 }: Props) {
+  const Heading = headingLevel;
   return (
     <section className="shell py-7 sm:py-12 lg:py-16">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
@@ -30,9 +33,9 @@ export default function FormLayout({
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="display balance mt-5 text-[clamp(2.1rem,4.6vw,3.4rem)]">
+            <Heading className="display balance mt-5 text-[clamp(2.1rem,4.6vw,3.4rem)]">
               {title}
-            </h1>
+            </Heading>
           </Reveal>
           {lede && (
             <Reveal delay={150}>
