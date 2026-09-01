@@ -9,9 +9,9 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-01 — shared footer: converted Explore and Programs navigation to two columns on phone.
 - 2026-09-01 — `/ug/career-prospect` and `/ug/career-prospects`: replaced the generic interior-page treatment with an image-led UG hero, persistent UG subnavigation, clearer job/founder pathways and a compact mobile career journey.
 - 2026-09-01 — `/ug/student-life` and `/ug/life-at-nexis`: moved both routes into the image-led UG system, added the sticky UG navigation and rebuilt the sports/events section as real-photo campus stories for a stronger phone experience.
+- 2026-09-01 — `/ug/founding-batch`: replaced text-only milestone tiles with real-photo stories, clarified the short-film rail and corrected the closing image to show the actual founding cohort without mobile cropping.
 
 ## Next candidates
 
-- `/ug/founding-batch`
 - `/ug/admissions-fees`
 - Remaining top-level and campaign pages

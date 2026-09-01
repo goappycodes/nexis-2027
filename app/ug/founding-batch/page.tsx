@@ -14,16 +14,16 @@ export const metadata: Metadata = {
 };
 
 const FILMS = [
-  { src: "/videos/ug/batch-1.mp4", poster: "/images/ug/founding-1.jpg", label: "The people" },
-  { src: "/videos/ug/batch-2.mp4", poster: "/images/ug/founding-2.jpg", label: "The work" },
-  { src: "/videos/ug/batch-3.mp4", poster: "/images/ug/founding-3.jpg", label: "The energy" },
+  { src: "/videos/ug/batch-1.mp4", poster: "/images/ug/founding-1.jpg", label: "Meet the batch", note: "The people building the first traditions" },
+  { src: "/videos/ug/batch-2.mp4", poster: "/images/ug/founding-2.jpg", label: "Inside the work", note: "Student voices from the programme" },
+  { src: "/videos/ug/batch-3.mp4", poster: "/images/ug/founding-3.jpg", label: "Campus energy", note: "The moments between the milestones" },
 ];
 
 const MILESTONES = [
-  { t: "First paying briefs", d: "Students take on live business problems while the fundamentals are still fresh." },
-  { t: "First internships", d: "The cohort starts building professional proof long before final placements." },
-  { t: "First ventures", d: "Dropshipping, creator and startup challenges turn classroom ideas into market feedback." },
-  { t: "First traditions", d: "House leagues, pitch nights, clubs and celebrations become the culture future batches inherit." },
+  { t: "First paying briefs", d: "Students take on live business problems while the fundamentals are still fresh.", img: "/wp-media/2025/08/case-study.jpg" },
+  { t: "First internships", d: "The cohort starts building professional proof long before final placements.", img: "/videos/intern-spotlight-poster.jpg" },
+  { t: "First ventures", d: "Dropshipping, creator and startup challenges turn classroom ideas into market feedback.", img: "/images/ug/career-entrepreneurship.jpg" },
+  { t: "First traditions", d: "House leagues, pitch nights, clubs and celebrations become the culture future batches inherit.", img: "/images/ug/day-houses.jpg" },
 ];
 
 export default function FoundingBatchPage() {
@@ -71,11 +71,16 @@ export default function FoundingBatchPage() {
             </Reveal>
             <div className="grid gap-4 sm:grid-cols-2 lg:col-span-8">
               {MILESTONES.map((item, index) => (
-                <Reveal key={item.t} delay={(index % 2) * 70} className={`p-6 sm:p-7 ${CARD_LIGHT}`}>
+                <Reveal key={item.t} delay={(index % 2) * 70} className={`grid min-h-[150px] grid-cols-[100px_1fr] overflow-hidden sm:grid-cols-[130px_1fr] ${CARD_LIGHT}`}>
                   <AccentRule />
-                  <span className="display text-3xl text-crimson">0{index + 1}</span>
-                  <h3 className="mt-4 font-serif text-xl">{item.t}</h3>
-                  <p className="mt-2 text-[0.86rem] leading-relaxed text-ink-2">{item.d}</p>
+                  <div className="relative min-h-full bg-paper-2">
+                    <Image src={item.img} alt="" fill sizes="130px" className="object-cover" />
+                    <span className="absolute left-3 top-3 rounded-full bg-black/60 px-2.5 py-1 text-[0.58rem] font-semibold tracking-[0.12em] text-white backdrop-blur">0{index + 1}</span>
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <h3 className="font-serif text-xl leading-tight">{item.t}</h3>
+                    <p className="mt-2 text-[0.84rem] leading-relaxed text-ink-2">{item.d}</p>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -101,6 +106,7 @@ export default function FoundingBatchPage() {
                 <div className="p-5">
                   <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-crimson">Film 0{index + 1}</p>
                   <h3 className="mt-2 font-serif text-xl text-white">{film.label}</h3>
+                  <p className="mt-2 text-[0.78rem] leading-relaxed text-white/52">{film.note}</p>
                 </div>
               </Reveal>
             ))}
@@ -110,8 +116,8 @@ export default function FoundingBatchPage() {
 
       <section className="bg-paper text-ink">
         <div className="shell grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
-          <Reveal className="relative aspect-[4/3] overflow-hidden rounded-[5px] bg-paper-2">
-            <Image src="/images/ug/life-4.jpg" alt="NEXIS students together on campus" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <Reveal className="relative aspect-[4/5] overflow-hidden rounded-[5px] bg-[#08080a] sm:aspect-[16/10]">
+            <Image src="/images/ug/founding-1.jpg" alt="The founding NEXIS UG batch together on campus" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain" />
           </Reveal>
           <Reveal>
             <Kicker>Batch of 2027–2030</Kicker>
