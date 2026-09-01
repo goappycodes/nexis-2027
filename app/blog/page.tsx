@@ -54,9 +54,9 @@ export default function BlogPage() {
         {/* Lead story */}
         <Reveal className={`grid overflow-hidden md:grid-cols-2 ${CARD_LIGHT}`}>
           <AccentRule />
-          <a href={postUrl(lead.slug)} target="_blank" rel="noreferrer" className="relative block aspect-[16/10] overflow-hidden bg-ink md:aspect-auto">
+          <a href={postUrl(lead.slug)} target="_blank" rel="noreferrer" className="relative block aspect-video overflow-hidden bg-ink md:aspect-auto">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={lead.img} alt={lead.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium hover:scale-105" />
+            <img src={lead.img} alt={lead.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-premium hover:scale-105 md:object-cover" />
           </a>
           <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-11">
             <p className="flex items-center gap-3 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-crimson">
@@ -78,13 +78,13 @@ export default function BlogPage() {
         </Reveal>
 
         {/* Featured grid */}
-        <div className="mt-6 grid gap-5 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="-mx-[var(--gutter)] mt-6 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overflow-y-hidden px-[var(--gutter)] pb-3 [scrollbar-width:none] sm:mx-0 sm:mt-8 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {rest.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 70} className={`flex flex-col ${CARD_LIGHT}`}>
+            <Reveal key={p.slug} delay={(i % 3) * 70} className={`flex min-w-[84%] snap-center flex-col sm:min-w-0 ${CARD_LIGHT}`}>
               <AccentRule />
-              <a href={postUrl(p.slug)} target="_blank" rel="noreferrer" className="relative block aspect-[16/10] overflow-hidden bg-ink">
+              <a href={postUrl(p.slug)} target="_blank" rel="noreferrer" className="relative block aspect-video overflow-hidden bg-ink">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.img} alt={p.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium hover:scale-105" />
+                <img src={p.img} alt={p.title} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-premium hover:scale-105" />
               </a>
               <div className="flex flex-1 flex-col p-5">
                 <p className="flex items-center gap-2 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-crimson">

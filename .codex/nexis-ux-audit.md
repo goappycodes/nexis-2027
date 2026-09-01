@@ -19,6 +19,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/careers`: added an uncropped campus-in-motion story before the vacancies, connecting staff roles to student projects, events and mentoring on phone and desktop.
 - 2026-09-02 — `/voice-of-nexis`: stopped the campus collage from cropping on phones and added a swipeable, authentic photo rail of student speaking, an industry visit and campus competition moments.
 - 2026-09-02 — `/18-under-18`: replaced the awkwardly cropped phone hero with a full challenge image and made all three qualifier rounds swipeable with uncropped campaign artwork.
+- 2026-09-02 — `/blog`: preserved the complete lead and feature artwork on phones and turned the latest-story catalogue into a compact, swipeable editorial rail.
 
 ## Next candidates
 
