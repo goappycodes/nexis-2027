@@ -23,6 +23,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/private-colleges-in-siliguri`: replaced the text-only NEXIS recommendation with a premium, uncropped industry-visit feature and a clearer mobile proof-point row.
 - 2026-09-02 — `/bba-colleges-in-siliguri`: turned the text-only programme summary into an uncropped, presentation-led proof panel with more legible mobile programme highlights.
 - 2026-09-02 — `/school-of-ai`: made the hands-on project catalogue swipeable on phones and rebuilt the reasons-to-join cards around larger, uncropped mobile imagery.
+- 2026-09-02 — `/pgp`: condensed the long mobile audience and faculty catalogues into swipeable rails, enlarged the programme-advantage imagery and stopped profile and programme photos from cropping on phones.
 
 ## Next candidates
 
