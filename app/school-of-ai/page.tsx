@@ -373,13 +373,13 @@ export default function SchoolOfAIPage() {
             </Reveal>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="-mx-[var(--gutter)] mt-10 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overflow-y-hidden px-[var(--gutter)] pb-3 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
             {LEARN.map((c, i) => (
-              <Reveal key={c.t} delay={(i % 4) * 70} className={`flex flex-col ${CARD_LIGHT}`}>
+              <Reveal key={c.t} delay={(i % 4) * 70} className={`flex min-w-[84%] snap-center flex-col sm:min-w-0 ${CARD_LIGHT}`}>
                 <AccentRule />
-                <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+                <div className="relative aspect-[16/10] overflow-hidden bg-ink">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105" />
+                  <img src={c.img} alt={c.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-premium group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-serif text-[1.05rem] leading-tight">{c.t}</h3>
@@ -501,11 +501,11 @@ export default function SchoolOfAIPage() {
 
           <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-2">
             {WHY.map((a, i) => (
-              <Reveal key={a.t} delay={(i % 2) * 80} className={`flex ${CARD_DARK}`}>
+              <Reveal key={a.t} delay={(i % 2) * 80} className={`flex flex-col sm:flex-row ${CARD_DARK}`}>
                 <AccentRule />
-                <div className="relative w-28 shrink-0 overflow-hidden bg-black/40 sm:w-40">
+                <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-black/40 sm:aspect-auto sm:w-40">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={a.img} alt={a.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                  <img src={a.img} alt={a.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain sm:object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col justify-center p-5 sm:p-7">
                   <h3 className="font-serif text-lg leading-tight text-white sm:text-xl">{a.t}</h3>
