@@ -55,6 +55,24 @@ const PERKS = [
   },
 ];
 
+const CAMPUS_MOMENTS = [
+  {
+    label: "Student voices",
+    img: "/images/ug/life-1.jpg",
+    alt: "A NEXIS student speaking during a campus session",
+  },
+  {
+    label: "Industry visits",
+    img: "/images/ug/life-3.jpg",
+    alt: "NEXIS students together during an industry visit",
+  },
+  {
+    label: "Campus competitions",
+    img: "/images/ug/life-4.jpg",
+    alt: "A NEXIS student taking part in a campus cricket event",
+  },
+];
+
 export default function VoiceOfNexisPage() {
   return (
     <main className="relative">
@@ -121,15 +139,20 @@ export default function VoiceOfNexisPage() {
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[2px] border border-line bg-paper-2">
-                <Image
-                  src="/images/campus/life-at-nexis.jpg"
-                  alt="NEXIS student ambassadors on campus"
-                  fill
-                  sizes="(max-width:1024px) 100vw, 40vw"
-                  className="object-cover"
-                />
-              </div>
+              <figure className="mt-8 overflow-hidden rounded-[2px] border border-line bg-ink">
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src="/images/campus/life-at-nexis.jpg"
+                    alt="A collage of student activities and events at NEXIS"
+                    fill
+                    sizes="(max-width:1024px) 100vw, 40vw"
+                    className="object-contain"
+                  />
+                </div>
+                <figcaption className="border-t border-white/10 px-4 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/65">
+                  The campus you&rsquo;ll represent
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
           <div className="lg:col-span-7">
@@ -169,6 +192,30 @@ export default function VoiceOfNexisPage() {
                 <span className="serif-em text-crimson">CV</span>.
               </h2>
             </Reveal>
+          </div>
+
+          <div className="-mx-5 mt-10 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overflow-y-hidden px-5 pb-3 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            {CAMPUS_MOMENTS.map((moment, i) => (
+              <Reveal
+                key={moment.label}
+                delay={i * 70}
+                className="min-w-[82%] snap-center overflow-hidden rounded-[3px] border border-line bg-ink sm:min-w-0"
+              >
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={moment.img}
+                    alt={moment.alt}
+                    fill
+                    sizes="(max-width: 640px) 82vw, 33vw"
+                    className="object-contain"
+                  />
+                </div>
+                <p className="border-t border-white/10 px-4 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/65">
+                  <span className="mr-2 text-crimson">0{i + 1}</span>
+                  {moment.label}
+                </p>
+              </Reveal>
+            ))}
           </div>
 
           <div className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-[2px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
