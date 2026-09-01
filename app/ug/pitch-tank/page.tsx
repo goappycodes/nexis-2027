@@ -57,9 +57,9 @@ const STAGES = [
 
 const WHY = [
   { t: "Pitch to real investors", d: "Experience a real Shark Tank as a student.", img: "/wp-media/2024/10/school-benefit.jpg" },
-  { t: "Expert mentorship & workshops", d: "Learn directly from top entrepreneurs." },
-  { t: "Unmatched networking", d: "Connect with investors, mentors and like-minded peers." },
-  { t: "Win big", d: "Up to ₹1,00,000 in cash rewards, plus mentorship, internships and more." },
+  { t: "Expert mentorship & workshops", d: "Learn directly from top entrepreneurs.", img: "/images/ug/highlight-faculty.jpg" },
+  { t: "Unmatched networking", d: "Connect with investors, mentors and like-minded peers.", img: "/images/campus/cafeteria.jpg" },
+  { t: "Win big", d: "Up to ₹1,00,000 in cash rewards, plus mentorship, internships and more.", img: "/images/ug/day-treasure-hunt.jpg" },
 ];
 
 export default function PitchTankPage() {

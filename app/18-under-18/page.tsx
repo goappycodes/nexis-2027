@@ -26,8 +26,8 @@ const RESULTS_PDF =
 
 const WHAT = [
   { t: "East India's biggest business league", d: "For high-school students across the region.", img: "/wp-media/2024/10/under-18-image.jpg" },
-  { t: "Real-world challenges", d: "Students take on genuine business problems, not textbook cases." },
-  { t: "Win prizes up to ₹2 Lakh", d: "Cash prizes, scholarships and recognition for the sharpest teams." },
+  { t: "Real-world challenges", d: "Students take on genuine business problems, not textbook cases.", img: "/images/ug/highlight-curriculum.jpg" },
+  { t: "Win prizes up to ₹2 Lakh", d: "Cash prizes, scholarships and recognition for the sharpest teams.", img: "/images/ug/day-houses.jpg" },
 ];
 
 const ROUNDS = [
@@ -71,8 +71,8 @@ const STATS = [
 
 const SCHOOL = [
   { t: "Hands-on business skills", d: "Equip students with real skills for real business challenges.", img: "/wp-media/2024/10/school-benefit.jpg" },
-  { t: "Exposure & connections", d: "Students gain exposure and build connections beyond the school." },
-  { t: "Awards & recognition", d: "Compete for the 18 under 18 title with exclusive awards, scholarships and recognition." },
+  { t: "Exposure & connections", d: "Students gain exposure and build connections beyond the school.", img: "/images/ug/learn-trek.jpg" },
+  { t: "Awards & recognition", d: "Compete for the 18 under 18 title with exclusive awards, scholarships and recognition.", img: "/images/campus/apex-hall.jpg" },
 ];
 
 export default function EighteenUnder18Page() {
@@ -214,11 +214,19 @@ export default function EighteenUnder18Page() {
           </div>
           <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-3">
             {SCHOOL.map((c, i) => (
-              <Reveal key={c.t} delay={(i % 3) * 80} className={`flex flex-col p-6 ${CARD_LIGHT}`}>
+              <Reveal key={c.t} delay={(i % 3) * 80} className={`flex flex-col ${CARD_LIGHT}`}>
                 <AccentRule />
-                <span className="display text-3xl text-crimson">0{i + 1}</span>
-                <h3 className="mt-4 font-serif text-lg leading-tight">{c.t}</h3>
-                <p className="mt-2 text-[0.88rem] leading-relaxed text-ink-2">{c.d}</p>
+                <div className="relative aspect-[16/10] overflow-hidden bg-ink">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={c.img} alt={c.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                  <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-crimson font-serif text-[0.85rem] text-white">
+                    0{i + 1}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-serif text-lg leading-tight">{c.t}</h3>
+                  <p className="mt-2 text-[0.88rem] leading-relaxed text-ink-2">{c.d}</p>
+                </div>
               </Reveal>
             ))}
           </div>
