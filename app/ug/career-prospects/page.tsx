@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -97,7 +98,17 @@ export default function CareerProspectsPage() {
       <section className="shell py-8 sm:py-16 lg:py-24">
         <div className="grid gap-5 lg:grid-cols-2">
           {/* Career Bootcamp */}
-          <Reveal className="flex flex-col rounded-[2px] border border-line bg-paper p-8 sm:p-10">
+          <Reveal className="group flex flex-col overflow-hidden rounded-[2px] border border-line bg-paper">
+            <div className="relative aspect-[16/9] overflow-hidden bg-paper-2">
+              <Image
+                src="/images/ug/career-jobs.jpg"
+                alt="NEXIS students in a career bootcamp session"
+                fill
+                sizes="(max-width:1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-1 flex-col p-8 sm:p-10">
             <span className="kicker text-crimson">For the job seekers</span>
             <h2 className="mt-4 font-serif text-[clamp(1.8rem,3vw,2.4rem)] leading-tight">
               Career Bootcamp
@@ -122,10 +133,21 @@ export default function CareerProspectsPage() {
                 your new skills in a real-world setting.
               </p>
             </div>
+            </div>
           </Reveal>
 
           {/* BYOB */}
-          <Reveal delay={90} className="flex flex-col rounded-[2px] border border-line bg-ink p-8 text-paper sm:p-10">
+          <Reveal delay={90} className="group flex flex-col overflow-hidden rounded-[2px] border border-line bg-ink text-paper">
+            <div className="relative aspect-[16/9] overflow-hidden bg-ink">
+              <Image
+                src="/images/ug/career-entrepreneurship.jpg"
+                alt="A NEXIS student building a venture through BYOB"
+                fill
+                sizes="(max-width:1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-1 flex-col p-8 sm:p-10">
             <span className="kicker text-crimson">For the entrepreneurs</span>
             <h2 className="mt-4 font-serif text-[clamp(1.8rem,3vw,2.4rem)] leading-tight">
               BYOB — Build Your Own Business
@@ -154,6 +176,7 @@ export default function CareerProspectsPage() {
                   </li>
                 ))}
               </ul>
+            </div>
             </div>
           </Reveal>
         </div>
