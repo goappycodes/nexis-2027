@@ -25,6 +25,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/school-of-ai`: made the hands-on project catalogue swipeable on phones and rebuilt the reasons-to-join cards around larger, uncropped mobile imagery.
 - 2026-09-02 — `/pgp`: condensed the long mobile audience and faculty catalogues into swipeable rails, enlarged the programme-advantage imagery and stopped profile and programme photos from cropping on phones.
 - 2026-09-02 — `/ug/2027` and `/ug/2027-poppins`: preserved the full campus collage in the phone hero and rebuilt the alternate-course cards as full-width, uncropped stories with visible programme context.
+- 2026-09-02 — `/ug/book-campus-tour`: added a complete, uncropped campus preview beside the booking form so prospective students see the learning environment before they book.
 
 ## Next candidates
 
