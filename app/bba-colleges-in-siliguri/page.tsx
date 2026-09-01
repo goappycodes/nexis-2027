@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -127,9 +128,24 @@ export default function BbaCollegesPage() {
 
       {/* At a glance / NEXIS highlight */}
       <section className="shell pb-6">
-        <Reveal className="rounded-[2px] border border-line bg-paper p-6 sm:p-9">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
+        <Reveal className="overflow-hidden rounded-[4px] border border-line bg-paper">
+          <div className="grid lg:grid-cols-[1.12fr_0.88fr]">
+            <figure className="border-b border-line bg-ink lg:border-b-0 lg:border-r">
+              <div className="relative aspect-video lg:h-full lg:min-h-[350px] lg:aspect-auto">
+                <Image
+                  src="/images/ug/highlight-curriculum.jpg"
+                  alt="A NEXIS student presenting a local business consulting project"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 56vw"
+                  className="object-contain"
+                />
+              </div>
+              <figcaption className="flex items-center gap-2 border-t border-white/10 px-4 py-3 text-[0.67rem] font-semibold uppercase tracking-[0.12em] text-white/65">
+                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                Student work, not just coursework
+              </figcaption>
+            </figure>
+            <div className="flex flex-col justify-center p-6 sm:p-9">
               <span className="kicker text-crimson">At a glance</span>
               <p className="mt-3 text-[0.98rem] leading-relaxed text-ink-2">
                 Every option here is a genuinely good choice for business studies.
@@ -137,18 +153,18 @@ export default function BbaCollegesPage() {
                 business school and an industry-focused alternative to a
                 traditional BBA, rather than a conventional degree college.
               </p>
-            </div>
-            <div className="grid shrink-0 grid-cols-3 gap-6">
-              {HIGHLIGHTS.map((h) => (
-                <div key={h.l}>
-                  <p className="display text-[clamp(1.4rem,3vw,2rem)] text-crimson">
-                    {h.k}
-                  </p>
-                  <p className="mt-1 text-[0.76rem] leading-tight text-ink-2">
-                    {h.l}
-                  </p>
-                </div>
-              ))}
+              <div className="mt-7 grid grid-cols-3 gap-3 border-t border-line pt-6 sm:gap-6">
+                {HIGHLIGHTS.map((h) => (
+                  <div key={h.l}>
+                    <p className="display text-[clamp(1.4rem,3vw,2rem)] text-crimson">
+                      {h.k}
+                    </p>
+                    <p className="mt-1 text-[0.76rem] leading-tight text-ink-2">
+                      {h.l}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
