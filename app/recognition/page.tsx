@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -102,7 +103,23 @@ export default function RecognitionPage() {
             </a>
           </>
         }
-      />
+      >
+        <Reveal delay={260} className="relative aspect-[16/10] overflow-hidden rounded-[5px] bg-paper-2 lg:col-span-12 lg:aspect-[21/7]">
+          <Image
+            src="/images/campus/apex-hall.jpg"
+            alt="A NEXIS learning hall on the Siliguri campus"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-crimson">What the recognition means</p>
+            <p className="mt-2 max-w-xl font-serif text-2xl leading-tight text-white sm:text-3xl">A skills-first NEXIS certification, with an optional independent degree route alongside it.</p>
+          </div>
+        </Reveal>
+      </PageHero>
 
       {/* Affiliations */}
       <section className="shell py-8 sm:py-16 lg:py-24">
@@ -121,24 +138,23 @@ export default function RecognitionPage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 sm:mt-16 grid gap-px overflow-hidden rounded-[2px] border border-line bg-line sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:grid-cols-2">
           {AFFILIATIONS.map((a, i) => (
-            <Reveal key={a.name} delay={(i % 2) * 80} className="bg-paper p-8 sm:p-10">
-              <div className="flex h-12 items-center">
+            <Reveal key={a.name} delay={(i % 2) * 70} className="relative grid min-h-[150px] grid-cols-[104px_1fr] overflow-hidden rounded-[5px] border border-line bg-paper sm:grid-cols-[126px_1fr]">
+              <div className="flex min-h-full items-center justify-center border-r border-line bg-paper-2 p-4">
                 {/* white logos, shown dark-on-light */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={a.src}
                   alt={a.name}
-                  className="h-10 w-auto max-w-[170px] object-contain object-left opacity-85 [filter:brightness(0)]"
+                  className="max-h-14 w-full object-contain opacity-85 [filter:brightness(0)]"
                 />
               </div>
-              <h3 className="mt-6 font-serif text-lg leading-tight sm:text-xl">
-                {a.name}
-              </h3>
-              <p className="mt-3 text-[0.94rem] leading-relaxed text-ink-2">
-                {a.desc}
-              </p>
+              <div className="p-5 sm:p-6">
+                <span className="text-[0.58rem] font-semibold tracking-[0.14em] text-crimson">0{i + 1}</span>
+                <h3 className="mt-3 font-serif text-lg leading-tight sm:text-xl">{a.name}</h3>
+                <p className="mt-2 text-[0.84rem] leading-relaxed text-ink-2 sm:text-[0.9rem]">{a.desc}</p>
+              </div>
             </Reveal>
           ))}
         </div>
