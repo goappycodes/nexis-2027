@@ -20,6 +20,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/voice-of-nexis`: stopped the campus collage from cropping on phones and added a swipeable, authentic photo rail of student speaking, an industry visit and campus competition moments.
 - 2026-09-02 — `/18-under-18`: replaced the awkwardly cropped phone hero with a full challenge image and made all three qualifier rounds swipeable with uncropped campaign artwork.
 - 2026-09-02 — `/blog`: preserved the complete lead and feature artwork on phones and turned the latest-story catalogue into a compact, swipeable editorial rail.
+- 2026-09-02 — `/private-colleges-in-siliguri`: replaced the text-only NEXIS recommendation with a premium, uncropped industry-visit feature and a clearer mobile proof-point row.
 
 ## Next candidates
 

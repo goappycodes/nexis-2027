@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -127,9 +128,24 @@ export default function PrivateCollegesPage() {
 
       {/* NEXIS #1 highlight */}
       <section className="shell pb-6">
-        <Reveal className="rounded-[2px] border border-line bg-paper p-6 sm:p-9">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
+        <Reveal className="overflow-hidden rounded-[4px] border border-line bg-paper">
+          <div className="grid lg:grid-cols-[1.05fr_1fr]">
+            <figure className="border-b border-line bg-ink lg:border-b-0 lg:border-r">
+              <div className="relative aspect-[15/8] lg:h-full lg:min-h-[340px] lg:aspect-auto">
+                <Image
+                  src="/images/ug/learn-trek.jpg"
+                  alt="NEXIS students together during an industry visit"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 52vw"
+                  className="object-contain lg:object-cover"
+                />
+              </div>
+              <figcaption className="flex items-center gap-2 border-t border-white/10 px-4 py-3 text-[0.67rem] font-semibold uppercase tracking-[0.12em] text-white/65">
+                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                Learning beyond the classroom
+              </figcaption>
+            </figure>
+            <div className="flex flex-col justify-center p-6 sm:p-9">
               <span className="kicker text-crimson">#1 · New-gen business school</span>
               <h2 className="mt-3 font-serif text-[clamp(1.6rem,3vw,2.2rem)] leading-tight">
                 NEXIS School of Business
@@ -139,18 +155,18 @@ export default function PrivateCollegesPage() {
                 management — a smarter alternative to a traditional college, where
                 you practise what you learn, every single day.
               </p>
-            </div>
-            <div className="grid shrink-0 grid-cols-3 gap-6">
-              {HIGHLIGHTS.map((h) => (
-                <div key={h.l}>
-                  <p className="display text-[clamp(1.4rem,3vw,2rem)] text-crimson">
-                    {h.k}
-                  </p>
-                  <p className="mt-1 text-[0.76rem] leading-tight text-ink-2">
-                    {h.l}
-                  </p>
-                </div>
-              ))}
+              <div className="mt-7 grid grid-cols-3 gap-3 border-t border-line pt-6 sm:gap-6">
+                {HIGHLIGHTS.map((h) => (
+                  <div key={h.l}>
+                    <p className="display text-[clamp(1.4rem,3vw,2rem)] text-crimson">
+                      {h.k}
+                    </p>
+                    <p className="mt-1 text-[0.76rem] leading-tight text-ink-2">
+                      {h.l}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
