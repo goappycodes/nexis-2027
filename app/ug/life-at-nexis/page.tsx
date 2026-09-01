@@ -28,31 +28,37 @@ const CLUBS = [
     t: "AI Club",
     d: "Build chatbots, explore Canva AI, try no-code tools and join AI hackathons.",
     tags: ["No-code websites", "AI Hackathon", "Canva AI", "Chatbot making"],
+    img: "/images/ug/learn-ai.jpg",
   },
   {
     t: "Entrepreneurship Club",
     d: "Build your own startup through PitchTank, BizNEX, case competitions and Startup Weekender.",
     tags: ["Startup Weekender", "BizNEX", "PitchTank", "AI Hackathon"],
+    img: "/images/ug/career-entrepreneurship.jpg",
   },
   {
     t: "Marketing Club",
     d: "Personal branding, creative ads and creator challenges — marketing you learn by doing.",
     tags: ["Personal branding", "Ad creation", "Ad showcase", "Creators Challenge"],
+    img: "/images/ug/learn-influencer.jpg",
   },
   {
     t: "Finance Club",
     d: "Mock board meetings, finance hackathons and the investor challenge — including our 1-crore Invest-a-thon.",
     tags: ["Finance Hackathon", "Investors Challenge", "1 Cr. Invest-a-thon", "Board Meeting"],
+    img: "/images/ug/career-jobs.jpg",
   },
   {
     t: "Cultural Club",
     d: "From Diwali and Freshers to jamming sessions and teachers' celebrations.",
     tags: ["Teachers' Day", "Freshers", "Jamming Session", "Diwali"],
+    img: "/images/ug/day-houses.jpg",
   },
   {
     t: "Sports Club",
     d: "Cricket, pickleball, tennis and badminton — with monthly inter-house competitions.",
     tags: ["Badminton", "Cricket", "Pickleball", "Tennis"],
+    img: "/images/ug/day-sports.jpg",
   },
 ];
 
@@ -185,23 +191,34 @@ export default function LifeAtNexisPage() {
             <Reveal
               key={c.t}
               delay={(i % 3) * 80}
-              className="lift flex flex-col rounded-[2px] border border-line bg-paper p-6 sm:p-8"
+              className="lift group flex flex-col overflow-hidden rounded-[2px] border border-line bg-paper"
             >
-              <h3 className="font-serif text-xl leading-tight sm:text-2xl">
-                {c.t}
-              </h3>
-              <p className="mt-3 flex-1 text-[0.94rem] leading-relaxed text-ink-2">
-                {c.d}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {c.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-line px-3 py-1 text-[0.72rem] text-ink-2"
-                  >
-                    {t}
-                  </span>
-                ))}
+              <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+                <Image
+                  src={c.img}
+                  alt={`${c.t} at NEXIS`}
+                  fill
+                  sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <h3 className="font-serif text-xl leading-tight sm:text-2xl">
+                  {c.t}
+                </h3>
+                <p className="mt-3 flex-1 text-[0.94rem] leading-relaxed text-ink-2">
+                  {c.d}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {c.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-line px-3 py-1 text-[0.72rem] text-ink-2"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </Reveal>
           ))}
