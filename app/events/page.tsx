@@ -92,7 +92,26 @@ export default function EventsPage() {
             </a>
           </>
         }
-      />
+      >
+        <Reveal delay={260} className="group relative aspect-[16/10] overflow-hidden rounded-[5px] bg-paper-2 lg:col-span-12 lg:aspect-[21/7]">
+          <Image
+            src="/wp-media/2025/03/stage1.jpg"
+            alt="A live student pitch event at NEXIS"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover transition-transform duration-700 ease-premium group-hover:scale-[1.02]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-5 sm:p-7">
+            <div>
+              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-crimson">Inside the room</p>
+              <p className="mt-2 max-w-lg font-serif text-2xl leading-tight text-white sm:text-3xl">Pitch nights, build sprints and campus celebrations—with students at the centre.</p>
+            </div>
+            <span className="hidden rounded-full border border-white/20 bg-black/30 px-4 py-2 text-[0.68rem] uppercase tracking-[0.12em] text-white/75 backdrop-blur sm:block">Siliguri · On campus</span>
+          </div>
+        </Reveal>
+      </PageHero>
 
       {/* Formats */}
       <section className="shell py-8 sm:py-16 lg:py-22">
@@ -111,12 +130,12 @@ export default function EventsPage() {
           </Reveal>
         </div>
 
-        <div className="mt-10 sm:mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="-mx-[var(--gutter)] mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--gutter)] pb-3 [scrollbar-width:none] sm:mt-16 md:mx-0 md:grid md:grid-cols-2 md:px-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {FORMATS.map((f, i) => (
             <Reveal
               key={f.t}
               delay={(i % 3) * 80}
-              className="lift group flex flex-col overflow-hidden rounded-[2px] border border-line bg-paper"
+              className="lift group flex w-[82vw] max-w-[330px] shrink-0 snap-start flex-col overflow-hidden rounded-[5px] border border-line bg-paper md:w-auto md:max-w-none"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
                 <Image
@@ -126,6 +145,7 @@ export default function EventsPage() {
                   sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
                 />
+                <span className="absolute left-4 top-4 rounded-full bg-black/55 px-3 py-1 text-[0.58rem] font-semibold tracking-[0.14em] text-white backdrop-blur">0{i + 1}</span>
               </div>
               <div className="flex flex-1 flex-col p-6 sm:p-8">
                 <span className="kicker text-crimson">{f.tag}</span>
