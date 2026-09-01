@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -54,6 +55,44 @@ export default function CareersPage() {
       />
 
       <section className="shell pb-16 sm:pb-24">
+        <Reveal className="mb-14 overflow-hidden rounded-[5px] border border-line bg-ink text-white sm:mb-20">
+          <div className="grid lg:grid-cols-[1.45fr_0.75fr]">
+            <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden bg-black lg:aspect-auto lg:min-h-[390px]">
+              <Image
+                src="/images/campus/life-at-nexis.jpg"
+                alt="A collage of student activities, performances and campus events at NEXIS"
+                fill
+                sizes="(max-width: 1024px) 100vw, 65vw"
+                className="object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center border-t border-white/10 p-6 sm:p-9 lg:border-l lg:border-t-0 lg:p-10">
+              <p className="flex items-center gap-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-crimson">
+                <span className="h-px w-7 bg-crimson" />
+                Close to the action
+              </p>
+              <h2 className="mt-5 font-serif text-[clamp(1.65rem,3vw,2.5rem)] leading-tight text-white">
+                Your work shows up in student life.
+              </h2>
+              <p className="mt-4 text-[0.94rem] leading-relaxed text-white/65">
+                NEXIS is a compact, hands-on campus. The team works around live
+                classes, student projects, performances and founder conversations —
+                so ideas move quickly from a meeting into the room.
+              </p>
+              <div className="mt-7 flex flex-wrap gap-2">
+                {["Student projects", "Campus events", "Mentor sessions"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/15 px-3 py-1.5 text-[0.68rem] uppercase tracking-[0.1em] text-white/70"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <Reveal>
           <div className="flex items-baseline justify-between gap-4 border-b border-line pb-5">
             <h2 className="font-serif text-2xl leading-tight">Open roles</h2>

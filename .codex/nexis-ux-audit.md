@@ -16,6 +16,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/recognition`: added a real-campus trust hero and rebuilt affiliation cards around larger, scannable logo panels with concise explanations on phones.
 - 2026-09-02 — `/about/campus`: added a full campus hero and replaced text-only facility tiles plus a redundant gallery with a swipeable, photo-led tour of six real spaces.
 - 2026-09-02 — `/contact-us`: added a real reception photo and campus invitation beside the enquiry form, with more specific Siliguri-focused contact language.
+- 2026-09-02 — `/careers`: added an uncropped campus-in-motion story before the vacancies, connecting staff roles to student projects, events and mentoring on phone and desktop.
 
 ## Next candidates
 
