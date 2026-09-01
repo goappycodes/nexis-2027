@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -118,6 +119,17 @@ export default function VoiceOfNexisPage() {
                 school — and gain real, practical experience that starts building
                 your profile from day one.
               </p>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[2px] border border-line bg-paper-2">
+                <Image
+                  src="/images/campus/life-at-nexis.jpg"
+                  alt="NEXIS student ambassadors on campus"
+                  fill
+                  sizes="(max-width:1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
             </Reveal>
           </div>
           <div className="lg:col-span-7">

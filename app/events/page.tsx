@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -21,6 +22,7 @@ const FORMATS = [
     d: "A guided campus tour and a UG information session with the admissions team — the best way to see NEXIS for yourself.",
     href: "/ug/book-campus-tour",
     cta: "Book a tour",
+    img: "/images/campus/tour7.jpg",
   },
   {
     t: "Founder Masterclass",
@@ -28,6 +30,7 @@ const FORMATS = [
     d: "Sit in on a session with a founder or CXO and hear how modern businesses are actually built and scaled.",
     href: "/ug/book-founder-connect",
     cta: "Meet a founder",
+    img: "/images/ug/highlight-faculty.jpg",
   },
   {
     t: "BizNEX & PitchTank",
@@ -35,6 +38,7 @@ const FORMATS = [
     d: "Business challenges and pitch battles where students turn ideas into ventures in front of a live panel.",
     href: "/ug/request-callback",
     cta: "Enquire",
+    img: "/wp-media/2025/03/stage1.jpg",
   },
   {
     t: "Startup Weekender",
@@ -42,6 +46,7 @@ const FORMATS = [
     d: "An intense weekend where teams go from idea to prototype to pitch — the NEXIS method, condensed.",
     href: "/ug/request-callback",
     cta: "Enquire",
+    img: "/images/campus/tour9.jpg",
   },
   {
     t: "Hackathons",
@@ -49,6 +54,7 @@ const FORMATS = [
     d: "AI and business hackathons where students build real tools and solve real problems, fast.",
     href: "/ug/request-callback",
     cta: "Enquire",
+    img: "/images/ug/learn-ai.jpg",
   },
   {
     t: "Fests & Cultural Nights",
@@ -56,6 +62,7 @@ const FORMATS = [
     d: "Freshers, musical nights, Diwali and more — the moments that turn a cohort into a community.",
     href: "/ug/life-at-nexis",
     cta: "See life at NEXIS",
+    img: "/images/ug/day-houses.jpg",
   },
 ];
 
@@ -109,22 +116,33 @@ export default function EventsPage() {
             <Reveal
               key={f.t}
               delay={(i % 3) * 80}
-              className="lift flex flex-col rounded-[2px] border border-line bg-paper p-6 sm:p-8"
+              className="lift group flex flex-col overflow-hidden rounded-[2px] border border-line bg-paper"
             >
-              <span className="kicker text-crimson">{f.tag}</span>
-              <h3 className="mt-4 font-serif text-xl leading-tight sm:text-2xl">
-                {f.t}
-              </h3>
-              <p className="mt-3 flex-1 text-[0.94rem] leading-relaxed text-ink-2">
-                {f.d}
-              </p>
-              <a
-                href={f.href}
-                className="ulink mt-5 inline-flex items-center gap-1.5 text-[0.85rem] font-medium text-ink"
-              >
-                {f.cta}
-                <ArrowRight className="text-[0.9em]" />
-              </a>
+              <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+                <Image
+                  src={f.img}
+                  alt={f.t}
+                  fill
+                  sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-6 sm:p-8">
+                <span className="kicker text-crimson">{f.tag}</span>
+                <h3 className="mt-4 font-serif text-xl leading-tight sm:text-2xl">
+                  {f.t}
+                </h3>
+                <p className="mt-3 flex-1 text-[0.94rem] leading-relaxed text-ink-2">
+                  {f.d}
+                </p>
+                <a
+                  href={f.href}
+                  className="ulink mt-5 inline-flex items-center gap-1.5 text-[0.85rem] font-medium text-ink"
+                >
+                  {f.cta}
+                  <ArrowRight className="text-[0.9em]" />
+                </a>
+              </div>
             </Reveal>
           ))}
         </div>
