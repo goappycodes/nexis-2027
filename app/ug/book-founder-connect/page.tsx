@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import FormLayout from "@/components/FormLayout";
 import EnquiryForm from "@/components/EnquiryForm";
-import { SITE_NAV, CONTACT } from "@/lib/content";
+import { SITE_NAV, CONTACT, FOUNDERS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Book a Founder Connect | NEXIS School of Business",
@@ -31,7 +32,28 @@ export default function BookFounderConnectPage() {
         }
         lede="Book a one-on-one with the people who built NEXIS. Talk through your ambitions, the program and whether it's the right fit — founder to student."
         aside={
-          <div className="space-y-6">
+          <div className="space-y-7">
+            <div className="grid grid-cols-2 overflow-hidden rounded-[3px] border border-line bg-ink shadow-[0_24px_60px_-44px_rgba(11,12,16,0.8)]">
+              {FOUNDERS.map((founder, index) => (
+                <figure
+                  key={founder.name}
+                  className={index === 0 ? "border-r border-white/10" : undefined}
+                >
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={founder.img}
+                      alt={founder.name}
+                      fill
+                      sizes="(max-width: 1023px) 50vw, 19vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="border-t border-white/10 px-3 py-3 text-center text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-white/75">
+                    {founder.name}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
             <ul className="space-y-3">
               {POINTS.map((p) => (
                 <li key={p} className="flex gap-3 text-[0.92rem] leading-relaxed text-ink-2">
