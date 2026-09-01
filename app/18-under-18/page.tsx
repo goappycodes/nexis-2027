@@ -86,7 +86,7 @@ export default function EighteenUnder18Page() {
         <img
           src="/wp-media/2024/10/Student-photos.png"
           alt="NEXIS 18 under 18 participants"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-top opacity-40"
+          className="absolute inset-0 -z-10 hidden h-full w-full object-cover object-top opacity-40 sm:block"
         />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#08080a]/85 via-[#08080a]/70 to-[#08080a]" />
         <div className="pointer-events-none absolute -right-24 -top-24 -z-10 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
@@ -119,6 +119,20 @@ export default function EighteenUnder18Page() {
               Register interest
               <ArrowRight className="arrow" />
             </a>
+          </Reveal>
+          <Reveal delay={280} className="mt-10 w-full sm:hidden">
+            <figure className="overflow-hidden rounded-[5px] border border-white/15 bg-black/50 text-left">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/wp-media/2024/10/lunch-day.jpg"
+                alt="Students working together during a NEXIS 18 under 18 business challenge"
+                className="h-auto w-full object-contain"
+              />
+              <figcaption className="flex items-center gap-2 border-t border-white/10 px-4 py-3 text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-white/65">
+                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                Business challenges. Team strategy. New ideas.
+              </figcaption>
+            </figure>
           </Reveal>
         </div>
       </section>
@@ -173,13 +187,13 @@ export default function EighteenUnder18Page() {
               </h2>
             </Reveal>
           </div>
-          <div className="mt-10 grid gap-4 sm:gap-5 lg:grid-cols-3">
+          <div className="-mx-[var(--gutter)] mt-10 flex snap-x snap-mandatory items-start gap-4 overflow-x-auto overflow-y-hidden px-[var(--gutter)] pb-3 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
             {ROUNDS.map((r, i) => (
-              <Reveal key={r.n} delay={(i % 3) * 80} className={`flex flex-col ${CARD_DARK}`}>
+              <Reveal key={r.n} delay={(i % 3) * 80} className={`flex min-w-[84%] snap-center flex-col md:min-w-0 ${CARD_DARK}`}>
                 <AccentRule />
                 <div className="relative aspect-[16/9] overflow-hidden bg-black/40">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={r.img} alt={r.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                  <img src={r.img} alt={r.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-contain" />
                   <span className="absolute left-4 top-4 rounded-full bg-crimson px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white">{r.n}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
