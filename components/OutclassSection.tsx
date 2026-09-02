@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Reveal from "./Reveal";
 import { ArrowRight } from "./icons";
 
@@ -15,6 +15,7 @@ type Slot = {
   r: string;
   z: number;
   src?: string;
+  objectPosition?: string;
 };
 
 type Semester = {
@@ -44,11 +45,11 @@ const SEMESTERS: Semester[] = [
     title: "The Creator's Challenge",
     desc: "A hands-on sprint where students build an audience from scratch — content, personal brand and community — and put it to the test in the real world.",
     slots: [
-      { top: "0%", left: "6%", w: "40%", h: "40%", r: "3deg", z: 1 },
-      { top: "5%", left: "54%", w: "43%", h: "49%", r: "-4deg", z: 2 },
-      { top: "47%", left: "0%", w: "46%", h: "46%", r: "-2deg", z: 3 },
-      { top: "53%", left: "51%", w: "38%", h: "40%", r: "4deg", z: 2 },
-      { top: "33%", left: "35%", w: "29%", h: "31%", r: "-6deg", z: 4 },
+      { top: "2%", left: "2%", w: "47%", h: "37%", r: "-2deg", z: 2, src: "/images/outclass/sem2/photo-1.webp", objectPosition: "center 68%" },
+      { top: "2%", left: "51%", w: "47%", h: "37%", r: "2deg", z: 1, src: "/images/outclass/sem2/photo-2.webp" },
+      { top: "43%", left: "3%", w: "29%", h: "52%", r: "1.5deg", z: 2, src: "/images/outclass/sem2/photo-3.webp", objectPosition: "center 62%" },
+      { top: "40%", left: "34%", w: "34%", h: "55%", r: "-2.5deg", z: 3, src: "/images/outclass/sem2/photo-4.webp", objectPosition: "center 64%" },
+      { top: "42%", left: "69%", w: "29%", h: "52%", r: "2deg", z: 2, src: "/images/outclass/sem2/photo-7.webp", objectPosition: "center 58%" },
     ],
   },
   {
@@ -86,6 +87,7 @@ function PhotoSlot({ slot }: { slot: Slot }) {
           loading="lazy"
           decoding="async"
           className="h-full w-full object-cover"
+          style={{ objectPosition: slot.objectPosition }}
           draggable={false}
         />
       ) : (
@@ -113,13 +115,16 @@ function PhotoSlot({ slot }: { slot: Slot }) {
   );
 }
 
-function SemesterCard({ semester, index }: { semester: Semester; index: number }) {
+function SemesterCard({
+  semester,
+  duplicate = false,
+}: {
+  semester: Semester;
+  duplicate?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   return (
-    <Reveal
-      delay={index * 90}
-      className="relative overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.015] p-5 sm:p-7"
-    >
+    <div className="relative flex h-[39rem] w-[min(86vw,28rem)] shrink-0 flex-col overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.015] p-5 sm:h-[43rem] sm:p-7">
       {/* soft crimson glow bleeding in from a corner */}
       <span className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-crimson/20 blur-[70px]" />
 
@@ -129,7 +134,7 @@ function SemesterCard({ semester, index }: { semester: Semester; index: number }
         </span>
         <span className="h-px flex-1 bg-white/12" />
       </div>
-      <h3 className="relative mt-2 text-[1.15rem] font-semibold leading-snug text-white sm:text-[1.3rem]">
+      <h3 className="relative mt-2 min-h-[3.25rem] text-[1.15rem] font-semibold leading-snug text-white sm:text-[1.3rem]">
         {semester.title}
       </h3>
 
@@ -157,7 +162,8 @@ function SemesterCard({ semester, index }: { semester: Semester; index: number }
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="group/km mt-5 flex w-full items-center justify-between rounded-full bg-gradient-to-r from-crimson to-[#ff5c7c] px-5 py-3 transition-transform duration-300 hover:-translate-y-0.5"
+        tabIndex={duplicate ? -1 : undefined}
+        className="group/km mt-auto flex w-full items-center justify-between rounded-full bg-gradient-to-r from-crimson to-[#ff5c7c] px-5 py-3 transition-transform duration-300 hover:-translate-y-0.5"
       >
         <span className="text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-white">
           {open ? "Show less" : "Know more"}
@@ -168,11 +174,57 @@ function SemesterCard({ semester, index }: { semester: Semester; index: number }
           }`}
         />
       </button>
-    </Reveal>
+    </div>
   );
 }
 
 export default function OutclassSection() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const interaction = useRef({
+    dragging: false,
+    focused: false,
+    hovered: false,
+    moved: false,
+    pointerId: -1,
+    startScrollLeft: 0,
+    startX: 0,
+  });
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const sequenceWidth = carousel.scrollWidth / 3;
+    carousel.scrollLeft = sequenceWidth;
+
+    let frame = 0;
+    let previousTime = performance.now();
+
+    const animate = (time: number) => {
+      const state = interaction.current;
+      const elapsed = Math.min(time - previousTime, 50) / 1000;
+      previousTime = time;
+
+      if (!reducedMotion && !state.dragging && !state.focused && !state.hovered) {
+        carousel.scrollLeft += 72 * elapsed;
+      }
+
+      if (carousel.scrollLeft >= sequenceWidth * 2) {
+        carousel.scrollLeft -= sequenceWidth;
+      } else if (carousel.scrollLeft <= 0) {
+        carousel.scrollLeft += sequenceWidth;
+      }
+
+      frame = requestAnimationFrame(animate);
+    };
+
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <section className="bg-[#111114] py-10 text-white sm:py-16">
       <div className="shell">
@@ -186,12 +238,86 @@ export default function OutclassSection() {
             semesters.
           </h2>
         </Reveal>
+      </div>
 
-        <div className="mx-auto mt-8 max-w-xl space-y-6">
-          {SEMESTERS.map((s, i) => (
-            <SemesterCard key={s.n} semester={s} index={i} />
-          ))}
-        </div>
+      <div
+        ref={carouselRef}
+        className="no-scrollbar marquee-mask mt-8 flex cursor-grab touch-pan-y select-none items-start gap-5 overflow-x-auto active:cursor-grabbing sm:gap-6"
+        tabIndex={0}
+        aria-label="OUTCLASS semesters. Drag horizontally to browse. Focus or hover to pause automatic scrolling."
+        onMouseEnter={() => {
+          interaction.current.hovered = true;
+        }}
+        onMouseLeave={() => {
+          interaction.current.hovered = false;
+        }}
+        onFocusCapture={() => {
+          interaction.current.focused = true;
+        }}
+        onBlurCapture={(event) => {
+          const nextTarget = event.relatedTarget as Node | null;
+          if (!nextTarget || !event.currentTarget.contains(nextTarget)) {
+            interaction.current.focused = false;
+          }
+        }}
+        onPointerDown={(event) => {
+          const target = event.target as HTMLElement;
+          if (target.closest("button, a")) return;
+
+          const state = interaction.current;
+          state.dragging = true;
+          state.moved = false;
+          state.pointerId = event.pointerId;
+          state.startX = event.clientX;
+          state.startScrollLeft = event.currentTarget.scrollLeft;
+          event.currentTarget.setPointerCapture(event.pointerId);
+        }}
+        onPointerMove={(event) => {
+          const state = interaction.current;
+          if (!state.dragging || state.pointerId !== event.pointerId) return;
+
+          const distance = event.clientX - state.startX;
+          if (Math.abs(distance) > 4) state.moved = true;
+          event.currentTarget.scrollLeft = state.startScrollLeft - distance;
+          event.preventDefault();
+        }}
+        onPointerUp={(event) => {
+          const state = interaction.current;
+          if (state.pointerId !== event.pointerId) return;
+          state.dragging = false;
+          state.pointerId = -1;
+          if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+            event.currentTarget.releasePointerCapture(event.pointerId);
+          }
+        }}
+        onPointerCancel={() => {
+          interaction.current.dragging = false;
+          interaction.current.pointerId = -1;
+        }}
+        onClickCapture={(event) => {
+          if (!interaction.current.moved) return;
+          event.preventDefault();
+          event.stopPropagation();
+          interaction.current.moved = false;
+        }}
+      >
+          {[...SEMESTERS, ...SEMESTERS, ...SEMESTERS].map((semester, index) => {
+            const duplicate =
+              index < SEMESTERS.length || index >= SEMESTERS.length * 2;
+
+            return (
+              <div
+                key={`${semester.n}-${index}`}
+                aria-hidden={duplicate || undefined}
+                className="shrink-0"
+              >
+                <SemesterCard
+                  semester={semester}
+                  duplicate={duplicate}
+                />
+              </div>
+            );
+          })}
       </div>
     </section>
   );
