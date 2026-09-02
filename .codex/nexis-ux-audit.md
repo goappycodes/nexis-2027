@@ -35,6 +35,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/voice-of-nexis/registration`: added an uncropped student-presenter story before the ambassador application and separated programme value into a compact phone card.
 - 2026-09-02 — `/ug/thank-you`: turned the confirmation into a campus-rich next step with a complete events collage and full-width mobile actions.
 - 2026-09-02 — `/`: preserved the complete classroom, programme and campus-gallery images on phone, corrected the hero image description and made both primary actions thumb-friendly.
+- 2026-09-02 — `/ug`: made the primary admissions actions full-width on phone, condensed the six-project showcase into a swipeable rail, preserved complete event and career imagery and replaced a vague admissions link with a clear destination.
 
 ## Next candidates
 

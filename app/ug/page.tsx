@@ -693,9 +693,9 @@ export default function UGPage() {
               practise what you learn — every single day.
             </p>
           </Reveal>
-          <Reveal delay={220}>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a href={CONTACT.applyHref} className="btn btn-crimson">
+          <Reveal delay={220} className="w-full sm:w-auto">
+            <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
+              <a href={CONTACT.applyHref} className="btn btn-crimson w-full justify-center sm:w-auto">
                 Apply now
                 <ArrowRight className="arrow" />
               </a>
@@ -703,7 +703,7 @@ export default function UGPage() {
                 href={REPORTS.yearbook}
                 target="_blank"
                 rel="noreferrer"
-                className="btn border-white/25 bg-transparent text-white hover:bg-white/10"
+                className="btn w-full justify-center border-white/25 bg-transparent text-white hover:bg-white/10 sm:w-auto"
               >
                 See 2025 Yearbook
                 <ArrowUpRight className="arrow" />
@@ -711,7 +711,7 @@ export default function UGPage() {
             </div>
           </Reveal>
           <Reveal delay={280}>
-            <p className="mt-6 max-w-2xl text-[0.66rem] leading-relaxed text-white/45 sm:mt-8 sm:text-[0.85rem] sm:text-white/50">
+            <p className="mt-6 max-w-2xl text-[0.78rem] leading-relaxed text-white/60 sm:mt-8 sm:text-[0.85rem] sm:text-white/50">
               Industry-integrated programme with a focus on Digital Sales &amp;
               Marketing, Business Analytics and Entrepreneurship, along with the
               industry-readiness skills that set you apart.
@@ -787,19 +787,19 @@ export default function UGPage() {
                 ))}
               </div>
 
-              <Reveal delay={140} className="mt-8 flex flex-wrap items-center gap-3">
+              <Reveal delay={140} className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
                 <a
                   href={CONTACT.brochureHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="btn btn-crimson"
+                  className="btn btn-crimson w-full justify-center sm:w-auto"
                 >
                   Download brochure
                   <ArrowUpRight className="arrow" />
                 </a>
                 <a
                   href={CONTACT.applyHref}
-                  className="btn btn-ghost"
+                  className="btn btn-ghost w-full justify-center sm:w-auto"
                 >
                   Enquire now
                   <ArrowRight className="arrow" />
@@ -840,14 +840,14 @@ export default function UGPage() {
                 className={`w-[264px] shrink-0 snap-start sm:w-[300px] ${CARD_LIGHT} flex flex-col`}
               >
                 <AccentRule />
-                <div className="relative aspect-[16/10] overflow-hidden bg-paper-2">
+                <div className="relative aspect-[600/536] overflow-hidden bg-paper-2 sm:aspect-[16/10]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={e.img}
                     alt={e.t}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-premium group-hover:scale-105 sm:object-cover"
                   />
                   {e.date && (
                     <span className="absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-paper backdrop-blur">
@@ -1239,23 +1239,23 @@ export default function UGPage() {
             </Reveal>
           </div>
 
-          <div className="mt-8 grid items-stretch gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto pb-3 [scrollbar-width:none] sm:mt-12 sm:gap-5 md:grid md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
             {LEARN.map((e, i) => (
               <Reveal
                 key={e.title}
                 delay={(i % 3) * 80}
-                className={`flex flex-col ${CARD_LIGHT}`}
+                className={`flex w-[84%] shrink-0 snap-start flex-col md:w-auto ${CARD_LIGHT}`}
               >
                 <AccentRule />
                 {/* Uniform frame so every card in the row matches. */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+                <div className="relative aspect-square overflow-hidden bg-ink md:aspect-[4/3]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={e.img}
                     alt={e.title}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                    className="absolute inset-0 h-full w-full object-contain transition-transform duration-700 ease-premium group-hover:scale-105 md:object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
@@ -1361,27 +1361,22 @@ export default function UGPage() {
             ))}
           </div>
 
-          {/* On narrow screens these are a flex column, not a grid — a sticky
-              child needs a tall containing block to travel in, and a one-column
-              grid gives each card a row exactly its own height (no travel).
-              From md they sit side by side and sticky is switched off. */}
-          <div className="mt-9 flex flex-col gap-5 md:grid md:grid-cols-3 md:items-start">
+          <div className="mt-9 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto pb-3 [scrollbar-width:none] md:grid md:grid-cols-3 md:items-start md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden">
             {PATHWAYS.map((p, i) => (
               <Reveal
                 key={p.title}
                 delay={i * 80}
-                style={{ top: `calc(6rem + ${i * 0.9}rem)` }}
-                className={`sticky flex flex-col md:static ${CARD_DARK}`}
+                className={`flex w-[84%] shrink-0 snap-start flex-col md:w-auto ${CARD_DARK}`}
               >
                 <AccentRule />
-                <div className="relative aspect-[2/1] overflow-hidden bg-black/40 sm:aspect-[16/9]">
+                <div className="relative aspect-square overflow-hidden bg-black/40 sm:aspect-[16/9]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.img}
                     alt={p.title}
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-contain sm:object-cover"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
@@ -1442,10 +1437,10 @@ export default function UGPage() {
                 the first step toward becoming a NEXIS student.
               </p>
               <a
-                href={CONTACT.applyHref}
-                className="btn btn-crimson mt-7 self-start"
+                href="/ug/admissions-fees"
+                className="btn btn-crimson mt-7 w-full justify-center self-start sm:w-auto"
               >
-                Click here
+                See admissions &amp; fees
                 <ArrowRight className="arrow" />
               </a>
             </div>
