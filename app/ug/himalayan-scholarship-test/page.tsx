@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
@@ -49,13 +50,6 @@ export default function HimalayanScholarshipPage() {
 
       {/* HERO */}
       <section id="top" className={`relative isolate overflow-hidden ${DEEP} text-white`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/wp-media/2025/01/himalayan-hero.jpg"
-          alt="Himalayan Scholarship Test at NEXIS"
-          className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45"
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#08080a]/85 via-[#08080a]/65 to-[#08080a]" />
         <div className="pointer-events-none absolute -left-24 -top-24 -z-10 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
 
         <div className="shell relative flex flex-col items-center pb-14 pt-12 text-center sm:pt-16 lg:pb-20 lg:pt-24">
@@ -78,11 +72,29 @@ export default function HimalayanScholarshipPage() {
               your journey at East India&rsquo;s first industry-led business school.
             </p>
           </Reveal>
-          <Reveal delay={220}>
-            <a href={APPLY} target="_blank" rel="noreferrer" className="btn btn-crimson mt-8">
+          <Reveal delay={220} className="w-full sm:w-auto">
+            <a href={APPLY} target="_blank" rel="noreferrer" className="btn btn-crimson mt-8 w-full justify-center sm:w-auto">
               Apply for the scholarship test
               <ArrowUpRight className="arrow" />
             </a>
+          </Reveal>
+
+          <Reveal delay={260} className="mt-10 w-full max-w-5xl">
+            <figure className="overflow-hidden rounded-[4px] border border-white/15 bg-black/35 shadow-[0_35px_90px_-50px_rgba(0,0,0,0.9)]">
+              <Image
+                src="/wp-media/2025/01/himalayan-hero.jpg"
+                alt="A NEXIS student at the campus entrepreneurship showcase"
+                width={1600}
+                height={1066}
+                sizes="(max-width: 1023px) 100vw, 80vw"
+                className="h-auto w-full"
+                priority
+              />
+              <figcaption className="flex items-center gap-3 border-t border-white/10 px-4 py-3 text-left text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/65 sm:px-5">
+                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                Students building from their first year
+              </figcaption>
+            </figure>
           </Reveal>
 
           <Reveal delay={300} className="mt-12 grid w-full max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-9 sm:grid-cols-4">
@@ -117,13 +129,12 @@ export default function HimalayanScholarshipPage() {
               </h2>
             </Reveal>
           </div>
-          <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-3">
+          <div className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-3">
             {JOURNEY.map((c, i) => (
-              <Reveal key={c.n} delay={(i % 3) * 80} className={`flex flex-col ${CARD_LIGHT}`}>
+              <Reveal key={c.n} delay={(i % 3) * 80} className={`flex min-w-[82vw] snap-start flex-col sm:min-w-0 ${CARD_LIGHT}`}>
                 <AccentRule />
                 <div className="relative aspect-[16/10] overflow-hidden bg-ink">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={c.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                  <Image src={c.img} alt={c.t} fill sizes="(max-width: 639px) 82vw, (max-width: 767px) 50vw, 33vw" className="object-contain" />
                   <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-crimson font-serif text-[0.85rem] text-white">{c.n}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
@@ -154,18 +165,16 @@ export default function HimalayanScholarshipPage() {
               </p>
             </Reveal>
           </div>
-          <div className="mt-10 grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
             {REWARDS.map((c, i) => (
-              <Reveal key={c.r} delay={(i % 4) * 70} className="group relative overflow-hidden rounded-[4px] border border-white/10">
-                <div className="relative aspect-[3/4]">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={c.img} alt={`${c.r} — ${c.v} scholarship`} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-premium group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-[#08080a]/40 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-crimson">{c.r}</p>
-                    <p className="mt-1 font-serif text-2xl text-white">{c.v}</p>
-                    <p className="text-[0.8rem] text-white/60">scholarship</p>
-                  </div>
+              <Reveal key={c.r} delay={(i % 4) * 70} className="min-w-[76vw] snap-start overflow-hidden rounded-[4px] border border-white/10 bg-[#0e0e11] sm:min-w-0">
+                <div className="relative aspect-square bg-black/30">
+                  <Image src={c.img} alt={`${c.r} — ${c.v} scholarship`} fill sizes="(max-width: 639px) 76vw, (max-width: 1023px) 50vw, 25vw" className="object-contain" />
+                </div>
+                <div className="border-t border-white/10 p-5">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-crimson">{c.r}</p>
+                  <p className="mt-1 font-serif text-2xl text-white">{c.v}</p>
+                  <p className="text-[0.8rem] text-white/60">scholarship</p>
                 </div>
               </Reveal>
             ))}
@@ -188,24 +197,23 @@ export default function HimalayanScholarshipPage() {
                 education. Register for the Himalayan Scholarship Test today.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a href={APPLY} target="_blank" rel="noreferrer" className="btn btn-crimson">
+                <a href={APPLY} target="_blank" rel="noreferrer" className="btn btn-crimson w-full justify-center sm:w-auto">
                   Apply now
                   <ArrowUpRight className="arrow" />
                 </a>
-                <a href="/ug" className="btn btn-ghost">
+                <a href="/ug" className="btn btn-ghost w-full justify-center sm:w-auto">
                   Explore the UG program
                   <ArrowRight className="arrow" />
                 </a>
               </div>
             </div>
             <div className="relative min-h-[240px] bg-paper-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/wp-media/2025/11/admission-student-min-scaled.jpg"
                 alt="A NEXIS admissions counselling session"
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover"
+                fill
+                sizes="(max-width: 767px) 100vw, 50vw"
+                className="object-contain"
               />
             </div>
           </Reveal>
