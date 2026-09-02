@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Reveal from "@/components/Reveal";
@@ -58,10 +59,27 @@ export default function ThankYouPage() {
           </Reveal>
         </div>
 
-        {/* What's next */}
+        <Reveal delay={100} className="mx-auto mt-10 max-w-4xl">
+          <figure className="overflow-hidden rounded-[3px] border border-line bg-ink shadow-[0_28px_70px_-48px_rgba(11,12,16,0.8)]">
+            <Image
+              src="/images/campus/life-at-nexis.jpg"
+              alt="A collage of student activities and events at NEXIS"
+              width={1440}
+              height={652}
+              sizes="(max-width: 1023px) 100vw, 70vw"
+              className="h-auto w-full"
+            />
+            <figcaption className="flex items-center gap-3 border-t border-white/10 px-4 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/65 sm:px-5">
+              <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+              Campus in motion
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        {/* Keep exploring */}
         <Reveal delay={120} className="mx-auto mt-12 max-w-3xl">
           <div className="rounded-[2px] border border-line bg-paper p-6 shadow-[0_30px_70px_-50px_rgba(11,12,16,0.5)] sm:p-9">
-            <p className="kicker text-crimson">What&rsquo;s next</p>
+            <p className="kicker text-crimson">While you wait</p>
             <ul className="mt-5 grid gap-4 sm:grid-cols-2">
               {HIGHLIGHTS.map((h) => (
                 <li key={h} className="flex gap-3 text-[0.95rem] leading-relaxed text-ink-2">
@@ -74,15 +92,15 @@ export default function ThankYouPage() {
         </Reveal>
 
         <Reveal delay={180} className="mt-9 flex flex-wrap items-center justify-center gap-3">
-          <a href="/ug" className="btn btn-crimson">
+          <a href="/ug" className="btn btn-crimson w-full justify-center sm:w-auto">
             Explore the UG program
             <ArrowRight className="arrow" />
           </a>
-          <a href={CONTACT.brochureHref} className="btn btn-ghost">
+          <a href={CONTACT.brochureHref} className="btn btn-ghost w-full justify-center sm:w-auto">
             Download brochure
             <ArrowUpRight className="arrow" />
           </a>
-          <a href={CONTACT.phoneHref} className="btn btn-ghost">
+          <a href={CONTACT.phoneHref} className="btn btn-ghost w-full justify-center sm:w-auto">
             Call {CONTACT.phone}
           </a>
         </Reveal>
