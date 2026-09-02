@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE_NAV, BATCH, type NavItem } from "@/lib/content";
 import { ArrowRight } from "./icons";
@@ -37,8 +38,11 @@ export default function SiteNav({
 }) {
   const dark = theme === "dark";
   const linkCls = dark ? "text-white/80" : "text-ink-2";
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const isActive = (href?: string) =>
+    Boolean(href && href !== "#top" && href.split("#")[0] === pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -54,6 +58,15 @@ export default function SiteNav({
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <>
       {/* Announcement strip */}
@@ -61,7 +74,7 @@ export default function SiteNav({
         <div className={branding === "2027" ? "flex items-center justify-center gap-1 px-2 py-2.5 text-center text-[clamp(10px,3.2vw,18px)] font-semibold whitespace-nowrap" : "shell flex items-center justify-center gap-3 py-2 text-center text-[0.72rem] tracking-[0.14em] uppercase"}>
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-crimson" />
           <span className="opacity-90">
-            {branding === "2027" ? "Early Bird Admissions for 2027 Batch start 1st Dec" : <>Admissions open · {BATCH.cohort} · Starts {BATCH.starts}</>}
+            {branding === "2027" ? "Early-bird admissions for the 2027 batch open 1 Dec" : <>Admissions open · {BATCH.cohort} · Starts {BATCH.starts}</>}
           </span>
         </div>
       </div>
@@ -112,7 +125,12 @@ export default function SiteNav({
                         <a
                           key={c.href}
                           href={c.href}
-                          className="block rounded-[2px] px-3.5 py-2.5 text-[0.85rem] text-ink-2 transition-colors hover:bg-paper-2 hover:text-ink"
+                          aria-current={isActive(c.href) ? "page" : undefined}
+                          className={`block rounded-[2px] px-3.5 py-2.5 text-[0.85rem] transition-colors hover:bg-paper-2 hover:text-ink ${
+                            isActive(c.href)
+                              ? "bg-paper-2 font-semibold text-crimson"
+                              : "text-ink-2"
+                          }`}
                         >
                           {c.label}
                         </a>
@@ -124,7 +142,10 @@ export default function SiteNav({
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`ulink text-[0.82rem] font-medium ${linkCls}`}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`ulink text-[0.82rem] font-medium ${
+                    isActive(item.href) ? "text-crimson" : linkCls
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -142,8 +163,9 @@ export default function SiteNav({
               className={`lg:hidden flex h-10 w-10 items-center justify-center rounded-full border ${
                 dark ? "border-white/25" : "border-line"
               }`}
-              aria-label="Toggle menu"
+              aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
+              aria-controls="mobile-site-menu"
             >
               <span className="relative flex h-3 w-4 flex-col justify-between">
                 <span
@@ -170,14 +192,22 @@ export default function SiteNav({
       {/* Mobile menu */}
       <div
         className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
-          open ? "opacity-100" : "pointer-events-none opacity-0"
+          open
+            ? "visible opacity-100"
+            : "invisible pointer-events-none opacity-0"
         }`}
+        aria-hidden={!open}
       >
-        <div
-          className="absolute inset-0 bg-ink/30 backdrop-blur-sm"
+        <button
+          type="button"
+          aria-label="Close menu"
+          className="absolute inset-0 border-0 bg-ink/30 p-0 backdrop-blur-sm"
           onClick={() => setOpen(false)}
         />
         <div
+          id="mobile-site-menu"
+          role="navigation"
+          aria-label="Mobile navigation"
           className={`absolute right-0 top-0 h-full w-[86%] max-w-sm overflow-y-auto bg-paper px-8 pb-12 pt-10 shadow-2xl transition-transform duration-500 ease-premium ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
@@ -193,7 +223,10 @@ export default function SiteNav({
                         key={c.href}
                         href={c.href}
                         onClick={() => setOpen(false)}
-                        className="border-b border-line-soft py-2.5 font-serif text-lg"
+                        aria-current={isActive(c.href) ? "page" : undefined}
+                        className={`border-b border-line-soft py-2.5 font-serif text-lg transition-colors ${
+                          isActive(c.href) ? "text-crimson" : "text-ink"
+                        }`}
                       >
                         {c.label}
                       </a>
@@ -205,7 +238,10 @@ export default function SiteNav({
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="font-serif text-xl"
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={`font-serif text-xl transition-colors ${
+                    isActive(item.href) ? "text-crimson" : "text-ink"
+                  }`}
                 >
                   {item.label}
                 </a>
