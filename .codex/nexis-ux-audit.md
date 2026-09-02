@@ -29,6 +29,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/ug/admission-enquiry`: added an uncropped, real-classroom presentation image beside the admissions form to connect the enquiry with the student experience.
 - 2026-09-02 — `/ug/book-founder-connect`: introduced both founders before the booking form with named, uncropped portraits that stay clear and balanced on phone.
 - 2026-09-02 — `/ug/request-callback`: gave the callback flow a named, visible counselling contact and a compact mobile profile card before the form.
+- 2026-09-02 — `/ug/register-for-day-nexis`: replaced the cropped campus montage with a full student-house photo and made both registration actions easier to use on phone.
 
 ## Next candidates
 

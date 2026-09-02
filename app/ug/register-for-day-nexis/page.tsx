@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
@@ -35,7 +36,12 @@ export default function DayAtNexisPage() {
         }
         lede="Curious what it's really like to study at NEXIS? Come spend a day with us — sit in on live classes, interact with current students, meet the faculty and explore our campus culture first-hand."
         actions={
-          <a href={FORM} target="_blank" rel="noreferrer" className="btn btn-crimson">
+          <a
+            href={FORM}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-crimson w-full justify-center sm:w-auto"
+          >
             Register your visit
             <ArrowUpRight className="arrow" />
           </a>
@@ -46,14 +52,20 @@ export default function DayAtNexisPage() {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[4px] border border-line">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/campus/life-at-nexis.jpg"
-                  alt="A day on the NEXIS campus in Siliguri"
-                  className="absolute inset-0 h-full w-full object-cover"
+              <figure className="overflow-hidden rounded-[4px] border border-line bg-ink shadow-[0_28px_70px_-48px_rgba(11,12,16,0.8)]">
+                <Image
+                  src="/images/ug/life-5.jpg"
+                  alt="NEXIS students with the four house flags on campus"
+                  width={2560}
+                  height={1920}
+                  sizes="(max-width: 1023px) 100vw, 58vw"
+                  className="h-auto w-full"
                 />
-              </div>
+                <figcaption className="flex items-center gap-3 border-t border-white/10 px-4 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/70 sm:px-5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                  Four houses. One campus.
+                </figcaption>
+              </figure>
             </Reveal>
           </div>
           <div className="lg:col-span-5">
@@ -69,7 +81,12 @@ export default function DayAtNexisPage() {
               ))}
             </ul>
             <Reveal delay={260} className="mt-8">
-              <a href={FORM} target="_blank" rel="noreferrer" className="btn btn-crimson">
+              <a
+                href={FORM}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-crimson w-full justify-center sm:w-auto"
+              >
                 Register Day @ NEXIS
                 <ArrowUpRight className="arrow" />
               </a>
