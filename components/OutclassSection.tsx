@@ -55,13 +55,13 @@ const SEMESTERS: Semester[] = [
   {
     n: "03",
     title: "AI Build - Lab",
-    desc: "Students design and ship AI-powered products in a build lab — moving from raw idea to a working prototype they can actually demo.",
+    desc: "Spend two weeks inside a real business before you write a single line of AI instructions — then spend two months actually building something that business ends up using, with the numbers to prove it worked.",
     slots: [
-      { top: "2%", left: "2%", w: "38%", h: "44%", r: "2deg", z: 2 },
-      { top: "0%", left: "44%", w: "52%", h: "35%", r: "-3deg", z: 1 },
-      { top: "40%", left: "12%", w: "44%", h: "46%", r: "-4deg", z: 3 },
-      { top: "48%", left: "60%", w: "38%", h: "44%", r: "3deg", z: 2 },
-      { top: "29%", left: "52%", w: "26%", h: "27%", r: "7deg", z: 4 },
+      { top: "2%", left: "2%", w: "47%", h: "37%", r: "-2deg", z: 2, src: "/images/outclass/sem3/photo-1.webp", objectPosition: "center 58%" },
+      { top: "2%", left: "51%", w: "47%", h: "37%", r: "2deg", z: 1, src: "/images/outclass/sem3/photo-2.webp", objectPosition: "center 60%" },
+      { top: "43%", left: "3%", w: "29%", h: "52%", r: "1.5deg", z: 2, src: "/images/outclass/sem3/photo-3.webp", objectPosition: "center 46%" },
+      { top: "40%", left: "34%", w: "34%", h: "55%", r: "-2.5deg", z: 3, src: "/images/outclass/sem3/photo-4.webp", objectPosition: "center 52%" },
+      { top: "42%", left: "69%", w: "29%", h: "52%", r: "2deg", z: 2, src: "/images/outclass/sem3/photo-5.webp", objectPosition: "center 52%" },
     ],
   },
 ];
