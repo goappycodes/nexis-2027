@@ -7,6 +7,7 @@ import StudentCarousel from "@/components/StudentCarousel";
 import VideoPlate from "@/components/VideoPlate";
 import LeadForm from "@/components/LeadForm";
 import YearbookFlipBook from "@/components/YearbookFlipBook";
+import OutclassSection from "@/components/OutclassSection";
 import { ArrowRight, ArrowUpRight, WhatsApp } from "@/components/icons";
 import { ACCREDITATION, BATCH, CONTACT, FOUNDERS } from "@/lib/content";
 
@@ -587,6 +588,9 @@ export default function UG2027LandingPage() {
         </div>
         </div>
       </section>
+
+      {/* OUTCLASS — expandable semester chapters with editorial collages */}
+      <OutclassSection />
 
       {/* Final CTA — awareness framing, over image */}
       <section className="relative overflow-hidden">

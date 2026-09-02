@@ -62,12 +62,11 @@ export default function VideoPlate({
         />
         <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
         <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-crimson shadow-[0_10px_40px_-8px_rgba(239,58,93,0.8)] transition-transform duration-500 ease-premium group-hover:scale-110 sm:h-20 sm:w-20">
-            <span className="absolute inset-0 rounded-full ring-1 ring-white/30" />
+          <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/40 backdrop-blur-md transition duration-500 ease-premium group-hover:bg-white/25 group-hover:scale-105 sm:h-20 sm:w-20">
             <svg
               viewBox="0 0 24 24"
               aria-hidden
-              className="ml-1 h-6 w-6 fill-white sm:h-7 sm:w-7"
+              className="ml-0.5 h-6 w-6 fill-white sm:h-7 sm:w-7"
             >
               <path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.3-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14Z" />
             </svg>
