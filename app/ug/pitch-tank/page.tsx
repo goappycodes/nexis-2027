@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { ArrowRight, ArrowUpRight } from "@/components/icons";
+import { ArrowUpRight } from "@/components/icons";
 import {
   DEEP,
   CARD_LIGHT,
@@ -34,7 +35,7 @@ const STAGES = [
   {
     n: "Stage 1",
     t: "Idea submission & elevator pitch",
-    img: "/wp-media/2025/03/stage1.jpg",
+    img: "/images/ug/highlight-curriculum.jpg",
     points: [
       "Pick a business idea — a unique startup or a local business (no big companies).",
       "A 90-minute workshop on business-canvas creation.",
@@ -45,7 +46,7 @@ const STAGES = [
   {
     n: "Stage 2",
     t: "The grand finale",
-    img: "/wp-media/2025/03/stage2.jpg",
+    img: "/images/ug/admissions.jpg",
     points: [
       "One-hour mentorship — teams work with a local business in Siliguri.",
       "30 minutes to refine the pitch with mentor guidance.",
@@ -69,13 +70,6 @@ export default function PitchTankPage() {
 
       {/* HERO */}
       <section id="top" className={`relative isolate overflow-hidden ${DEEP} text-white`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/wp-media/2025/03/shark-tank-.png"
-          alt="NEXIS PitchTank student founders"
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-top opacity-45"
-        />
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#08080a]/85 via-[#08080a]/70 to-[#08080a]" />
         <div className="pointer-events-none absolute -left-24 -top-24 -z-10 h-96 w-96 rounded-full bg-crimson/25 blur-[130px]" />
 
         <div className="shell relative flex flex-col items-center pb-14 pt-12 text-center sm:pt-16 lg:pb-20 lg:pt-24">
@@ -99,11 +93,29 @@ export default function PitchTankPage() {
               mentorship.
             </p>
           </Reveal>
-          <Reveal delay={220}>
-            <a href={FORM} target="_blank" rel="noreferrer" className="btn btn-crimson mt-8">
+          <Reveal delay={220} className="w-full sm:w-auto">
+            <a href={FORM} target="_blank" rel="noreferrer" className="btn btn-crimson mt-8 w-full justify-center sm:w-auto">
               Register now
               <ArrowUpRight className="arrow" />
             </a>
+          </Reveal>
+
+          <Reveal delay={260} className="mt-10 w-full max-w-5xl">
+            <figure className="overflow-hidden rounded-[4px] border border-white/15 bg-black/35 shadow-[0_35px_90px_-50px_rgba(0,0,0,0.9)]">
+              <Image
+                src="/images/ug/admissions.jpg"
+                alt="Students presenting to a live audience at NEXIS"
+                width={2560}
+                height={1303}
+                sizes="(max-width: 1023px) 100vw, 80vw"
+                className="h-auto w-full"
+                priority
+              />
+              <figcaption className="flex items-center gap-3 border-t border-white/10 px-4 py-3 text-left text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/65 sm:px-5">
+                <span className="h-1.5 w-1.5 rounded-full bg-crimson" />
+                A live student presentation at NEXIS
+              </figcaption>
+            </figure>
           </Reveal>
 
           <Reveal delay={300} className="mt-12 grid w-full max-w-3xl grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-9 sm:grid-cols-4">
@@ -123,8 +135,13 @@ export default function PitchTankPage() {
           <Reveal className={`grid items-stretch overflow-hidden md:grid-cols-2 ${CARD_LIGHT}`}>
             <AccentRule />
             <div className="relative min-h-[240px] bg-paper-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/wp-media/2024/10/under-18-image.jpg" alt="Student founders at NEXIS" className="absolute inset-0 h-full w-full object-cover" />
+              <Image
+                src="/images/ug/creator-chirag.jpg"
+                alt="A NEXIS student creator"
+                fill
+                sizes="(max-width: 767px) 100vw, 50vw"
+                className="object-contain"
+              />
             </div>
             <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
               <Chip>The stage</Chip>
@@ -162,8 +179,7 @@ export default function PitchTankPage() {
               <Reveal key={s.n} delay={i * 90} className={`flex flex-col ${CARD_DARK}`}>
                 <AccentRule />
                 <div className="relative aspect-[16/9] overflow-hidden bg-black/40">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.img} alt={s.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                  <Image src={s.img} alt={s.t} fill sizes="(max-width: 767px) 100vw, 50vw" className="object-contain" />
                   <span className="absolute left-4 top-4 rounded-full bg-crimson px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white">{s.n}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
@@ -192,8 +208,7 @@ export default function PitchTankPage() {
                 <AccentRule />
                 {c.img ? (
                   <div className="relative aspect-[4/3] overflow-hidden bg-ink">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={c.img} alt={c.t} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                    <Image src={c.img} alt={c.t} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw" className="object-contain" />
                   </div>
                 ) : (
                   <div className="flex aspect-[4/3] items-center justify-center bg-paper-2">
