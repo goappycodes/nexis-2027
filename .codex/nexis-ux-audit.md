@@ -34,6 +34,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/ug/himalayan-scholarship-test`: surfaced a real student showcase in the hero, made journey and award cards swipeable, and stopped campaign images from cropping on phone.
 - 2026-09-02 — `/voice-of-nexis/registration`: added an uncropped student-presenter story before the ambassador application and separated programme value into a compact phone card.
 - 2026-09-02 — `/ug/thank-you`: turned the confirmation into a campus-rich next step with a complete events collage and full-width mobile actions.
+- 2026-09-02 — `/`: preserved the complete classroom, programme and campus-gallery images on phone, corrected the hero image description and made both primary actions thumb-friendly.
 
 ## Next candidates
 

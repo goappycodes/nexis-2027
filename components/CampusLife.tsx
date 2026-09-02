@@ -83,14 +83,14 @@ export default function CampusLife({ index = "06" }: { index?: string }) {
             <Reveal
               key={img.src}
               delay={(i % 4) * 60}
-              className="group relative aspect-[4/3] overflow-hidden rounded-[2px] bg-paper-2"
+              className="group relative aspect-[600/536] overflow-hidden rounded-[2px] bg-paper-2 sm:aspect-[4/3]"
             >
               <Image
                 src={img.src}
                 alt={img.cap}
                 fill
                 sizes="(max-width:768px) 50vw, 25vw"
-                className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                className="object-contain transition-transform duration-700 ease-premium group-hover:scale-105 sm:object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
               <figcaption className="absolute bottom-0 left-0 flex items-center gap-2 p-4 text-[0.8rem] font-medium text-white">

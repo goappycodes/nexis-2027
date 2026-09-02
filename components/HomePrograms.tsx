@@ -43,13 +43,13 @@ export default function HomePrograms() {
                   p.live ? "hover:border-crimson/60" : ""
                 }`}
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-paper-2">
+                <div className="relative aspect-[600/536] overflow-hidden bg-paper-2 sm:aspect-[16/9]">
                   <Image
                     src={p.img}
                     alt={p.title}
                     fill
                     sizes="(max-width:768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-premium group-hover:scale-105"
+                    className="object-contain transition-transform duration-700 ease-premium group-hover:scale-105 sm:object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" />
                   <span className="absolute left-4 top-4 rounded-full bg-crimson px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white">

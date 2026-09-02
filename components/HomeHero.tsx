@@ -41,11 +41,11 @@ export default function HomeHero() {
 
             <Reveal delay={240}>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <a href="#programs" className="btn btn-crimson">
+                <a href="#programs" className="btn btn-crimson w-full justify-center sm:w-auto">
                   Explore programs
                   <ArrowRight className="arrow" />
                 </a>
-                <a href="#campus" className="btn border-white/30 bg-transparent text-paper hover:bg-white/10">
+                <a href="#campus" className="btn w-full justify-center border-white/30 bg-transparent text-paper hover:bg-white/10 sm:w-auto">
                   Take a campus tour
                   <ArrowUpRight className="arrow" />
                 </a>
@@ -56,13 +56,13 @@ export default function HomeHero() {
           {/* Right — campus plate */}
           <div className="lg:col-span-5">
             <Reveal delay={200} className="relative">
-              <figure className="relative aspect-[16/10] overflow-hidden rounded-[6px] bg-paper-2 lg:aspect-[4/5]">
+              <figure className="relative aspect-[600/536] overflow-hidden rounded-[6px] bg-paper-2 lg:aspect-[4/5]">
                 <Image
                   src="/images/campus/apex-hall.jpg"
-                  alt="Students inside the NEXIS campus in Siliguri"
+                  alt="The Apex Hall classroom at the NEXIS campus in Siliguri"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-contain lg:object-cover"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/5 to-transparent" />
