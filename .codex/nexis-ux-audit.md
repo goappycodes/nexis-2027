@@ -38,6 +38,7 @@ This file tracks the recurring page-by-page polish so later passes move forward 
 - 2026-09-02 — `/ug`: made the primary admissions actions full-width on phone, condensed the six-project showcase into a swipeable rail, preserved complete event and career imagery and replaced a vague admissions link with a clear destination.
 - 2026-09-02 — `/about/privacy`, `/about/terms-of-use` and `/ug/late-payment-of-fees-policy`: added a touch-friendly document navigator, stable section links and a clearer numbered reading hierarchy across all policy pages.
 - 2026-09-02 — shared navigation: added current-page cues, prevented the closed phone menu from receiving focus, supported Escape-to-close, clarified toggle labels and tightened the 2027 admissions announcement.
+- 2026-09-02 — shared student wall: replaced anonymous four-across phone thumbnails with a swipeable portrait roster that keeps every student name and internship organisation visible without hover.
 
 ## Next candidates
 
