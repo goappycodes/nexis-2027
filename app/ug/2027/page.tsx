@@ -118,7 +118,10 @@ export default function UG2027LandingPage() {
         <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(10px,3.2vw,18px)] leading-tight tracking-normal sm:py-2.5">
           <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-crimson sm:h-1.5 sm:w-1.5" />
           <span className="whitespace-nowrap font-semibold opacity-90">
-            Early Bird Admissions for 2027 Batch start 1st Dec
+            Early Bird Admissions for 2027 Batch start{" "}
+            <span className="text-crimson underline decoration-white decoration-2 underline-offset-4">
+              1st DECEMBER
+            </span>
           </span>
         </div>
       </div>
@@ -366,9 +369,9 @@ export default function UG2027LandingPage() {
               Undergrad in Business Management
             </p>
             <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)]">
-              What&rsquo;s It{" "}
-              <span className="serif-em text-crimson">Really Like</span> at
-              NEXIS.
+              Inside The{" "}
+              <span className="serif-em text-crimson">Undergrad Batch</span> of
+              NEXIS
             </h2>
           </Reveal>
 
