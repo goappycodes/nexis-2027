@@ -493,9 +493,8 @@ export default function UG2027LandingPage() {
         <div className="shell relative flex h-full flex-col py-8 sm:py-12 lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-w-0 lg:!p-0">
           <Reveal className="max-w-sm">
             <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem]">
-              You intern{" "}
-              <span className="serif-em text-crimson">thrice</span> in 3
-              years.
+              Do <span className="serif-em text-crimson">3 internships</span>{" "}
+              in 3 years.
             </h2>
           </Reveal>
           <div className="mt-9 hidden lg:block">
