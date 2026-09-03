@@ -44,22 +44,22 @@ const YEARBOOK_PAGES = Array.from(
 
 const PROGRAM_HIGHLIGHTS = [
   {
-    title: "Build your business",
+    title: "Build your own Business",
     text: "Turn ideas into ventures. Learn to pitch, raise funds and lead.",
     img: "/images/ug/career-entrepreneurship.jpg",
     alt: "NEXIS students showcasing their own products",
     position: "35% center",
   },
   {
-    title: "Learn from industry",
-    text: "100+ experts. Founder mentorship. Internships from year one.",
+    title: "Industry as your Faculty",
+    text: "60+ Entrepreneurs already on campus to teach you.",
     img: "/images/ug/career-jobs.jpg",
     alt: "An industry mentor leading a session with NEXIS students",
     position: "left center",
   },
   {
-    title: "Graduate with experience",
-    text: "6 CV-ready projects in three years. Real work to show for it.",
+    title: "Graduate with real experience",
+    text: "Do 3 internships in three years. Get to work on 6 practical-projects across six semesters.",
     img: "/images/ug/learn-ai.jpg",
     alt: "A NEXIS student presenting a completed software project",
     position: "center 60%",
@@ -370,9 +370,8 @@ export default function UG2027LandingPage() {
               Undergrad in Business Management
             </p>
             <h2 className="display balance mt-3 text-[clamp(1.7rem,4.8vw,3rem)]">
-              Inside The{" "}
-              <span className="serif-em text-crimson">Undergrad Batch</span> of
-              NEXIS
+              What makes <span className="serif-em text-crimson">NEXIS</span>{" "}
+              different from other colleges
             </h2>
           </Reveal>
 
@@ -589,6 +588,28 @@ export default function UG2027LandingPage() {
         <div className="shell lg:!px-0">
           <YearbookFlipBook pages={YEARBOOK_PAGES} />
         </div>
+        </div>
+      </section>
+
+      {/* Campus film — muted, looping and non-interactive so it never
+          sends visitors away from the admissions page. */}
+      <section className="bg-ink py-8 text-white sm:py-14">
+        <div className="shell">
+          <div className="relative aspect-video overflow-hidden rounded-[14px] bg-black shadow-[0_30px_80px_-35px_rgba(0,0,0,0.85)] ring-1 ring-white/10">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/fzefAS5pIZw?autoplay=1&mute=1&loop=1&playlist=fzefAS5pIZw&controls=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0"
+              title="Explore the NEXIS campus"
+              loading="lazy"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              tabIndex={-1}
+              className="pointer-events-none absolute inset-0 h-full w-full border-0"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/75 via-black/20 to-transparent" />
+            <h2 className="display pointer-events-none absolute left-[6%] top-1/2 -translate-y-1/2 text-[clamp(2.2rem,8vw,7rem)] leading-[0.78] tracking-[-0.055em] text-white drop-shadow-lg">
+              EXPLORE <span className="serif-em text-[0.58em] tracking-normal">our</span>
+              <span className="block">Campus</span>
+            </h2>
+          </div>
         </div>
       </section>
 
