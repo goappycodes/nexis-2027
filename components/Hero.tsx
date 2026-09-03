@@ -46,7 +46,7 @@ export default function Hero() {
                   rel="noreferrer"
                   className="btn btn-ghost"
                 >
-                  Download prospectus
+                  Download brochure
                   <ArrowUpRight className="arrow" />
                 </a>
               </div>

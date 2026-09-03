@@ -45,7 +45,7 @@ export default function CtaBand() {
                 rel="noreferrer"
                 className="btn w-full justify-center border-white/40 bg-transparent text-white hover:bg-white/10 sm:w-auto lg:w-full"
               >
-                Download prospectus
+                Download brochure
                 <ArrowUpRight className="arrow" />
               </a>
             </Reveal>

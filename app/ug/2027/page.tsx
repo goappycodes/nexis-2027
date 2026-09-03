@@ -624,7 +624,7 @@ export default function UG2027LandingPage() {
               href={CONTACT.brochureHref}
               className="btn border-white/40 bg-transparent text-white hover:bg-white/10"
             >
-              Download prospectus
+              Download brochure
               <ArrowUpRight className="arrow" />
             </a>
           </Reveal>
