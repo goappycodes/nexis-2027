@@ -255,12 +255,15 @@ export default function UG2027LandingPage() {
             </Reveal>
             <Reveal delay={100} className="mt-4 flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 lg:border-white/15 lg:bg-white/5">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line">
-                <Image
+                {/* Load this portrait directly: the deployment's image-optimizer
+                    quota must not prevent the counsellor photo from rendering. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/images/counselling/moira-priya-circle.png"
                   alt="Ms. Moira Priya Devi, Counselling Head"
-                  fill
-                  sizes="80px"
-                  className="object-cover object-[center_38%]"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover object-[center_38%]"
                 />
               </div>
               <p className="text-[0.8rem] leading-relaxed text-ink-2 lg:text-white/80">
