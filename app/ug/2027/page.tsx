@@ -438,7 +438,7 @@ export default function UG2027LandingPage() {
                       {c.description}
                     </p>
                     <a href="#enquire" className="ulink mt-auto inline-flex items-center gap-1.5 pt-3 text-[0.78rem] text-white sm:gap-2 sm:pt-4 sm:text-[0.82rem] lg:pt-3" aria-label={`Enquire about ${c.name}`}>
-                      Explore program <ArrowUpRight className="shrink-0 text-crimson" />
+                      Explore curriculum in detail <ArrowUpRight className="shrink-0 text-crimson" />
                     </a>
                   </div>
                 </Reveal>
