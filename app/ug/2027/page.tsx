@@ -215,21 +215,23 @@ export default function UG2027LandingPage() {
                   </Reveal>
                 ))}
               </div>
-              <Reveal delay={280} className="mt-6 grid max-w-lg grid-cols-2 items-center gap-6 border-t border-white/15 pt-5 sm:gap-8 lg:border-line">
-                <p className="col-span-2 font-serif text-xl leading-tight sm:text-2xl">
+              <Reveal delay={280} className="mt-6 max-w-lg border-t border-white/15 pt-5 lg:border-line">
+                <p className="font-serif text-xl leading-tight sm:text-2xl">
                   Our courses are backed by
                 </p>
-                {ACCREDITATION.slice(0, 2).map((mark) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    key={mark.name}
-                    src={mark.src}
-                    alt={mark.name}
-                    className="h-16 w-full min-w-0 object-contain object-left brightness-0 invert sm:h-20 lg:invert-0"
-                  />
-                ))}
+                <div className="mt-4 flex items-center gap-2 sm:gap-3">
+                  {ACCREDITATION.slice(0, 2).map((mark) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      key={mark.name}
+                      src={mark.src}
+                      alt={mark.name}
+                      className="h-16 w-36 shrink-0 object-contain object-left brightness-0 invert sm:h-20 sm:w-44 lg:invert-0"
+                    />
+                  ))}
+                </div>
               </Reveal>
             </div>
           </div>
