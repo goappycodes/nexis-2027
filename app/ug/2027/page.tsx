@@ -256,7 +256,7 @@ export default function UG2027LandingPage() {
             <Reveal delay={100} className="mt-4 flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 lg:border-white/15 lg:bg-white/5">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line">
                 <Image
-                  src="/images/counselling/moira-priya-2027.jpg"
+                  src="/images/counselling/moira-priya-circle.png"
                   alt="Ms. Moira Priya Devi, Counselling Head"
                   fill
                   sizes="80px"
