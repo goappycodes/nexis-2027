@@ -88,20 +88,16 @@ const ADMISSION_VALUE_CLASS =
 
 const LP_FACTS = [
   { label: "Format", value: "On-campus", sub: "Opt-in residential" },
-  {
-    label: "Commencement",
-    value: BATCH.starts,
-    sub: "",
-  },
+  { label: "Batch of UG", value: "2027 - 2030", sub: "" },
   {
     label: "Eligibility",
     value: "10+2 / equivalent board",
-    sub: "Current students & passouts",
+    sub: "Class 12th pass outs",
   },
   {
     label: "Duration",
     value: "3 years",
-    sub: "6 months mandatory internship",
+    sub: "",
   },
 ];
 
@@ -446,15 +442,20 @@ export default function UG2027LandingPage() {
               ))}
             </div>
             <Reveal className="mt-6 grid grid-cols-2 items-stretch overflow-hidden rounded-[4px] border border-crimson/25 bg-crimson/[0.06] sm:grid-cols-3 sm:auto-rows-fr">
-              <div className="p-4 sm:p-6">
+              <div className="flex min-h-[132px] flex-col justify-between p-4 sm:min-h-[148px] sm:p-6">
                 <p className={ADMISSION_VALUE_CLASS}>40</p>
-                <p className="mt-2 text-[0.98rem] leading-snug text-ink">Students per program</p>
+                <p className="mt-2 text-[0.98rem] leading-snug text-ink">
+                  <span className="block">Students Intake</span>
+                  <span className="block">Capacity</span>
+                </p>
               </div>
-              <div className="border-l border-crimson/20 p-4 sm:p-6">
+              <div className="flex min-h-[132px] flex-col justify-between border-l border-crimson/20 p-4 sm:min-h-[148px] sm:p-6">
                 <p className={ADMISSION_VALUE_CLASS}>15</p>
-                <p className="mt-2 text-[0.98rem] leading-snug text-ink">Early-bird places each</p>
+                <p className="mt-2 text-[0.98rem] leading-snug text-ink">
+                  Early-bird Scholarships
+                </p>
               </div>
-              <div className="col-span-2 border-t border-crimson/20 p-4 sm:col-span-1 sm:border-l sm:border-t-0 sm:p-6">
+              <div className="col-span-2 flex min-h-[132px] flex-col justify-between border-t border-crimson/20 p-4 sm:col-span-1 sm:min-h-[148px] sm:border-l sm:border-t-0 sm:p-6">
                 <p className={ADMISSION_VALUE_CLASS}>1 December</p>
                 <p className="mt-2 text-[0.98rem] leading-snug text-ink">Admissions open</p>
               </div>
@@ -481,9 +482,9 @@ export default function UG2027LandingPage() {
 
       {/* Intern spotlight — keep the approved mobile treatment; show the
           complete 9:16 frame beside the heading on desktop. */}
-      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-ink sm:h-[56vh] lg:h-auto lg:min-h-0">
+      <section className="relative h-[62vh] min-h-[440px] w-full overflow-hidden bg-paper sm:h-[56vh] lg:h-auto lg:min-h-0">
         <div className="h-full lg:mx-auto lg:grid lg:h-auto lg:max-w-[1040px] lg:grid-cols-[minmax(0,1fr)_288px] lg:items-center lg:gap-20 lg:px-12 lg:py-10">
-        <div className="absolute inset-0 lg:relative lg:inset-auto lg:col-start-2 lg:row-start-1 lg:aspect-[9/16] lg:overflow-hidden lg:rounded-lg lg:bg-black lg:ring-1 lg:ring-white/15" aria-hidden="true">
+        <div className="absolute inset-0 lg:relative lg:inset-auto lg:col-start-2 lg:row-start-1 lg:aspect-[9/16] lg:overflow-hidden lg:rounded-lg lg:bg-paper lg:ring-1 lg:ring-line" aria-hidden="true">
           <LazyVideo
             src="/videos/intern-spotlight.mp4"
             poster="/videos/intern-spotlight-poster.jpg"
@@ -497,35 +498,27 @@ export default function UG2027LandingPage() {
 
         <div className="shell relative flex h-full flex-col py-8 sm:py-12 lg:col-start-1 lg:row-start-1 lg:h-auto lg:min-w-0 lg:!p-0">
           <Reveal className="max-w-sm">
-            <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem]">
+            <h2 className="display balance text-[clamp(1.7rem,4.8vw,3rem)] text-white lg:text-[3.5rem] lg:text-ink">
               Do <span className="serif-em text-crimson">3 internships</span>{" "}
               in 3 years.
             </h2>
           </Reveal>
-          <div className="mt-9 hidden lg:block">
-            <p className="mb-5 font-serif text-2xl text-white">
-              Learn by working{" "}
-              <span className="serif-em text-crimson">with</span> —
-            </p>
-            <Recognition vibrant doubleRow embedded showAccreditation={false} showKicker={false} />
-          </div>
         </div>
         </div>
       </section>
 
-      {/* Mobile keeps the full-width recruiter showcase below the video. */}
-      <div className="lg:hidden">
-      <div className="relative overflow-hidden bg-gradient-to-br from-black via-ink to-black py-8 text-center sm:py-12">
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/25 blur-[100px]" />
-        <p className="shell relative display text-[clamp(1.3rem,3.6vw,1.9rem)] text-white">
-          Learn by working{" "}
-          <span className="serif-em text-crimson">with</span> —
-        </p>
-      </div>
-
-      {/* Trust — recruiters + accreditation */}
-      <Recognition vibrant doubleRow showAccreditation={false} showKicker={false} />
-      </div>
+      {/* Recruiter showcase — directly below the video on the light section. */}
+      <section className="overflow-hidden border-b border-line bg-paper-2/50 py-7 sm:py-10">
+        <div className="shell">
+          <p className="display text-[clamp(1.3rem,3.6vw,1.9rem)] text-ink">
+            Learn by working with{" "}
+            <span className="serif-em text-crimson">75+ brands</span> —
+          </p>
+          <div className="mt-6">
+            <Recognition vibrant doubleRow embedded showAccreditation={false} showKicker={false} />
+          </div>
+        </div>
+      </section>
 
       {/* Faculty — pre-designed portrait cards, auto-scrolling so the
           strip reads as lively on mobile without needing a swipe. */}
