@@ -256,11 +256,11 @@ export default function UG2027LandingPage() {
             <Reveal delay={100} className="mt-4 flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 lg:border-white/15 lg:bg-white/5">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-line">
                 <Image
-                  src="/images/counselling/moira-priya-headshot.png"
+                  src="/images/counselling/moira-priya-2027.jpg"
                   alt="Ms. Moira Priya Devi, Counselling Head"
                   fill
                   sizes="80px"
-                  className="object-cover"
+                  className="object-cover object-[center_38%]"
                 />
               </div>
               <p className="text-[0.8rem] leading-relaxed text-ink-2 lg:text-white/80">
@@ -564,6 +564,9 @@ export default function UG2027LandingPage() {
         </div>
       </section>
 
+      {/* OUTCLASS — expandable semester chapters with editorial collages */}
+      <OutclassSection />
+
       {/* Yearbook — real page-turn flip book */}
       <section className="bg-paper py-8 sm:py-14">
         <div className="lg:mx-auto lg:grid lg:max-w-[1280px] lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:items-center lg:gap-12 lg:px-12">
@@ -585,9 +588,6 @@ export default function UG2027LandingPage() {
         </div>
         </div>
       </section>
-
-      {/* OUTCLASS — expandable semester chapters with editorial collages */}
-      <OutclassSection />
 
       {/* Final CTA — awareness framing, over image */}
       <section className="relative overflow-hidden">

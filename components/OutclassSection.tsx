@@ -237,6 +237,9 @@ export default function OutclassSection() {
             The <span className="serif-em text-crimson">OUTCLASS</span>{" "}
             semesters.
           </h2>
+          <p className="mt-3 text-[0.92rem] leading-relaxed text-white/70 sm:text-[1rem]">
+            Learn practically by doing projects
+          </p>
         </Reveal>
       </div>
 
