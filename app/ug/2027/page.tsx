@@ -87,16 +87,16 @@ const ADMISSION_VALUE_CLASS =
   "whitespace-nowrap font-serif text-4xl leading-none text-crimson sm:text-[clamp(1.5rem,3.3vw,3rem)]";
 
 const LP_FACTS = [
-  { label: "Format", value: "On-campus", sub: "Opt-in residential" },
-  { label: "Batch of UG", value: "2027 - 2030", sub: "" },
+  { label: "Format", value: "On-campus", sub: "Siliguri" },
+  { label: "Duration", value: "3 years", sub: "2027 - 2030" },
   {
     label: "Eligibility",
     value: "10+2 / equivalent board",
     sub: "Class 12th pass outs",
   },
   {
-    label: "Duration",
-    value: "3 years",
+    label: "Seats available",
+    value: "40",
     sub: "",
   },
 ];
@@ -114,7 +114,7 @@ export default function UG2027LandingPage() {
         <div className="flex w-full items-center justify-center gap-1.5 px-3 py-2 text-center text-[clamp(10px,3.2vw,18px)] leading-tight tracking-normal sm:py-2.5">
           <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-crimson sm:h-1.5 sm:w-1.5" />
           <span className="whitespace-nowrap font-semibold opacity-90">
-            Early Bird Admissions for 2027 Batch start{" "}
+            Early Bird Admissions for 2027 Batch starts{" "}
             <span className="text-crimson underline decoration-white decoration-2 underline-offset-4">
               1st DECEMBER
             </span>
@@ -242,11 +242,8 @@ export default function UG2027LandingPage() {
               <div className="overflow-hidden rounded-[3px] border border-line bg-paper shadow-[0_40px_90px_-55px_rgba(11,12,16,0.55)]">
                 <div className="border-b border-line bg-paper-2/60 px-5 py-3.5 sm:px-7 sm:py-4">
                   <h2 className="font-serif text-2xl leading-tight sm:text-3xl">
-                    Enquire about the 2027 admissions
+                    Enquire about the 2027 - 2030 batch admissions
                   </h2>
-                  <p className="mt-1 text-[0.84rem] text-ink-2">
-                    Get info on curriculum, fees, and admissions
-                  </p>
                 </div>
                 <div className="p-4 sm:p-7">
                   <LeadForm submitLabel="Send my enquiry" />

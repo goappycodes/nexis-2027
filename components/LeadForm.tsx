@@ -2,7 +2,6 @@
 
 import { useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { FORM_OPTIONS } from "@/lib/content";
 import { ArrowRight } from "./icons";
 
 const inputCls =
@@ -81,7 +80,7 @@ export default function LeadForm({
           />
         </Field>
 
-        <Field label="Current grade" required>
+        <Field label="Class 12th passing year" required>
           <div className="relative">
             <select
               name="grade"
@@ -92,9 +91,9 @@ export default function LeadForm({
               <option value="" disabled>
                 Select…
               </option>
-              {FORM_OPTIONS.grade.map((g) => (
-                <option key={g} value={g}>
-                  {g}
+              {["2027", "2026", "2025"].map((year) => (
+                <option key={year} value={year}>
+                  {year}
                 </option>
               ))}
             </select>
